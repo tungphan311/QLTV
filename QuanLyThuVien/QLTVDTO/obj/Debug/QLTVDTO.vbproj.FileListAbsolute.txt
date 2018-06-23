@@ -1,0 +1,9 @@
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVDTO\bin\Debug\QLTVDTO.dll
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVDTO\bin\Debug\QLTVDTO.pdb
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVDTO\bin\Debug\QLTVDTO.xml
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.vbprojResolveAssemblyReference.cache
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.Resources.resources
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.vbproj.GenerateResource.Cache
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.dll
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.xml
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.pdb

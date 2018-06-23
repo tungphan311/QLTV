@@ -1,0 +1,8 @@
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVBus\bin\Debug\QLTVBus.dll
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVBus\bin\Debug\QLTVBus.pdb
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVBus\bin\Debug\QLTVBus.xml
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVBus\obj\Debug\QLTVBus.Resources.resources
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVBus\obj\Debug\QLTVBUS.vbproj.GenerateResource.Cache
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVBus\obj\Debug\QLTVBus.dll
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVBus\obj\Debug\QLTVBus.xml
+C:\Users\CatRom\Desktop\QuanLyThuVien\QLTVBus\obj\Debug\QLTVBus.pdb
