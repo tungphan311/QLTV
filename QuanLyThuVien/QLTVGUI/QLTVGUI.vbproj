@@ -110,6 +110,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ucBaoCao.Designer.vb">
+      <DependentUpon>ucBaoCao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucBaoCao.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBaoCaoSachMuon.Designer.vb">
+      <DependentUpon>ucBaoCaoSachMuon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucBaoCaoSachMuon.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBaoCaoSachTre.Designer.vb">
+      <DependentUpon>ucBaoCaoSachTre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucBaoCaoSachTre.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ucChoMuonSach.Designer.vb">
       <DependentUpon>ucChoMuonSach.vb</DependentUpon>
     </Compile>
@@ -126,6 +144,18 @@
       <DependentUpon>ucNhanTraSach.vb</DependentUpon>
     </Compile>
     <Compile Include="ucNhanTraSach.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThayDoiQuyDinh.Designer.vb">
+      <DependentUpon>ucThayDoiQuyDinh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucThayDoiQuyDinh.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThuVien.Designer.vb">
+      <DependentUpon>ucThuVien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucThuVien.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucTiepNhanSachMoi.Designer.vb">
@@ -151,6 +181,15 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucBaoCao.resx">
+      <DependentUpon>ucBaoCao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBaoCaoSachMuon.resx">
+      <DependentUpon>ucBaoCaoSachMuon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBaoCaoSachTre.resx">
+      <DependentUpon>ucBaoCaoSachTre.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucChoMuonSach.resx">
       <DependentUpon>ucChoMuonSach.vb</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +198,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucNhanTraSach.resx">
       <DependentUpon>ucNhanTraSach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThayDoiQuyDinh.resx">
+      <DependentUpon>ucThayDoiQuyDinh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThuVien.resx">
+      <DependentUpon>ucThuVien.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucTiepNhanSachMoi.resx">
       <DependentUpon>ucTiepNhanSachMoi.vb</DependentUpon>
@@ -289,6 +334,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add_circle_grey_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-sign-inside-a-black-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Support_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6452.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact-divider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Info_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

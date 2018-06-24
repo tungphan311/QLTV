@@ -32,15 +32,15 @@ Partial Class ucLapTheDocGia
         Me.tbHoTen = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.lbMaDocGia = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.dtpNgaySinh = New System.Windows.Forms.DateTimePicker()
-        Me.tbDiaChi = New Bunifu.Framework.UI.BunifuMaterialTextbox()
-        Me.tbEmail = New Bunifu.Framework.UI.BunifuMaterialTextbox()
-        Me.cbLoaiDocGia = New System.Windows.Forms.ComboBox()
-        Me.dtpNgayLapThe = New System.Windows.Forms.DateTimePicker()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnLuuVaThoat = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btnThoat = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btnLuu = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.dtpNgaySinh = New System.Windows.Forms.DateTimePicker()
+        Me.tbDiaChi = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.tbEmail = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.dtpNgayLapThe = New System.Windows.Forms.DateTimePicker()
+        Me.cbLoaiDocGia = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -61,7 +61,7 @@ Partial Class ucLapTheDocGia
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(135, 127)
+        Me.Label3.Location = New System.Drawing.Point(146, 134)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 21)
         Me.Label3.TabIndex = 1
@@ -73,7 +73,7 @@ Partial Class ucLapTheDocGia
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(118, 343)
+        Me.Label4.Location = New System.Drawing.Point(129, 310)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(96, 21)
         Me.Label4.TabIndex = 1
@@ -85,7 +85,7 @@ Partial Class ucLapTheDocGia
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(154, 235)
+        Me.Label5.Location = New System.Drawing.Point(165, 222)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(60, 21)
         Me.Label5.TabIndex = 1
@@ -97,7 +97,7 @@ Partial Class ucLapTheDocGia
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(131, 182)
+        Me.Label6.Location = New System.Drawing.Point(142, 178)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(83, 21)
         Me.Label6.TabIndex = 1
@@ -109,7 +109,7 @@ Partial Class ucLapTheDocGia
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(163, 289)
+        Me.Label7.Location = New System.Drawing.Point(174, 266)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(51, 21)
         Me.Label7.TabIndex = 1
@@ -121,7 +121,7 @@ Partial Class ucLapTheDocGia
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(113, 397)
+        Me.Label8.Location = New System.Drawing.Point(124, 354)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(101, 21)
         Me.Label8.TabIndex = 1
@@ -141,12 +141,11 @@ Partial Class ucLapTheDocGia
         Me.tbHoTen.LineIdleColor = System.Drawing.Color.Silver
         Me.tbHoTen.LineMouseHoverColor = System.Drawing.Color.Gray
         Me.tbHoTen.LineThickness = 2
-        Me.tbHoTen.Location = New System.Drawing.Point(234, 117)
+        Me.tbHoTen.Location = New System.Drawing.Point(245, 124)
         Me.tbHoTen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbHoTen.Name = "tbHoTen"
         Me.tbHoTen.Size = New System.Drawing.Size(331, 36)
         Me.tbHoTen.TabIndex = 2
-        Me.tbHoTen.Text = "(Bắt buộc)"
         Me.tbHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbMaDocGia
@@ -156,7 +155,7 @@ Partial Class ucLapTheDocGia
         Me.lbMaDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbMaDocGia.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.lbMaDocGia.ForeColor = System.Drawing.Color.Red
-        Me.lbMaDocGia.Location = New System.Drawing.Point(234, 72)
+        Me.lbMaDocGia.Location = New System.Drawing.Point(245, 91)
         Me.lbMaDocGia.Name = "lbMaDocGia"
         Me.lbMaDocGia.Size = New System.Drawing.Size(82, 21)
         Me.lbMaDocGia.TabIndex = 3
@@ -168,100 +167,11 @@ Partial Class ucLapTheDocGia
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(125, 73)
+        Me.Label2.Location = New System.Drawing.Point(136, 90)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(89, 21)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Mã độc giả:"
-        '
-        'dtpNgaySinh
-        '
-        Me.dtpNgaySinh.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke
-        Me.dtpNgaySinh.CalendarTitleBackColor = System.Drawing.SystemColors.Control
-        Me.dtpNgaySinh.CalendarTrailingForeColor = System.Drawing.Color.Black
-        Me.dtpNgaySinh.CustomFormat = "ddddddddd, dd/MM/yyyy"
-        Me.dtpNgaySinh.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpNgaySinh.Location = New System.Drawing.Point(234, 177)
-        Me.dtpNgaySinh.Name = "dtpNgaySinh"
-        Me.dtpNgaySinh.Size = New System.Drawing.Size(221, 29)
-        Me.dtpNgaySinh.TabIndex = 4
-        Me.dtpNgaySinh.Value = New Date(2000, 1, 1, 0, 0, 0, 0)
-        '
-        'tbDiaChi
-        '
-        Me.tbDiaChi.AutoSize = True
-        Me.tbDiaChi.BackColor = System.Drawing.Color.White
-        Me.tbDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbDiaChi.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.tbDiaChi.ForeColor = System.Drawing.Color.Silver
-        Me.tbDiaChi.HintForeColor = System.Drawing.Color.Empty
-        Me.tbDiaChi.HintText = ""
-        Me.tbDiaChi.isPassword = False
-        Me.tbDiaChi.LineFocusedColor = System.Drawing.Color.Gray
-        Me.tbDiaChi.LineIdleColor = System.Drawing.Color.Silver
-        Me.tbDiaChi.LineMouseHoverColor = System.Drawing.Color.Gray
-        Me.tbDiaChi.LineThickness = 2
-        Me.tbDiaChi.Location = New System.Drawing.Point(234, 226)
-        Me.tbDiaChi.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.tbDiaChi.Name = "tbDiaChi"
-        Me.tbDiaChi.Size = New System.Drawing.Size(331, 36)
-        Me.tbDiaChi.TabIndex = 2
-        Me.tbDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'tbEmail
-        '
-        Me.tbEmail.AutoSize = True
-        Me.tbEmail.BackColor = System.Drawing.Color.White
-        Me.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbEmail.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.tbEmail.ForeColor = System.Drawing.Color.Silver
-        Me.tbEmail.HintForeColor = System.Drawing.Color.Empty
-        Me.tbEmail.HintText = ""
-        Me.tbEmail.isPassword = False
-        Me.tbEmail.LineFocusedColor = System.Drawing.Color.Gray
-        Me.tbEmail.LineIdleColor = System.Drawing.Color.Silver
-        Me.tbEmail.LineMouseHoverColor = System.Drawing.Color.Gray
-        Me.tbEmail.LineThickness = 2
-        Me.tbEmail.Location = New System.Drawing.Point(234, 279)
-        Me.tbEmail.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.tbEmail.Name = "tbEmail"
-        Me.tbEmail.Size = New System.Drawing.Size(331, 36)
-        Me.tbEmail.TabIndex = 2
-        Me.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'cbLoaiDocGia
-        '
-        Me.cbLoaiDocGia.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.cbLoaiDocGia.FormattingEnabled = True
-        Me.cbLoaiDocGia.Location = New System.Drawing.Point(234, 339)
-        Me.cbLoaiDocGia.Name = "cbLoaiDocGia"
-        Me.cbLoaiDocGia.Size = New System.Drawing.Size(221, 29)
-        Me.cbLoaiDocGia.TabIndex = 5
-        '
-        'dtpNgayLapThe
-        '
-        Me.dtpNgayLapThe.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke
-        Me.dtpNgayLapThe.CalendarTitleBackColor = System.Drawing.SystemColors.Control
-        Me.dtpNgayLapThe.CalendarTrailingForeColor = System.Drawing.Color.Black
-        Me.dtpNgayLapThe.CustomFormat = "ddddddddd, dd/MM/yyyy"
-        Me.dtpNgayLapThe.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.dtpNgayLapThe.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpNgayLapThe.Location = New System.Drawing.Point(234, 392)
-        Me.dtpNgayLapThe.Name = "dtpNgayLapThe"
-        Me.dtpNgayLapThe.Size = New System.Drawing.Size(221, 29)
-        Me.dtpNgayLapThe.TabIndex = 4
-        Me.dtpNgayLapThe.Value = New Date(2018, 6, 23, 0, 0, 0, 0)
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox1.Location = New System.Drawing.Point(48, 47)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(605, 392)
-        Me.GroupBox1.TabIndex = 7
-        Me.GroupBox1.TabStop = False
         '
         'btnLuuVaThoat
         '
@@ -368,21 +278,108 @@ Partial Class ucLapTheDocGia
         Me.btnLuu.Textcolor = System.Drawing.Color.Black
         Me.btnLuu.TextFont = New System.Drawing.Font("Segoe UI", 12.0!)
         '
+        'dtpNgaySinh
+        '
+        Me.dtpNgaySinh.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke
+        Me.dtpNgaySinh.CalendarTitleBackColor = System.Drawing.SystemColors.Control
+        Me.dtpNgaySinh.CalendarTrailingForeColor = System.Drawing.Color.Black
+        Me.dtpNgaySinh.CustomFormat = "ddddddddd, dd/MM/yyyy"
+        Me.dtpNgaySinh.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpNgaySinh.Location = New System.Drawing.Point(245, 172)
+        Me.dtpNgaySinh.Name = "dtpNgaySinh"
+        Me.dtpNgaySinh.Size = New System.Drawing.Size(221, 29)
+        Me.dtpNgaySinh.TabIndex = 9
+        Me.dtpNgaySinh.Value = New Date(2000, 1, 1, 0, 0, 0, 0)
+        '
+        'tbDiaChi
+        '
+        Me.tbDiaChi.AutoSize = True
+        Me.tbDiaChi.BackColor = System.Drawing.Color.White
+        Me.tbDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbDiaChi.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.tbDiaChi.ForeColor = System.Drawing.Color.Silver
+        Me.tbDiaChi.HintForeColor = System.Drawing.Color.Empty
+        Me.tbDiaChi.HintText = ""
+        Me.tbDiaChi.isPassword = False
+        Me.tbDiaChi.LineFocusedColor = System.Drawing.Color.Gray
+        Me.tbDiaChi.LineIdleColor = System.Drawing.Color.Silver
+        Me.tbDiaChi.LineMouseHoverColor = System.Drawing.Color.Gray
+        Me.tbDiaChi.LineThickness = 2
+        Me.tbDiaChi.Location = New System.Drawing.Point(245, 212)
+        Me.tbDiaChi.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbDiaChi.Name = "tbDiaChi"
+        Me.tbDiaChi.Size = New System.Drawing.Size(331, 36)
+        Me.tbDiaChi.TabIndex = 7
+        Me.tbDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'tbEmail
+        '
+        Me.tbEmail.AutoSize = True
+        Me.tbEmail.BackColor = System.Drawing.Color.White
+        Me.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbEmail.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.tbEmail.ForeColor = System.Drawing.Color.Silver
+        Me.tbEmail.HintForeColor = System.Drawing.Color.Empty
+        Me.tbEmail.HintText = ""
+        Me.tbEmail.isPassword = False
+        Me.tbEmail.LineFocusedColor = System.Drawing.Color.Gray
+        Me.tbEmail.LineIdleColor = System.Drawing.Color.Silver
+        Me.tbEmail.LineMouseHoverColor = System.Drawing.Color.Gray
+        Me.tbEmail.LineThickness = 2
+        Me.tbEmail.Location = New System.Drawing.Point(245, 259)
+        Me.tbEmail.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbEmail.Name = "tbEmail"
+        Me.tbEmail.Size = New System.Drawing.Size(331, 36)
+        Me.tbEmail.TabIndex = 8
+        Me.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'dtpNgayLapThe
+        '
+        Me.dtpNgayLapThe.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke
+        Me.dtpNgayLapThe.CalendarTitleBackColor = System.Drawing.SystemColors.Control
+        Me.dtpNgayLapThe.CalendarTrailingForeColor = System.Drawing.Color.Black
+        Me.dtpNgayLapThe.CustomFormat = "ddddddddd, dd/MM/yyyy"
+        Me.dtpNgayLapThe.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.dtpNgayLapThe.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpNgayLapThe.Location = New System.Drawing.Point(245, 348)
+        Me.dtpNgayLapThe.Name = "dtpNgayLapThe"
+        Me.dtpNgayLapThe.Size = New System.Drawing.Size(221, 29)
+        Me.dtpNgayLapThe.TabIndex = 10
+        Me.dtpNgayLapThe.Value = New Date(2018, 6, 23, 0, 0, 0, 0)
+        '
+        'cbLoaiDocGia
+        '
+        Me.cbLoaiDocGia.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.cbLoaiDocGia.FormattingEnabled = True
+        Me.cbLoaiDocGia.Location = New System.Drawing.Point(245, 306)
+        Me.cbLoaiDocGia.Name = "cbLoaiDocGia"
+        Me.cbLoaiDocGia.Size = New System.Drawing.Size(221, 29)
+        Me.cbLoaiDocGia.TabIndex = 11
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Location = New System.Drawing.Point(78, 63)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(544, 340)
+        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.TabStop = False
+        '
         'ucLapTheDocGia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.dtpNgaySinh)
+        Me.Controls.Add(Me.tbDiaChi)
+        Me.Controls.Add(Me.tbEmail)
+        Me.Controls.Add(Me.dtpNgayLapThe)
+        Me.Controls.Add(Me.cbLoaiDocGia)
         Me.Controls.Add(Me.btnLuuVaThoat)
         Me.Controls.Add(Me.btnThoat)
         Me.Controls.Add(Me.btnLuu)
-        Me.Controls.Add(Me.cbLoaiDocGia)
-        Me.Controls.Add(Me.dtpNgayLapThe)
-        Me.Controls.Add(Me.dtpNgaySinh)
         Me.Controls.Add(Me.lbMaDocGia)
-        Me.Controls.Add(Me.tbEmail)
-        Me.Controls.Add(Me.tbDiaChi)
         Me.Controls.Add(Me.tbHoTen)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -411,13 +408,13 @@ Partial Class ucLapTheDocGia
     Friend WithEvents tbHoTen As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents lbMaDocGia As Windows.Forms.Label
     Friend WithEvents Label2 As Windows.Forms.Label
-    Friend WithEvents dtpNgaySinh As Windows.Forms.DateTimePicker
-    Friend WithEvents tbDiaChi As Bunifu.Framework.UI.BunifuMaterialTextbox
-    Friend WithEvents tbEmail As Bunifu.Framework.UI.BunifuMaterialTextbox
-    Friend WithEvents cbLoaiDocGia As Windows.Forms.ComboBox
-    Friend WithEvents dtpNgayLapThe As Windows.Forms.DateTimePicker
     Friend WithEvents btnLuu As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLuuVaThoat As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnThoat As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents dtpNgaySinh As Windows.Forms.DateTimePicker
+    Friend WithEvents tbDiaChi As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents tbEmail As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents dtpNgayLapThe As Windows.Forms.DateTimePicker
+    Friend WithEvents cbLoaiDocGia As Windows.Forms.ComboBox
     Friend WithEvents GroupBox1 As Windows.Forms.GroupBox
 End Class

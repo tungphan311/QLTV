@@ -26,10 +26,12 @@ Partial Class frmHome
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHome))
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.pnTaskBar = New System.Windows.Forms.Panel()
+        Me.ibtnMinimize = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.ibtnExit = New Bunifu.Framework.UI.BunifuImageButton()
         Me.fpnZone = New System.Windows.Forms.FlowLayoutPanel()
         Me.tbName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.btnLogo = New Bunifu.Framework.UI.BunifuImageButton()
         Me.btnLapBaoCao = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btnNhanTraSach = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btnChoMuonSach = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -38,13 +40,11 @@ Partial Class frmHome
         Me.btnThayDoiQuyDinh = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btnLapTheDocGia = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.pbMenu = New System.Windows.Forms.PictureBox()
-        Me.ibtnMinimize = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.ibtnExit = New Bunifu.Framework.UI.BunifuImageButton()
         Me.pnTaskBar.SuspendLayout()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ibtnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ibtnExit, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuDragControl1
@@ -64,6 +64,32 @@ Partial Class frmHome
         Me.pnTaskBar.Name = "pnTaskBar"
         Me.pnTaskBar.Size = New System.Drawing.Size(984, 29)
         Me.pnTaskBar.TabIndex = 2
+        '
+        'ibtnMinimize
+        '
+        Me.ibtnMinimize.BackColor = System.Drawing.Color.Transparent
+        Me.ibtnMinimize.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Minimize_Window_64
+        Me.ibtnMinimize.ImageActive = Nothing
+        Me.ibtnMinimize.Location = New System.Drawing.Point(931, 2)
+        Me.ibtnMinimize.Name = "ibtnMinimize"
+        Me.ibtnMinimize.Size = New System.Drawing.Size(25, 25)
+        Me.ibtnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ibtnMinimize.TabIndex = 0
+        Me.ibtnMinimize.TabStop = False
+        Me.ibtnMinimize.Zoom = 25
+        '
+        'ibtnExit
+        '
+        Me.ibtnExit.BackColor = System.Drawing.Color.Transparent
+        Me.ibtnExit.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Close_Window_64
+        Me.ibtnExit.ImageActive = Nothing
+        Me.ibtnExit.Location = New System.Drawing.Point(956, 2)
+        Me.ibtnExit.Name = "ibtnExit"
+        Me.ibtnExit.Size = New System.Drawing.Size(25, 25)
+        Me.ibtnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ibtnExit.TabIndex = 0
+        Me.ibtnExit.TabStop = False
+        Me.ibtnExit.Zoom = 25
         '
         'fpnZone
         '
@@ -97,18 +123,18 @@ Partial Class frmHome
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "________________________________"
         '
-        'BunifuImageButton1
+        'btnLogo
         '
-        Me.BunifuImageButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.BunifuImageButton1.Image = Global.QLTVGUI.My.Resources.Resources.Books_96px
-        Me.BunifuImageButton1.ImageActive = Nothing
-        Me.BunifuImageButton1.Location = New System.Drawing.Point(85, 35)
-        Me.BunifuImageButton1.Name = "BunifuImageButton1"
-        Me.BunifuImageButton1.Size = New System.Drawing.Size(71, 71)
-        Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.BunifuImageButton1.TabIndex = 6
-        Me.BunifuImageButton1.TabStop = False
-        Me.BunifuImageButton1.Zoom = 10
+        Me.btnLogo.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnLogo.Image = Global.QLTVGUI.My.Resources.Resources.Books_96px
+        Me.btnLogo.ImageActive = Nothing
+        Me.btnLogo.Location = New System.Drawing.Point(85, 35)
+        Me.btnLogo.Name = "btnLogo"
+        Me.btnLogo.Size = New System.Drawing.Size(71, 71)
+        Me.btnLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btnLogo.TabIndex = 6
+        Me.btnLogo.TabStop = False
+        Me.btnLogo.Zoom = 10
         '
         'btnLapBaoCao
         '
@@ -365,6 +391,7 @@ Partial Class frmHome
         'pbMenu
         '
         Me.pbMenu.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.pbMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pbMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pbMenu.Image = Global.QLTVGUI.My.Resources.Resources.blankpage1
         Me.pbMenu.Location = New System.Drawing.Point(0, 29)
@@ -374,32 +401,6 @@ Partial Class frmHome
         Me.pbMenu.TabIndex = 0
         Me.pbMenu.TabStop = False
         '
-        'ibtnMinimize
-        '
-        Me.ibtnMinimize.BackColor = System.Drawing.Color.Transparent
-        Me.ibtnMinimize.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Minimize_Window_64
-        Me.ibtnMinimize.ImageActive = Nothing
-        Me.ibtnMinimize.Location = New System.Drawing.Point(931, 2)
-        Me.ibtnMinimize.Name = "ibtnMinimize"
-        Me.ibtnMinimize.Size = New System.Drawing.Size(25, 25)
-        Me.ibtnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ibtnMinimize.TabIndex = 0
-        Me.ibtnMinimize.TabStop = False
-        Me.ibtnMinimize.Zoom = 25
-        '
-        'ibtnExit
-        '
-        Me.ibtnExit.BackColor = System.Drawing.Color.Transparent
-        Me.ibtnExit.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Close_Window_64
-        Me.ibtnExit.ImageActive = Nothing
-        Me.ibtnExit.Location = New System.Drawing.Point(956, 2)
-        Me.ibtnExit.Name = "ibtnExit"
-        Me.ibtnExit.Size = New System.Drawing.Size(25, 25)
-        Me.ibtnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ibtnExit.TabIndex = 0
-        Me.ibtnExit.TabStop = False
-        Me.ibtnExit.Zoom = 25
-        '
         'frmHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -407,7 +408,7 @@ Partial Class frmHome
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(984, 561)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.BunifuImageButton1)
+        Me.Controls.Add(Me.btnLogo)
         Me.Controls.Add(Me.tbName)
         Me.Controls.Add(Me.btnLapBaoCao)
         Me.Controls.Add(Me.btnNhanTraSach)
@@ -425,10 +426,10 @@ Partial Class frmHome
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "QUẢN LÝ THƯ VIỆN"
         Me.pnTaskBar.ResumeLayout(False)
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ibtnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ibtnExit, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -448,6 +449,6 @@ Partial Class frmHome
     Friend WithEvents btnNhanTraSach As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLapBaoCao As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnThayDoiQuyDinh As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents btnLogo As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents Label1 As Windows.Forms.Label
 End Class

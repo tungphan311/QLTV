@@ -31,3 +31,8 @@ C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucNhan
 C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucTiepNhanSachMoi.resources
 C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucTraCuuSach.resources
 C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.vbproj.GenerateResource.Cache
+C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucBaoCao.resources
+C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucBaoCaoSachMuon.resources
+C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucBaoCaoSachTre.resources
+C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucThayDoiQuyDinh.resources
+C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucThuVien.resources

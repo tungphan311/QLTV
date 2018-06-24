@@ -32,6 +32,11 @@ QLTVGUI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:QLTVGUI.My.Resources.Resources._6452">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:QLTVGUI.My.Resources.Resources.add_circle_black_48x48">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -58,6 +63,11 @@ QLTVGUI
 </summary>
 </member>
 <member name="P:QLTVGUI.My.Resources.Resources.Books_96px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QLTVGUI.My.Resources.Resources.contact_divider">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -122,6 +132,11 @@ QLTVGUI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:QLTVGUI.My.Resources.Resources.icons8_Info_64">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:QLTVGUI.My.Resources.Resources.icons8_Maximize_Window_64">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -172,6 +187,11 @@ QLTVGUI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:QLTVGUI.My.Resources.Resources.icons8_Support_64">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:QLTVGUI.My.Resources.Resources.icons8_Term_64">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -183,6 +203,16 @@ QLTVGUI
 </summary>
 </member>
 <member name="P:QLTVGUI.My.Resources.Resources.line2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QLTVGUI.My.Resources.Resources.minus_sign_inside_a_black_circle">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QLTVGUI.My.Resources.Resources.settings">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

@@ -36,34 +36,34 @@ Partial Class ucTiepNhanSachMoi
         Me.tbHoTen = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.tbTriGia = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnLuuVaThoat = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btnThoat = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btnLuu = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btAddTheLoai = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.clbDSTheLoai = New System.Windows.Forms.CheckedListBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.clbDSTacGia = New System.Windows.Forms.CheckedListBox()
-        Me.btnAddTacGia = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.cbTacGia = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.clbDSNhaXuatBan = New System.Windows.Forms.CheckedListBox()
         Me.btnAddNhaXuatBan = New Bunifu.Framework.UI.BunifuImageButton()
         Me.cbNhaXuatBan = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.clbDSTacGia = New System.Windows.Forms.CheckedListBox()
+        Me.btnAddTacGia = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.cbTacGia = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.clbDSTheLoai = New System.Windows.Forms.CheckedListBox()
+        Me.btAddTheLoai = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnLuuVaThoat = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.btnThoat = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.btnLuu = New Bunifu.Framework.UI.BunifuFlatButton()
         CType(Me.nudNamXuatBan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        CType(Me.btAddTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.btnAddTacGia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         CType(Me.btnAddNhaXuatBan, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.btnAddTacGia, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.btAddTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -252,6 +252,207 @@ Partial Class ucTiepNhanSachMoi
         Me.GroupBox1.TabIndex = 47
         Me.GroupBox1.TabStop = False
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.clbDSNhaXuatBan)
+        Me.GroupBox4.Controls.Add(Me.btnAddNhaXuatBan)
+        Me.GroupBox4.Controls.Add(Me.cbNhaXuatBan)
+        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Controls.Add(Me.Label8)
+        Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.GroupBox4.Location = New System.Drawing.Point(89, 446)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(429, 154)
+        Me.GroupBox4.TabIndex = 45
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Nhà xuất bản:"
+        '
+        'clbDSNhaXuatBan
+        '
+        Me.clbDSNhaXuatBan.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.clbDSNhaXuatBan.FormattingEnabled = True
+        Me.clbDSNhaXuatBan.Location = New System.Drawing.Point(159, 72)
+        Me.clbDSNhaXuatBan.Name = "clbDSNhaXuatBan"
+        Me.clbDSNhaXuatBan.Size = New System.Drawing.Size(196, 64)
+        Me.clbDSNhaXuatBan.TabIndex = 46
+        '
+        'btnAddNhaXuatBan
+        '
+        Me.btnAddNhaXuatBan.BackColor = System.Drawing.Color.Transparent
+        Me.btnAddNhaXuatBan.Image = Global.QLTVGUI.My.Resources.Resources.add_circle_grey_48x48
+        Me.btnAddNhaXuatBan.ImageActive = Nothing
+        Me.btnAddNhaXuatBan.Location = New System.Drawing.Point(361, 28)
+        Me.btnAddNhaXuatBan.Name = "btnAddNhaXuatBan"
+        Me.btnAddNhaXuatBan.Size = New System.Drawing.Size(30, 33)
+        Me.btnAddNhaXuatBan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnAddNhaXuatBan.TabIndex = 45
+        Me.btnAddNhaXuatBan.TabStop = False
+        Me.btnAddNhaXuatBan.Zoom = 10
+        '
+        'cbNhaXuatBan
+        '
+        Me.cbNhaXuatBan.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cbNhaXuatBan.FormattingEnabled = True
+        Me.cbNhaXuatBan.Location = New System.Drawing.Point(159, 33)
+        Me.cbNhaXuatBan.Name = "cbNhaXuatBan"
+        Me.cbNhaXuatBan.Size = New System.Drawing.Size(196, 25)
+        Me.cbNhaXuatBan.TabIndex = 44
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(10, 34)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(130, 19)
+        Me.Label5.TabIndex = 40
+        Me.Label5.Text = "Thêm nhà xuất bản:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(63, 68)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(76, 19)
+        Me.Label8.TabIndex = 40
+        Me.Label8.Text = "Danh sách:"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.clbDSTacGia)
+        Me.GroupBox3.Controls.Add(Me.btnAddTacGia)
+        Me.GroupBox3.Controls.Add(Me.cbTacGia)
+        Me.GroupBox3.Controls.Add(Me.Label12)
+        Me.GroupBox3.Controls.Add(Me.Label13)
+        Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.GroupBox3.Location = New System.Drawing.Point(89, 278)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(429, 154)
+        Me.GroupBox3.TabIndex = 44
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Tác giả:"
+        '
+        'clbDSTacGia
+        '
+        Me.clbDSTacGia.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.clbDSTacGia.FormattingEnabled = True
+        Me.clbDSTacGia.Location = New System.Drawing.Point(159, 72)
+        Me.clbDSTacGia.Name = "clbDSTacGia"
+        Me.clbDSTacGia.Size = New System.Drawing.Size(196, 64)
+        Me.clbDSTacGia.TabIndex = 46
+        '
+        'btnAddTacGia
+        '
+        Me.btnAddTacGia.BackColor = System.Drawing.Color.Transparent
+        Me.btnAddTacGia.Image = Global.QLTVGUI.My.Resources.Resources.add_circle_grey_48x48
+        Me.btnAddTacGia.ImageActive = Nothing
+        Me.btnAddTacGia.Location = New System.Drawing.Point(361, 28)
+        Me.btnAddTacGia.Name = "btnAddTacGia"
+        Me.btnAddTacGia.Size = New System.Drawing.Size(30, 33)
+        Me.btnAddTacGia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnAddTacGia.TabIndex = 45
+        Me.btnAddTacGia.TabStop = False
+        Me.btnAddTacGia.Zoom = 10
+        '
+        'cbTacGia
+        '
+        Me.cbTacGia.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cbTacGia.FormattingEnabled = True
+        Me.cbTacGia.Location = New System.Drawing.Point(159, 33)
+        Me.cbTacGia.Name = "cbTacGia"
+        Me.cbTacGia.Size = New System.Drawing.Size(196, 25)
+        Me.cbTacGia.TabIndex = 44
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(49, 33)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(90, 19)
+        Me.Label12.TabIndex = 40
+        Me.Label12.Text = "Thêm tác giả:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(63, 68)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(76, 19)
+        Me.Label13.TabIndex = 40
+        Me.Label13.Text = "Danh sách:"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.clbDSTheLoai)
+        Me.GroupBox2.Controls.Add(Me.btAddTheLoai)
+        Me.GroupBox2.Controls.Add(Me.cbTheLoai)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.GroupBox2.Location = New System.Drawing.Point(89, 113)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(429, 154)
+        Me.GroupBox2.TabIndex = 40
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Thể loại:"
+        '
+        'clbDSTheLoai
+        '
+        Me.clbDSTheLoai.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.clbDSTheLoai.FormattingEnabled = True
+        Me.clbDSTheLoai.Location = New System.Drawing.Point(157, 70)
+        Me.clbDSTheLoai.Name = "clbDSTheLoai"
+        Me.clbDSTheLoai.Size = New System.Drawing.Size(196, 64)
+        Me.clbDSTheLoai.TabIndex = 46
+        '
+        'btAddTheLoai
+        '
+        Me.btAddTheLoai.BackColor = System.Drawing.Color.Transparent
+        Me.btAddTheLoai.Image = Global.QLTVGUI.My.Resources.Resources.add_circle_grey_48x48
+        Me.btAddTheLoai.ImageActive = Nothing
+        Me.btAddTheLoai.Location = New System.Drawing.Point(359, 28)
+        Me.btAddTheLoai.Name = "btAddTheLoai"
+        Me.btAddTheLoai.Size = New System.Drawing.Size(30, 33)
+        Me.btAddTheLoai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btAddTheLoai.TabIndex = 45
+        Me.btAddTheLoai.TabStop = False
+        Me.btAddTheLoai.Zoom = 10
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(45, 37)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(95, 19)
+        Me.Label11.TabIndex = 40
+        Me.Label11.Text = "Thêm thể loại:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(63, 72)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(76, 19)
+        Me.Label6.TabIndex = 40
+        Me.Label6.Text = "Danh sách:"
+        '
         'btnLuuVaThoat
         '
         Me.btnLuuVaThoat.Activecolor = System.Drawing.Color.Silver
@@ -357,207 +558,6 @@ Partial Class ucTiepNhanSachMoi
         Me.btnLuu.Textcolor = System.Drawing.Color.Black
         Me.btnLuu.TextFont = New System.Drawing.Font("Segoe UI", 12.0!)
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.clbDSTheLoai)
-        Me.GroupBox2.Controls.Add(Me.btAddTheLoai)
-        Me.GroupBox2.Controls.Add(Me.cbTheLoai)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.GroupBox2.Location = New System.Drawing.Point(89, 113)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(429, 154)
-        Me.GroupBox2.TabIndex = 40
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Thể loại:"
-        '
-        'btAddTheLoai
-        '
-        Me.btAddTheLoai.BackColor = System.Drawing.Color.Transparent
-        Me.btAddTheLoai.Image = Global.QLTVGUI.My.Resources.Resources.add_circle_grey_48x48
-        Me.btAddTheLoai.ImageActive = Nothing
-        Me.btAddTheLoai.Location = New System.Drawing.Point(359, 28)
-        Me.btAddTheLoai.Name = "btAddTheLoai"
-        Me.btAddTheLoai.Size = New System.Drawing.Size(30, 33)
-        Me.btAddTheLoai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btAddTheLoai.TabIndex = 45
-        Me.btAddTheLoai.TabStop = False
-        Me.btAddTheLoai.Zoom = 10
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(63, 72)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(76, 19)
-        Me.Label6.TabIndex = 40
-        Me.Label6.Text = "Danh sách:"
-        '
-        'clbDSTheLoai
-        '
-        Me.clbDSTheLoai.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.clbDSTheLoai.FormattingEnabled = True
-        Me.clbDSTheLoai.Location = New System.Drawing.Point(157, 70)
-        Me.clbDSTheLoai.Name = "clbDSTheLoai"
-        Me.clbDSTheLoai.Size = New System.Drawing.Size(196, 64)
-        Me.clbDSTheLoai.TabIndex = 46
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(45, 37)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(95, 19)
-        Me.Label11.TabIndex = 40
-        Me.Label11.Text = "Thêm thể loại:"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.clbDSTacGia)
-        Me.GroupBox3.Controls.Add(Me.btnAddTacGia)
-        Me.GroupBox3.Controls.Add(Me.cbTacGia)
-        Me.GroupBox3.Controls.Add(Me.Label12)
-        Me.GroupBox3.Controls.Add(Me.Label13)
-        Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.GroupBox3.Location = New System.Drawing.Point(89, 278)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(429, 154)
-        Me.GroupBox3.TabIndex = 44
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Tác giả:"
-        '
-        'clbDSTacGia
-        '
-        Me.clbDSTacGia.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.clbDSTacGia.FormattingEnabled = True
-        Me.clbDSTacGia.Location = New System.Drawing.Point(159, 72)
-        Me.clbDSTacGia.Name = "clbDSTacGia"
-        Me.clbDSTacGia.Size = New System.Drawing.Size(196, 64)
-        Me.clbDSTacGia.TabIndex = 46
-        '
-        'btnAddTacGia
-        '
-        Me.btnAddTacGia.BackColor = System.Drawing.Color.Transparent
-        Me.btnAddTacGia.Image = Global.QLTVGUI.My.Resources.Resources.add_circle_grey_48x48
-        Me.btnAddTacGia.ImageActive = Nothing
-        Me.btnAddTacGia.Location = New System.Drawing.Point(361, 28)
-        Me.btnAddTacGia.Name = "btnAddTacGia"
-        Me.btnAddTacGia.Size = New System.Drawing.Size(30, 33)
-        Me.btnAddTacGia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnAddTacGia.TabIndex = 45
-        Me.btnAddTacGia.TabStop = False
-        Me.btnAddTacGia.Zoom = 10
-        '
-        'cbTacGia
-        '
-        Me.cbTacGia.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cbTacGia.FormattingEnabled = True
-        Me.cbTacGia.Location = New System.Drawing.Point(159, 33)
-        Me.cbTacGia.Name = "cbTacGia"
-        Me.cbTacGia.Size = New System.Drawing.Size(196, 25)
-        Me.cbTacGia.TabIndex = 44
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(49, 33)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(90, 19)
-        Me.Label12.TabIndex = 40
-        Me.Label12.Text = "Thêm tác giả:"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(63, 68)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(76, 19)
-        Me.Label13.TabIndex = 40
-        Me.Label13.Text = "Danh sách:"
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.clbDSNhaXuatBan)
-        Me.GroupBox4.Controls.Add(Me.btnAddNhaXuatBan)
-        Me.GroupBox4.Controls.Add(Me.cbNhaXuatBan)
-        Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Controls.Add(Me.Label8)
-        Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.GroupBox4.Location = New System.Drawing.Point(89, 446)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(429, 154)
-        Me.GroupBox4.TabIndex = 45
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Nhà xuất bản:"
-        '
-        'clbDSNhaXuatBan
-        '
-        Me.clbDSNhaXuatBan.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.clbDSNhaXuatBan.FormattingEnabled = True
-        Me.clbDSNhaXuatBan.Location = New System.Drawing.Point(159, 72)
-        Me.clbDSNhaXuatBan.Name = "clbDSNhaXuatBan"
-        Me.clbDSNhaXuatBan.Size = New System.Drawing.Size(196, 64)
-        Me.clbDSNhaXuatBan.TabIndex = 46
-        '
-        'btnAddNhaXuatBan
-        '
-        Me.btnAddNhaXuatBan.BackColor = System.Drawing.Color.Transparent
-        Me.btnAddNhaXuatBan.Image = Global.QLTVGUI.My.Resources.Resources.add_circle_grey_48x48
-        Me.btnAddNhaXuatBan.ImageActive = Nothing
-        Me.btnAddNhaXuatBan.Location = New System.Drawing.Point(361, 28)
-        Me.btnAddNhaXuatBan.Name = "btnAddNhaXuatBan"
-        Me.btnAddNhaXuatBan.Size = New System.Drawing.Size(30, 33)
-        Me.btnAddNhaXuatBan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnAddNhaXuatBan.TabIndex = 45
-        Me.btnAddNhaXuatBan.TabStop = False
-        Me.btnAddNhaXuatBan.Zoom = 10
-        '
-        'cbNhaXuatBan
-        '
-        Me.cbNhaXuatBan.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cbNhaXuatBan.FormattingEnabled = True
-        Me.cbNhaXuatBan.Location = New System.Drawing.Point(159, 33)
-        Me.cbNhaXuatBan.Name = "cbNhaXuatBan"
-        Me.cbNhaXuatBan.Size = New System.Drawing.Size(196, 25)
-        Me.cbNhaXuatBan.TabIndex = 44
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(10, 34)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(130, 19)
-        Me.Label5.TabIndex = 40
-        Me.Label5.Text = "Thêm nhà xuất bản:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(63, 68)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(76, 19)
-        Me.Label8.TabIndex = 40
-        Me.Label8.Text = "Danh sách:"
-        '
         'ucTiepNhanSachMoi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -584,15 +584,15 @@ Partial Class ucTiepNhanSachMoi
         Me.Size = New System.Drawing.Size(700, 900)
         CType(Me.nudNamXuatBan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        CType(Me.btAddTheLoai, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        CType(Me.btnAddTacGia, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.btnAddNhaXuatBan, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        CType(Me.btnAddTacGia, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.btAddTheLoai, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
