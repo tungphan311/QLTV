@@ -776,48 +776,48 @@ Partial Class ucThayDoiQuyDinh
 
     End Sub
 
-    Friend WithEvents Label1 As Windows.Forms.Label
-    Friend WithEvents GroupBox1 As Windows.Forms.GroupBox
-    Friend WithEvents lbThoiHanThe As Windows.Forms.Label
-    Friend WithEvents lbTuoiToiDa As Windows.Forms.Label
-    Friend WithEvents Label4 As Windows.Forms.Label
-    Friend WithEvents lbTuoiToiThieu As Windows.Forms.Label
-    Friend WithEvents Label2 As Windows.Forms.Label
-    Friend WithEvents Label3 As Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents lbThoiHanThe As System.Windows.Forms.Label
+    Friend WithEvents lbTuoiToiDa As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lbTuoiToiThieu As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnThayDoiQD1 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents Label7 As Windows.Forms.Label
-    Friend WithEvents Label6 As Windows.Forms.Label
-    Friend WithEvents Label5 As Windows.Forms.Label
-    Friend WithEvents pnQD1 As Windows.Forms.Panel
-    Friend WithEvents nudThoiHanThe As Windows.Forms.NumericUpDown
-    Friend WithEvents nudTuoiToiDa As Windows.Forms.NumericUpDown
-    Friend WithEvents nudTuoiToiThieu As Windows.Forms.NumericUpDown
-    Friend WithEvents GroupBox2 As Windows.Forms.GroupBox
-    Friend WithEvents Label12 As Windows.Forms.Label
-    Friend WithEvents Label10 As Windows.Forms.Label
-    Friend WithEvents Label8 As Windows.Forms.Label
-    Friend WithEvents lbSoLuongLoai As Windows.Forms.Label
-    Friend WithEvents lbKhoangCachNam As Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents pnQD1 As System.Windows.Forms.Panel
+    Friend WithEvents nudThoiHanThe As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudTuoiToiDa As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudTuoiToiThieu As System.Windows.Forms.NumericUpDown
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents lbSoLuongLoai As System.Windows.Forms.Label
+    Friend WithEvents lbKhoangCachNam As System.Windows.Forms.Label
     Friend WithEvents btnThayDoiQD2 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents Panel1 As Windows.Forms.Panel
-    Friend WithEvents nudKhoangCachNam As Windows.Forms.NumericUpDown
-    Friend WithEvents Label15 As Windows.Forms.Label
-    Friend WithEvents GroupBox3 As Windows.Forms.GroupBox
-    Friend WithEvents lbThoiGianToiDa As Windows.Forms.Label
-    Friend WithEvents lbSachToiDa As Windows.Forms.Label
-    Friend WithEvents Label22 As Windows.Forms.Label
-    Friend WithEvents Label23 As Windows.Forms.Label
-    Friend WithEvents nudThoiGianToiDa As Windows.Forms.NumericUpDown
-    Friend WithEvents nudSachToiDa As Windows.Forms.NumericUpDown
-    Friend WithEvents Label14 As Windows.Forms.Label
-    Friend WithEvents Label16 As Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents nudKhoangCachNam As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents lbThoiGianToiDa As System.Windows.Forms.Label
+    Friend WithEvents lbSachToiDa As System.Windows.Forms.Label
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents nudThoiGianToiDa As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSachToiDa As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents btnThayDoiQD3 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents Label17 As Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents dgDSTheLoai As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents DataGridViewTextBoxColumn1 As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MaTheLoai As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TenTheLoai As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents fpnDSTheLoai As Windows.Forms.FlowLayoutPanel
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MaTheLoai As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TenTheLoai As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents fpnDSTheLoai As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents btnThoat As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLuuThayDoi As Bunifu.Framework.UI.BunifuFlatButton
 End Class

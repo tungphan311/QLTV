@@ -398,23 +398,23 @@ Partial Class ucLapTheDocGia
 
     End Sub
 
-    Friend WithEvents Label1 As Windows.Forms.Label
-    Friend WithEvents Label3 As Windows.Forms.Label
-    Friend WithEvents Label4 As Windows.Forms.Label
-    Friend WithEvents Label5 As Windows.Forms.Label
-    Friend WithEvents Label6 As Windows.Forms.Label
-    Friend WithEvents Label7 As Windows.Forms.Label
-    Friend WithEvents Label8 As Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents tbHoTen As Bunifu.Framework.UI.BunifuMaterialTextbox
-    Friend WithEvents lbMaDocGia As Windows.Forms.Label
-    Friend WithEvents Label2 As Windows.Forms.Label
+    Friend WithEvents lbMaDocGia As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btnLuu As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLuuVaThoat As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnThoat As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents dtpNgaySinh As Windows.Forms.DateTimePicker
+    Friend WithEvents dtpNgaySinh As System.Windows.Forms.DateTimePicker
     Friend WithEvents tbDiaChi As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents tbEmail As Bunifu.Framework.UI.BunifuMaterialTextbox
-    Friend WithEvents dtpNgayLapThe As Windows.Forms.DateTimePicker
-    Friend WithEvents cbLoaiDocGia As Windows.Forms.ComboBox
-    Friend WithEvents GroupBox1 As Windows.Forms.GroupBox
+    Friend WithEvents dtpNgayLapThe As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cbLoaiDocGia As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
 End Class

@@ -435,13 +435,13 @@ Partial Class frmHome
 
     End Sub
 
-    Friend WithEvents pbMenu As Windows.Forms.PictureBox
+    Friend WithEvents pbMenu As System.Windows.Forms.PictureBox
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
-    Friend WithEvents fpnZone As Windows.Forms.FlowLayoutPanel
-    Friend WithEvents pnTaskBar As Windows.Forms.Panel
+    Friend WithEvents fpnZone As System.Windows.Forms.FlowLayoutPanel
+    Friend WithEvents pnTaskBar As System.Windows.Forms.Panel
     Friend WithEvents ibtnExit As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents ibtnMinimize As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents tbName As Windows.Forms.Label
+    Friend WithEvents tbName As System.Windows.Forms.Label
     Friend WithEvents btnLapTheDocGia As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnTiepNhanSachMoi As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnTraCuuSach As Bunifu.Framework.UI.BunifuFlatButton
@@ -450,5 +450,5 @@ Partial Class frmHome
     Friend WithEvents btnLapBaoCao As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnThayDoiQuyDinh As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLogo As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents Label1 As Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

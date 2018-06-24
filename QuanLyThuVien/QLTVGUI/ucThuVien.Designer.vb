@@ -219,16 +219,16 @@ Partial Class ucThuVien
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents PictureBox1 As Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As Windows.Forms.PictureBox
-    Friend WithEvents Label1 As Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents BunifuGradientPanel1 As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents Label2 As Windows.Forms.Label
-    Friend WithEvents lbSoDauSach As Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lbSoDauSach As System.Windows.Forms.Label
     Friend WithEvents BunifuGradientPanel2 As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents Label3 As Windows.Forms.Label
-    Friend WithEvents Label4 As Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents BunifuGradientPanel3 As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents Label5 As Windows.Forms.Label
-    Friend WithEvents Label6 As Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class

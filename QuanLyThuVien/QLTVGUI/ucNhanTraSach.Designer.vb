@@ -577,36 +577,36 @@ Partial Class ucNhanTraSach
 
     End Sub
 
-    Friend WithEvents Label1 As Windows.Forms.Label
-    Friend WithEvents dtpNgayTra As Windows.Forms.DateTimePicker
-    Friend WithEvents Label9 As Windows.Forms.Label
-    Friend WithEvents Label11 As Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents dtpNgayTra As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents tbMaDocGia As Bunifu.Framework.UI.BunifuMaterialTextbox
-    Friend WithEvents GroupBox1 As Windows.Forms.GroupBox
-    Friend WithEvents Label7 As Windows.Forms.Label
-    Friend WithEvents lbTinhTrang As Windows.Forms.Label
-    Friend WithEvents Label8 As Windows.Forms.Label
-    Friend WithEvents Label5 As Windows.Forms.Label
-    Friend WithEvents lbNgayLap As Windows.Forms.Label
-    Friend WithEvents Label3 As Windows.Forms.Label
-    Friend WithEvents lbHoTen As Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lbTinhTrang As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents lbNgayLap As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lbHoTen As System.Windows.Forms.Label
     Friend WithEvents dgDSSachMuon As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents DataGridViewTextBoxColumn1 As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ThoiGianMuon As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox2 As Windows.Forms.GroupBox
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ThoiGianMuon As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents dgDanhSachSach As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents STT As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MaSach As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TenSach As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TheLoai As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TacGia As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents STT As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MaSach As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TenSach As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TheLoai As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TacGia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents Label10 As Windows.Forms.Label
-    Friend WithEvents Label2 As Windows.Forms.Label
-    Friend WithEvents Label13 As Windows.Forms.Label
-    Friend WithEvents cbMaSach As Windows.Forms.ComboBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents cbMaSach As System.Windows.Forms.ComboBox
     Friend WithEvents btnLuuVaThoat As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnThoat As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLuu As Bunifu.Framework.UI.BunifuFlatButton

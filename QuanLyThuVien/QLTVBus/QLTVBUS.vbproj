@@ -63,7 +63,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="DocGiaBus.vb" />
+    <Compile Include="LoaiDocGiaBus.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -98,6 +99,20 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLTVDAL\QLTVDAL.vbproj">
+      <Project>{82060e18-cc81-4f04-acb4-27f0c4dafbd8}</Project>
+      <Name>QLTVDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLTVDTO\QLTVDTO.vbproj">
+      <Project>{eee6bb5a-d04c-4671-9d73-d1b3be6ce0f3}</Project>
+      <Name>QLTVDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.vbproj">
+      <Project>{f1e1a736-60a9-428b-a3cf-4296edd63af3}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

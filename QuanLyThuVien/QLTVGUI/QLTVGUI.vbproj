@@ -10,7 +10,7 @@
     <AssemblyName>QLTVGUI</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsFormsWithCustomSubMain</MyType>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -352,6 +352,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Info_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLTVBus\QLTVBUS.vbproj">
+      <Project>{6a671c80-7ed5-430a-879d-6c5fb7eb40ce}</Project>
+      <Name>QLTVBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLTVDTO\QLTVDTO.vbproj">
+      <Project>{eee6bb5a-d04c-4671-9d73-d1b3be6ce0f3}</Project>
+      <Name>QLTVDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.vbproj">
+      <Project>{f1e1a736-60a9-428b-a3cf-4296edd63af3}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

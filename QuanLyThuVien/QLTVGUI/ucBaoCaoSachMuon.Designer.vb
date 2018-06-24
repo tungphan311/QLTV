@@ -318,19 +318,19 @@ Partial Class ucBaoCaoSachMuon
 
     End Sub
 
-    Friend WithEvents Label1 As Windows.Forms.Label
-    Friend WithEvents Label11 As Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents tbThang As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents tbNam As Bunifu.Framework.UI.BunifuMaterialTextbox
-    Friend WithEvents Label2 As Windows.Forms.Label
-    Friend WithEvents GroupBox1 As Windows.Forms.GroupBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dgThongKe As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents DataGridViewTextBoxColumn1 As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TenTheLoai As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SoLuotMuon As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TiLe As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents labellb As Windows.Forms.Label
-    Friend WithEvents lbTongLuotMuon As Windows.Forms.Label
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TenTheLoai As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SoLuotMuon As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TiLe As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents labellb As System.Windows.Forms.Label
+    Friend WithEvents lbTongLuotMuon As System.Windows.Forms.Label
     Friend WithEvents btnThoat As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnXuatBaoCao As Bunifu.Framework.UI.BunifuFlatButton
 End Class

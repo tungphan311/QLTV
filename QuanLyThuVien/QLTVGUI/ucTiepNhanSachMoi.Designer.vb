@@ -597,38 +597,38 @@ Partial Class ucTiepNhanSachMoi
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As Windows.Forms.Label
-    Friend WithEvents lbMaDocGia As Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lbMaDocGia As System.Windows.Forms.Label
     Friend WithEvents btnLuu As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnThoat As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLuuVaThoat As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents nudNamXuatBan As Windows.Forms.NumericUpDown
-    Friend WithEvents cbTheLoai As Windows.Forms.ComboBox
-    Friend WithEvents dtpNgayLapThe As Windows.Forms.DateTimePicker
-    Friend WithEvents Label9 As Windows.Forms.Label
-    Friend WithEvents Label4 As Windows.Forms.Label
-    Friend WithEvents Label10 As Windows.Forms.Label
-    Friend WithEvents Label7 As Windows.Forms.Label
-    Friend WithEvents Label2 As Windows.Forms.Label
-    Friend WithEvents Label3 As Windows.Forms.Label
+    Friend WithEvents nudNamXuatBan As System.Windows.Forms.NumericUpDown
+    Friend WithEvents cbTheLoai As System.Windows.Forms.ComboBox
+    Friend WithEvents dtpNgayLapThe As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents tbHoTen As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents tbTriGia As Bunifu.Framework.UI.BunifuMaterialTextbox
-    Friend WithEvents GroupBox1 As Windows.Forms.GroupBox
-    Friend WithEvents GroupBox2 As Windows.Forms.GroupBox
-    Friend WithEvents clbDSTheLoai As Windows.Forms.CheckedListBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents clbDSTheLoai As System.Windows.Forms.CheckedListBox
     Friend WithEvents btAddTheLoai As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents Label11 As Windows.Forms.Label
-    Friend WithEvents Label6 As Windows.Forms.Label
-    Friend WithEvents GroupBox4 As Windows.Forms.GroupBox
-    Friend WithEvents clbDSNhaXuatBan As Windows.Forms.CheckedListBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents clbDSNhaXuatBan As System.Windows.Forms.CheckedListBox
     Friend WithEvents btnAddNhaXuatBan As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents cbNhaXuatBan As Windows.Forms.ComboBox
-    Friend WithEvents Label5 As Windows.Forms.Label
-    Friend WithEvents Label8 As Windows.Forms.Label
-    Friend WithEvents GroupBox3 As Windows.Forms.GroupBox
-    Friend WithEvents clbDSTacGia As Windows.Forms.CheckedListBox
+    Friend WithEvents cbNhaXuatBan As System.Windows.Forms.ComboBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents clbDSTacGia As System.Windows.Forms.CheckedListBox
     Friend WithEvents btnAddTacGia As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents cbTacGia As Windows.Forms.ComboBox
-    Friend WithEvents Label12 As Windows.Forms.Label
-    Friend WithEvents Label13 As Windows.Forms.Label
+    Friend WithEvents cbTacGia As System.Windows.Forms.ComboBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
 End Class

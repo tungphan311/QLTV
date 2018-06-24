@@ -245,15 +245,15 @@ Partial Class ucBaoCaoSachTre
 
     End Sub
 
-    Friend WithEvents GroupBox1 As Windows.Forms.GroupBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dgThongKe As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents Label11 As Windows.Forms.Label
-    Friend WithEvents Label1 As Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnThoat As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnXuatBaoCao As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents DataGridViewTextBoxColumn1 As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TenSach As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NgayMuon As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SoNgayTraTre As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dtpNgay As Windows.Forms.DateTimePicker
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TenSach As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NgayMuon As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SoNgayTraTre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dtpNgay As System.Windows.Forms.DateTimePicker
 End Class

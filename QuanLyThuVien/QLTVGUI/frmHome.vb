@@ -9,7 +9,8 @@ Public Class frmHome
     End Sub
 
     Private Sub ibtnExit_Click(sender As Object, e As EventArgs) Handles ibtnExit.Click
-        If MessageBox.Show("Bạn muốn tắt ứng dụng Quản lý thư viện?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        Dim result As Integer = MessageBox.Show("Bạn có muốn tắt ứng dụng quản lý thư viện?", "Thông báo", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
             Me.Close()
         End If
     End Sub
