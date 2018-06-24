@@ -63,7 +63,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="ChiTietPhieuMuonDTO.vb" />
+    <Compile Include="ChiTietPhieuTraDTO.vb" />
+    <Compile Include="DocGiaDTO.vb" />
+    <Compile Include="LoaiDocGiaDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -79,6 +82,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NhaXuatBanDTO.vb" />
+    <Compile Include="PhieuMuonSachDTO.vb" />
+    <Compile Include="PhieuTraSachDTO.vb" />
+    <Compile Include="SachDTO.vb" />
+    <Compile Include="TacGiaDTO.vb" />
+    <Compile Include="ThamSoDTO.vb" />
+    <Compile Include="TheLoaiDTO.vb" />
+    <Compile Include="TrangThaiDTO.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
