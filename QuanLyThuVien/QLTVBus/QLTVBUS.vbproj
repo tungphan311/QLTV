@@ -80,7 +80,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NhaXuatBanBUS.vb" />
+    <Compile Include="SachBUS.vb" />
     <Compile Include="ThamSoBus.vb" />
+    <Compile Include="TrangThaiBUS.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

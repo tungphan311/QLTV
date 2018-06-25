@@ -4,7 +4,7 @@
     Private strMaNhaXuatBan As String
     Private dateNgayNhap As DateTime
     Private strMaTacGia As String
-    Private strTheLoai As String
+    Private strMaTheLoai As String
     Private iMaTrangThai As Integer
     Private iNamXuatBan As Integer
     Private iTriGia As Integer
@@ -19,7 +19,7 @@
         Me.strMaNhaXuatBan = strMaNhaXuatBan
         Me.dateNgayNhap = dateNgayNhap
         Me.strMaTacGia = strMaTacGia
-        Me.strTheLoai = strTheLoai
+        Me.strMaTheLoai = strMaTheLoai
         Me.iMaTrangThai = iMaTrangThai
         Me.iNamXuatBan = iNamXuatBan
         Me.iTriGia = iTriGia
@@ -70,12 +70,12 @@
         End Set
     End Property
 
-    Property TheLoai() As String
+    Property MaTheLoai() As String
         Get
-            Return strTheLoai
+            Return strMaTheLoai
         End Get
         Set(ByVal value As String)
-            strTheLoai = value
+            strMaTheLoai = value
         End Set
     End Property
 
