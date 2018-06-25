@@ -63,7 +63,7 @@ Public Class SachDAL
     Public Function insert(s As SachDTO) As Result
         Dim query As String = String.Empty
         query &= "insert into [tblSach] "
-        query &= "values (@masach, @tenSach, @manhaxuatban, @ngaynhap, @matacgia, @matheloai, @matrangthai, @namxuatban, @trigia)"
+        query &= "values (@masach, @tenSach, @manhaxuatban, @ngaynhap, @matrangthai, @namxuatban, @trigia)"
 
         Dim nextMaSach = 0
         Dim ms = "MS" + Convert.ToString(nextMaSach)
@@ -84,8 +84,6 @@ Public Class SachDAL
                     .Parameters.AddWithValue("@tensach", s.TenSach)
                     .Parameters.AddWithValue("@manhaxuatban", s.MaNhaXuatBan)
                     .Parameters.AddWithValue("@ngaynhap", s.NgayNhap)
-                    .Parameters.AddWithValue("@matacgia", s.MaTacGia)
-                    .Parameters.AddWithValue("@matheloai", s.MaTheLoai)
                     .Parameters.AddWithValue("@matrangthai", s.MaTrangThai)
                     .Parameters.AddWithValue("@namxuatban", s.NamXuatBan)
                     .Parameters.AddWithValue("@trigia", s.TriGia)
@@ -127,8 +125,6 @@ Public Class SachDAL
                     .Parameters.AddWithValue("@tensach", s.TenSach)
                     .Parameters.AddWithValue("@manhaxuatban", s.MaNhaXuatBan)
                     .Parameters.AddWithValue("@ngaynhap", s.NgayNhap)
-                    .Parameters.AddWithValue("@matacgia", s.MaTacGia)
-                    .Parameters.AddWithValue("@matheloai", s.MaTheLoai)
                     .Parameters.AddWithValue("@matrangthai", s.MaTrangThai)
                     .Parameters.AddWithValue("@namxuatban", s.NamXuatBan)
                     .Parameters.AddWithValue("@trigia", s.TriGia)
@@ -167,7 +163,7 @@ Public Class SachDAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New SachDTO(reader("masach"), reader("tensach"), reader("manhaxuatban"), reader("ngaynhap"), reader("matacgia"), reader("matheloai"), reader("matrangthai"), reader("namxuatban"), reader("trigia")))
+                            listSach.Add(New SachDTO(reader("masach"), reader("tensach"), reader("manhaxuatban"), reader("ngaynhap"), reader("matrangthai"), reader("namxuatban"), reader("trigia")))
                         End While
                     End If
                 Catch ex As Exception
