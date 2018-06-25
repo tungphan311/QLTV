@@ -19,3 +19,15 @@ C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.pdb
 C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\bin\Debug\Utility.dll
 C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\bin\Debug\Utility.pdb
 C:\Users\CatRom\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\bin\Debug\Utility.xml
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\bin\Debug\QLTVDTO.dll
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\bin\Debug\QLTVDTO.pdb
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\bin\Debug\QLTVDTO.xml
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\bin\Debug\Utility.dll
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\bin\Debug\Utility.pdb
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\bin\Debug\Utility.xml
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.vbprojResolveAssemblyReference.cache
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.Resources.resources
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.vbproj.GenerateResource.Cache
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.dll
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.xml
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVDTO\obj\Debug\QLTVDTO.pdb

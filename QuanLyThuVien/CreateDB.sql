@@ -199,6 +199,8 @@ CREATE TABLE [tblDocGia](
 ) ON [PRIMARY]
 
 GO
+SET ANSI_PADDING OFF
+GO
 
 insert into [tblDocGia] values ('DG000001', N'Phan Thanh Tùng', '31/01/1998', N'Linh Trung, Thủ Đức, HCM', 'thanhtunga1lqd@gmail.com', '24/06/2017', '1')
 GO
@@ -219,9 +221,6 @@ GO
 insert into [tblDocGia] values ('DG000009', N'Lữ Bố', '12/12/1988', N'Phường 26, Bình Thạnh, HCM', 'lubo@gmail.com', '01/04/2017', '2')
 GO
 insert into [tblDocGia] values ('DG000010', N'Tôn Sách', '10/06/1980', N'Đakao, Quận 1, HCM', 'tonsach@gmail.com', '03/05/2017', '2')
-GO
-
-SET ANSI_PADDING OFF
 GO
 
 /****** Object:  Table [tblLoaiDocGia]    Script Date: 6/10/2018 10:23:54 PM ******/
@@ -306,12 +305,14 @@ GO
 insert into [tblNhaXuatBan] values ('NXB00020', N'NXB Thành Luân')
 GO
 
-/****** Object:  Table [tblPhieuMuonSach]    Script Date: 6/10/2018 10:23:54 PM ******/
+/****** Object:  Table [dbo].[tblPhieuMuonSach]    Script Date: 6/25/2018 8:12:05 PM ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [tblPhieuMuonSach](
+
+CREATE TABLE [dbo].[tblPhieuMuonSach](
 	[maphieumuonsach] [nvarchar](8) NOT NULL,
 	[ngaymuon] [datetime] NOT NULL,
 	[madocgia] [nvarchar](8) NOT NULL,
@@ -352,12 +353,14 @@ GO
 insert into [tblPhieuMuonSach] values ('PMS00014', '11/10/2017', 'DG000009')
 GO
 
-/****** Object:  Table [tblPhieuTraSach]    Script Date: 6/10/2018 10:23:54 PM ******/
+/****** Object:  Table [dbo].[tblPhieuTraSach]    Script Date: 6/25/2018 8:15:28 PM ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [tblPhieuTraSach](
+
+CREATE TABLE [dbo].[tblPhieuTraSach](
 	[maphieutrasach] [nvarchar](8) NOT NULL,
 	[ngaytra] [datetime] NOT NULL,
 	[madocgia] [nvarchar](8) NOT NULL,
@@ -396,21 +399,21 @@ GO
 insert into [tblPhieuTraSach] values ('PTS00013', '12/10/2017', 'DG000009')
 GO
 
-/****** Object:  Table [tblSach]    Script Date: 6/10/2018 10:23:54 PM ******/
+/****** Object:  Table [dbo].[tblSach]    Script Date: 6/25/2018 8:15:59 PM ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [tblSach](
+
+CREATE TABLE [dbo].[tblSach](
 	[masach] [nvarchar](8) NOT NULL,
 	[tensach] [nvarchar](50) NOT NULL,
 	[manhaxuatban] [nvarchar](8) NOT NULL,
 	[ngaynhap] [datetime] NOT NULL,
-	[matacgia] [nvarchar](8) NOT NULL,
-	[matheloai] [nvarchar](8) NOT NULL,
 	[matrangthai] [int] NOT NULL,
-	[namxuatban] [datetime] NOT NULL,
-	[trigia] [money] NOT NULL,
+	[namxuatban] [int] NOT NULL,
+	[trigia] [int] NOT NULL,
  CONSTRAINT [PK_tblSach] PRIMARY KEY CLUSTERED 
 (
 	[masach] ASC
@@ -418,72 +421,50 @@ CREATE TABLE [tblSach](
 ) ON [PRIMARY]
 
 GO
-ALTER TABLE [tblSach] 
-DROP COLUMN namxuatban
+
+insert into [tblSach] values ('S0000001', N'Sách 1', 'NXB00006', '01/01/2016', 1, 2012, 100000)
 GO
-ALTER TABLE [tblSach]
-ADD namxuatban [INT] NOT NULL
+insert into [tblSach] values ('S0000002', N'Sách 2', 'NXB00002', '01/01/2016', 1, 2012, 52000)
 GO
-ALTER TABLE [tblSach] 
-DROP COLUMN trigia
+insert into [tblSach] values ('S0000003', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 1, 2011, 500000)
 GO
-ALTER TABLE [tblSach]
-ADD trigia [INT] NOT NULL
+insert into [tblSach] values ('S0000004', N'Tây Du Ký', 'NXB00001', '01/01/2016', 2, 2010, 450000)
+GO
+insert into [tblSach] values ('S0000005', N'Harry Potter 1', 'NXB00006', '01/01/2016', 2, 2012, 2000000)
+GO
+insert into [tblSach] values ('S0000006', N'Harry Potter 2', 'NXB00006', '01/01/2016', 1, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000007', N'Harry Potter 3', 'NXB00006', '01/01/2016', 2, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000008', N'Harry Potter 4', 'NXB00006', '01/01/2016', 1, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000009', N'Harry Potter 5', 'NXB00006', '01/01/2016', 1, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000010', N'Harry Potter 6', 'NXB00006', '01/01/2016', 2, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000011', N'Harry Potter 7', 'NXB00006', '01/01/2016', 2, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000012', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 2, 2011, 500000)
+GO
+insert into [tblSach] values ('S0000013', N'Tam Quốc Diễn Nghĩa 2', 'NXB00008', '01/01/2016', 1, 2011, 500000)
+GO
+insert into [tblSach] values ('S0000014', N'Tam Quốc Diễn Nghĩa 3', 'NXB00008', '01/01/2016', 1, 2011, 500000)
+GO
+insert into [tblSach] values ('S0000015', N'Sherlock Holmes 1', 'NXB00019', '01/01/2016', 1, 2010, 780000)
+GO
+insert into [tblSach] values ('S0000016', N'Sherlock Holmes 2', 'NXB00019', '01/01/2016', 2, 2010, 780000)
+GO
+insert into [tblSach] values ('S0000017', N'Sherlock Holmes 3', 'NXB00019', '01/01/2016', 2, 2010, 780000)
 GO
 
-insert into [tblSach] values ('S0000001', N'Sách 1', 'NXB00006', '01/01/2016', 'TG001', 'TL1', 1, 2012, 100000)
-GO
-insert into [tblSach] values ('S0000002', N'Sách 2', 'NXB00002', '01/01/2016', 'TG050', 'TL3', 1, 2012, 52000)
-GO
-insert into [tblSach] values ('S0000003', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 'TG030', 'TL2', 1, 2011, 500000)
-GO
-insert into [tblSach] values ('S0000004', N'Tây Du Ký', 'NXB00001', '01/01/2016', 'TG031', 'TL2', 2, 2010, 450000)
-GO
-insert into [tblSach] values ('S0000005', N'Harry Potter 1', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 2, 2012, 2000000)
-GO
-insert into [tblSach] values ('S0000006', N'Harry Potter 2', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 1, 2012, 200000)
-GO
-insert into [tblSach] values ('S0000007', N'Harry Potter 3', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 2, 2012, 200000)
-GO
-insert into [tblSach] values ('S0000008', N'Harry Potter 4', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 1, 2012, 200000)
-GO
-insert into [tblSach] values ('S0000009', N'Harry Potter 5', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 1, 2012, 200000)
-GO
-insert into [tblSach] values ('S0000010', N'Harry Potter 6', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 2, 2012, 200000)
-GO
-insert into [tblSach] values ('S0000011', N'Harry Potter 7', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 2, 2012, 200000)
-GO
-insert into [tblSach] values ('S0000012', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 'TG030', 'TL2', 2, 2011, 500000)
-GO
-insert into [tblSach] values ('S0000013', N'Tam Quốc Diễn Nghĩa 2', 'NXB00008', '01/01/2016', 'TG030', 'TL2', 1, 2011, 500000)
-GO
-insert into [tblSach] values ('S0000014', N'Tam Quốc Diễn Nghĩa 3', 'NXB00008', '01/01/2016', 'TG030', 'TL2', 1, 2011, 500000)
-GO
-insert into [tblSach] values ('S0000015', N'Sherlock Holmes 1', 'NXB00019', '01/01/2016', 'TG069', 'TL1', 1, 2010, 780000)
-GO
-insert into [tblSach] values ('S0000016', N'Sherlock Holmes 2', 'NXB00019', '01/01/2016', 'TG069', 'TL1', 2, 2010, 780000)
-GO
-insert into [tblSach] values ('S0000017', N'Sherlock Holmes 3', 'NXB00019', '01/01/2016', 'TG069', 'TL1', 2, 2010, 780000)
-GO
-insert into [tblSach] values ('S0000018', N'Game of Thrones 1', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 1, 2013, 2120000)
-GO
-insert into [tblSach] values ('S0000019', N'Game of Thrones 2', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 1, 2013, 2220000)
-GO
-insert into [tblSach] values ('S0000020', N'Game of Thrones 3', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 2, 2013, 2400000)
-GO
-insert into [tblSach] values ('S0000021', N'Game of Thrones 4', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 1, 2013, 2020000)
-GO
-insert into [tblSach] values ('S0000022', N'Game of Thrones 5', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 2, 2013, 2510000)
-GO
-insert into [tblSach] values ('S0000023', N'Game of Thrones 6', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 1, 2013, 2330000)
-GO
- 
-/****** Object:  Table [tblTacGia]    Script Date: 6/10/2018 10:23:54 PM ******/
+/****** Object:  Table [dbo].[tblTacGia]    Script Date: 6/25/2018 8:16:19 PM ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [tblTacGia](
+
+CREATE TABLE [dbo].[tblTacGia](
 	[matacgia] [nvarchar](8) NOT NULL,
 	[tentacgia] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_tblTacGia] PRIMARY KEY CLUSTERED 
@@ -695,12 +676,51 @@ GO
 insert into [tblTacGia] values ('TG100', N'Puskin')
 GO
 
-/****** Object:  Table [tblThamSo]    Script Date: 6/10/2018 10:23:54 PM ******/
+/****** Object:  Table [dbo].[tblTacGiaSach]    Script Date: 6/25/2018 8:16:39 PM ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [tblThamSo](
+
+CREATE TABLE [dbo].[tblTacGiaSach](
+	[matacgiasach] [nvarchar](8) NOT NULL,
+	[masach] [nvarchar](8) NULL,
+	[matacgia] [nvarchar](8) NULL,
+ CONSTRAINT [PK_tblTacGiaSach] PRIMARY KEY CLUSTERED 
+(
+	[matacgiasach] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+insert into [tblTacGiaSach] values ('TGS00001', 'S0000001', 'TG020')
+insert into [tblTacGiaSach] values ('TGS00002', 'S0000020', 'TG018')
+insert into [tblTacGiaSach] values ('TGS00003', 'S0000005', 'TG006')
+insert into [tblTacGiaSach] values ('TGS00004', 'S0000002', 'TG018')
+insert into [tblTacGiaSach] values ('TGS00005', 'S0000016', 'TG001')
+insert into [tblTacGiaSach] values ('TGS00006', 'S0000008', 'TG019')
+insert into [tblTacGiaSach] values ('TGS00007', 'S0000010', 'TG098')
+insert into [tblTacGiaSach] values ('TGS00008', 'S0000006', 'TG031')
+insert into [tblTacGiaSach] values ('TGS00009', 'S0000004', 'TG001')
+insert into [tblTacGiaSach] values ('TGS00010', 'S0000017', 'TG019')
+insert into [tblTacGiaSach] values ('TGS00011', 'S0000007', 'TG098')
+insert into [tblTacGiaSach] values ('TGS00012', 'S0000003', 'TG010')
+insert into [tblTacGiaSach] values ('TGS00013', 'S0000009', 'TG020')
+insert into [tblTacGiaSach] values ('TGS00014', 'S0000011', 'TG030')
+insert into [tblTacGiaSach] values ('TGS00015', 'S0000012', 'TG022')
+insert into [tblTacGiaSach] values ('TGS00016', 'S0000013', 'TG033')
+insert into [tblTacGiaSach] values ('TGS00017', 'S0000014', 'TG044')
+
+/****** Object:  Table [dbo].[tblThamSo]    Script Date: 6/25/2018 8:16:58 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tblThamSo](
 	[tuoitoithieu] [smallint] NOT NULL,
 	[tuoitoida] [smallint] NOT NULL,
 	[hansudung] [smallint] NOT NULL,
@@ -712,13 +732,15 @@ CREATE TABLE [tblThamSo](
 GO
 
 insert into [tblThamSo] values (18, 55, 6, 8, 5, 4)
- 
-/****** Object:  Table [tblTheLoai]    Script Date: 6/10/2018 10:23:54 PM ******/
+
+/****** Object:  Table [dbo].[tblTheLoai]    Script Date: 6/25/2018 8:18:42 PM ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [tblTheLoai](
+
+CREATE TABLE [dbo].[tblTheLoai](
 	[matheloai] [nvarchar](8) NOT NULL,
 	[tentheloai] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_tblTheLoai] PRIMARY KEY CLUSTERED 
@@ -730,15 +752,53 @@ CREATE TABLE [tblTheLoai](
 GO
 
 insert into [tblTheLoai] values ('TL1', 'A')
+GO
 insert into [tblTheLoai] values ('TL2', 'B')
+GO
 insert into [tblTheLoai] values ('TL3', 'C')
+GO
 
-/****** Object:  Table [tblTrangThai]    Script Date: 6/10/2018 10:23:54 PM ******/
+/****** Object:  Table [dbo].[tblTheLoaiSach]    Script Date: 6/25/2018 8:19:03 PM ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [tblTrangThai](
+
+CREATE TABLE [dbo].[tblTheLoaiSach](
+	[matheloaisach] [nvarchar](8) NULL,
+	[masach] [nvarchar](8) NULL,
+	[matheloai] [nvarchar](8) NULL
+) ON [PRIMARY]
+
+GO
+
+insert into [tblTheLoaiSach] values ('TLS00001', 'S0000001', 'TL1')
+insert into [tblTheLoaiSach] values ('TLS00002', 'S0000002', 'TL2')
+insert into [tblTheLoaiSach] values ('TLS00003', 'S0000003', 'TL2')
+insert into [tblTheLoaiSach] values ('TLS00004', 'S0000004', 'TL3')
+insert into [tblTheLoaiSach] values ('TLS00005', 'S0000005', 'TL3')
+insert into [tblTheLoaiSach] values ('TLS00006', 'S0000006', 'TL1')
+insert into [tblTheLoaiSach] values ('TLS00007', 'S0000007', 'TL3')
+insert into [tblTheLoaiSach] values ('TLS00008', 'S0000008', 'TL1')
+insert into [tblTheLoaiSach] values ('TLS00009', 'S0000009', 'TL2')
+insert into [tblTheLoaiSach] values ('TLS00010', 'S0000010', 'TL1')
+insert into [tblTheLoaiSach] values ('TLS00011', 'S0000011', 'TL2')
+insert into [tblTheLoaiSach] values ('TLS00012', 'S0000012', 'TL2')
+insert into [tblTheLoaiSach] values ('TLS00013', 'S0000013', 'TL3')
+insert into [tblTheLoaiSach] values ('TLS00014', 'S0000014', 'TL1')
+insert into [tblTheLoaiSach] values ('TLS00015', 'S0000015', 'TL3')
+insert into [tblTheLoaiSach] values ('TLS00016', 'S0000016', 'TL3')
+insert into [tblTheLoaiSach] values ('TLS00017', 'S0000017', 'TL1')
+
+/****** Object:  Table [dbo].[tblTrangThai]    Script Date: 6/25/2018 8:19:15 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tblTrangThai](
 	[matrangthai] [int] NOT NULL,
 	[tentrangthai] [nvarchar](20) NOT NULL,
  CONSTRAINT [PK_tblTrangThai] PRIMARY KEY CLUSTERED 
@@ -752,29 +812,4 @@ GO
 insert into [tblTrangThai] values (1, N'Còn sách')
 GO
 insert into [tblTrangThai] values (2, N'Đã mượn')
-GO
-
-ALTER TABLE [tblChiTietPhieuMuon]  WITH CHECK ADD  CONSTRAINT [FK_tblChiTietPhieuMuon_tblPhieuMuonSach] FOREIGN KEY([maphieumuonsach])
-REFERENCES [tblPhieuMuonSach] ([maphieumuonsach])
-GO
-ALTER TABLE [tblChiTietPhieuMuon] CHECK CONSTRAINT [FK_tblChiTietPhieuMuon_tblPhieuMuonSach]
-GO
-ALTER TABLE [tblChiTietPhieuTra]  WITH CHECK ADD  CONSTRAINT [FK_tblChiTietPhieuTra_tblPhieuTraSach] FOREIGN KEY([maphieutrasach])
-REFERENCES [tblPhieuTraSach] ([maphieutrasach])
-GO
-ALTER TABLE [tblChiTietPhieuTra] CHECK CONSTRAINT [FK_tblChiTietPhieuTra_tblPhieuTraSach]
-GO
-ALTER TABLE [tblPhieuMuonSach]  WITH CHECK ADD  CONSTRAINT [FK_tblPhieuMuonSach_tblDocGia] FOREIGN KEY([madocgia])
-REFERENCES [tblDocGia] ([madocgia])
-GO
-ALTER TABLE [tblPhieuMuonSach] CHECK CONSTRAINT [FK_tblPhieuMuonSach_tblDocGia]
-GO
-ALTER TABLE [tblPhieuTraSach]  WITH CHECK ADD  CONSTRAINT [FK_tblPhieuTraSach_tblDocGia] FOREIGN KEY([madocgia])
-REFERENCES [tblDocGia] ([madocgia])
-GO
-ALTER TABLE [tblPhieuTraSach] CHECK CONSTRAINT [FK_tblPhieuTraSach_tblDocGia]
-GO
-USE [master]
-GO
-ALTER DATABASE [QuanLyThuVien] SET  READ_WRITE 
 GO
