@@ -67,7 +67,9 @@ Public Class DocGiaBus
 
     Public Function isValidDateAdded(dg As DocGiaDTO) As Boolean
 
-        If (dg.NgayLapThe > Today) Then
+        Dim ngaylapthe = New DateTime(dg.NgayLapThe.Year, dg.NgayLapThe.Month, dg.NgayLapThe.Day)
+
+        If (ngaylapthe > Today) Then
             Return False
         End If
 

@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports QLTVDTO
 Imports Utility
 
-Public Class ChiTietPhieuMuonDAL
+Public Class ChiTietPhieuTraDAL
     Private connectionString As String
 
     Public Sub New()
@@ -14,14 +14,14 @@ Public Class ChiTietPhieuMuonDAL
         Me.connectionString = ConnectionString
     End Sub
 
-    Public Function build_mactphieumuon(ByRef nextMactPhieuMuon As String) As Result
-        nextMactPhieuMuon = String.Empty
-        nextMactPhieuMuon = "CTPM"
+    Public Function build_mactphieutra(ByRef nextMactPhieuTra As String) As Result
+        nextMactPhieuTra = String.Empty
+        nextMactPhieuTra = "CTPT"
 
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [machitietphieumuon] "
-        query &= "FROM [tblChiTietPhieuMuon] "
-        query &= "ORDER BY [machitietphieumuon] DESC "
+        query &= "SELECT TOP 1 [machitietphieutra] "
+        query &= "FROM [tblChiTietPhieuTra] "
+        query &= "ORDER BY [machitietphieutra] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -38,7 +38,7 @@ Public Class ChiTietPhieuMuonDAL
                     msOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            msOnDB = reader("machitietphieumuon")
+                            msOnDB = reader("machitietphieutra")
                         End While
                     End If
                     If (msOnDB <> Nothing And msOnDB.Length >= 8) Then
@@ -47,8 +47,8 @@ Public Class ChiTietPhieuMuonDAL
                         convertDecimal = convertDecimal + 1
                         Dim tmp = convertDecimal.ToString()
                         tmp = tmp.PadLeft(msOnDB.Length - 4, "0")
-                        nextMactPhieuMuon = nextMactPhieuMuon + tmp
-                        System.Console.WriteLine(nextMactPhieuMuon)
+                        nextMactPhieuTra = nextMactPhieuTra + tmp
+                        System.Console.WriteLine(nextMactPhieuTra)
                     End If
 
                 Catch ex As Exception
@@ -61,11 +61,11 @@ Public Class ChiTietPhieuMuonDAL
         Return New Result(True)
     End Function
 
-    Public Function insert(ctpm As ChiTietPhieuMuonDTO) As Result
+    Public Function insert(ctpt As ChiTietPhieuTraDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblChiTietPhieuMuon] ([machitietphieumuon], [maphieumuonsach], [masach])"
-        query &= "VALUES (@machitietphieumuon,@maphieumuonsach,@masach)"
+        query &= "INSERT INTO [tblChiTietPhieuTra] ([machitietphieutra], [maphieutrasach], [masach])"
+        query &= "VALUES (@machitietphieutra,@maphieutrasach,@masach)"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -73,9 +73,9 @@ Public Class ChiTietPhieuMuonDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@machitietphieumuon", ctpm.MaChiTietPhieuMuon)
-                    .Parameters.AddWithValue("@maphieumuonsach", ctpm.MaPhieuMuonSach)
-                    .Parameters.AddWithValue("@masach", ctpm.MaSach)
+                    .Parameters.AddWithValue("@machitietphieutra", ctpt.MaChiTietPhieuTra)
+                    .Parameters.AddWithValue("@maphieutrasach", ctpt.MaPhieuTraSach)
+                    .Parameters.AddWithValue("@masach", ctpt.MaSach)
                 End With
                 Try
                     conn.Open()
@@ -90,11 +90,11 @@ Public Class ChiTietPhieuMuonDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectALL(ByRef listCTPhieuMuon As List(Of ChiTietPhieuMuonDTO)) As Result
+    Public Function selectALL(ByRef listCTPhieuTra As List(Of ChiTietPhieuTraDTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT [machitietphieumuon], [maphieumuonsach], [masach]"
-        query &= "FROM [tblChiTietPhieuMuon]"
+        query &= "SELECT [machitietphieutra], [maphieutrasach], [masach]"
+        query &= "FROM [tblChiTietPhieuTra]"
 
 
         Using conn As New SqlConnection(connectionString)
@@ -109,9 +109,9 @@ Public Class ChiTietPhieuMuonDAL
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
                     If reader.HasRows = True Then
-                        listCTPhieuMuon.Clear()
+                        listCTPhieuTra.Clear()
                         While reader.Read()
-                            listCTPhieuMuon.Add(New ChiTietPhieuMuonDTO(reader("machitietphieumuon"), reader("maphieumuonsach"), reader("masach")))
+                            listCTPhieuTra.Add(New ChiTietPhieuTraDTO(reader("machitietphieutra"), reader("maphieutrasach"), reader("masach")))
                         End While
                     End If
 
