@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietPhieuMuonDAL.vb" />
+    <Compile Include="ChiTietPhieuTraDAL.vb" />
     <Compile Include="DocGiaDAL.vb" />
     <Compile Include="LoaiDocGiaDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -84,9 +85,13 @@
     </Compile>
     <Compile Include="NhaXuatBanDAL.vb" />
     <Compile Include="PhieuMuonSachDAL.vb" />
+    <Compile Include="PhieuTraSachDAL.vb" />
     <Compile Include="SachDAL.vb" />
     <Compile Include="TacGiaDAL.vb" />
+    <Compile Include="TacGiaSachDAL.vb" />
     <Compile Include="ThamSoDAL.vb" />
+    <Compile Include="TheLoaiDAL.vb" />
+    <Compile Include="TheLoaiSachDAL.vb" />
     <Compile Include="TrangThaiDAL.vb" />
   </ItemGroup>
   <ItemGroup>
