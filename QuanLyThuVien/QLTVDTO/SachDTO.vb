@@ -3,8 +3,6 @@
     Private strTenSach As String
     Private strMaNhaXuatBan As String
     Private dateNgayNhap As DateTime
-    Private strMaTacGia As String
-    Private strTheLoai As String
     Private iMaTrangThai As Integer
     Private iNamXuatBan As Integer
     Private iTriGia As Integer
@@ -13,13 +11,11 @@
 
     End Sub
 
-    Public Sub New(strMaSach As String, strTenSach As String, strMaNhaXuatBan As String, dateNgayNhap As DateTime, strMaTacGia As String, strTheLoai As String, iMaTrangThai As Integer, iNamXuatBan As Integer, iTriGia As Integer)
+    Public Sub New(strMaSach As String, strTenSach As String, strMaNhaXuatBan As String, dateNgayNhap As DateTime, iMaTrangThai As Integer, iNamXuatBan As Integer, iTriGia As Integer)
         Me.strMaSach = strMaSach
         Me.strTenSach = strTenSach
         Me.strMaNhaXuatBan = strMaNhaXuatBan
         Me.dateNgayNhap = dateNgayNhap
-        Me.strMaTacGia = strMaTacGia
-        Me.strTheLoai = strTheLoai
         Me.iMaTrangThai = iMaTrangThai
         Me.iNamXuatBan = iNamXuatBan
         Me.iTriGia = iTriGia
@@ -58,24 +54,6 @@
         End Get
         Set(ByVal value As DateTime)
             dateNgayNhap = value
-        End Set
-    End Property
-
-    Property MaTacGia() As String
-        Get
-            Return strMaTacGia
-        End Get
-        Set(ByVal value As String)
-            strMaTacGia = value
-        End Set
-    End Property
-
-    Property TheLoai() As String
-        Get
-            Return strTheLoai
-        End Get
-        Set(ByVal value As String)
-            strTheLoai = value
         End Set
     End Property
 

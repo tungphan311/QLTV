@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietPhieuMuonDAL.vb" />
     <Compile Include="DocGiaDAL.vb" />
     <Compile Include="LoaiDocGiaDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -81,6 +82,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PhieuMuonSachDAL.vb" />
     <Compile Include="ThamSoDAL.vb" />
   </ItemGroup>
   <ItemGroup>

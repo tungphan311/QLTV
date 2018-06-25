@@ -10,6 +10,7 @@ Public Class ThamSoBus
     Public Sub New(connectionString As String)
         tsDAL = New ThamSoDAL(connectionString)
     End Sub
+
     Public Function update(qd As ThamSoDTO) As Result
         Return tsDAL.update(qd)
     End Function

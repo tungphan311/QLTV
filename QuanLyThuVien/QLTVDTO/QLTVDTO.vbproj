@@ -87,8 +87,10 @@
     <Compile Include="PhieuTraSachDTO.vb" />
     <Compile Include="SachDTO.vb" />
     <Compile Include="TacGiaDTO.vb" />
+    <Compile Include="TacGiaSachDTO.vb" />
     <Compile Include="ThamSoDTO.vb" />
     <Compile Include="TheLoaiDTO.vb" />
+    <Compile Include="TheLoaiSachDTO.vb" />
     <Compile Include="TrangThaiDTO.vb" />
   </ItemGroup>
   <ItemGroup>

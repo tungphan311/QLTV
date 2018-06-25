@@ -74,9 +74,6 @@ Public Class DocGiaDAL
         'buildMSHS(nextMshs)
         'hs.MSHS = nextMshs
 
-        Console.WriteLine(dg.MaDocGia)
-        Console.WriteLine(dg.NgaySinh)
-
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
                 With comm
@@ -131,6 +128,46 @@ Public Class DocGiaDAL
                     End If
 
                 Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function update(dg As DocGiaDTO) As Result
+
+        Dim query As String = String.Empty
+        query &= " UPDATE [tblDocGia] SET"
+        query &= " [hotendocgia] = @hotendocgia "
+        query &= " ,[ngaysinh] = @ngaysinh "
+        query &= " ,[diachi] = @diachi "
+        query &= " ,[email] = @email "
+        query &= " ,[ngaylapthe] = @ngaylapthe "
+        query &= " ,[maloaidocgia] = @maloaidocgia "
+        query &= " WHERE "
+        query &= " [madocgia] = @madocgia "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@hotendocgia", dg.HoTen)
+                    .Parameters.AddWithValue("@ngaysinh", dg.NgaySinh)
+                    .Parameters.AddWithValue("@diachi", dg.DiaChi)
+                    .Parameters.AddWithValue("@email", dg.Email)
+                    .Parameters.AddWithValue("@ngaylapthe", dg.NgayLapThe)
+                    .Parameters.AddWithValue("@maloaidocgia", dg.MaLoaiDocGia)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     System.Console.WriteLine(ex.StackTrace)
                     Return New Result(False)

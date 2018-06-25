@@ -85,4 +85,8 @@ Public Class DocGiaBus
     Public Function selectAll(listDocGia As List(Of DocGiaDTO)) As Result
         Return dgDAL.selectALL(listDocGia)
     End Function
+
+    Public Function update(dg As DocGiaDTO) As Result
+        Return dgDAL.update(dg)
+    End Function
 End Class

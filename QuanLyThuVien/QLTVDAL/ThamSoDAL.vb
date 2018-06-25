@@ -56,9 +56,9 @@ Public Class ThamSoDAL
         query &= " [tuoitoithieu] = @tuoitoithieu "
         query &= " ,[tuoitoida] = @tuoitoida "
         query &= " ,[hansudung] = @hansudung "
-        query &= " ,[namxuatbantoithieu = @namxuatbantoithieu "
-        query &= " ,[soluongsachmuontoida = @soluongsachmuontoida "
-        query &= " ,[thoigianmuontoida = @thoigianmuontoida "
+        query &= " ,[namxuatbantoithieu] = @namxuatbantoithieu "
+        query &= " ,[soluongsachmuontoida] = @soluongsachmuontoida "
+        query &= " ,[thoigianmuontoida] = @thoigianmuontoida "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -80,7 +80,7 @@ Public Class ThamSoDAL
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     ' cap nhat that bai
-                    Return New Result(False, "Cập nhật quy định không thành công!", ex.StackTrace)
+                    Return New Result(False)
                 End Try
             End Using
         End Using
