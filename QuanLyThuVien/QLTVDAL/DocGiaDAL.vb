@@ -56,11 +56,87 @@ Public Class DocGiaDAL
                 Catch ex As Exception
                     conn.Close()
                     System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Lấy tự động mã số độc giả không thành công!", ex.StackTrace)
+                    Return New Result(False)
                 End Try
             End Using
         End Using
         Return New Result(True)
     End Function
 
+    Public Function insert(dg As DocGiaDTO) As Result
+
+        Dim query As String = String.Empty
+        query &= "INSERT INTO [tblDocGia] ([madocgia], [hotendocgia], [ngaysinh], [diachi], [email], [ngaylapthe], [maloaidocgia])"
+        query &= "VALUES (@madocgia,@hotendocgia,@ngaysinh,@diachi,@email,@ngaylapthe,@maloaidocgia)"
+
+        'get MSHS
+        'Dim nextMshs = "1"
+        'buildMSHS(nextMshs)
+        'hs.MSHS = nextMshs
+
+        Console.WriteLine(dg.MaDocGia)
+        Console.WriteLine(dg.NgaySinh)
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@madocgia", dg.MaDocGia)
+                    .Parameters.AddWithValue("@hotendocgia", dg.HoTen)
+                    .Parameters.AddWithValue("@ngaysinh", dg.NgaySinh)
+                    .Parameters.AddWithValue("@diachi", dg.DiaChi)
+                    .Parameters.AddWithValue("@email", dg.Email)
+                    .Parameters.AddWithValue("@ngaylapthe", dg.NgayLapThe)
+                    .Parameters.AddWithValue("@maloaidocgia", dg.MaLoaiDocGia)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function selectALL(ByRef listDocGia As List(Of DocGiaDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [madocgia], [hotendocgia], [ngaysinh], [diachi], [email], [ngaylapthe], [maloaidocgia]"
+        query &= "FROM [tblDocGia]"
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listDocGia.Clear()
+                        While reader.Read()
+                            listDocGia.Add(New DocGiaDTO(reader("madocgia"), reader("hotendocgia"), reader("ngaysinh"), reader("diachi"), reader("email"),
+                                                         reader("ngaylapthe"), reader("maloaidocgia")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
 End Class

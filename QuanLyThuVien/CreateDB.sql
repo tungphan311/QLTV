@@ -1,4 +1,4 @@
-USE [master]
+﻿USE [master]
 GO
 
 WHILE EXISTS(select NULL from sys.databases where name='QuanLyThuVien')
@@ -12,6 +12,7 @@ BEGIN
 END
 GO
 
+set dateformat dmy
 
 USE [master]
 GO
@@ -102,6 +103,36 @@ CREATE TABLE [tblChiTietPhieuMuon](
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblChiTietPhieuMuon] values ('CTPM0001', 'PMS00001', 'S0000015')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0002', 'PMS00002', 'S0000001')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0003', 'PMS00003', 'S0000002')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0004', 'PMS00004', 'S0000005')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0005', 'PMS00005', 'S0000004')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0006', 'PMS00006', 'S0000007')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0007', 'PMS00007', 'S0000008')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0008', 'PMS00008', 'S0000003')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0009', 'PMS00009', 'S0000010')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0010', 'PMS00010', 'S0000013')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0011', 'PMS00011', 'S0000014')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0012', 'PMS00012', 'S0000018')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0013', 'PMS00013', 'S0000019')
+GO
+insert into [tblChiTietPhieuMuon] values ('CTPM0014', 'PMS00014', 'S0000020')
+GO
+
 /****** Object:  Table [tblChiTietPhieuTra]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -118,6 +149,34 @@ CREATE TABLE [tblChiTietPhieuTra](
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblChiTietPhieuTra] values ('CTPT0001', 'S0000015', 'PTS00001')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0002', 'S0000001', 'PTS00002')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0003', 'S0000002', 'PTS00003')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0004', 'S0000005', 'PTS00004')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0005', 'S0000004', 'PTS00005')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0006', 'S0000007', 'PTS00006')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0007', 'S0000008', 'PTS00007')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0008', 'S0000003', 'PTS00008')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0009', 'S0000010', 'PTS00009')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0010', 'S0000020', 'PTS00010')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0011', 'S0000014', 'PTS00011')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0012', 'S0000013', 'PTS00012')
+GO
+insert into [tblChiTietPhieuTra] values ('CTPT0013', 'S0000018', 'PTS00013')
+GO
+
 /****** Object:  Table [tblDocGia]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -140,8 +199,31 @@ CREATE TABLE [tblDocGia](
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblDocGia] values ('DG000001', N'Phan Thanh Tùng', '31/01/1998', N'Linh Trung, Thủ Đức, HCM', 'thanhtunga1lqd@gmail.com', '24/06/2017', '1')
+GO
+insert into [tblDocGia] values ('DG000002', N'Nguyễn Thành Luân', '01/01/1998', N'Linh Trung, Thủ Đức, HCM', 'thanhluana2lqd@gmail.com', '24/06/2017', '2')
+GO
+insert into [tblDocGia] values ('DG000003', N'Nguyễn Văn A', '01/05/1997', N'Linh Trung, Thủ Đức, HCM', 'nva@gmail.com', '24/06/2017', '2')
+GO
+insert into [tblDocGia] values ('DG000004', N'Trần Thị B', '31/10/1998', N'Linh Trung, Thủ Đức, HCM', 'ttb@gmail.com', '23/06/2017', '1')
+GO
+insert into [tblDocGia] values ('DG000005', N'Trần Thị Bưởi', '18/01/1998', N'Linh Trung, Thủ Đức, HCM', 'tbuoi@gmail.com', '22/06/2017', '1')
+GO
+insert into [tblDocGia] values ('DG000006', N'Vương Giả', '23/12/1995', N'Phường 10, Phú Nhuận, HCM', 'vuonggia@gmail.com', '23/06/2017', '2')
+GO
+insert into [tblDocGia] values ('DG000007', N'Lưu Bị', '01/02/1990', N'Phường 5, Quận 3, HCM', 'luubi@gmail.com', '20/05/2017', '1')
+GO
+insert into [tblDocGia] values ('DG000008', N'Tào Tháo', '03/03/1998', N'Bén Nghé, Quận 1, HCM', 'taothao@gmail.com', '23/05/2017', '1')
+GO
+insert into [tblDocGia] values ('DG000009', N'Lữ Bố', '12/12/1988', N'Phường 26, Bình Thạnh, HCM', 'lubo@gmail.com', '01/04/2017', '2')
+GO
+insert into [tblDocGia] values ('DG000010', N'Tôn Sách', '10/06/1980', N'Đakao, Quận 1, HCM', 'tonsach@gmail.com', '03/05/2017', '2')
+GO
+
 SET ANSI_PADDING OFF
 GO
+
 /****** Object:  Table [tblLoaiDocGia]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -161,6 +243,12 @@ CREATE TABLE [tblLoaiDocGia](
 GO
 SET ANSI_PADDING OFF
 GO
+
+insert into [tblLoaiDocGia] values ('1', 'X')
+GO
+insert into [tblLoaiDocGia] values ('2', 'Y')
+GO
+
 /****** Object:  Table [tblNhaXuatBan]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -176,6 +264,48 @@ CREATE TABLE [tblNhaXuatBan](
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblNhaXuatBan] values ('NXB00001', N'NXB Trẻ')
+GO
+insert into [tblNhaXuatBan] values ('NXB00002', N'NXB Già')
+GO
+insert into [tblNhaXuatBan] values ('NXB00003', N'NXB Kim Đồng')
+GO
+insert into [tblNhaXuatBan] values ('NXB00004', N'NXB Giáo Dục')
+GO
+insert into [tblNhaXuatBan] values ('NXB00005', N'NXB Thanh Niên')
+GO
+insert into [tblNhaXuatBan] values ('NXB00006', N'NXB Thiếu Niên')
+GO
+insert into [tblNhaXuatBan] values ('NXB00007', N'NXB Ngô Quốc')
+GO
+insert into [tblNhaXuatBan] values ('NXB00008', N'NXB Nguỵ Quốc')
+GO
+insert into [tblNhaXuatBan] values ('NXB00009', N'NXB Thục Quốc')
+GO
+insert into [tblNhaXuatBan] values ('NXB00010', N'NXB Nhã Nam')
+GO
+insert into [tblNhaXuatBan] values ('NXB00011', N'NXB Thái Hà')
+GO
+insert into [tblNhaXuatBan] values ('NXB00012', N'NXB Thanh Tùng')
+GO
+insert into [tblNhaXuatBan] values ('NXB00013', N'NXB Phương Nam')
+GO
+insert into [tblNhaXuatBan] values ('NXB00014', N'NXB Đông A')
+GO
+insert into [tblNhaXuatBan] values ('NXB00015', N'NXB Alpha Books')
+GO
+insert into [tblNhaXuatBan] values ('NXB00016', N'NXB First News')
+GO
+insert into [tblNhaXuatBan] values ('NXB00017', N'NXB Đông Tây')
+GO
+insert into [tblNhaXuatBan] values ('NXB00018', N'NXB Đại học Quốc Gia Tp. Hồ Chí Minh')
+GO
+insert into [tblNhaXuatBan] values ('NXB00019', N'NXB Sư Phạm')
+GO
+insert into [tblNhaXuatBan] values ('NXB00020', N'NXB Thành Luân')
+GO
+
 /****** Object:  Table [tblPhieuMuonSach]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -192,6 +322,36 @@ CREATE TABLE [tblPhieuMuonSach](
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblPhieuMuonSach] values ('PMS00001', '01/10/2017', 'DG000001')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00002', '02/10/2017', 'DG000001')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00003', '03/10/2017', 'DG000002')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00004', '03/10/2017', 'DG000003')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00005', '04/10/2017', 'DG000005')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00006', '04/10/2017', 'DG000008')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00007', '04/10/2017', 'DG000009')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00008', '05/10/2017', 'DG000006')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00009', '06/10/2017', 'DG000007')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00010', '06/10/2017', 'DG000004')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00011', '07/10/2017', 'DG000002')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00012', '07/10/2017', 'DG000008')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00013', '10/10/2017', 'DG000010')
+GO
+insert into [tblPhieuMuonSach] values ('PMS00014', '11/10/2017', 'DG000009')
+GO
+
 /****** Object:  Table [tblPhieuTraSach]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -208,6 +368,34 @@ CREATE TABLE [tblPhieuTraSach](
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblPhieuTraSach] values ('PTS00001', '04/10/2017', 'DG000001')
+GO
+insert into [tblPhieuTraSach] values ('PTS00002', '05/10/2017', 'DG000002')
+GO
+insert into [tblPhieuTraSach] values ('PTS00003', '07/10/2017', 'DG000003')
+GO
+insert into [tblPhieuTraSach] values ('PTS00004', '07/10/2017', 'DG000005')
+GO
+insert into [tblPhieuTraSach] values ('PTS00005', '07/10/2017', 'DG000008')
+GO
+insert into [tblPhieuTraSach] values ('PTS00006', '07/10/2017', 'DG000009')
+GO
+insert into [tblPhieuTraSach] values ('PTS00007', '07/10/2017', 'DG000006')
+GO
+insert into [tblPhieuTraSach] values ('PTS00008', '07/10/2017', 'DG000007')
+GO
+insert into [tblPhieuTraSach] values ('PTS00009', '07/10/2017', 'DG000004')
+GO
+insert into [tblPhieuTraSach] values ('PTS00010', '08/10/2017', 'DG000002')
+GO
+insert into [tblPhieuTraSach] values ('PTS00011', '08/10/2017', 'DG000008')
+GO
+insert into [tblPhieuTraSach] values ('PTS00012', '12/10/2017', 'DG000010')
+GO
+insert into [tblPhieuTraSach] values ('PTS00013', '12/10/2017', 'DG000009')
+GO
+
 /****** Object:  Table [tblSach]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -216,13 +404,13 @@ GO
 CREATE TABLE [tblSach](
 	[masach] [nvarchar](8) NOT NULL,
 	[tensach] [nvarchar](50) NOT NULL,
-	[namxuatban] [datetime] NOT NULL,
 	[manhaxuatban] [nvarchar](8) NOT NULL,
 	[ngaynhap] [datetime] NOT NULL,
-	[trigia] [money] NOT NULL,
 	[matacgia] [nvarchar](8) NOT NULL,
 	[matheloai] [nvarchar](8) NOT NULL,
 	[matrangthai] [int] NOT NULL,
+	[namxuatban] [datetime] NOT NULL,
+	[trigia] [money] NOT NULL,
  CONSTRAINT [PK_tblSach] PRIMARY KEY CLUSTERED 
 (
 	[masach] ASC
@@ -230,6 +418,66 @@ CREATE TABLE [tblSach](
 ) ON [PRIMARY]
 
 GO
+ALTER TABLE [tblSach] 
+DROP COLUMN namxuatban
+GO
+ALTER TABLE [tblSach]
+ADD namxuatban [INT] NOT NULL
+GO
+ALTER TABLE [tblSach] 
+DROP COLUMN trigia
+GO
+ALTER TABLE [tblSach]
+ADD trigia [INT] NOT NULL
+GO
+
+insert into [tblSach] values ('S0000001', N'Sách 1', 'NXB00006', '01/01/2016', 'TG001', 'TL1', 1, 2012, 100000)
+GO
+insert into [tblSach] values ('S0000002', N'Sách 2', 'NXB00002', '01/01/2016', 'TG050', 'TL3', 1, 2012, 52000)
+GO
+insert into [tblSach] values ('S0000003', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 'TG030', 'TL2', 1, 2011, 500000)
+GO
+insert into [tblSach] values ('S0000004', N'Tây Du Ký', 'NXB00001', '01/01/2016', 'TG031', 'TL2', 2, 2010, 450000)
+GO
+insert into [tblSach] values ('S0000005', N'Harry Potter 1', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 2, 2012, 2000000)
+GO
+insert into [tblSach] values ('S0000006', N'Harry Potter 2', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 1, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000007', N'Harry Potter 3', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 2, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000008', N'Harry Potter 4', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 1, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000009', N'Harry Potter 5', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 1, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000010', N'Harry Potter 6', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 2, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000011', N'Harry Potter 7', 'NXB00006', '01/01/2016', 'TG018', 'TL3', 2, 2012, 200000)
+GO
+insert into [tblSach] values ('S0000012', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 'TG030', 'TL2', 2, 2011, 500000)
+GO
+insert into [tblSach] values ('S0000013', N'Tam Quốc Diễn Nghĩa 2', 'NXB00008', '01/01/2016', 'TG030', 'TL2', 1, 2011, 500000)
+GO
+insert into [tblSach] values ('S0000014', N'Tam Quốc Diễn Nghĩa 3', 'NXB00008', '01/01/2016', 'TG030', 'TL2', 1, 2011, 500000)
+GO
+insert into [tblSach] values ('S0000015', N'Sherlock Holmes 1', 'NXB00019', '01/01/2016', 'TG069', 'TL1', 1, 2010, 780000)
+GO
+insert into [tblSach] values ('S0000016', N'Sherlock Holmes 2', 'NXB00019', '01/01/2016', 'TG069', 'TL1', 2, 2010, 780000)
+GO
+insert into [tblSach] values ('S0000017', N'Sherlock Holmes 3', 'NXB00019', '01/01/2016', 'TG069', 'TL1', 2, 2010, 780000)
+GO
+insert into [tblSach] values ('S0000018', N'Game of Thrones 1', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 1, 2013, 2120000)
+GO
+insert into [tblSach] values ('S0000019', N'Game of Thrones 2', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 1, 2013, 2220000)
+GO
+insert into [tblSach] values ('S0000020', N'Game of Thrones 3', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 2, 2013, 2400000)
+GO
+insert into [tblSach] values ('S0000021', N'Game of Thrones 4', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 1, 2013, 2020000)
+GO
+insert into [tblSach] values ('S0000022', N'Game of Thrones 5', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 2, 2013, 2510000)
+GO
+insert into [tblSach] values ('S0000023', N'Game of Thrones 6', 'NXB00010', '01/01/2016', 'TG096', 'TL2', 1, 2013, 2330000)
+GO
+ 
 /****** Object:  Table [tblTacGia]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -245,6 +493,208 @@ CREATE TABLE [tblTacGia](
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblTacGia] values ('TG001', N'Phan Thanh Tùng')
+GO
+insert into [tblTacGia] values ('TG002', N'Nguyễn Thành Luân') 
+GO
+insert into [tblTacGia] values ('TG003', N'Nguyễn Văn A')
+GO
+insert into [tblTacGia] values ('TG004', N'Lại Thi Lại')
+GO
+insert into [tblTacGia] values ('TG005', N'Nguyễn Nhật Ánh')
+GO
+insert into [tblTacGia] values ('TG006', N'Trang Hạ')
+GO
+insert into [tblTacGia] values ('TG007', N'Nguyễn Phong Việt')
+GO
+insert into [tblTacGia] values ('TG008', N'Sơn Tùng')
+GO
+insert into [tblTacGia] values ('TG009', N'Anh Khang')
+GO
+insert into [tblTacGia] values ('TG010', N'Sơn Paris')
+GO
+insert into [tblTacGia] values ('TG011', N'Gào')
+GO
+insert into [tblTacGia] values ('TG012', N'Thét')
+GO
+insert into [tblTacGia] values ('TG013', N'Phan Thanh Tuấn')
+GO
+insert into [tblTacGia] values ('TG014', N'Phan Quân')
+GO
+insert into [tblTacGia] values ('TG015', N'Phan Hải')
+GO
+insert into [tblTacGia] values ('TG016', N'Phan Thị')
+GO
+insert into [tblTacGia] values ('TG017', N'Phan Phong Trào')
+GO
+insert into [tblTacGia] values ('TG018', N'Phan Xuân Quang')
+GO
+insert into [tblTacGia] values ('TG019', N'Lê Xuân Trường')
+GO
+insert into [tblTacGia] values ('TG020', N'Hà Nội')
+GO
+insert into [tblTacGia] values ('TG021', N'Hồ Chí Minh')
+GO
+insert into [tblTacGia] values ('TG022', N'Đà Nẵng')
+GO
+insert into [tblTacGia] values ('TG023', N'Phan Cuồng')
+GO
+insert into [tblTacGia] values ('TG024', N'Phan Thành')
+GO
+insert into [tblTacGia] values ('TG025', N'Nguyễn Ngọc Thạch')
+GO
+insert into [tblTacGia] values ('TG026', N'Đỗ Nhật Nam')
+GO
+insert into [tblTacGia] values ('TG027', N'Hamlet Trương')
+GO
+insert into [tblTacGia] values ('TG028', N'Iris Cao')
+GO
+insert into [tblTacGia] values ('TG029', N'Adam Lalana')
+GO
+insert into [tblTacGia] values ('TG030', N'Ronaldo')
+GO
+insert into [tblTacGia] values ('TG031', N'Wayne Bruce')
+GO
+insert into [tblTacGia] values ('TG032', N'Clark Kent')
+GO
+insert into [tblTacGia] values ('TG033', N'Diana Prince')
+GO
+insert into [tblTacGia] values ('TG034', N'Iron Man')
+GO
+insert into [tblTacGia] values ('TG035', N'Tony Stark')
+GO
+insert into [tblTacGia] values ('TG036', N'Bruce Banner')
+GO
+insert into [tblTacGia] values ('TG037', N'Steve Roger')
+GO
+insert into [tblTacGia] values ('TG038', N'Thor')
+GO
+insert into [tblTacGia] values ('TG039', N'Hawkeye')
+GO
+insert into [tblTacGia] values ('TG040', N'Natasha')
+GO
+insert into [tblTacGia] values ('TG041', N'Vision')
+GO
+insert into [tblTacGia] values ('TG042', N'Xuân Diệu')
+GO
+insert into [tblTacGia] values ('TG043', N'Xuân Quỳnh')
+GO
+insert into [tblTacGia] values ('TG044', N'Tú Xương')
+GO
+insert into [tblTacGia] values ('TG045', N'Tú Mỡ')
+GO
+insert into [tblTacGia] values ('TG046', N'Đỗ Trọng Phụng')
+GO
+insert into [tblTacGia] values ('TG047', N'Hồ Xuân Hương')
+GO
+insert into [tblTacGia] values ('TG048', N'Bà Huyện Thanh Quan')
+GO
+insert into [tblTacGia] values ('TG049', N'Nguyễn Du')
+GO
+insert into [tblTacGia] values ('TG050', N'Đỗ Phủ')
+GO
+insert into [tblTacGia] values ('TG051', N'Nguyễn Bỉnh Khiêm')
+GO
+insert into [tblTacGia] values ('TG052', N'Chế Lan Viên')
+GO
+insert into [tblTacGia] values ('TG053', N'Lê Đạt')
+GO
+insert into [tblTacGia] values ('TG054', N'Lê Đỗ')
+GO
+insert into [tblTacGia] values ('TG055', N'Lê Rớt')
+GO
+insert into [tblTacGia] values ('TG056', N'Lê Tạch')
+GO
+insert into [tblTacGia] values ('TG057', N'Nguyễn Trãi')
+GO
+insert into [tblTacGia] values ('TG058', N'Tản Đà')
+GO
+insert into [tblTacGia] values ('TG059', N'Cao Bá Quát')
+GO
+insert into [tblTacGia] values ('TG060', N'Hàn Mạc Tử')
+GO
+insert into [tblTacGia] values ('TG061', N'Nguyễn Duy')
+GO
+insert into [tblTacGia] values ('TG062', N'Tố Hữu')
+GO
+insert into [tblTacGia] values ('TG063', N'Nguyễn Bính')
+GO
+insert into [tblTacGia] values ('TG064', N'Nguyễn Khuyến')
+GO
+insert into [tblTacGia] values ('TG065', N'Huy Cận')
+GO
+insert into [tblTacGia] values ('TG066', N'Luân Cận')
+GO
+insert into [tblTacGia] values ('TG067', N'Phan Bội Châu')
+GO
+insert into [tblTacGia] values ('TG068', N'Phan Chu Trinh')
+GO
+insert into [tblTacGia] values ('TG069', N'Lưu Quang Vũ')
+GO
+insert into [tblTacGia] values ('TG070', N'Bằng Việt')
+GO
+insert into [tblTacGia] values ('TG071', N'Quách Gia')
+GO
+insert into [tblTacGia] values ('TG072', N'Thu Bồn')
+GO
+insert into [tblTacGia] values ('TG073', N'Trần Đăng Khoa')
+GO
+insert into [tblTacGia] values ('TG074', N'Nguyễn Khoa Điềm')
+GO
+insert into [tblTacGia] values ('TG075', N'Nguyễn Đình Chiểu')
+GO
+insert into [tblTacGia] values ('TG076', N'Nguyễn Công Trứ')
+GO
+insert into [tblTacGia] values ('TG077', N'Lưu Trọng Lư')
+GO
+insert into [tblTacGia] values ('TG078', N'Đỗ Trung Quân')
+GO
+insert into [tblTacGia] values ('TG079', N'Lý Bạch')
+GO
+insert into [tblTacGia] values ('TG080', N'Bạch Cư Dị')
+GO
+insert into [tblTacGia] values ('TG081', N'Vương Duy')
+GO
+insert into [tblTacGia] values ('TG082', N'Khổng Tử')
+GO
+insert into [tblTacGia] values ('TG083', N'Đỗ Mục')
+GO
+insert into [tblTacGia] values ('TG084', N'Gia Cát Lượng')
+GO
+insert into [tblTacGia] values ('TG085', N'Tào Tháo')
+GO
+insert into [tblTacGia] values ('TG086', N'Tào Thực')
+GO
+insert into [tblTacGia] values ('TG087', N'Lục Tốn')
+GO
+insert into [tblTacGia] values ('TG088', N'Chu Du')
+GO
+insert into [tblTacGia] values ('TG089', N'Tuân Úc')
+GO
+insert into [tblTacGia] values ('TG090', N'Trương Cáp')
+GO
+insert into [tblTacGia] values ('TG091', N'Bàng Thống')
+GO
+insert into [tblTacGia] values ('TG092', N'Đồng Hoa')
+GO
+insert into [tblTacGia] values ('TG093', N'Đinh Diện')
+GO
+insert into [tblTacGia] values ('TG094', N'Đinh Mặc')
+GO
+insert into [tblTacGia] values ('TG095', N'Ngô Thừa Ân')
+GO
+insert into [tblTacGia] values ('TG096', N'J.K.Rowling')
+GO
+insert into [tblTacGia] values ('TG097', N'William Shakespeare')
+GO
+insert into [tblTacGia] values ('TG098', N'Lev Tolstoy')
+GO
+insert into [tblTacGia] values ('TG099', N'Victor Hugo')
+GO
+insert into [tblTacGia] values ('TG100', N'Puskin')
+GO
+
 /****** Object:  Table [tblThamSo]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -254,12 +704,15 @@ CREATE TABLE [tblThamSo](
 	[tuoitoithieu] [smallint] NOT NULL,
 	[tuoitoida] [smallint] NOT NULL,
 	[hansudung] [smallint] NOT NULL,
-	[namxuatbantoithieu] [datetime] NOT NULL,
+	[namxuatbantoithieu] [smallint] NOT NULL,
 	[soluongsachmuontoida] [smallint] NOT NULL,
 	[thoigianmuontoida] [smallint] NOT NULL
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblThamSo] values (18, 55, 6, 8, 5, 4)
+ 
 /****** Object:  Table [tblTheLoai]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -275,6 +728,11 @@ CREATE TABLE [tblTheLoai](
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblTheLoai] values ('TL1', 'A')
+insert into [tblTheLoai] values ('TL2', 'B')
+insert into [tblTheLoai] values ('TL3', 'C')
+
 /****** Object:  Table [tblTrangThai]    Script Date: 6/10/2018 10:23:54 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -290,6 +748,12 @@ CREATE TABLE [tblTrangThai](
 ) ON [PRIMARY]
 
 GO
+
+insert into [tblTrangThai] values (1, N'Còn sách')
+GO
+insert into [tblTrangThai] values (2, N'Đã mượn')
+GO
+
 ALTER TABLE [tblChiTietPhieuMuon]  WITH CHECK ADD  CONSTRAINT [FK_tblChiTietPhieuMuon_tblPhieuMuonSach] FOREIGN KEY([maphieumuonsach])
 REFERENCES [tblPhieuMuonSach] ([maphieumuonsach])
 GO

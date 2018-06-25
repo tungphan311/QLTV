@@ -31,10 +31,10 @@ Partial Class ucThuVien
         Me.lbSoDauSach = New System.Windows.Forms.Label()
         Me.BunifuGradientPanel2 = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lbSoDocGia = New System.Windows.Forms.Label()
         Me.BunifuGradientPanel3 = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lbSoLuotMuon = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuGradientPanel1.SuspendLayout()
@@ -119,7 +119,7 @@ Partial Class ucThuVien
         Me.BunifuGradientPanel2.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel2.BackgroundImage"), System.Drawing.Image)
         Me.BunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BunifuGradientPanel2.Controls.Add(Me.Label3)
-        Me.BunifuGradientPanel2.Controls.Add(Me.Label4)
+        Me.BunifuGradientPanel2.Controls.Add(Me.lbSoDocGia)
         Me.BunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.BunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(200, Byte), Integer))
         Me.BunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(55, Byte), Integer))
@@ -142,24 +142,24 @@ Partial Class ucThuVien
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "độc giả" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Label4
+        'lbSoDocGia
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(3, 30)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(90, 72)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "69"
+        Me.lbSoDocGia.AutoSize = True
+        Me.lbSoDocGia.BackColor = System.Drawing.Color.Transparent
+        Me.lbSoDocGia.Font = New System.Drawing.Font("Segoe UI Semibold", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbSoDocGia.ForeColor = System.Drawing.Color.White
+        Me.lbSoDocGia.Location = New System.Drawing.Point(3, 30)
+        Me.lbSoDocGia.Name = "lbSoDocGia"
+        Me.lbSoDocGia.Size = New System.Drawing.Size(90, 72)
+        Me.lbSoDocGia.TabIndex = 2
+        Me.lbSoDocGia.Text = "69"
         '
         'BunifuGradientPanel3
         '
         Me.BunifuGradientPanel3.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel3.BackgroundImage"), System.Drawing.Image)
         Me.BunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BunifuGradientPanel3.Controls.Add(Me.Label5)
-        Me.BunifuGradientPanel3.Controls.Add(Me.Label6)
+        Me.BunifuGradientPanel3.Controls.Add(Me.lbSoLuotMuon)
         Me.BunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(125, Byte), Integer))
         Me.BunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.BunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(125, Byte), Integer))
@@ -182,23 +182,22 @@ Partial Class ucThuVien
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "lượt mượn"
         '
-        'Label6
+        'lbSoLuotMuon
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(3, 30)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 72)
-        Me.Label6.TabIndex = 2
-        Me.Label6.Text = "69"
+        Me.lbSoLuotMuon.AutoSize = True
+        Me.lbSoLuotMuon.BackColor = System.Drawing.Color.Transparent
+        Me.lbSoLuotMuon.Font = New System.Drawing.Font("Segoe UI Semibold", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbSoLuotMuon.ForeColor = System.Drawing.Color.White
+        Me.lbSoLuotMuon.Location = New System.Drawing.Point(3, 30)
+        Me.lbSoLuotMuon.Name = "lbSoLuotMuon"
+        Me.lbSoLuotMuon.Size = New System.Drawing.Size(90, 72)
+        Me.lbSoLuotMuon.TabIndex = 2
+        Me.lbSoLuotMuon.Text = "69"
         '
         'ucThuVien
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.QLTVGUI.My.Resources.Resources._13312
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.BunifuGradientPanel3)
         Me.Controls.Add(Me.BunifuGradientPanel2)
@@ -227,8 +226,8 @@ Partial Class ucThuVien
     Friend WithEvents lbSoDauSach As System.Windows.Forms.Label
     Friend WithEvents BunifuGradientPanel2 As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lbSoDocGia As System.Windows.Forms.Label
     Friend WithEvents BunifuGradientPanel3 As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lbSoLuotMuon As System.Windows.Forms.Label
 End Class

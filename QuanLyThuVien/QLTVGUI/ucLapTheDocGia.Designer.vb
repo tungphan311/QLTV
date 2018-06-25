@@ -132,8 +132,8 @@ Partial Class ucLapTheDocGia
         Me.tbHoTen.AutoSize = True
         Me.tbHoTen.BackColor = System.Drawing.Color.White
         Me.tbHoTen.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbHoTen.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.tbHoTen.ForeColor = System.Drawing.Color.Silver
+        Me.tbHoTen.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.tbHoTen.ForeColor = System.Drawing.Color.Black
         Me.tbHoTen.HintForeColor = System.Drawing.Color.Empty
         Me.tbHoTen.HintText = ""
         Me.tbHoTen.isPassword = False
@@ -145,19 +145,19 @@ Partial Class ucLapTheDocGia
         Me.tbHoTen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbHoTen.Name = "tbHoTen"
         Me.tbHoTen.Size = New System.Drawing.Size(331, 36)
-        Me.tbHoTen.TabIndex = 2
-        Me.tbHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbHoTen.TabIndex = 1
+        Me.tbHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'lbMaDocGia
         '
         Me.lbMaDocGia.AutoSize = True
         Me.lbMaDocGia.BackColor = System.Drawing.Color.Gainsboro
         Me.lbMaDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lbMaDocGia.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.lbMaDocGia.Font = New System.Drawing.Font("Segoe UI", 13.0!)
         Me.lbMaDocGia.ForeColor = System.Drawing.Color.Red
-        Me.lbMaDocGia.Location = New System.Drawing.Point(245, 91)
+        Me.lbMaDocGia.Location = New System.Drawing.Point(245, 87)
         Me.lbMaDocGia.Name = "lbMaDocGia"
-        Me.lbMaDocGia.Size = New System.Drawing.Size(82, 21)
+        Me.lbMaDocGia.Size = New System.Drawing.Size(94, 25)
         Me.lbMaDocGia.TabIndex = 3
         Me.lbMaDocGia.Text = "MaDocGia"
         '
@@ -202,7 +202,7 @@ Partial Class ucLapTheDocGia
         Me.btnLuuVaThoat.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnLuuVaThoat.selected = False
         Me.btnLuuVaThoat.Size = New System.Drawing.Size(141, 41)
-        Me.btnLuuVaThoat.TabIndex = 6
+        Me.btnLuuVaThoat.TabIndex = 8
         Me.btnLuuVaThoat.Text = "Lưu và Thoát"
         Me.btnLuuVaThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnLuuVaThoat.Textcolor = System.Drawing.Color.Black
@@ -237,7 +237,7 @@ Partial Class ucLapTheDocGia
         Me.btnThoat.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnThoat.selected = False
         Me.btnThoat.Size = New System.Drawing.Size(90, 41)
-        Me.btnThoat.TabIndex = 6
+        Me.btnThoat.TabIndex = 9
         Me.btnThoat.Text = "Thoát"
         Me.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnThoat.Textcolor = System.Drawing.Color.Black
@@ -272,7 +272,7 @@ Partial Class ucLapTheDocGia
         Me.btnLuu.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnLuu.selected = False
         Me.btnLuu.Size = New System.Drawing.Size(90, 41)
-        Me.btnLuu.TabIndex = 6
+        Me.btnLuu.TabIndex = 7
         Me.btnLuu.Text = "Lưu"
         Me.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnLuu.Textcolor = System.Drawing.Color.Black
@@ -289,7 +289,7 @@ Partial Class ucLapTheDocGia
         Me.dtpNgaySinh.Location = New System.Drawing.Point(245, 172)
         Me.dtpNgaySinh.Name = "dtpNgaySinh"
         Me.dtpNgaySinh.Size = New System.Drawing.Size(221, 29)
-        Me.dtpNgaySinh.TabIndex = 9
+        Me.dtpNgaySinh.TabIndex = 2
         Me.dtpNgaySinh.Value = New Date(2000, 1, 1, 0, 0, 0, 0)
         '
         'tbDiaChi
@@ -297,8 +297,8 @@ Partial Class ucLapTheDocGia
         Me.tbDiaChi.AutoSize = True
         Me.tbDiaChi.BackColor = System.Drawing.Color.White
         Me.tbDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbDiaChi.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.tbDiaChi.ForeColor = System.Drawing.Color.Silver
+        Me.tbDiaChi.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.tbDiaChi.ForeColor = System.Drawing.Color.Black
         Me.tbDiaChi.HintForeColor = System.Drawing.Color.Empty
         Me.tbDiaChi.HintText = ""
         Me.tbDiaChi.isPassword = False
@@ -310,7 +310,7 @@ Partial Class ucLapTheDocGia
         Me.tbDiaChi.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbDiaChi.Name = "tbDiaChi"
         Me.tbDiaChi.Size = New System.Drawing.Size(331, 36)
-        Me.tbDiaChi.TabIndex = 7
+        Me.tbDiaChi.TabIndex = 3
         Me.tbDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'tbEmail
@@ -318,8 +318,8 @@ Partial Class ucLapTheDocGia
         Me.tbEmail.AutoSize = True
         Me.tbEmail.BackColor = System.Drawing.Color.White
         Me.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbEmail.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.tbEmail.ForeColor = System.Drawing.Color.Silver
+        Me.tbEmail.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.tbEmail.ForeColor = System.Drawing.Color.Black
         Me.tbEmail.HintForeColor = System.Drawing.Color.Empty
         Me.tbEmail.HintText = ""
         Me.tbEmail.isPassword = False
@@ -331,8 +331,8 @@ Partial Class ucLapTheDocGia
         Me.tbEmail.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbEmail.Name = "tbEmail"
         Me.tbEmail.Size = New System.Drawing.Size(331, 36)
-        Me.tbEmail.TabIndex = 8
-        Me.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbEmail.TabIndex = 4
+        Me.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'dtpNgayLapThe
         '
@@ -345,8 +345,8 @@ Partial Class ucLapTheDocGia
         Me.dtpNgayLapThe.Location = New System.Drawing.Point(245, 348)
         Me.dtpNgayLapThe.Name = "dtpNgayLapThe"
         Me.dtpNgayLapThe.Size = New System.Drawing.Size(221, 29)
-        Me.dtpNgayLapThe.TabIndex = 10
-        Me.dtpNgayLapThe.Value = New Date(2018, 6, 23, 0, 0, 0, 0)
+        Me.dtpNgayLapThe.TabIndex = 6
+        Me.dtpNgayLapThe.Value = New Date(2018, 6, 25, 11, 17, 51, 0)
         '
         'cbLoaiDocGia
         '
@@ -355,7 +355,7 @@ Partial Class ucLapTheDocGia
         Me.cbLoaiDocGia.Location = New System.Drawing.Point(245, 306)
         Me.cbLoaiDocGia.Name = "cbLoaiDocGia"
         Me.cbLoaiDocGia.Size = New System.Drawing.Size(221, 29)
-        Me.cbLoaiDocGia.TabIndex = 11
+        Me.cbLoaiDocGia.TabIndex = 5
         '
         'GroupBox1
         '

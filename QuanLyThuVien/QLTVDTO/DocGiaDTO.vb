@@ -4,7 +4,7 @@
     Private dateNgaySinh As DateTime
     Private strDiaChi As String
     Private strEmail As String
-    Private dateNgayLapThe As String
+    Private dateNgayLapThe As DateTime
     Private strMaLoaiDocGia As String
 
     Public Sub New()
