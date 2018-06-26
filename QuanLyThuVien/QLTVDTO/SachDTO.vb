@@ -6,12 +6,13 @@
     Private iMaTrangThai As Integer
     Private iNamXuatBan As Integer
     Private iTriGia As Integer
+    Private strMaDocGiaMuon As String
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(strMaSach As String, strTenSach As String, strMaNhaXuatBan As String, dateNgayNhap As DateTime, iMaTrangThai As Integer, iNamXuatBan As Integer, iTriGia As Integer)
+    Public Sub New(strMaSach As String, strTenSach As String, strMaNhaXuatBan As String, dateNgayNhap As DateTime, iMaTrangThai As Integer, iNamXuatBan As Integer, iTriGia As Integer, strMaDocGiaMuon As String)
         Me.strMaSach = strMaSach
         Me.strTenSach = strTenSach
         Me.strMaNhaXuatBan = strMaNhaXuatBan
@@ -19,6 +20,7 @@
         Me.iMaTrangThai = iMaTrangThai
         Me.iNamXuatBan = iNamXuatBan
         Me.iTriGia = iTriGia
+        Me.strMaDocGiaMuon = strMaDocGiaMuon
     End Sub
 
     Property MaSach() As String
@@ -81,6 +83,15 @@
         End Get
         Set(ByVal value As Integer)
             iTriGia = value
+        End Set
+    End Property
+
+    Property MaDocGiaMuon() As String
+        Get
+            Return strMaDocGiaMuon
+        End Get
+        Set(ByVal value As String)
+            strMaDocGiaMuon = value
         End Set
     End Property
 End Class

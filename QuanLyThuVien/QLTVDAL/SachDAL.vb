@@ -63,7 +63,7 @@ Public Class SachDAL
     Public Function insert(s As SachDTO) As Result
         Dim query As String = String.Empty
         query &= "insert into [tblSach] "
-        query &= "values (@masach, @tenSach, @manhaxuatban, @ngaynhap, @matrangthai, @namxuatban, @trigia)"
+        query &= "values (@masach, @tenSach, @manhaxuatban, @ngaynhap, @matrangthai, @namxuatban, @trigia, @madocgiamuon)"
 
         Dim nextMaSach = 0
         Dim ms = "MS" + Convert.ToString(nextMaSach)
@@ -87,6 +87,7 @@ Public Class SachDAL
                     .Parameters.AddWithValue("@matrangthai", s.MaTrangThai)
                     .Parameters.AddWithValue("@namxuatban", s.NamXuatBan)
                     .Parameters.AddWithValue("@trigia", s.TriGia)
+                    .Parameters.AddWithValue("@madocgiamuon", s.MaDocGiaMuon)
                 End With
                 Try
                     conn.Open()
@@ -112,6 +113,7 @@ Public Class SachDAL
         query &= " [matrangthai] = @matrangthai "
         query &= " [namxuatban] = @namxuatban "
         query &= " [trigia] = @trigia "
+        query &= " [madocgiamuon] = @madocgiamuon"
         query &= "where "
         query &= " [masach] = @masach "
 
@@ -128,6 +130,7 @@ Public Class SachDAL
                     .Parameters.AddWithValue("@matrangthai", s.MaTrangThai)
                     .Parameters.AddWithValue("@namxuatban", s.NamXuatBan)
                     .Parameters.AddWithValue("@trigia", s.TriGia)
+                    .Parameters.AddWithValue("@madocgiamuon", s.MaDocGiaMuon)
                 End With
                 Try
                     conn.Open()
@@ -146,7 +149,7 @@ Public Class SachDAL
     Public Function selectAll(ByRef listSach As List(Of SachDTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "select [masach], [tenSach], [manhaxuatban], [ngaynhap], [matacgia], [matheloai], [matrangthai], [namxuatban], [trigia]"
+        query &= "select [masach], [tenSach], [manhaxuatban], [ngaynhap], [matacgia], [matheloai], [matrangthai], [namxuatban], [trigia], [madocgiamuon]"
         query &= " from [tblSach]"
 
         Using conn As New SqlConnection(connectionString)
@@ -163,7 +166,7 @@ Public Class SachDAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New SachDTO(reader("masach"), reader("tensach"), reader("manhaxuatban"), reader("ngaynhap"), reader("matrangthai"), reader("namxuatban"), reader("trigia")))
+                            listSach.Add(New SachDTO(reader("masach"), reader("tensach"), reader("manhaxuatban"), reader("ngaynhap"), reader("matrangthai"), reader("namxuatban"), reader("trigia"), reader("madocgiamuon")))
                         End While
                     End If
                 Catch ex As Exception
