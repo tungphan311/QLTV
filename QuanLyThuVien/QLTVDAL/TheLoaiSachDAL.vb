@@ -98,4 +98,32 @@ Public Class TheLoaiSachDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+    Public Function deleteAllByMaTheLoai(matheloai As String) As Result
+
+        Dim query As String = String.Empty
+        query &= "DELETE FROM [tblTheLoaiSach] "
+        query &= "WHERE [matheloai] = @matheloai"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matheloai", matheloai)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+
+    End Function
 End Class

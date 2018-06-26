@@ -98,4 +98,90 @@ Public Class TheLoaiDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+    Public Function deleteByMaTheLoai(matheloai As String) As Result
+
+        Dim query As String = String.Empty
+        query &= "DELETE FROM [tblTheLoai] "
+        query &= "WHERE [matheloai] = @matheloai"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matheloai", matheloai)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+
+    End Function
+
+    Public Function updateByMaTheLoai(matheloai As String, tentheloaimoi As String) As Result
+
+        Dim query As String = String.Empty
+        query &= "UPDATE [tblTheLoai] "
+        query &= "SET [tentheloai] = @tentheloaimoi "
+        query &= "WHERE [matheloai] = @matheloai"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matheloai", matheloai)
+                    .Parameters.AddWithValue("@tentheloaimoi", tentheloaimoi)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function insert(theloai As TheLoaiDTO) As Result
+
+        Dim query As String = String.Empty
+        query &= "INSERT INTO [tblTheLoai] ([matheloai], [tentheloai]) "
+        query &= "VALUES (@matheloai, @tentheloai)"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matheloai", theloai.MaTheLoai)
+                    .Parameters.AddWithValue("@tentheloai", theloai.TenTheLoai)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+
+    End Function
 End Class

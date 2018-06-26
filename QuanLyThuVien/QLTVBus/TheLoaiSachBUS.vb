@@ -20,4 +20,8 @@ Public Class TheLoaiSachBUS
     Public Function selectAll(ByRef listTLS As List(Of TheLoaiSachDTO)) As Result
         Return tlsDAL.selectALL(listTLS)
     End Function
+
+    Public Function deleteAllByMaTheLoai(matheloai As String) As Result
+        Return tlsDAL.deleteAllByMaTheLoai(matheloai)
+    End Function
 End Class

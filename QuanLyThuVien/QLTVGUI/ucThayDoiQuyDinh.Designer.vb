@@ -22,10 +22,10 @@ Partial Class ucThayDoiQuyDinh
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.nudThoiHanThe = New System.Windows.Forms.NumericUpDown()
@@ -38,10 +38,8 @@ Partial Class ucThayDoiQuyDinh
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dgDSTheLoai = New Bunifu.Framework.UI.BunifuCustomDataGrid()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MaTheLoai = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TenTheLoai = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nudKhoangCachNam = New System.Windows.Forms.NumericUpDown()
@@ -61,7 +59,6 @@ Partial Class ucThayDoiQuyDinh
         CType(Me.nudTuoiToiDa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTuoiToiThieu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.dgDSTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudKhoangCachNam, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
@@ -202,7 +199,8 @@ Partial Class ucThayDoiQuyDinh
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.FlowLayoutPanel1)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.dgDSTheLoai)
         Me.GroupBox2.Controls.Add(Me.nudKhoangCachNam)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label12)
@@ -215,83 +213,71 @@ Partial Class ucThayDoiQuyDinh
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Quy định 2:"
         '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Controls.Add(Me.Label6)
-        Me.FlowLayoutPanel1.Controls.Add(Me.dgDSTheLoai)
-        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(22, 64)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(451, 178)
-        Me.FlowLayoutPanel1.TabIndex = 5
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Blue
-        Me.Label6.Location = New System.Drawing.Point(3, 0)
+        Me.Label6.Location = New System.Drawing.Point(25, 64)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(118, 17)
-        Me.Label6.TabIndex = 74
+        Me.Label6.TabIndex = 76
         Me.Label6.Text = "Danh sách thể loại:"
         '
         'dgDSTheLoai
         '
+        Me.dgDSTheLoai.AllowUserToOrderColumns = True
         Me.dgDSTheLoai.AllowUserToResizeColumns = False
         Me.dgDSTheLoai.AllowUserToResizeRows = False
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgDSTheLoai.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgDSTheLoai.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgDSTheLoai.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgDSTheLoai.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.dgDSTheLoai.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgDSTheLoai.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgDSTheLoai.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgDSTheLoai.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgDSTheLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgDSTheLoai.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.MaTheLoai, Me.TenTheLoai})
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.Color.Red
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgDSTheLoai.DefaultCellStyle = DataGridViewCellStyle19
+        Me.dgDSTheLoai.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MaTheLoai, Me.TenTheLoai})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgDSTheLoai.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgDSTheLoai.DoubleBuffered = True
         Me.dgDSTheLoai.EnableHeadersVisualStyles = False
         Me.dgDSTheLoai.GridColor = System.Drawing.Color.Gray
         Me.dgDSTheLoai.HeaderBgColor = System.Drawing.Color.DarkGray
         Me.dgDSTheLoai.HeaderForeColor = System.Drawing.Color.Black
-        Me.dgDSTheLoai.Location = New System.Drawing.Point(3, 20)
+        Me.dgDSTheLoai.Location = New System.Drawing.Point(42, 91)
         Me.dgDSTheLoai.Name = "dgDSTheLoai"
         Me.dgDSTheLoai.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgDSTheLoai.RowsDefaultCellStyle = DataGridViewCellStyle20
-        Me.dgDSTheLoai.Size = New System.Drawing.Size(448, 148)
-        Me.dgDSTheLoai.TabIndex = 5
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DataGridViewTextBoxColumn1.Frozen = True
-        Me.DataGridViewTextBoxColumn1.HeaderText = "STT"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 40
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgDSTheLoai.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgDSTheLoai.Size = New System.Drawing.Size(407, 148)
+        Me.dgDSTheLoai.TabIndex = 75
         '
         'MaTheLoai
         '
         Me.MaTheLoai.Frozen = True
         Me.MaTheLoai.HeaderText = "Mã Thể Loại"
         Me.MaTheLoai.Name = "MaTheLoai"
+        Me.MaTheLoai.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.MaTheLoai.Width = 150
         '
         'TenTheLoai
@@ -299,6 +285,7 @@ Partial Class ucThayDoiQuyDinh
         Me.TenTheLoai.Frozen = True
         Me.TenTheLoai.HeaderText = "Tên Thể Loại"
         Me.TenTheLoai.Name = "TenTheLoai"
+        Me.TenTheLoai.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.TenTheLoai.Width = 216
         '
         'nudKhoangCachNam
@@ -461,6 +448,7 @@ Partial Class ucThayDoiQuyDinh
         Me.btnLuuThayDoi.ButtonText = "Lưu thay đổi"
         Me.btnLuuThayDoi.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLuuThayDoi.DisabledColor = System.Drawing.Color.Silver
+        Me.btnLuuThayDoi.Enabled = False
         Me.btnLuuThayDoi.ForeColor = System.Drawing.Color.Black
         Me.btnLuuThayDoi.Iconcolor = System.Drawing.Color.Transparent
         Me.btnLuuThayDoi.Iconimage = Global.QLTVGUI.My.Resources.Resources.icons8_Save_64
@@ -506,8 +494,6 @@ Partial Class ucThayDoiQuyDinh
         CType(Me.nudTuoiToiThieu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.FlowLayoutPanel1.PerformLayout()
         CType(Me.dgDSTheLoai, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudKhoangCachNam, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
@@ -537,16 +523,14 @@ Partial Class ucThayDoiQuyDinh
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents Label6 As Label
-    Friend WithEvents dgDSTheLoai As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents MaTheLoai As DataGridViewTextBoxColumn
-    Friend WithEvents TenTheLoai As DataGridViewTextBoxColumn
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents dgDSTheLoai As Bunifu.Framework.UI.BunifuCustomDataGrid
+    Friend WithEvents MaTheLoai As DataGridViewTextBoxColumn
+    Friend WithEvents TenTheLoai As DataGridViewTextBoxColumn
 End Class
