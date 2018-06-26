@@ -121,10 +121,10 @@
   <data name="BunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACdSURBVChTbc65CsJQEEbheWwLRSISXHBBFBc0uCAKWthY
-        mMLGxsZnOt57h5AbnWaqjzO/nKlxpM6BhB0pGX3WjFgyZe7ujA0T9kiBtgH1IrRwV9GYE1KiailGA66I
-        vtPS6uedR0MuLnFD/jdllZJHXe6INVyRljxKyRFreIE6AT1o80Ss4SXKA0p4IdZwfaellkNN3og1PC55
-        1ODDF4LhP63N1HV3AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACwSURBVChTddAhC8JQFIbh8+NMgjAQFmRFi0tLWqZBFATB
+        IAa13HNuWNqKNpvNv/V5z+bkct36w3s+Do3sHWNbYiIFpsJI5YZMzljKEWvZYysbHDgH1cg2aO6hVYsk
+        x4kXoM4SO8RNSdGVM1BYqs956OKQ4RQUbtp9N7UlRQXPQH3n2pKiyiSg3/AeVHKCh4lB/gvCc5UijvE0
+        Ech/wV9JEUd4mSGos+Q26TktKXqbAT7T3wa5LeOIkAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="BunifuGradientPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -140,10 +140,11 @@
   <data name="BunifuGradientPanel3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACiSURBVChTbc+hEsIwEIThvjaipU1hECAwCBBFYBAgMAgQ
-        GAymr5NcENddSksmRKzKN/9cMjvJ1eaYKdQuCnWrqbo1tsF2pbqmVDlUmoXILgcEsO2RA5Ij4V8Jj0GJ
-        SM4GMC59UDWW5GRULoBxSfZ4DEpE/loDRqUeAXxLAuTvhPxddPgPYTfAB2Hi8AGxROSfM8BkqR5LRP4F
-        mDo8LBG927l23hY2yqSX3p4AAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADJSURBVChTdc+/CwFxGMfx54+wms1WVrMRg8WPQX6UGy4Z
+        7kSSKOUU6tQNOgxXlOlMymDzL318n/veL2J/9f48DxUSF5STDmqpI5rpPbpZC72cCT2/wbhkYF5ZwGjN
+        QBKdJMpIpDEqrjy0FGirTkBBSQlL648SI2swBMVL33Me0kc4TDVQdJNfqkZzXLIFcow+KLzJL4VIlAJ0
+        3akgb84//HNOl8hUcbMV0K/D4yVXoPu5Dfo7J0oSdfB0G6B4ib8LSjzHJUavRx1v1Ln8Lmrrm5QAAAAA
+        SUVORK5CYII=
 </value>
   </data>
 </root>

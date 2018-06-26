@@ -181,16 +181,17 @@ Public Class ucLapTheDocGia
             System.Console.WriteLine(result.SystemMessage)
         End If
 
-        ' Xoá ucLapTheDocGia và gọi lại ucThuVien
+        ' clear fpnZone và gọi lại ucThuVien
         Dim parent = New ucLapTheDocGia
         parent = sender.Parent
         Dim grandpar = New FlowLayoutPanel
         grandpar = parent.Parent
         grandpar.Controls.Clear()
+        Dim grgrpar = New frmHome
+        grgrpar = grandpar.Parent
+        grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
-        grandpar.AutoScroll = False
-
     End Sub
 
     Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click
@@ -199,8 +200,11 @@ Public Class ucLapTheDocGia
         Dim grandpar = New FlowLayoutPanel
         grandpar = parent.Parent
         grandpar.Controls.Clear()
+        Dim grgrpar = New frmHome
+        grgrpar = grandpar.Parent
+        grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
-        grandpar.AutoScroll = False
     End Sub
+
 End Class

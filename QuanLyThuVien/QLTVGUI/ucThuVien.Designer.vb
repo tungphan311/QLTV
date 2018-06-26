@@ -46,7 +46,7 @@ Partial Class ucThuVien
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Info_64
-        Me.PictureBox2.Location = New System.Drawing.Point(268, 299)
+        Me.PictureBox2.Location = New System.Drawing.Point(253, 299)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(20, 20)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -57,7 +57,7 @@ Partial Class ucThuVien
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.QLTVGUI.My.Resources.Resources.contact_divider
-        Me.PictureBox1.Location = New System.Drawing.Point(114, 223)
+        Me.PictureBox1.Location = New System.Drawing.Point(99, 223)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(503, 50)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -68,7 +68,7 @@ Partial Class ucThuVien
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(291, 301)
+        Me.Label1.Location = New System.Drawing.Point(276, 301)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(171, 147)
         Me.Label1.TabIndex = 3
@@ -80,11 +80,11 @@ Partial Class ucThuVien
         Me.BunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BunifuGradientPanel1.Controls.Add(Me.Label2)
         Me.BunifuGradientPanel1.Controls.Add(Me.lbSoDauSach)
-        Me.BunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer))
-        Me.BunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.BunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(120, Byte), Integer))
-        Me.BunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.BunifuGradientPanel1.Location = New System.Drawing.Point(80, 45)
+        Me.BunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(176, Byte), Integer))
+        Me.BunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.BunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(176, Byte), Integer))
+        Me.BunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.BunifuGradientPanel1.Location = New System.Drawing.Point(65, 45)
         Me.BunifuGradientPanel1.Name = "BunifuGradientPanel1"
         Me.BunifuGradientPanel1.Quality = 10
         Me.BunifuGradientPanel1.Size = New System.Drawing.Size(150, 150)
@@ -124,7 +124,7 @@ Partial Class ucThuVien
         Me.BunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(200, Byte), Integer))
         Me.BunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.BunifuGradientPanel2.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.BunifuGradientPanel2.Location = New System.Drawing.Point(290, 45)
+        Me.BunifuGradientPanel2.Location = New System.Drawing.Point(275, 45)
         Me.BunifuGradientPanel2.Name = "BunifuGradientPanel2"
         Me.BunifuGradientPanel2.Quality = 10
         Me.BunifuGradientPanel2.Size = New System.Drawing.Size(150, 150)
@@ -160,11 +160,11 @@ Partial Class ucThuVien
         Me.BunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BunifuGradientPanel3.Controls.Add(Me.Label5)
         Me.BunifuGradientPanel3.Controls.Add(Me.lbSoLuotMuon)
-        Me.BunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(125, Byte), Integer))
-        Me.BunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.BunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(125, Byte), Integer))
-        Me.BunifuGradientPanel3.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.BunifuGradientPanel3.Location = New System.Drawing.Point(500, 45)
+        Me.BunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(176, Byte), Integer))
+        Me.BunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.BunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(176, Byte), Integer))
+        Me.BunifuGradientPanel3.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.BunifuGradientPanel3.Location = New System.Drawing.Point(485, 45)
         Me.BunifuGradientPanel3.Name = "BunifuGradientPanel3"
         Me.BunifuGradientPanel3.Quality = 10
         Me.BunifuGradientPanel3.Size = New System.Drawing.Size(150, 150)
@@ -206,7 +206,7 @@ Partial Class ucThuVien
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "ucThuVien"
-        Me.Size = New System.Drawing.Size(730, 530)
+        Me.Size = New System.Drawing.Size(700, 530)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BunifuGradientPanel1.ResumeLayout(False)

@@ -52,7 +52,7 @@ Public Class ThamSoDAL
     Public Function update(thamso As ThamSoDTO) As Result
 
         Dim query As String = String.Empty
-        query &= " UPDATE [[tblThamSo]] SET"
+        query &= " UPDATE [tblThamSo] SET"
         query &= " [tuoitoithieu] = @tuoitoithieu "
         query &= " ,[tuoitoida] = @tuoitoida "
         query &= " ,[hansudung] = @hansudung "
