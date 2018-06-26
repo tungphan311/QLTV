@@ -20,9 +20,9 @@ Public Class PhieuMuonSachDAL
         nextMaPhieuMuon = "PMS"
 
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [maphieumuon] "
+        query &= "SELECT TOP 1 [maphieumuonsach] "
         query &= "FROM [tblPhieuMuonSach] "
-        query &= "ORDER BY [maphieumuon] DESC "
+        query &= "ORDER BY [maphieumuonsach] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -39,7 +39,7 @@ Public Class PhieuMuonSachDAL
                     msOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            msOnDB = reader("maphieumuon")
+                            msOnDB = reader("maphieumuonsach")
                         End While
                     End If
                     If (msOnDB <> Nothing And msOnDB.Length >= 8) Then
