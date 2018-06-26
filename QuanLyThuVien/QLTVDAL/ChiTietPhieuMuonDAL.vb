@@ -7,6 +7,7 @@ Public Class ChiTietPhieuMuonDAL
     Private connectionString As String
 
     Public Sub New()
+        ' Read ConnectionString value from App.config file
         connectionString = ConfigurationManager.AppSettings("ConnectionString")
     End Sub
 
@@ -14,12 +15,12 @@ Public Class ChiTietPhieuMuonDAL
         Me.connectionString = ConnectionString
     End Sub
 
-    Public Function build_mactphieumuon(ByRef nextMactPhieuMuon As String) As Result
-        nextMactPhieuMuon = String.Empty
-        nextMactPhieuMuon = "CTPM"
+    Public Function build_mactpm(ByRef nextMaCTPM As String) As Result
+        nextMaCTPM = String.Empty
+        nextMaCTPM = "CTPM"
 
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [machitietphieumuon] "
+        query &= "SELECT TOP 1 [machietietphieumuon] "
         query &= "FROM [tblChiTietPhieuMuon] "
         query &= "ORDER BY [machitietphieumuon] DESC "
 
@@ -38,17 +39,17 @@ Public Class ChiTietPhieuMuonDAL
                     msOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            msOnDB = reader("machitietphieumuon")
+                            msOnDB = reader("machietietphieumuon")
                         End While
                     End If
                     If (msOnDB <> Nothing And msOnDB.Length >= 8) Then
-                        Dim v = msOnDB.Substring(4)
+                        Dim v = msOnDB.Substring(3)
                         Dim convertDecimal = Convert.ToDecimal(v)
                         convertDecimal = convertDecimal + 1
                         Dim tmp = convertDecimal.ToString()
-                        tmp = tmp.PadLeft(msOnDB.Length - 4, "0")
-                        nextMactPhieuMuon = nextMactPhieuMuon + tmp
-                        System.Console.WriteLine(nextMactPhieuMuon)
+                        tmp = tmp.PadLeft(msOnDB.Length - 3, "0")
+                        nextMaCTPM = nextMaCTPM + tmp
+                        System.Console.WriteLine(nextMaCTPM)
                     End If
 
                 Catch ex As Exception
@@ -59,69 +60,5 @@ Public Class ChiTietPhieuMuonDAL
             End Using
         End Using
         Return New Result(True)
-    End Function
-
-    Public Function insert(ctpm As ChiTietPhieuMuonDTO) As Result
-
-        Dim query As String = String.Empty
-        query &= "INSERT INTO [tblChiTietPhieuMuon] ([machitietphieumuon], [maphieumuonsach], [masach])"
-        query &= "VALUES (@machitietphieumuon,@maphieumuonsach,@masach)"
-
-        Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
-                With comm
-                    .Connection = conn
-                    .CommandType = CommandType.Text
-                    .CommandText = query
-                    .Parameters.AddWithValue("@machitietphieumuon", ctpm.MaChiTietPhieuMuon)
-                    .Parameters.AddWithValue("@maphieumuonsach", ctpm.MaPhieuMuonSach)
-                    .Parameters.AddWithValue("@masach", ctpm.MaSach)
-                End With
-                Try
-                    conn.Open()
-                    comm.ExecuteNonQuery()
-                Catch ex As Exception
-                    conn.Close()
-                    System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False)
-                End Try
-            End Using
-        End Using
-        Return New Result(True) ' thanh cong
-    End Function
-
-    Public Function selectALL(ByRef listCTPhieuMuon As List(Of ChiTietPhieuMuonDTO)) As Result
-
-        Dim query As String = String.Empty
-        query &= "SELECT [machitietphieumuon], [maphieumuonsach], [masach]"
-        query &= "FROM [tblChiTietPhieuMuon]"
-
-
-        Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
-                With comm
-                    .Connection = conn
-                    .CommandType = CommandType.Text
-                    .CommandText = query
-                End With
-                Try
-                    conn.Open()
-                    Dim reader As SqlDataReader
-                    reader = comm.ExecuteReader()
-                    If reader.HasRows = True Then
-                        listCTPhieuMuon.Clear()
-                        While reader.Read()
-                            listCTPhieuMuon.Add(New ChiTietPhieuMuonDTO(reader("machitietphieumuon"), reader("maphieumuonsach"), reader("masach")))
-                        End While
-                    End If
-
-                Catch ex As Exception
-                    conn.Close()
-                    System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False)
-                End Try
-            End Using
-        End Using
-        Return New Result(True) ' thanh cong
     End Function
 End Class
