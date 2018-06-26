@@ -36,6 +36,8 @@ Public Class ucChoMuonSach
     End Sub
 
     Private Sub tbMaDocGia_KeyDown(sender As Object, e As KeyEventArgs) Handles tbMaDocGia.KeyDown
-        If (e.KeyCode) Then
+        If (e.KeyCode = Keys.Enter) Then
+
+        End If
     End Sub
 End Class
