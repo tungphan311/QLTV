@@ -104,33 +104,33 @@ CREATE TABLE [tblChiTietPhieuMuon](
 
 GO
 
-insert into [tblChiTietPhieuMuon] values ('CTPM0001', 'PMS00001', 'S0000015')
+insert into [tblChiTietPhieuMuon] values ('CTPM0001', 'PMS00001', 'S0000004')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0002', 'PMS00002', 'S0000001')
+insert into [tblChiTietPhieuMuon] values ('CTPM0002', 'PMS00001', 'S0000010')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0003', 'PMS00003', 'S0000002')
+insert into [tblChiTietPhieuMuon] values ('CTPM0003', 'PMS00002', 'S0000007')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0004', 'PMS00004', 'S0000005')
+insert into [tblChiTietPhieuMuon] values ('CTPM0004', 'PMS00002', 'S0000011')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0005', 'PMS00005', 'S0000004')
+insert into [tblChiTietPhieuMuon] values ('CTPM0005', 'PMS00002', 'S0000002')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0006', 'PMS00006', 'S0000007')
+insert into [tblChiTietPhieuMuon] values ('CTPM0006', 'PMS00002', 'S0000005')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0007', 'PMS00007', 'S0000008')
+insert into [tblChiTietPhieuMuon] values ('CTPM0007', 'PMS00003', 'S0000010')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0008', 'PMS00008', 'S0000003')
+insert into [tblChiTietPhieuMuon] values ('CTPM0008', 'PMS00004', 'S0000008')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0009', 'PMS00009', 'S0000010')
+insert into [tblChiTietPhieuMuon] values ('CTPM0009', 'PMS00004', 'S0000012')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0010', 'PMS00010', 'S0000013')
+insert into [tblChiTietPhieuMuon] values ('CTPM0010', 'PMS00004', 'S0000013')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0011', 'PMS00011', 'S0000014')
+insert into [tblChiTietPhieuMuon] values ('CTPM0011', 'PMS00005', 'S0000001')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0012', 'PMS00012', 'S0000018')
+insert into [tblChiTietPhieuMuon] values ('CTPM0012', 'PMS00006', 'S0000003')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0013', 'PMS00013', 'S0000019')
+insert into [tblChiTietPhieuMuon] values ('CTPM0013', 'PMS00007', 'S0000009')
 GO
-insert into [tblChiTietPhieuMuon] values ('CTPM0014', 'PMS00014', 'S0000020')
+insert into [tblChiTietPhieuMuon] values ('CTPM0014', 'PMS00007', 'S0000012')
 GO
 
 /****** Object:  Table [tblChiTietPhieuTra]    Script Date: 6/10/2018 10:23:54 PM ******/
@@ -150,31 +150,23 @@ CREATE TABLE [tblChiTietPhieuTra](
 
 GO
 
-insert into [tblChiTietPhieuTra] values ('CTPT0001', 'S0000015', 'PTS00001')
+insert into [tblChiTietPhieuTra] values ('CTPT0001', 'S0000010', 'PTS00001')
 GO
-insert into [tblChiTietPhieuTra] values ('CTPT0002', 'S0000001', 'PTS00002')
+insert into [tblChiTietPhieuTra] values ('CTPT0002', 'S0000010', 'PTS00002')
 GO
-insert into [tblChiTietPhieuTra] values ('CTPT0003', 'S0000002', 'PTS00003')
+insert into [tblChiTietPhieuTra] values ('CTPT0003', 'S0000008', 'PTS00003')
 GO
-insert into [tblChiTietPhieuTra] values ('CTPT0004', 'S0000005', 'PTS00004')
+insert into [tblChiTietPhieuTra] values ('CTPT0004', 'S0000012', 'PTS00003')
 GO
-insert into [tblChiTietPhieuTra] values ('CTPT0005', 'S0000004', 'PTS00005')
+insert into [tblChiTietPhieuTra] values ('CTPT0005', 'S0000005', 'PTS00004')
 GO
-insert into [tblChiTietPhieuTra] values ('CTPT0006', 'S0000007', 'PTS00006')
+insert into [tblChiTietPhieuTra] values ('CTPT0006', 'S0000007', 'PTS00004')
 GO
-insert into [tblChiTietPhieuTra] values ('CTPT0007', 'S0000008', 'PTS00007')
+insert into [tblChiTietPhieuTra] values ('CTPT0007', 'S0000002', 'PTS00004')
 GO
-insert into [tblChiTietPhieuTra] values ('CTPT0008', 'S0000003', 'PTS00008')
+insert into [tblChiTietPhieuTra] values ('CTPT0008', 'S0000011', 'PTS00005')
 GO
-insert into [tblChiTietPhieuTra] values ('CTPT0009', 'S0000010', 'PTS00009')
-GO
-insert into [tblChiTietPhieuTra] values ('CTPT0010', 'S0000020', 'PTS00010')
-GO
-insert into [tblChiTietPhieuTra] values ('CTPT0011', 'S0000014', 'PTS00011')
-GO
-insert into [tblChiTietPhieuTra] values ('CTPT0012', 'S0000013', 'PTS00012')
-GO
-insert into [tblChiTietPhieuTra] values ('CTPT0013', 'S0000018', 'PTS00013')
+insert into [tblChiTietPhieuTra] values ('CTPT0009', 'S0000004', 'PTS00006')
 GO
 
 /****** Object:  Table [tblDocGia]    Script Date: 6/10/2018 10:23:54 PM ******/
@@ -324,33 +316,19 @@ CREATE TABLE [dbo].[tblPhieuMuonSach](
 
 GO
 
-insert into [tblPhieuMuonSach] values ('PMS00001', '01/10/2017', 'DG000001')
+insert into [tblPhieuMuonSach] values ('PMS00001', '20/06/2018', 'DG000003')
 GO
-insert into [tblPhieuMuonSach] values ('PMS00002', '02/10/2017', 'DG000001')
+insert into [tblPhieuMuonSach] values ('PMS00002', '22/06/2018', 'DG000010')
 GO
-insert into [tblPhieuMuonSach] values ('PMS00003', '03/10/2017', 'DG000002')
+insert into [tblPhieuMuonSach] values ('PMS00003', '22/06/2018', 'DG000001')
 GO
-insert into [tblPhieuMuonSach] values ('PMS00004', '03/10/2017', 'DG000003')
+insert into [tblPhieuMuonSach] values ('PMS00004', '23/06/2018', 'DG000005')
 GO
-insert into [tblPhieuMuonSach] values ('PMS00005', '04/10/2017', 'DG000005')
+insert into [tblPhieuMuonSach] values ('PMS00005', '24/06/2018', 'DG000001')
 GO
-insert into [tblPhieuMuonSach] values ('PMS00006', '04/10/2017', 'DG000008')
+insert into [tblPhieuMuonSach] values ('PMS00006', '26/06/2018', 'DG000004')
 GO
-insert into [tblPhieuMuonSach] values ('PMS00007', '04/10/2017', 'DG000009')
-GO
-insert into [tblPhieuMuonSach] values ('PMS00008', '05/10/2017', 'DG000006')
-GO
-insert into [tblPhieuMuonSach] values ('PMS00009', '06/10/2017', 'DG000007')
-GO
-insert into [tblPhieuMuonSach] values ('PMS00010', '06/10/2017', 'DG000004')
-GO
-insert into [tblPhieuMuonSach] values ('PMS00011', '07/10/2017', 'DG000002')
-GO
-insert into [tblPhieuMuonSach] values ('PMS00012', '07/10/2017', 'DG000008')
-GO
-insert into [tblPhieuMuonSach] values ('PMS00013', '10/10/2017', 'DG000010')
-GO
-insert into [tblPhieuMuonSach] values ('PMS00014', '11/10/2017', 'DG000009')
+insert into [tblPhieuMuonSach] values ('PMS00007', '26/06/2018', 'DG000002')
 GO
 
 /****** Object:  Table [dbo].[tblPhieuTraSach]    Script Date: 6/25/2018 8:15:28 PM ******/
@@ -372,31 +350,17 @@ CREATE TABLE [dbo].[tblPhieuTraSach](
 
 GO
 
-insert into [tblPhieuTraSach] values ('PTS00001', '04/10/2017', 'DG000001')
+insert into [tblPhieuTraSach] values ('PTS00001', '22/06/2018', 'DG000003')
 GO
-insert into [tblPhieuTraSach] values ('PTS00002', '05/10/2017', 'DG000002')
+insert into [tblPhieuTraSach] values ('PTS00002', '24/06/2018', 'DG000001')
 GO
-insert into [tblPhieuTraSach] values ('PTS00003', '07/10/2017', 'DG000003')
+insert into [tblPhieuTraSach] values ('PTS00003', '24/06/2018', 'DG000005')
 GO
-insert into [tblPhieuTraSach] values ('PTS00004', '07/10/2017', 'DG000005')
+insert into [tblPhieuTraSach] values ('PTS00004', '24/06/2018', 'DG000010')
 GO
-insert into [tblPhieuTraSach] values ('PTS00005', '07/10/2017', 'DG000008')
+insert into [tblPhieuTraSach] values ('PTS00005', '25/06/2018', 'DG000010')
 GO
-insert into [tblPhieuTraSach] values ('PTS00006', '07/10/2017', 'DG000009')
-GO
-insert into [tblPhieuTraSach] values ('PTS00007', '07/10/2017', 'DG000006')
-GO
-insert into [tblPhieuTraSach] values ('PTS00008', '07/10/2017', 'DG000007')
-GO
-insert into [tblPhieuTraSach] values ('PTS00009', '07/10/2017', 'DG000004')
-GO
-insert into [tblPhieuTraSach] values ('PTS00010', '08/10/2017', 'DG000002')
-GO
-insert into [tblPhieuTraSach] values ('PTS00011', '08/10/2017', 'DG000008')
-GO
-insert into [tblPhieuTraSach] values ('PTS00012', '12/10/2017', 'DG000010')
-GO
-insert into [tblPhieuTraSach] values ('PTS00013', '12/10/2017', 'DG000009')
+insert into [tblPhieuTraSach] values ('PTS00006', '26/06/2018', 'DG000003')
 GO
 
 /****** Object:  Table [dbo].[tblSach]    Script Date: 6/25/2018 8:15:59 PM ******/
@@ -414,6 +378,7 @@ CREATE TABLE [dbo].[tblSach](
 	[matrangthai] [int] NOT NULL,
 	[namxuatban] [int] NOT NULL,
 	[trigia] [int] NOT NULL,
+	[madocgiamuon] [nvarchar](8)
  CONSTRAINT [PK_tblSach] PRIMARY KEY CLUSTERED 
 (
 	[masach] ASC
@@ -422,39 +387,39 @@ CREATE TABLE [dbo].[tblSach](
 
 GO
 
-insert into [tblSach] values ('S0000001', N'Sách 1', 'NXB00006', '01/01/2016', 1, 2012, 100000)
+insert into [tblSach] values ('S0000001', N'Sách 1', 'NXB00006', '01/01/2016', 2, 2012, 100000, 'DG000001')
 GO
-insert into [tblSach] values ('S0000002', N'Sách 2', 'NXB00002', '01/01/2016', 1, 2012, 52000)
+insert into [tblSach] values ('S0000002', N'Sách 2', 'NXB00002', '01/01/2016', 1, 2012, 52000, '')
 GO
-insert into [tblSach] values ('S0000003', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 1, 2011, 500000)
+insert into [tblSach] values ('S0000003', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 1, 2011, 500000, '')
 GO
-insert into [tblSach] values ('S0000004', N'Tây Du Ký', 'NXB00001', '01/01/2016', 2, 2010, 450000)
+insert into [tblSach] values ('S0000004', N'Tây Du Ký', 'NXB00001', '01/01/2016', 2, 2010, 450000, 'DG000004')
 GO
-insert into [tblSach] values ('S0000005', N'Harry Potter 1', 'NXB00006', '01/01/2016', 2, 2012, 2000000)
+insert into [tblSach] values ('S0000005', N'Harry Potter 1', 'NXB00006', '01/01/2016', 1, 2012, 2000000, '')
 GO
-insert into [tblSach] values ('S0000006', N'Harry Potter 2', 'NXB00006', '01/01/2016', 1, 2012, 200000)
+insert into [tblSach] values ('S0000006', N'Harry Potter 2', 'NXB00006', '01/01/2016', 1, 2012, 200000, '')
 GO
-insert into [tblSach] values ('S0000007', N'Harry Potter 3', 'NXB00006', '01/01/2016', 2, 2012, 200000)
+insert into [tblSach] values ('S0000007', N'Harry Potter 3', 'NXB00006', '01/01/2016', 1, 2012, 200000, '')
 GO
-insert into [tblSach] values ('S0000008', N'Harry Potter 4', 'NXB00006', '01/01/2016', 1, 2012, 200000)
+insert into [tblSach] values ('S0000008', N'Harry Potter 4', 'NXB00006', '01/01/2016', 1, 2012, 200000, '')
 GO
-insert into [tblSach] values ('S0000009', N'Harry Potter 5', 'NXB00006', '01/01/2016', 1, 2012, 200000)
+insert into [tblSach] values ('S0000009', N'Harry Potter 5', 'NXB00006', '01/01/2016', 2, 2012, 200000, 'DG000002')
 GO
-insert into [tblSach] values ('S0000010', N'Harry Potter 6', 'NXB00006', '01/01/2016', 2, 2012, 200000)
+insert into [tblSach] values ('S0000010', N'Harry Potter 6', 'NXB00006', '01/01/2016', 1, 2012, 200000, '')
 GO
-insert into [tblSach] values ('S0000011', N'Harry Potter 7', 'NXB00006', '01/01/2016', 2, 2012, 200000)
+insert into [tblSach] values ('S0000011', N'Harry Potter 7', 'NXB00006', '01/01/2016', 1, 2012, 200000, '')
 GO
-insert into [tblSach] values ('S0000012', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 2, 2011, 500000)
+insert into [tblSach] values ('S0000012', N'Tam Quốc Diễn Nghĩa 1', 'NXB00008', '01/01/2016', 2, 2011, 500000, 'DG000002')
 GO
-insert into [tblSach] values ('S0000013', N'Tam Quốc Diễn Nghĩa 2', 'NXB00008', '01/01/2016', 1, 2011, 500000)
+insert into [tblSach] values ('S0000013', N'Tam Quốc Diễn Nghĩa 2', 'NXB00008', '01/01/2016', 2, 2011, 500000, 'DG000005')
 GO
-insert into [tblSach] values ('S0000014', N'Tam Quốc Diễn Nghĩa 3', 'NXB00008', '01/01/2016', 1, 2011, 500000)
+insert into [tblSach] values ('S0000014', N'Tam Quốc Diễn Nghĩa 3', 'NXB00008', '01/01/2016', 1, 2011, 500000, '')
 GO
-insert into [tblSach] values ('S0000015', N'Sherlock Holmes 1', 'NXB00019', '01/01/2016', 1, 2010, 780000)
+insert into [tblSach] values ('S0000015', N'Sherlock Holmes 1', 'NXB00019', '01/01/2016', 1, 2010, 780000, '')
 GO
-insert into [tblSach] values ('S0000016', N'Sherlock Holmes 2', 'NXB00019', '01/01/2016', 2, 2010, 780000)
+insert into [tblSach] values ('S0000016', N'Sherlock Holmes 2', 'NXB00019', '01/01/2016', 1, 2010, 780000, '')
 GO
-insert into [tblSach] values ('S0000017', N'Sherlock Holmes 3', 'NXB00019', '01/01/2016', 2, 2010, 780000)
+insert into [tblSach] values ('S0000017', N'Sherlock Holmes 3', 'NXB00019', '01/01/2016', 1, 2010, 780000, '')
 GO
 
 /****** Object:  Table [dbo].[tblTacGia]    Script Date: 6/25/2018 8:16:19 PM ******/
@@ -696,7 +661,7 @@ CREATE TABLE [dbo].[tblTacGiaSach](
 GO
 
 insert into [tblTacGiaSach] values ('TGS00001', 'S0000001', 'TG020')
-insert into [tblTacGiaSach] values ('TGS00002', 'S0000020', 'TG018')
+insert into [tblTacGiaSach] values ('TGS00002', 'S0000002', 'TG018')
 insert into [tblTacGiaSach] values ('TGS00003', 'S0000005', 'TG006')
 insert into [tblTacGiaSach] values ('TGS00004', 'S0000002', 'TG018')
 insert into [tblTacGiaSach] values ('TGS00005', 'S0000016', 'TG001')
