@@ -81,3 +81,5 @@ C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucThuVie
 C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucTiepNhanSachMoi.resources
 C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.ucTraCuuSach.resources
 C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\obj\Debug\QLTVGUI.vbproj.GenerateResource.Cache
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\bin\Debug\itextsharp.dll
+C:\Users\Tung\Source\Repos\QLTV\QuanLyThuVien\QLTVGUI\bin\Debug\itextsharp.xml

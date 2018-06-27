@@ -217,5 +217,10 @@ QLTVGUI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="T:QLTVGUI.ucThayDoiQuyDinh">
+ <summary>
+ Giao diện thay đổi danh sách các quy định, thêm / xoá / sửa thể loại sách.
+ </summary>
+</member>
 </members>
 </doc>

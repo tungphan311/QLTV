@@ -96,7 +96,7 @@ Partial Class frmHome
         Me.fpnZone.AutoScroll = True
         Me.fpnZone.BackColor = System.Drawing.Color.WhiteSmoke
         Me.fpnZone.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.fpnZone.Location = New System.Drawing.Point(252, 29)
+        Me.fpnZone.Location = New System.Drawing.Point(251, 29)
         Me.fpnZone.Name = "fpnZone"
         Me.fpnZone.Size = New System.Drawing.Size(730, 530)
         Me.fpnZone.TabIndex = 1

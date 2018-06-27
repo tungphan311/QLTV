@@ -69,11 +69,6 @@ Public Class DocGiaDAL
         query &= "INSERT INTO [tblDocGia] ([madocgia], [hotendocgia], [ngaysinh], [diachi], [email], [ngaylapthe], [maloaidocgia])"
         query &= "VALUES (@madocgia,@hotendocgia,@ngaysinh,@diachi,@email,@ngaylapthe,@maloaidocgia)"
 
-        'get MSHS
-        'Dim nextMshs = "1"
-        'buildMSHS(nextMshs)
-        'hs.MSHS = nextMshs
-
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
                 With comm
@@ -175,5 +170,53 @@ Public Class DocGiaDAL
             End Using
         End Using
         Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function findWithMaDG(ByRef maDocGia As String, ByRef tenDocGia As String, ByRef ngayLapThe As DateTime, ByRef listMaSach As List(Of String), ByRef listTenSach As List(Of String), ByRef listNgayMuon As List(Of DateTime)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT dg.[hotendocgia], dg.[ngaylapthe], s.[masach], pms.[ngaymuon], s.[tensach]"
+        query &= " FROM [tblDocGia] dg, [tblPhieuMuonSach] pms, [tblChiTietPhieuMuon] ctpm, [tblSach] s"
+        query &= " WHERE"
+        query &= " pms.[madocgia] = dg.[madocgia]"
+        query &= " AND ctpm.[maphieumuonsach] = pms.[maphieumuonsach]"
+        query &= " AND ctpm.[masach] = s.[masach]"
+        query &= " AND dg.[madocgia] = @madocgia"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@madocgia", maDocGia)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listMaSach.Clear()
+                        listTenSach.Clear()
+                        listNgayMuon.Clear()
+                        While reader.Read()
+                            tenDocGia = reader("hotendocgia")
+                            ngayLapThe = reader("ngaylapthe")
+                            listMaSach.Add(reader("masach"))
+                            listTenSach.Add(reader("tensach"))
+                            listNgayMuon.Add(reader("ngaymuon"))
+                        End While
+                    End If
+
+
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False, "Nạp thông tin độc giả không thành công", ex.StackTrace)
+                End Try
+
+            End Using
+        End Using
+        Return New Result(True)
     End Function
 End Class

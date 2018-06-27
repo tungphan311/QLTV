@@ -1,6 +1,7 @@
 ﻿Imports QLTVDAL
 Imports QLTVDTO
 Imports Utility
+Imports System.Text.RegularExpressions
 
 Public Class SachBUS
     Private sDAL As SachDAL
@@ -36,5 +37,13 @@ Public Class SachBUS
 
     Public Function insert(sach As SachDTO) As Result
 
+    End Function
+
+    Public Function findWithMaSachTacGia(ByRef maSach As String, ByRef tenSach As String, listTG As List(Of String)) As Result
+        Return sDAL.findWithMaSachTacGia(maSach, tenSach, listTG)
+    End Function
+
+    Public Function findWithMaSachTheLoai(ByRef maSach As String, listTL As List(Of String))
+        Return sDAL.findWithMaSachTheLoai(maSach, listTL)
     End Function
 End Class

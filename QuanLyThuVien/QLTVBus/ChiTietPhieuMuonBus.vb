@@ -15,4 +15,8 @@ Public Class ChiTietPhieuMuonBus
     Public Function build_mactpm(ByRef nextMaCTPM As String) As Result
         Return ctpmDAL.build_mactpm(nextMaCTPM)
     End Function
+
+    Public Function insert(ctpm As ChiTietPhieuMuonDTO) As Result
+        Return ctpmDAL.insert(ctpm)
+    End Function
 End Class

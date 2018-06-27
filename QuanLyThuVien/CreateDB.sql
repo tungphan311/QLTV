@@ -778,3 +778,11 @@ insert into [tblTrangThai] values (1, N'Còn sách')
 GO
 insert into [tblTrangThai] values (2, N'Đã mượn')
 GO
+
+SELECT dg.[hotendocgia], dg.[ngaylapthe], ctpm.[masach] 
+FROM [tblDocGia] dg, [tblPhieuMuonSach] pms, [tblChiTietPhieuMuon] ctpm
+WHERE 
+pms.[madocgia] = dg.[madocgia]
+AND ctpm.[maphieumuonsach] = pms.[maphieumuonsach]
+AND dg.[madocgia] = 'DG000001'
+GROUP BY dg.[hotendocgia], dg.[ngaylapthe], ctpm.[masach] 

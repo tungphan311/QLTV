@@ -65,14 +65,14 @@ Public Class SachDAL
         query &= "insert into [tblSach] "
         query &= "values (@masach, @tenSach, @manhaxuatban, @ngaynhap, @matrangthai, @namxuatban, @trigia, @madocgiamuon)"
 
-        Dim nextMaSach = 0
-        Dim ms = "MS" + Convert.ToString(nextMaSach)
-        Dim result As Result
-        result = get_masach(ms)
-        If (result.FlagResult = False) Then
-            Return result
-        End If
-        s.MaSach = ms
+        'Dim nextMaSach = 0
+        'Dim ms = "MS" + Convert.ToString(nextMaSach)
+        'Dim result As Result
+        'result = get_masach(ms)
+        'If (result.FlagResult = False) Then
+        '    Return result
+        'End If
+        's.MaSach = ms
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -201,6 +201,83 @@ Public Class SachDAL
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     Return New Result(False, "Xoá sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function findWithMaSachTacGia(ByRef maSach As String, ByRef tenSach As String, ByRef listTG As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT s.[masach], s.[tensach], tg.[tentacgia]"
+        query &= " FROM [tblSach] s, [tblTacGia] tg, [tblTacGiaSach] tgs"
+        query &= " WHERE"
+        query &= " tg.[matacgia] = tgs.[matacgia]"
+        query &= " AND tgs.[masach] = s.[masach]"
+        query &= " AND s.[masach] = @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", maSach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listTG.Clear()
+                        While reader.Read()
+                            tenSach = reader("tensach")
+                            listTG.Add(reader("tentacgia"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False, "Nạp thông tin sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function findWithMaSachTheLoai(ByRef maSach As String, ByRef listTL As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT s.[masach], s.[tensach], tl.tentheloai"
+        query &= " FROM [tblSach] s, [tblTheLoai] tl, [tblTheLoaiSach] tls"
+        query &= " WHERE"
+        query &= " s.masach = tls.masach"
+        query &= " AND tls.matheloai = tl.matheloai"
+        query &= " AND s.[masach] = @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", maSach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listTL.Clear()
+                        While reader.Read()
+                            listTL.Add(reader("tentheloai"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False, "Nạp thông tin sách không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
