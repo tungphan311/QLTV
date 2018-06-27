@@ -179,6 +179,7 @@ Public Class SachDAL
         Return New Result(True)
     End Function
 
+
     Public Function delete(strMaSach As String) As Result
 
         Dim query As String = String.Empty
@@ -201,6 +202,180 @@ Public Class SachDAL
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     Return New Result(False, "Xoá sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function selectAll_MaSach(masach As String, ByRef listSach As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= "select [masach] "
+        query &= "from [tblSach] "
+        query &= "where [masach] like @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listSach.Clear()
+                        While reader.Read()
+                            listSach.Add(reader("masach"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function selectAll_TenSach(tensach As String, ByRef listSach As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= "select [masach] "
+        query &= "from [tblSach] "
+        query &= "where [tensach] like @tensach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@tensach", tensach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listSach.Clear()
+                        While reader.Read()
+                            listSach.Add(reader("masach"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function selectAll_TrangThai(matrangthai As String, ByRef listSach As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= "select [masach] "
+        query &= "from [tblSach] "
+        query &= "where [matrangthai] like @matrangthai"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matrangthai", matrangthai)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listSach.Clear()
+                        While reader.Read()
+                            listSach.Add(reader("masach"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function get_TenSach_ByMaSach(masach As String, ByRef tensach As String) As Result
+
+        Dim query As String = String.Empty
+        query &= "select [tensach] "
+        query &= "from [tblSach] "
+        query &= "where [masach] = @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            tensach = reader("tensach")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function get_TrangThai_ByMaSach(masach As String, ByRef trangthai As String) As Result
+
+        Dim query As String = String.Empty
+        query &= "select [tentrangthai] "
+        query &= "from [tblSach], [tblTrangThai] "
+        query &= "where [masach] = @masach "
+        query &= "  and [tblSach].[matrangthai] = [tblTrangThai].[matrangthai]"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            trangthai = reader("tentrangthai")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
                 End Try
             End Using
         End Using

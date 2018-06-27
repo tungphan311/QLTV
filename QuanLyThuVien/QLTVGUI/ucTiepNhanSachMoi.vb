@@ -9,9 +9,9 @@ Public Class ucTiepNhanSachMoi
     Private tacgiabus As New TacGiaBUS()
     Private tacgiasachbus As New TacGiaSachBUS()
     Private nhaxbbus As New NhaXuatBanBUS()
-    Private listtheloai = New List(Of TheLoaiDTO)
-    Private listtacgia = New List(Of TacGiaDTO)
-    Private listnhaxb = New List(Of NhaXuatBanDTO)
+    Private listtheloai As New List(Of TheLoaiDTO)
+    Private listtacgia As New List(Of TacGiaDTO)
+    Private listnhaxb As New List(Of NhaXuatBanDTO)
     Private result As New Result()
 
     Private Sub ucTiepNhanSachMoi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -36,6 +36,7 @@ Public Class ucTiepNhanSachMoi
             Return
         End If
 
+        listtheloai.RemoveAt(0)
         cbTheLoai.DataSource = New BindingSource(listtheloai, String.Empty)
         cbTheLoai.DisplayMember = "tentheloai"
         cbTheLoai.ValueMember = "matheloai"
@@ -50,6 +51,7 @@ Public Class ucTiepNhanSachMoi
             Return
         End If
 
+        listtacgia.RemoveAt(0)
         cbTacGia.DataSource = New BindingSource(listtacgia, String.Empty)
         cbTacGia.DisplayMember = "tentacgia"
         cbTacGia.ValueMember = "matacgia"
@@ -63,6 +65,8 @@ Public Class ucTiepNhanSachMoi
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
+
+        listnhaxb.RemoveAt(0)
         cbNhaXuatBan.DataSource = New BindingSource(listnhaxb, String.Empty)
         cbNhaXuatBan.DisplayMember = "tennhaxuatban"
         cbNhaXuatBan.ValueMember = "manhaxuatban"

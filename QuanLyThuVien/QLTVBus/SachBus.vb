@@ -53,4 +53,24 @@ Public Class SachBUS
     Public Function delete(strMaSach As String) As Result
         Return sDAL.delete(strMaSach)
     End Function
+
+    Public Function selectAll_MaSach(masach As String, ByRef listSach As List(Of String)) As Result
+        Return sDAL.selectAll_MaSach(masach, listSach)
+    End Function
+
+    Public Function selectAll_TenSach(tensach As String, ByRef listSach As List(Of String)) As Result
+        Return sDAL.selectAll_TenSach(tensach, listSach)
+    End Function
+
+    Public Function selectAll_TrangThai(matrangthai As String, ByRef listSach As List(Of String)) As Result
+        Return sDAL.selectAll_TrangThai(matrangthai, listSach)
+    End Function
+
+    Public Function get_TenSach_ByMaSach(masach As String, ByRef tensach As String) As Result
+        Return sDAL.get_TenSach_ByMaSach(masach, tensach)
+    End Function
+
+    Public Function get_TrangThai_ByMaSach(masach As String, ByRef trangthai As String) As Result
+        Return sDAL.get_TrangThai_ByMaSach(masach, trangthai)
+    End Function
 End Class
