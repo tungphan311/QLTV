@@ -20,4 +20,8 @@ Public Class TacGiaSachBUS
     Public Function selectAll(ByRef lisTGS As List(Of TacGiaSachDTO)) As Result
         Return tgsDAL.selectALL(lisTGS)
     End Function
+
+    Public Function insert(tgs As TacGiaSachDTO) As Result
+        Return tgsDAL.insert(tgs)
+    End Function
 End Class

@@ -16,7 +16,7 @@ Public Class SachDAL
 
     Public Function get_masach(ByRef nextMaSach As String) As Result
         nextMaSach = String.Empty
-        nextMaSach = "MS"
+        nextMaSach = "S"
 
         Dim query As String = String.Empty
         query &= "select top 1 [masach] "
@@ -42,11 +42,11 @@ Public Class SachDAL
                         End While
                     End If
                     If (msOnDB <> Nothing And msOnDB.Length >= 8) Then
-                        Dim v = msOnDB.Substring(2)
+                        Dim v = msOnDB.Substring(1)
                         Dim convertDecimal = Convert.ToDecimal(v)
                         convertDecimal = convertDecimal + 1
                         Dim tmp = convertDecimal.ToString()
-                        tmp = tmp.PadLeft(msOnDB.Length - 2, "0")
+                        tmp = tmp.PadLeft(msOnDB.Length - 1, "0")
                         nextMaSach = nextMaSach + tmp
                         System.Console.WriteLine(nextMaSach)
                     End If
@@ -149,8 +149,8 @@ Public Class SachDAL
     Public Function selectAll(ByRef listSach As List(Of SachDTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "select [masach], [tenSach], [manhaxuatban], [ngaynhap], [matacgia], [matheloai], [matrangthai], [namxuatban], [trigia], [madocgiamuon]"
-        query &= " from [tblSach]"
+        query &= "select * "
+        query &= "from [tblSach]"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -172,7 +172,7 @@ Public Class SachDAL
                 Catch ex As Exception
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
-                    Return New Result(False, "Lây tất cả sách không thành công", ex.StackTrace)
+                    Return New Result(False)
                 End Try
             End Using
         End Using

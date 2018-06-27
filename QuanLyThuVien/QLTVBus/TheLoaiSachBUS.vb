@@ -13,7 +13,7 @@ Public Class TheLoaiSachBUS
         tlsDAL = New TheLoaiSachDAL(connectionString)
     End Sub
 
-    Public Function build_matgs(ByRef nextMaTGS As String) As Result
+    Public Function build_matls(ByRef nextMaTGS As String) As Result
         Return tlsDAL.build_matls(nextMaTGS)
     End Function
 
@@ -23,5 +23,9 @@ Public Class TheLoaiSachBUS
 
     Public Function deleteAllByMaTheLoai(matheloai As String) As Result
         Return tlsDAL.deleteAllByMaTheLoai(matheloai)
+    End Function
+
+    Public Function insert(tls As TheLoaiSachDTO) As Result
+        Return tlsDAL.insert(tls)
     End Function
 End Class

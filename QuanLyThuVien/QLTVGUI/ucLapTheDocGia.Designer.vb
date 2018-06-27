@@ -350,6 +350,8 @@ Partial Class ucLapTheDocGia
         '
         'cbLoaiDocGia
         '
+        Me.cbLoaiDocGia.BackColor = System.Drawing.SystemColors.Window
+        Me.cbLoaiDocGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbLoaiDocGia.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.cbLoaiDocGia.FormattingEnabled = True
         Me.cbLoaiDocGia.Location = New System.Drawing.Point(245, 306)

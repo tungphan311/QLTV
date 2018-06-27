@@ -34,7 +34,23 @@ Public Class SachBUS
         Return True
     End Function
 
-    Public Function insert(sach As SachDTO) As Result
+    Public Function get_masach(ByRef nextMaSach As String) As Result
+        Return sDAL.get_masach(nextMaSach)
+    End Function
 
+    Public Function insert(sach As SachDTO) As Result
+        Return sDAL.insert(sach)
+    End Function
+
+    Public Function update(s As SachDTO) As Result
+        Return sDAL.update(s)
+    End Function
+
+    Public Function selectAll(ByRef listSach As List(Of SachDTO)) As Result
+        Return sDAL.selectAll(listSach)
+    End Function
+
+    Public Function delete(strMaSach As String) As Result
+        Return sDAL.delete(strMaSach)
     End Function
 End Class
