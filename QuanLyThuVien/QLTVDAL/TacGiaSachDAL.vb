@@ -44,11 +44,11 @@ Public Class TacGiaSachDAL
                         End While
                     End If
                     If (msOnDB <> Nothing And msOnDB.Length >= 8) Then
-                        Dim v = msOnDB.Substring(2)
+                        Dim v = msOnDB.Substring(3)
                         Dim convertDecimal = Convert.ToDecimal(v)
                         convertDecimal = convertDecimal + 1
                         Dim tmp = convertDecimal.ToString()
-                        tmp = tmp.PadLeft(msOnDB.Length - 2, "0")
+                        tmp = tmp.PadLeft(msOnDB.Length - 3, "0")
                         nextMaTGS = nextMaTGS + tmp
                         System.Console.WriteLine(nextMaTGS)
                     End If
@@ -97,5 +97,108 @@ Public Class TacGiaSachDAL
             End Using
         End Using
         Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function selectALL_MaTacGia(matacgia As String, ByRef listMaSach As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT [masach]"
+        query &= " FROM [tblTacGiaSach]"
+        query &= " WHERE [matacgia] LIKE @matacgia"
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matacgia", matacgia)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listMaSach.Clear()
+                        While reader.Read()
+                            listMaSach.Add(reader("masach"))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function get_TenTacGia_ByMaSach(masach As String, ByRef listtacgia As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT [tentacgia]"
+        query &= " FROM [tblTacGiaSach], [tblTacGia]"
+        query &= " WHERE [masach] = @masach "
+        query &= " AND [tblTacGiaSach].[matacgia] = [tblTacGia].[matacgia]"
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listtacgia.Clear()
+                        While reader.Read()
+                            listtacgia.Add(reader("tentacgia"))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function insert(tgs As TacGiaSachDTO) As Result
+        Dim query As String = String.Empty
+        query &= "insert into [tblTacGiaSach] "
+        query &= "values (@matacgiasach, @masach, @matacgia)"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matacgiasach", tgs.MaTacGiaSach)
+                    .Parameters.AddWithValue("@masach", tgs.MaSach)
+                    .Parameters.AddWithValue("@matacgia", tgs.MaTacGia)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+
+                Catch ex As Exception
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
     End Function
 End Class

@@ -19,6 +19,8 @@ Public Class ucLapTheDocGia
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
+
+        listLoaiDG.RemoveAt(0)
         cbLoaiDocGia.DataSource = New BindingSource(listLoaiDG, String.Empty)
         cbLoaiDocGia.DisplayMember = "tenloaidocgia"
         cbLoaiDocGia.ValueMember = "maloaidocgia"

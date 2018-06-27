@@ -44,11 +44,11 @@ Public Class TheLoaiSachDAL
                         End While
                     End If
                     If (msOnDB <> Nothing And msOnDB.Length >= 8) Then
-                        Dim v = msOnDB.Substring(2)
+                        Dim v = msOnDB.Substring(3)
                         Dim convertDecimal = Convert.ToDecimal(v)
                         convertDecimal = convertDecimal + 1
                         Dim tmp = convertDecimal.ToString()
-                        tmp = tmp.PadLeft(msOnDB.Length - 2, "0")
+                        tmp = tmp.PadLeft(msOnDB.Length - 3, "0")
                         nextMaTLS = nextMaTLS + tmp
                         System.Console.WriteLine(nextMaTLS)
                     End If
@@ -99,6 +99,81 @@ Public Class TheLoaiSachDAL
         Return New Result(True) ' thanh cong
     End Function
 
+    Public Function selectALL_MaTheLoai(matheloai As String, ByRef listMaSach As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT [masach]"
+        query &= " FROM [tblTheLoaiSach]"
+        query &= " WHERE [matheloai] like @matheloai"
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matheloai", matheloai)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listMaSach.Clear()
+                        While reader.Read()
+                            listMaSach.Add(reader("masach"))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function getTenTheLoai_ByMaSach(masach As String, ByRef listTheLoai As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT [tentheloai]"
+        query &= " FROM [tblTheLoaiSach], [tblTheLoai] "
+        query &= " WHERE [masach] = @masach "
+        query &= " AND [tblTheLoaiSach].[matheloai] = [tblTheLoai].[matheloai]"
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listTheLoai.Clear()
+                        While reader.Read()
+                            listTheLoai.Add(reader("tentheloai"))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
     Public Function deleteAllByMaTheLoai(matheloai As String) As Result
 
         Dim query As String = String.Empty
@@ -125,5 +200,33 @@ Public Class TheLoaiSachDAL
         End Using
         Return New Result(True) ' thanh cong
 
+    End Function
+
+    Public Function insert(tls As TheLoaiSachDTO) As Result
+        Dim query As String = String.Empty
+        query &= "insert into [tblTheLoaiSach] "
+        query &= "values (@matheloaisach, @masach, @matheloai)"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matheloaisach", tls.MaTheLoaiSach)
+                    .Parameters.AddWithValue("@masach", tls.MaSach)
+                    .Parameters.AddWithValue("@matheloai", tls.MaTheLoai)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+
+                Catch ex As Exception
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
     End Function
 End Class

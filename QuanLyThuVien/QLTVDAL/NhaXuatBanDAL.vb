@@ -16,8 +16,7 @@ Public Class NhaXuatBanDAL
 
     Public Function selectAll(ByRef listNXB As List(Of NhaXuatBanDTO)) As Result
         Dim query As String = String.Empty
-        query &= " select [manhaxuatban], [tennhaxuatban]"
-        query &= " from [tblNhaXuatBan]"
+        query &= " SELECT * FROM [tblNhaXuatBan]"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()

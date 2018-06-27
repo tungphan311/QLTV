@@ -20,4 +20,16 @@ Public Class TacGiaSachBUS
     Public Function selectAll(ByRef lisTGS As List(Of TacGiaSachDTO)) As Result
         Return tgsDAL.selectALL(lisTGS)
     End Function
+
+    Public Function selectALL_MaTacGia(matacgia As String, ByRef listMaSach As List(Of String)) As Result
+        Return tgsDAL.selectALL_MaTacGia(matacgia, listMaSach)
+    End Function
+
+    Public Function insert(tgs As TacGiaSachDTO) As Result
+        Return tgsDAL.insert(tgs)
+    End Function
+
+    Public Function get_TenTacGia_ByMaSach(masach As String, ByRef listtacgia As List(Of String)) As Result
+        Return tgsDAL.get_TenTacGia_ByMaSach(masach, listtacgia)
+    End Function
 End Class

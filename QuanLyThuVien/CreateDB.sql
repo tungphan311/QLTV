@@ -247,7 +247,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [tblNhaXuatBan](
 	[manhaxuatban] [nvarchar](8) NOT NULL,
-	[tennhanxuatban] [nvarchar](50) NOT NULL,
+	[tennhaxuatban] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_tblNhaXuatBan] PRIMARY KEY CLUSTERED 
 (
 	[manhaxuatban] ASC

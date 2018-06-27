@@ -23,7 +23,7 @@ Partial Class ucTiepNhanSachMoi
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lbMaDocGia = New System.Windows.Forms.Label()
+        Me.lbMaSach = New System.Windows.Forms.Label()
         Me.nudNamXuatBan = New System.Windows.Forms.NumericUpDown()
         Me.cbTheLoai = New System.Windows.Forms.ComboBox()
         Me.dtpNgayLapThe = New System.Windows.Forms.DateTimePicker()
@@ -33,15 +33,12 @@ Partial Class ucTiepNhanSachMoi
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.tbHoTen = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.tbTenSach = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.tbTriGia = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.clbDSNhaXuatBan = New System.Windows.Forms.CheckedListBox()
-        Me.btnAddNhaXuatBan = New Bunifu.Framework.UI.BunifuImageButton()
         Me.cbNhaXuatBan = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.clbDSTacGia = New System.Windows.Forms.CheckedListBox()
         Me.btnAddTacGia = New Bunifu.Framework.UI.BunifuImageButton()
@@ -59,7 +56,6 @@ Partial Class ucTiepNhanSachMoi
         CType(Me.nudNamXuatBan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.btnAddNhaXuatBan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.btnAddTacGia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -78,33 +74,40 @@ Partial Class ucTiepNhanSachMoi
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "TIẾP NHẬN SÁCH MỚI"
         '
-        'lbMaDocGia
+        'lbMaSach
         '
-        Me.lbMaDocGia.AutoSize = True
-        Me.lbMaDocGia.BackColor = System.Drawing.Color.Gainsboro
-        Me.lbMaDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lbMaDocGia.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.lbMaDocGia.ForeColor = System.Drawing.Color.Red
-        Me.lbMaDocGia.Location = New System.Drawing.Point(235, 76)
-        Me.lbMaDocGia.Name = "lbMaDocGia"
-        Me.lbMaDocGia.Size = New System.Drawing.Size(65, 21)
-        Me.lbMaDocGia.TabIndex = 19
-        Me.lbMaDocGia.Text = "MaSach"
+        Me.lbMaSach.AutoSize = True
+        Me.lbMaSach.BackColor = System.Drawing.Color.Gainsboro
+        Me.lbMaSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lbMaSach.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.lbMaSach.ForeColor = System.Drawing.Color.Red
+        Me.lbMaSach.Location = New System.Drawing.Point(235, 76)
+        Me.lbMaSach.Name = "lbMaSach"
+        Me.lbMaSach.Size = New System.Drawing.Size(65, 21)
+        Me.lbMaSach.TabIndex = 19
+        Me.lbMaSach.Text = "MaSach"
         '
         'nudNamXuatBan
         '
         Me.nudNamXuatBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.nudNamXuatBan.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.nudNamXuatBan.Location = New System.Drawing.Point(235, 679)
+        Me.nudNamXuatBan.Location = New System.Drawing.Point(297, 597)
+        Me.nudNamXuatBan.Maximum = New Decimal(New Integer() {2499, 0, 0, 0})
+        Me.nudNamXuatBan.Minimum = New Decimal(New Integer() {1900, 0, 0, 0})
         Me.nudNamXuatBan.Name = "nudNamXuatBan"
-        Me.nudNamXuatBan.Size = New System.Drawing.Size(80, 29)
+        Me.nudNamXuatBan.Size = New System.Drawing.Size(113, 29)
         Me.nudNamXuatBan.TabIndex = 45
         Me.nudNamXuatBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.nudNamXuatBan.Value = New Decimal(New Integer() {1900, 0, 0, 0})
         '
         'cbTheLoai
         '
+        Me.cbTheLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.cbTheLoai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cbTheLoai.DropDownHeight = 100
         Me.cbTheLoai.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cbTheLoai.FormattingEnabled = True
+        Me.cbTheLoai.IntegralHeight = False
         Me.cbTheLoai.Location = New System.Drawing.Point(157, 33)
         Me.cbTheLoai.Name = "cbTheLoai"
         Me.cbTheLoai.Size = New System.Drawing.Size(196, 25)
@@ -112,17 +115,18 @@ Partial Class ucTiepNhanSachMoi
         '
         'dtpNgayLapThe
         '
+        Me.dtpNgayLapThe.CalendarFont = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.dtpNgayLapThe.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke
         Me.dtpNgayLapThe.CalendarTitleBackColor = System.Drawing.SystemColors.Control
         Me.dtpNgayLapThe.CalendarTrailingForeColor = System.Drawing.Color.Black
         Me.dtpNgayLapThe.CustomFormat = "ddddddddd, dd/MM/yyyy"
         Me.dtpNgayLapThe.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.dtpNgayLapThe.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpNgayLapThe.Location = New System.Drawing.Point(235, 717)
+        Me.dtpNgayLapThe.Location = New System.Drawing.Point(297, 635)
         Me.dtpNgayLapThe.Name = "dtpNgayLapThe"
-        Me.dtpNgayLapThe.Size = New System.Drawing.Size(221, 29)
+        Me.dtpNgayLapThe.Size = New System.Drawing.Size(211, 29)
         Me.dtpNgayLapThe.TabIndex = 41
-        Me.dtpNgayLapThe.Value = New Date(2018, 6, 23, 0, 0, 0, 0)
+        Me.dtpNgayLapThe.Value = New Date(2018, 6, 27, 0, 0, 0, 0)
         '
         'Label9
         '
@@ -130,7 +134,7 @@ Partial Class ucTiepNhanSachMoi
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(115, 721)
+        Me.Label9.Location = New System.Drawing.Point(86, 592)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(89, 21)
         Me.Label9.TabIndex = 31
@@ -142,7 +146,7 @@ Partial Class ucTiepNhanSachMoi
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(94, 681)
+        Me.Label4.Location = New System.Drawing.Point(86, 552)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(110, 21)
         Me.Label4.TabIndex = 40
@@ -154,7 +158,7 @@ Partial Class ucTiepNhanSachMoi
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(466, 760)
+        Me.Label10.Location = New System.Drawing.Point(381, 632)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(43, 21)
         Me.Label10.TabIndex = 37
@@ -166,7 +170,7 @@ Partial Class ucTiepNhanSachMoi
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(149, 761)
+        Me.Label7.Location = New System.Drawing.Point(86, 632)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(55, 21)
         Me.Label7.TabIndex = 36
@@ -196,33 +200,33 @@ Partial Class ucTiepNhanSachMoi
         Me.Label3.TabIndex = 27
         Me.Label3.Text = "Tên sách:"
         '
-        'tbHoTen
+        'tbTenSach
         '
-        Me.tbHoTen.AutoSize = True
-        Me.tbHoTen.BackColor = System.Drawing.Color.White
-        Me.tbHoTen.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbHoTen.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.tbHoTen.ForeColor = System.Drawing.Color.Silver
-        Me.tbHoTen.HintForeColor = System.Drawing.Color.Empty
-        Me.tbHoTen.HintText = ""
-        Me.tbHoTen.isPassword = False
-        Me.tbHoTen.LineFocusedColor = System.Drawing.Color.Gray
-        Me.tbHoTen.LineIdleColor = System.Drawing.Color.Silver
-        Me.tbHoTen.LineMouseHoverColor = System.Drawing.Color.Gray
-        Me.tbHoTen.LineThickness = 2
-        Me.tbHoTen.Location = New System.Drawing.Point(235, 106)
-        Me.tbHoTen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.tbHoTen.Name = "tbHoTen"
-        Me.tbHoTen.Size = New System.Drawing.Size(331, 36)
-        Me.tbHoTen.TabIndex = 46
-        Me.tbHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.tbTenSach.AutoSize = True
+        Me.tbTenSach.BackColor = System.Drawing.Color.White
+        Me.tbTenSach.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbTenSach.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.tbTenSach.ForeColor = System.Drawing.Color.Black
+        Me.tbTenSach.HintForeColor = System.Drawing.Color.Empty
+        Me.tbTenSach.HintText = ""
+        Me.tbTenSach.isPassword = False
+        Me.tbTenSach.LineFocusedColor = System.Drawing.Color.Gray
+        Me.tbTenSach.LineIdleColor = System.Drawing.Color.Silver
+        Me.tbTenSach.LineMouseHoverColor = System.Drawing.Color.Gray
+        Me.tbTenSach.LineThickness = 2
+        Me.tbTenSach.Location = New System.Drawing.Point(235, 106)
+        Me.tbTenSach.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbTenSach.Name = "tbTenSach"
+        Me.tbTenSach.Size = New System.Drawing.Size(331, 36)
+        Me.tbTenSach.TabIndex = 46
+        Me.tbTenSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'tbTriGia
         '
         Me.tbTriGia.AutoSize = True
         Me.tbTriGia.BackColor = System.Drawing.Color.White
         Me.tbTriGia.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbTriGia.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.tbTriGia.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.tbTriGia.ForeColor = System.Drawing.Color.Black
         Me.tbTriGia.HintForeColor = System.Drawing.Color.Empty
         Me.tbTriGia.HintText = ""
@@ -231,13 +235,13 @@ Partial Class ucTiepNhanSachMoi
         Me.tbTriGia.LineIdleColor = System.Drawing.Color.Silver
         Me.tbTriGia.LineMouseHoverColor = System.Drawing.Color.Gray
         Me.tbTriGia.LineThickness = 2
-        Me.tbTriGia.Location = New System.Drawing.Point(235, 750)
+        Me.tbTriGia.Location = New System.Drawing.Point(297, 668)
         Me.tbTriGia.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbTriGia.Name = "tbTriGia"
-        Me.tbTriGia.Size = New System.Drawing.Size(221, 36)
+        Me.tbTriGia.Size = New System.Drawing.Size(113, 36)
         Me.tbTriGia.TabIndex = 46
         Me.tbTriGia.Text = "0"
-        Me.tbTriGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.tbTriGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox1
         '
@@ -245,58 +249,41 @@ Partial Class ucTiepNhanSachMoi
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox1.Location = New System.Drawing.Point(48, 47)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(605, 762)
+        Me.GroupBox1.Size = New System.Drawing.Size(605, 695)
         Me.GroupBox1.TabIndex = 47
         Me.GroupBox1.TabStop = False
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.clbDSNhaXuatBan)
-        Me.GroupBox4.Controls.Add(Me.btnAddNhaXuatBan)
         Me.GroupBox4.Controls.Add(Me.cbNhaXuatBan)
         Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Controls.Add(Me.Label8)
         Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.GroupBox4.Location = New System.Drawing.Point(89, 446)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(429, 154)
+        Me.GroupBox4.Size = New System.Drawing.Size(429, 75)
         Me.GroupBox4.TabIndex = 45
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Nhà xuất bản:"
         '
-        'clbDSNhaXuatBan
-        '
-        Me.clbDSNhaXuatBan.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.clbDSNhaXuatBan.FormattingEnabled = True
-        Me.clbDSNhaXuatBan.Location = New System.Drawing.Point(159, 72)
-        Me.clbDSNhaXuatBan.Name = "clbDSNhaXuatBan"
-        Me.clbDSNhaXuatBan.Size = New System.Drawing.Size(196, 64)
-        Me.clbDSNhaXuatBan.TabIndex = 46
-        '
-        'btnAddNhaXuatBan
-        '
-        Me.btnAddNhaXuatBan.BackColor = System.Drawing.Color.Transparent
-        Me.btnAddNhaXuatBan.Image = Global.QLTVGUI.My.Resources.Resources.add_circle_grey_48x48
-        Me.btnAddNhaXuatBan.ImageActive = Nothing
-        Me.btnAddNhaXuatBan.Location = New System.Drawing.Point(361, 28)
-        Me.btnAddNhaXuatBan.Name = "btnAddNhaXuatBan"
-        Me.btnAddNhaXuatBan.Size = New System.Drawing.Size(30, 33)
-        Me.btnAddNhaXuatBan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnAddNhaXuatBan.TabIndex = 45
-        Me.btnAddNhaXuatBan.TabStop = False
-        Me.btnAddNhaXuatBan.Zoom = 10
-        '
         'cbNhaXuatBan
         '
+        Me.cbNhaXuatBan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.cbNhaXuatBan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cbNhaXuatBan.DropDownHeight = 100
         Me.cbNhaXuatBan.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cbNhaXuatBan.FormattingEnabled = True
-        Me.cbNhaXuatBan.Location = New System.Drawing.Point(159, 33)
+        Me.cbNhaXuatBan.IntegralHeight = False
+        Me.cbNhaXuatBan.Location = New System.Drawing.Point(159, 31)
         Me.cbNhaXuatBan.Name = "cbNhaXuatBan"
-        Me.cbNhaXuatBan.Size = New System.Drawing.Size(196, 25)
-        Me.cbNhaXuatBan.TabIndex = 44
+        Me.cbNhaXuatBan.Size = New System.Drawing.Size(212, 25)
+        Me.cbNhaXuatBan.TabIndex = 47
         '
         'Label5
         '
@@ -304,23 +291,11 @@ Partial Class ucTiepNhanSachMoi
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(10, 34)
+        Me.Label5.Location = New System.Drawing.Point(45, 34)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(130, 19)
+        Me.Label5.Size = New System.Drawing.Size(94, 19)
         Me.Label5.TabIndex = 40
-        Me.Label5.Text = "Thêm nhà xuất bản:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(63, 68)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(76, 19)
-        Me.Label8.TabIndex = 40
-        Me.Label8.Text = "Danh sách:"
+        Me.Label5.Text = "Nhà xuất bản:"
         '
         'GroupBox3
         '
@@ -361,8 +336,12 @@ Partial Class ucTiepNhanSachMoi
         '
         'cbTacGia
         '
+        Me.cbTacGia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.cbTacGia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cbTacGia.DropDownHeight = 100
         Me.cbTacGia.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cbTacGia.FormattingEnabled = True
+        Me.cbTacGia.IntegralHeight = False
         Me.cbTacGia.Location = New System.Drawing.Point(159, 33)
         Me.cbTacGia.Name = "cbTacGia"
         Me.cbTacGia.Size = New System.Drawing.Size(196, 25)
@@ -475,7 +454,7 @@ Partial Class ucTiepNhanSachMoi
         Me.btnLuuVaThoat.IconVisible = True
         Me.btnLuuVaThoat.IconZoom = 60.0R
         Me.btnLuuVaThoat.IsTab = False
-        Me.btnLuuVaThoat.Location = New System.Drawing.Point(281, 838)
+        Me.btnLuuVaThoat.Location = New System.Drawing.Point(281, 806)
         Me.btnLuuVaThoat.Name = "btnLuuVaThoat"
         Me.btnLuuVaThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnLuuVaThoat.OnHovercolor = System.Drawing.Color.Gray
@@ -510,7 +489,7 @@ Partial Class ucTiepNhanSachMoi
         Me.btnThoat.IconVisible = True
         Me.btnThoat.IconZoom = 60.0R
         Me.btnThoat.IsTab = False
-        Me.btnThoat.Location = New System.Drawing.Point(492, 838)
+        Me.btnThoat.Location = New System.Drawing.Point(492, 806)
         Me.btnThoat.Name = "btnThoat"
         Me.btnThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnThoat.OnHovercolor = System.Drawing.Color.Gray
@@ -545,7 +524,7 @@ Partial Class ucTiepNhanSachMoi
         Me.btnLuu.IconVisible = True
         Me.btnLuu.IconZoom = 60.0R
         Me.btnLuu.IsTab = False
-        Me.btnLuu.Location = New System.Drawing.Point(121, 838)
+        Me.btnLuu.Location = New System.Drawing.Point(121, 806)
         Me.btnLuu.Name = "btnLuu"
         Me.btnLuu.Normalcolor = System.Drawing.Color.LightGray
         Me.btnLuu.OnHovercolor = System.Drawing.Color.Gray
@@ -565,28 +544,24 @@ Partial Class ucTiepNhanSachMoi
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.tbTriGia)
-        Me.Controls.Add(Me.tbHoTen)
+        Me.Controls.Add(Me.tbTenSach)
         Me.Controls.Add(Me.nudNamXuatBan)
         Me.Controls.Add(Me.dtpNgayLapThe)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnLuuVaThoat)
         Me.Controls.Add(Me.btnThoat)
         Me.Controls.Add(Me.btnLuu)
-        Me.Controls.Add(Me.lbMaDocGia)
+        Me.Controls.Add(Me.lbMaSach)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "ucTiepNhanSachMoi"
-        Me.Size = New System.Drawing.Size(700, 900)
+        Me.Size = New System.Drawing.Size(700, 870)
         CType(Me.nudNamXuatBan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.btnAddNhaXuatBan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.btnAddTacGia, System.ComponentModel.ISupportInitialize).EndInit()
@@ -598,7 +573,7 @@ Partial Class ucTiepNhanSachMoi
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents lbMaDocGia As System.Windows.Forms.Label
+    Friend WithEvents lbMaSach As System.Windows.Forms.Label
     Friend WithEvents btnLuu As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnThoat As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLuuVaThoat As Bunifu.Framework.UI.BunifuFlatButton
@@ -611,7 +586,7 @@ Partial Class ucTiepNhanSachMoi
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents tbHoTen As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents tbTenSach As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents tbTriGia As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
@@ -620,15 +595,12 @@ Partial Class ucTiepNhanSachMoi
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents clbDSNhaXuatBan As System.Windows.Forms.CheckedListBox
-    Friend WithEvents btnAddNhaXuatBan As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents cbNhaXuatBan As System.Windows.Forms.ComboBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents clbDSTacGia As System.Windows.Forms.CheckedListBox
     Friend WithEvents btnAddTacGia As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents cbTacGia As System.Windows.Forms.ComboBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents cbNhaXuatBan As ComboBox
 End Class
