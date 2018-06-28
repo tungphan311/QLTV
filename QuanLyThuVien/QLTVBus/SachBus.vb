@@ -34,6 +34,10 @@ Public Class SachBUS
         Return True
     End Function
 
+    Public Function get_masach(ByRef nextMaSach As String) As Result
+        Return sDAL.get_masach(nextMaSach)
+    End Function
+
     Public Function insert(sach As SachDTO) As Result
         Return sDAL.insert(sach)
     End Function
@@ -76,5 +80,33 @@ Public Class SachBUS
 
     Public Function findWithMaSachTheLoai(ByRef maSach As String, listTL As List(Of String))
         Return sDAL.findWithMaSachTheLoai(maSach, listTL)
+    End Function
+
+    Public Function findTenSachFromMaSach(masach As String, ByRef sach As SachDTO) As Result
+        Return sDAL.findTenSachFromMaSach(masach, sach)
+    End Function
+
+    Public Function traSachBangMaSach(masach As String) As Result
+        Return sDAL.traSachBangMaSach(masach)
+    End Function
+
+    Public Function findWithMaDG(madocgia As String, ByRef listMS As List(Of String)) As Result
+        Return sDAL.findWithMaDG(madocgia, listMS)
+    End Function
+
+    Public Function findDetailWithMaSach(masach As String, ByRef tensach As String, ByRef ngaymuon As DateTime) As Result
+        Return sDAL.findDetailWithMaSach(masach, tensach, ngaymuon)
+    End Function
+
+    Public Function findMaDocGiaMuonByMaSach(masach As String, ByRef madocgiamuon As String) As Result
+        Return sDAL.findMaDocGiaMuonByMaSach(masach, madocgiamuon)
+    End Function
+
+    Public Function updateMaDocGiaMuon(masach As String, mddgm As String) As Result
+        Return sDAL.updateMaDocGiaMuon(masach, mddgm)
+    End Function
+
+    Public Function findMaSach(masach As String, ByRef num As Integer) As Result
+        Return sDAL.findMaSach(masach, num)
     End Function
 End Class

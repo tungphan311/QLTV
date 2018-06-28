@@ -11,12 +11,14 @@ Public Class ucChoMuonSach
     Private pmsBUS As PhieuMuonSachBus
     Private ctpmBUS As ChiTietPhieuMuonBus
     Private sachBUS As SachBUS
+    Private tsBUS As ThamSoBus
 
     Private Sub ucChoMuonSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgBus = New DocGiaBus()
         pmsBUS = New PhieuMuonSachBus()
         ctpmBUS = New ChiTietPhieuMuonBus()
         sachBUS = New SachBUS()
+        tsBUS = New ThamSoBus()
         Dim result As Result
 
         'Load info doc gia
@@ -39,6 +41,7 @@ Public Class ucChoMuonSach
         End If
         lbMaPMS.Text = nextMS
 
+        clearInfo()
         dtpNgayMuon.Value = DateTime.Now
     End Sub
 
@@ -57,7 +60,17 @@ Public Class ucChoMuonSach
             If isTrue = False Then
                 MessageBox.Show("Độc giả không tồn tại. Xin vui lòng kiểm tra lại mã độc giả!")
                 tbMaDocGia.Focus()
+                clearInfo()
                 Return
+            End If
+
+            Dim isValid As Boolean
+            isValid = theHopLe()
+            If (isValid = False) Then
+                MessageBox.Show("Quý khách không thể mượn thêm sách vì có sách mượn quá hạn. " +
+                                 "Xin vui lòng trả sách trước khi mượn thêm sách mới!", "Error", MessageBoxButtons.OK)
+                tbMaSach.Enabled = False
+                btnThemMaSach.Enabled = False
             End If
         End If
 
@@ -70,35 +83,45 @@ Public Class ucChoMuonSach
         Dim listTenSach As New List(Of String)
         Dim listNgayMuon As New List(Of DateTime)
 
+        ' Truy van du lieu tu database
         Dim result As New Result
-        result = dgBus.findWithMaDG(madocgia, tendocgia, ngaylapthe, listMaSach, listTenSach, listNgayMuon)
+        result = sachBUS.findWithMaDG(madocgia, listMaSach)
+        Dim res As New Result
+        res = dgBus.findWithMaDG(madocgia, tendocgia, ngaylapthe)
 
-        If (result.FlagResult = False) Then
-            MessageBox.Show("Nạp thông tin độc giả không thành công")
-            Return New Result(False)
-        End If
-
-        If (tendocgia.Length < 1) Then
+        If tendocgia.Length < 1 Then
             isTrue = False
         End If
 
-        lbHoTen.Text = tendocgia
-        lbNgayLap.Text = ngaylapthe.Day.ToString() + "/ " + ngaylapthe.Month.ToString() + "/ " + ngaylapthe.Year.ToString()
+        For i As Integer = 0 To listMaSach.Count - 1
+            Dim res1 As New Result
+            Dim tensach As String = String.Empty
+            Dim ngaymuon As New DateTime
+            res1 = sachBUS.findDetailWithMaSach(listMaSach(i), tensach, ngaymuon)
+            listTenSach.Add(tensach)
+            listNgayMuon.Add(ngaymuon)
+        Next
+
+        ' Truyen gia tri vao GUI
+        If (tinhTrang(DateTime.Now, ngaylapthe) = False) Then
+            If MessageBox.Show("Thẻ độc giả của quý khác đã quá hạn, xin vui lòng lập thẻ độc giả mới!", "Error ", MessageBoxButtons.OK) = DialogResult.OK Then
+                tbMaDocGia.Focus()
+                Return New Result(False)
+            End If
+        End If
 
         If (tinhTrang(DateTime.Now, ngaylapthe) = True) Then
             lbTinhTrang.Text = "Thẻ khả dụng"
         End If
-        If (tinhTrang(DateTime.Now, ngaylapthe) = False) Then
-            lbTinhTrang.Text = "Thẻ hết hạn"
-        End If
+
+        lbHoTen.Text = tendocgia
+        lbNgayLap.Text = ngaylapthe.Day.ToString() + "/ " + ngaylapthe.Month.ToString() + "/ " + ngaylapthe.Year.ToString()
 
         For i As Integer = 0 To listMaSach.Count - 1
             Dim str As String()
             str = New String() {"", listMaSach(i), listTenSach(i), listNgayMuon(i), tinhTrangSach(listNgayMuon(i))}
             dgDSSachMuon.Rows.Add(str)
         Next
-
-
         Return New Result(True)
     End Function
 
@@ -163,24 +186,38 @@ Public Class ucChoMuonSach
     Private Function tinhTrangSach(ngaylap As DateTime) As String
         Dim day As TimeSpan = DateTime.Now - ngaylap
         Dim days As Integer = day.TotalDays
-
-        If (days > 4) Then
+        Dim songaymuontoida As Integer = Nothing
+        Dim res As New Result
+        res = tsBUS.getSoNgayMuonToiDa(songaymuontoida)
+        If (days > songaymuontoida) Then
             Return "Quá hạn"
         End If
 
         Return "Đang mượn"
     End Function
 
-    Public Function getSachInfo(ByRef maSach As String) As Result
+    Public Function getSachInfo(ByRef maSach As String, ByRef isTrue As Boolean) As Result
         Dim tenSach As String = String.Empty
         Dim listTG As New List(Of String)
         Dim listTL As New List(Of String)
 
         Dim result1 As New Result
         Dim result2 As New Result
+        Dim res As New Result
+        Dim num As Integer = Nothing
 
         result1 = sachBUS.findWithMaSachTacGia(maSach, tenSach, listTG)
         result2 = sachBUS.findWithMaSachTheLoai(maSach, listTL)
+        res = sachBUS.findMaSach(maSach, num)
+
+        If num = 0 Then
+            isTrue = False
+            MessageBox.Show("Sách không tồn tại. Xin vui lòng nhập lại mã sách!")
+            tbMaSach.Focus()
+            Return New Result(False)
+        Else
+            isTrue = True
+        End If
 
         If (result1.FlagResult = False) Then
             MessageBox.Show("Nạp thông tin độc giả không thành công")
@@ -194,16 +231,19 @@ Public Class ucChoMuonSach
         Dim tacgia As String = String.Empty
         Dim theloai As String = String.Empty
 
-        For i As Integer = 0 To listTG.Count - 2
-            tacgia = tacgia + listTG(i) + ", "
+        For i As Integer = 0 To listTG.Count - 1
+            tacgia = tacgia + listTG(i)
+            If i < listTG.Count - 1 Then
+                tacgia = tacgia + ", "
+            End If
         Next
-        tacgia = tacgia + listTG(listTG.Count - 1)
 
-        For i As Integer = 0 To listTL.Count - 2
-            theloai = theloai + listTL(i) + ", "
+        For i As Integer = 0 To listTL.Count - 1
+            theloai = theloai + listTL(i)
+            If i < listTL.Count - 1 Then
+                theloai = theloai + ", "
+            End If
         Next
-        theloai = theloai + listTL(listTL.Count - 1)
-
 
         Dim str As String()
         str = New String() {"", maSach, tenSach, theloai, tacgia}
@@ -220,7 +260,15 @@ Public Class ucChoMuonSach
             Return
         End If
 
-        getSachInfo(tbMaSach.Text)
+        Dim isTrue As Boolean = True
+        Dim hopLe As Boolean = sachHopLe(tbMaSach.Text)
+        If hopLe = False Then
+            MessageBox.Show("Quý khách không thể mượn sách này vì sách đã được mượn!")
+            tbMaSach.Focus()
+            Return
+        End If
+
+        getSachInfo(tbMaSach.Text, isTrue)
 
     End Sub
 
@@ -231,8 +279,17 @@ Public Class ucChoMuonSach
     End Sub
 
     Private Sub btnLuuVaThoat_Click(sender As Object, e As EventArgs) Handles btnLuuVaThoat.Click
-        If (dgDSSachMuon.Rows.Count + dgDanhSachSach.Rows.Count > 5) Then
-            MessageBox.Show("Quý khách không được mướn quá 5 cuốn sách trong 4 ngày!")
+        Dim sosachmuontoida As Integer = Nothing
+        Dim songaymuontoida As Integer = Nothing
+        Dim re As New Result
+        Dim re1 As New Result
+        re = tsBUS.getSoNgayMuonToiDa(songaymuontoida)
+        re1 = tsBUS.getSoSachMuonToiDa(sosachmuontoida)
+
+        Dim sum As Integer = dgDSSachMuon.Rows.Count + dgDanhSachSach.Rows.Count
+
+        If (sum > sosachmuontoida) Then
+            MessageBox.Show("Quý khách không được mượn quá " + sosachmuontoida.ToString() + " cuốn sách!")
             Return
         End If
 
@@ -253,13 +310,16 @@ Public Class ucChoMuonSach
         result = pmsBUS.insert(pms)
 
         For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
-            Dim res As Result
-            Dim result1 As Result
+            Dim res As New Result
+            Dim result1 As New Result
             res = ctpmBUS.build_mactpm(nextMaCTPM)
             ctpm.MaChiTietPhieuMuon = nextMaCTPM
             ctpm.MaPhieuMuonSach = lbMaPMS.Text
             ctpm.MaSach = dgDanhSachSach.Rows(i).Cells(1).Value
             result1 = ctpmBUS.insert(ctpm)
+
+            Dim res1 As New Result
+            res1 = sachBUS.updateMaDocGiaMuon(dgDanhSachSach.Rows(i).Cells(1).Value, tbMaDocGia.Text)
         Next
 
         '2. clear fpZone + call back ucThuVien
@@ -299,4 +359,33 @@ Public Class ucChoMuonSach
 
     End Sub
 
+    Private Function sachHopLe(masach As String) As Boolean
+        Dim result As New Result
+        Dim madocgiamuon As String = String.Empty
+        result = sachBUS.findMaDocGiaMuonByMaSach(masach, madocgiamuon)
+
+        If madocgiamuon.Length > 0 Then
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Private Sub tbMaSach_OnValueChanged(sender As Object, e As EventArgs) Handles tbMaSach.OnValueChanged
+        If lbHoTen.Text.Length < 1 Then
+            MessageBox.Show("Vui lòng nhập vào mã độc giả trước!")
+            tbMaDocGia.Focus()
+            Return
+        End If
+    End Sub
+
+    Private Function theHopLe() As Boolean
+        Dim hople As String = "Quá hạn"
+        For i As Integer = 0 To dgDSSachMuon.Rows.Count - 1
+            If dgDSSachMuon.Rows(i).Cells(4).Value = hople Then
+                Return False
+            End If
+        Next
+        Return True
+    End Function
 End Class

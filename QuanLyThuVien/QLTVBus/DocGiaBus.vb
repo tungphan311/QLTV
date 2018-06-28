@@ -92,7 +92,7 @@ Public Class DocGiaBus
         Return dgDAL.update(dg)
     End Function
 
-    Public Function findWithMaDG(ByRef maDocGia As String, ByRef tenDocGia As String, ByRef ngayLapThe As DateTime, ByRef listMaSach As List(Of String), ByRef listTenSach As List(Of String), ByRef listNgayMuon As List(Of DateTime)) As Result
-        Return dgDAL.findWithMaDG(maDocGia, tenDocGia, ngayLapThe, listMaSach, listTenSach, listNgayMuon)
+    Public Function findWithMaDG(ByRef maDocGia As String, ByRef tenDocGia As String, ByRef ngayLapThe As DateTime) As Result
+        Return dgDAL.findWithMaDG(maDocGia, tenDocGia, ngayLapThe)
     End Function
 End Class

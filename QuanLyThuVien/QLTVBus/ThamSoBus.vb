@@ -18,4 +18,12 @@ Public Class ThamSoBus
     Public Function selectALL(ByRef thamso As ThamSoDTO) As Result
         Return tsDAL.selectALL(thamso)
     End Function
+
+    Public Function getSoNgayMuonToiDa(ByRef songay As Integer) As Result
+        Return tsDAL.getSoNgayMuonToiDa(songay)
+    End Function
+
+    Public Function getSoSachMuonToiDa(ByRef sosach As Integer) As Result
+        Return tsDAL.getSoSachMuonToiDa(sosach)
+    End Function
 End Class

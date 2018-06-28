@@ -93,7 +93,7 @@ Partial Class ucChoMuonSach
         Me.tbMaDocGia.LineIdleColor = System.Drawing.Color.Silver
         Me.tbMaDocGia.LineMouseHoverColor = System.Drawing.Color.Gray
         Me.tbMaDocGia.LineThickness = 2
-        Me.tbMaDocGia.Location = New System.Drawing.Point(246, 119)
+        Me.tbMaDocGia.Location = New System.Drawing.Point(245, 127)
         Me.tbMaDocGia.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbMaDocGia.Name = "tbMaDocGia"
         Me.tbMaDocGia.Size = New System.Drawing.Size(112, 36)
@@ -130,7 +130,7 @@ Partial Class ucChoMuonSach
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(144, 129)
+        Me.Label11.Location = New System.Drawing.Point(136, 134)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(89, 21)
         Me.Label11.TabIndex = 30
@@ -210,7 +210,7 @@ Partial Class ucChoMuonSach
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(72, 75)
+        Me.Label8.Location = New System.Drawing.Point(72, 74)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(110, 17)
         Me.Label8.TabIndex = 11
@@ -311,7 +311,7 @@ Partial Class ucChoMuonSach
         Me.Column1.HeaderText = "Tình Trạng"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 148
+        Me.Column1.Width = 130
         '
         'GroupBox2
         '

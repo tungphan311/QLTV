@@ -16,7 +16,7 @@ Public Class SachDAL
 
     Public Function get_masach(ByRef nextMaSach As String) As Result
         nextMaSach = String.Empty
-        nextMaSach = "MS"
+        nextMaSach = "S"
 
         Dim query As String = String.Empty
         query &= "select top 1 [masach] "
@@ -42,11 +42,11 @@ Public Class SachDAL
                         End While
                     End If
                     If (msOnDB <> Nothing And msOnDB.Length >= 8) Then
-                        Dim v = msOnDB.Substring(2)
+                        Dim v = msOnDB.Substring(1)
                         Dim convertDecimal = Convert.ToDecimal(v)
                         convertDecimal = convertDecimal + 1
                         Dim tmp = convertDecimal.ToString()
-                        tmp = tmp.PadLeft(msOnDB.Length - 2, "0")
+                        tmp = tmp.PadLeft(msOnDB.Length - 1, "0")
                         nextMaSach = nextMaSach + tmp
                         System.Console.WriteLine(nextMaSach)
                     End If
@@ -66,7 +66,7 @@ Public Class SachDAL
         query &= "values (@masach, @tenSach, @manhaxuatban, @ngaynhap, @matrangthai, @namxuatban, @trigia, @madocgiamuon)"
 
         Dim nextMaSach = 0
-        Dim ms = "MS" + Convert.ToString(nextMaSach)
+        Dim ms = "S" + Convert.ToString(nextMaSach)
         Dim result As Result
         result = get_masach(ms)
         If (result.FlagResult = False) Then
@@ -135,7 +135,6 @@ Public Class SachDAL
                 Try
                     conn.Open()
                     comm.ExecuteNonQuery()
-
                 Catch ex As Exception
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
@@ -149,7 +148,7 @@ Public Class SachDAL
     Public Function selectAll(ByRef listSach As List(Of SachDTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "select [masach], [tenSach], [manhaxuatban], [ngaynhap], [matacgia], [matheloai], [matrangthai], [namxuatban], [trigia], [madocgiamuon]"
+        query &= "select *"
         query &= " from [tblSach]"
 
         Using conn As New SqlConnection(connectionString)
@@ -446,6 +445,243 @@ Public Class SachDAL
                     If reader.HasRows = True Then
                         While reader.Read()
                             trangthai = reader("tentrangthai")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function findTenSachFromMaSach(masach As String, ByRef sach As SachDTO) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT *"
+        query &= " FROM [tblSach]"
+        query &= " WHERE"
+        query &= " [masach] = @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            sach = New SachDTO(reader("masach"), reader("tensach"), reader("manhaxuatban"), reader("ngaynhap"), reader("matrangthai"),
+                                                     reader("namxuatban"), reader("trigia"), reader("madocgiamuon"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False, "Nạp thông tin sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result()
+    End Function
+
+    Public Function traSachBangMaSach(masach As String) As Result
+
+        Dim query As String = String.Empty
+        query &= " UPDATE [tblSach]"
+        query &= " SET"
+        query &= " [madocgiamuon] = '' "
+        query &= " WHERE"
+        query &= " [masach] = @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False, "Cập nhật sách thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function findWithMaDG(madocgia As String, ByRef listMS As List(Of String)) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT s.[masach]"
+        query &= " FROM [tblSach] s, [tblDocGia] dg"
+        query &= " WHERE s.[madocgiamuon] = dg.[madocgia]"
+        query &= " AND dg.[madocgia] = @madocgia"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@madocgia", madocgia)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listMS.Clear()
+                        While reader.Read()
+                            listMS.Add(reader("masach"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False, "Tìm thông tin sách không thành công!", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function findDetailWithMaSach(masach As String, ByRef tensach As String, ByRef ngaymuon As DateTime) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT s.[tensach], pms.[ngaymuon]"
+        query &= " FROM [tblSach] s, [tblChiTietPhieuMuon] ctpm, [tblPhieuMuonSach] pms"
+        query &= " WHERE s.[masach] = ctpm.[masach]"
+        query &= " AND ctpm.[maphieumuonsach] = pms.[maphieumuonsach]"
+        query &= " AND s.[masach] = @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            tensach = reader("tensach")
+                            ngaymuon = reader("ngaymuon")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function findMaDocGiaMuonByMaSach(masach As String, ByRef madocgiamuon As String) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT [madocgiamuon]"
+        query &= " FROM [tblSach]"
+        query &= " WHERE [masach] = @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            madocgiamuon = reader("madocgiamuon")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function updateMaDocGiaMuon(masach As String, mddgm As String) As Result
+
+        Dim query As String = String.Empty
+        query &= " UPDATE [tblSach]"
+        query &= " SET [madocgiamuon] = @madocgiamuon"
+        query &= " WHERE [masach] = @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                    .Parameters.AddWithValue("@madocgiamuon", mddgm)
+
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function findMaSach(masach As String, ByRef num As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT COUNT(*) AS i"
+        query &= " FROM [tblSach]"
+        query &= " WHERE [masach] = @masach"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@masach", masach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            num = reader("i")
                         End While
                     End If
                 Catch ex As Exception

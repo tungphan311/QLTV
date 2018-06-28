@@ -86,4 +86,68 @@ Public Class ThamSoDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+    Public Function getSoNgayMuonToiDa(ByRef songay As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT [thoigianmuontoida]"
+        query &= " FROM [tblThamSo]"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            songay = reader("thoigianmuontoida")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Function getSoSachMuonToiDa(ByRef sosach As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT [soluongsachmuontoida]"
+        query &= " FROM [tblThamSo]"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            sosach = reader("soluongsachmuontoida")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
 End Class
