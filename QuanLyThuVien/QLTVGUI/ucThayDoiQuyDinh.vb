@@ -33,6 +33,8 @@ Public Class ucThayDoiQuyDinh
             Return
         End If
 
+        dstheloai.RemoveAt(0)
+
         ' thêm thể loại vào datagrid
         For Each i As TheLoaiDTO In dstheloai
             Dim s As String()

@@ -2,6 +2,9 @@
 Imports QLTVBus
 Imports Utility
 Imports System.Drawing
+Imports System.IO
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
 
 Public Class ucTraCuuSach
     Dim tlbus As New TheLoaiBUS
@@ -55,6 +58,8 @@ Public Class ucTraCuuSach
     End Sub
 
     Private Sub btnTraCuu_Click(sender As Object, e As EventArgs) Handles btnTraCuu.Click
+        dgDanhSachSach.Rows.Clear()
+
         Dim ketqua As New List(Of String)
         Dim timkiem As New List(Of String)
 
@@ -122,6 +127,8 @@ Public Class ucTraCuuSach
             If ketqua.Count > 0 Then
                 showResult(ketqua)
             End If
+        Else
+            MessageBox.Show("Không tìm thấy kết quả nào thoả mãn!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
     End Sub
@@ -189,5 +196,186 @@ Public Class ucTraCuuSach
         Using b As SolidBrush = New SolidBrush(dgDanhSachSach.RowHeadersDefaultCellStyle.ForeColor)
             e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDanhSachSach.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 2)
         End Using
+    End Sub
+
+    Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click
+        Dim parent As ucTraCuuSach
+        parent = sender.Parent
+        Dim grandpar = New FlowLayoutPanel
+        grandpar = parent.Parent
+        grandpar.Controls.Clear()
+        Dim grgrpar = New frmHome
+        grgrpar = grandpar.Parent
+        grgrpar.btnLapTheDocGia.selected = False
+        Dim ucThuVien As New ucThuVien
+        grandpar.Controls.Add(ucThuVien)
+    End Sub
+
+    Private Sub btnXuatKetQua_Click(sender As Object, e As EventArgs) Handles btnXuatKetQua.Click
+
+        Try
+            Dim path As String = "\tracuu.pdf"
+            Dim myFont As String = "C:\Windows\Fonts\Calibri.ttf"
+
+            ' open folder browser
+            Using fbd As New FolderBrowserDialog()
+                Dim rs As New DialogResult()
+                rs = fbd.ShowDialog
+
+                If rs = DialogResult.OK And Not String.IsNullOrWhiteSpace(fbd.SelectedPath) Then
+                    path = fbd.SelectedPath.ToString() + path
+                Else
+                    Return
+                End If
+            End Using
+
+
+            ' dinh dang file
+            Dim doc As Document = New iTextSharp.text.Document(PageSize.LETTER, 30, 30, 50, 50)
+            Dim wrtr As PdfWriter = PdfWriter.GetInstance(doc, New FileStream(path, FileMode.Create))
+
+            ' mo file
+            doc.Open()
+            doc.NewPage()
+
+            ' font chu, mau sac
+            Dim bfR As BaseFont = BaseFont.CreateFont(myFont, BaseFont.IDENTITY_H, BaseFont.EMBEDDED)
+            Dim clrBlack As BaseColor = New BaseColor(0, 0, 0)
+
+            Dim fntTitle As iTextSharp.text.Font = New iTextSharp.text.Font(bfR, 16, iTextSharp.text.Font.BOLD, clrBlack)
+            Dim fntHead As iTextSharp.text.Font = New iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.BOLD, clrBlack)
+            Dim fntHead2 As iTextSharp.text.Font = New iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.ITALIC, clrBlack)
+            Dim fntNormal As iTextSharp.text.Font = New iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, clrBlack)
+
+            ' title
+            Dim title As New Paragraph(New Chunk("KẾT QUẢ TRA CỨU SÁCH", fntTitle))
+            title.Alignment = Element.ALIGN_CENTER
+            title.SpacingAfter = 50.0F
+            doc.Add(title)
+
+            ' thong so
+            Dim properties As New Paragraph("Thông số tìm kiếm:", fntHead)
+            properties.SpacingAfter = 10.0F
+            doc.Add(properties)
+
+            Dim s As String = Nothing
+
+            '' ma sach
+            s = "- Mã sách: "
+            If tbMaSach.Text.Length > 0 Then
+                s += "'" + tbMaSach.Text + "'"
+            Else
+                s += "(Tất cả)"
+            End If
+
+            doc.Add(New Paragraph(s, fntNormal))
+
+            '' ten sach 
+            s = "- Tên sách: "
+            If tbTenSach.Text.Length > 0 Then
+                s += "'" + tbTenSach.Text + "'"
+            Else
+                s += "(Tất cả)"
+            End If
+
+            doc.Add(New Paragraph(s, fntNormal))
+
+            '' tac gia
+            s = "- Tác giả: "
+            If cbTacGia.SelectedIndex > 0 Then
+                s += "'" + cbTacGia.Text + "'"
+            Else
+                s += "(Tất cả)"
+            End If
+
+            doc.Add(New Paragraph(s, fntNormal))
+
+            '' the loai
+            s = "- Thể loại: "
+            If cbTheLoai.SelectedIndex > 0 Then
+                s += "'" + cbTheLoai.Text + "'"
+            Else
+                s += "(Tất cả)"
+            End If
+
+            doc.Add(New Paragraph(s, fntNormal))
+
+            '' trang thai
+            s = "- Trạng thái: "
+            If cbTinhTrang.SelectedIndex = 2 Then
+                s += "'Đã mượn'"
+            ElseIf cbTinhTrang.SelectedIndex = 1 Then
+                s += "'Còn sách'"
+            Else
+                s += "(Tất cả)"
+            End If
+
+            doc.Add(New Paragraph(s, fntNormal))
+
+
+            ' datagrid
+            '' width
+            Dim ketqua As New Paragraph("Kết quả tìm kiếm: ", fntHead)
+            ketqua.SpacingBefore = 20.0F
+            ketqua.SpacingAfter = 20.0F
+            doc.Add(ketqua)
+
+            Dim pdftable As New PdfPTable(dgDanhSachSach.Columns.Count)
+            pdftable.TotalWidth = 550.0F
+            pdftable.LockedWidth = True
+
+            '' set width for columns
+            Dim widths(0 To dgDanhSachSach.Columns.Count - 1) As Single
+            For i As Integer = 0 To dgDanhSachSach.Columns.Count - 1
+                widths(i) = 1.0F * (dgDanhSachSach.Columns(i).Width / 600.0F)
+            Next
+
+            pdftable.SetWidths(widths)
+            pdftable.HorizontalAlignment = 0
+
+            '''''
+
+            ' header on datagrid
+            Dim pdfcell As PdfPCell = New PdfPCell
+            For i As Integer = 0 To dgDanhSachSach.Columns.Count - 1
+                pdfcell = New PdfPCell(New Phrase(New Chunk(dgDanhSachSach.Columns(i).HeaderText, fntHead2)))
+                pdfcell.HorizontalAlignment = PdfPCell.ALIGN_LEFT
+                pdftable.AddCell(pdfcell)
+            Next
+
+
+            ''''
+            ' rows on datagrid
+            For i As Integer = 0 To dgDanhSachSach.Rows.Count - 2
+                For j As Integer = 0 To dgDanhSachSach.Columns.Count - 1
+                    pdfcell = New PdfPCell(New Phrase(dgDanhSachSach(j, i).Value.ToString(), fntNormal))
+                    pdftable.HorizontalAlignment = PdfPCell.ALIGN_LEFT
+                    pdftable.AddCell(pdfcell)
+                Next
+            Next
+
+            ''''
+            doc.Add(pdftable)
+
+
+
+            ' ngay tao
+            Dim ngay As New Paragraph("Ngày tạo: " + Today.Day.ToString() + "/" + Today.Month.ToString() + "/" + Today.Year.ToString(), fntNormal)
+            ngay.Alignment = Element.ALIGN_RIGHT
+            ngay.SpacingBefore = 50.0F
+
+            doc.Add(ngay)
+
+            ' close
+            doc.Close()
+
+            MessageBox.Show("Xuất kết quả tìm kiếm thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+
+        Catch ex As Exception
+            MessageBox.Show("Xuất kết quả tìm kiếm thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End Try
+
     End Sub
 End Class

@@ -93,16 +93,16 @@ Partial Class ucTiepNhanSachMoi
         Me.nudNamXuatBan.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.nudNamXuatBan.Location = New System.Drawing.Point(297, 597)
         Me.nudNamXuatBan.Maximum = New Decimal(New Integer() {2499, 0, 0, 0})
-        Me.nudNamXuatBan.Minimum = New Decimal(New Integer() {1900, 0, 0, 0})
+        Me.nudNamXuatBan.Minimum = New Decimal(New Integer() {2000, 0, 0, 0})
         Me.nudNamXuatBan.Name = "nudNamXuatBan"
         Me.nudNamXuatBan.Size = New System.Drawing.Size(113, 29)
-        Me.nudNamXuatBan.TabIndex = 45
+        Me.nudNamXuatBan.TabIndex = 5
         Me.nudNamXuatBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.nudNamXuatBan.Value = New Decimal(New Integer() {1900, 0, 0, 0})
+        Me.nudNamXuatBan.Value = New Decimal(New Integer() {2000, 0, 0, 0})
         '
         'cbTheLoai
         '
-        Me.cbTheLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.cbTheLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cbTheLoai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbTheLoai.DropDownHeight = 100
         Me.cbTheLoai.Font = New System.Drawing.Font("Segoe UI", 10.0!)
@@ -111,7 +111,7 @@ Partial Class ucTiepNhanSachMoi
         Me.cbTheLoai.Location = New System.Drawing.Point(157, 33)
         Me.cbTheLoai.Name = "cbTheLoai"
         Me.cbTheLoai.Size = New System.Drawing.Size(196, 25)
-        Me.cbTheLoai.TabIndex = 44
+        Me.cbTheLoai.TabIndex = 11
         '
         'dtpNgayLapThe
         '
@@ -125,7 +125,7 @@ Partial Class ucTiepNhanSachMoi
         Me.dtpNgayLapThe.Location = New System.Drawing.Point(297, 635)
         Me.dtpNgayLapThe.Name = "dtpNgayLapThe"
         Me.dtpNgayLapThe.Size = New System.Drawing.Size(211, 29)
-        Me.dtpNgayLapThe.TabIndex = 41
+        Me.dtpNgayLapThe.TabIndex = 6
         Me.dtpNgayLapThe.Value = New Date(2018, 6, 27, 0, 0, 0, 0)
         '
         'Label9
@@ -158,7 +158,7 @@ Partial Class ucTiepNhanSachMoi
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(381, 632)
+        Me.Label10.Location = New System.Drawing.Point(371, 632)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(43, 21)
         Me.Label10.TabIndex = 37
@@ -218,7 +218,7 @@ Partial Class ucTiepNhanSachMoi
         Me.tbTenSach.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbTenSach.Name = "tbTenSach"
         Me.tbTenSach.Size = New System.Drawing.Size(331, 36)
-        Me.tbTenSach.TabIndex = 46
+        Me.tbTenSach.TabIndex = 1
         Me.tbTenSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'tbTriGia
@@ -239,7 +239,7 @@ Partial Class ucTiepNhanSachMoi
         Me.tbTriGia.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbTriGia.Name = "tbTriGia"
         Me.tbTriGia.Size = New System.Drawing.Size(113, 36)
-        Me.tbTriGia.TabIndex = 46
+        Me.tbTriGia.TabIndex = 7
         Me.tbTriGia.Text = "0"
         Me.tbTriGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -274,7 +274,7 @@ Partial Class ucTiepNhanSachMoi
         '
         'cbNhaXuatBan
         '
-        Me.cbNhaXuatBan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.cbNhaXuatBan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cbNhaXuatBan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbNhaXuatBan.DropDownHeight = 100
         Me.cbNhaXuatBan.Font = New System.Drawing.Font("Segoe UI", 10.0!)
@@ -283,7 +283,7 @@ Partial Class ucTiepNhanSachMoi
         Me.cbNhaXuatBan.Location = New System.Drawing.Point(159, 31)
         Me.cbNhaXuatBan.Name = "cbNhaXuatBan"
         Me.cbNhaXuatBan.Size = New System.Drawing.Size(212, 25)
-        Me.cbNhaXuatBan.TabIndex = 47
+        Me.cbNhaXuatBan.TabIndex = 13
         '
         'Label5
         '
@@ -336,7 +336,7 @@ Partial Class ucTiepNhanSachMoi
         '
         'cbTacGia
         '
-        Me.cbTacGia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.cbTacGia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cbTacGia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbTacGia.DropDownHeight = 100
         Me.cbTacGia.Font = New System.Drawing.Font("Segoe UI", 10.0!)
@@ -345,7 +345,7 @@ Partial Class ucTiepNhanSachMoi
         Me.cbTacGia.Location = New System.Drawing.Point(159, 33)
         Me.cbTacGia.Name = "cbTacGia"
         Me.cbTacGia.Size = New System.Drawing.Size(196, 25)
-        Me.cbTacGia.TabIndex = 44
+        Me.cbTacGia.TabIndex = 12
         '
         'Label12
         '
@@ -461,7 +461,7 @@ Partial Class ucTiepNhanSachMoi
         Me.btnLuuVaThoat.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnLuuVaThoat.selected = False
         Me.btnLuuVaThoat.Size = New System.Drawing.Size(141, 41)
-        Me.btnLuuVaThoat.TabIndex = 23
+        Me.btnLuuVaThoat.TabIndex = 9
         Me.btnLuuVaThoat.Text = "Lưu và Thoát"
         Me.btnLuuVaThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnLuuVaThoat.Textcolor = System.Drawing.Color.Black
@@ -496,7 +496,7 @@ Partial Class ucTiepNhanSachMoi
         Me.btnThoat.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnThoat.selected = False
         Me.btnThoat.Size = New System.Drawing.Size(90, 41)
-        Me.btnThoat.TabIndex = 24
+        Me.btnThoat.TabIndex = 10
         Me.btnThoat.Text = "Thoát"
         Me.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnThoat.Textcolor = System.Drawing.Color.Black
@@ -531,7 +531,7 @@ Partial Class ucTiepNhanSachMoi
         Me.btnLuu.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnLuu.selected = False
         Me.btnLuu.Size = New System.Drawing.Size(90, 41)
-        Me.btnLuu.TabIndex = 25
+        Me.btnLuu.TabIndex = 8
         Me.btnLuu.Text = "Lưu"
         Me.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnLuu.Textcolor = System.Drawing.Color.Black

@@ -15,6 +15,7 @@ Public Class ucTiepNhanSachMoi
     Private result As New Result()
 
     Private Sub ucTiepNhanSachMoi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        tbTenSach.Focus()
 
         ' lay ma sach tu dong
         Dim nextMaSach = "0"
