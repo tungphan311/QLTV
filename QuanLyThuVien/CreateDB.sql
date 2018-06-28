@@ -194,6 +194,8 @@ GO
 SET ANSI_PADDING OFF
 GO
 
+insert into [tblDocGia] values ('DG000000', '', '', '', '', '', '')
+GO
 insert into [tblDocGia] values ('DG000001', N'Phan Thanh Tùng', '31/01/1998', N'Linh Trung, Thủ Đức, HCM', 'thanhtunga1lqd@gmail.com', '24/06/2017', '1')
 GO
 insert into [tblDocGia] values ('DG000002', N'Nguyễn Thành Luân', '01/01/1998', N'Linh Trung, Thủ Đức, HCM', 'thanhluana2lqd@gmail.com', '24/06/2017', '2')
@@ -256,6 +258,8 @@ CREATE TABLE [tblNhaXuatBan](
 
 GO
 
+insert into [tblNhaXuatBan] values ('NXB00000', '')
+GO
 insert into [tblNhaXuatBan] values ('NXB00001', N'NXB Trẻ')
 GO
 insert into [tblNhaXuatBan] values ('NXB00002', N'NXB Già')
@@ -387,6 +391,8 @@ CREATE TABLE [dbo].[tblSach](
 
 GO
 
+insert into [tblSach] values ('S0000000', '', '', '', '', '', '', '')
+GO
 insert into [tblSach] values ('S0000001', N'Sách 1', 'NXB00006', '01/01/2016', 2, 2012, 100000, 'DG000001')
 GO
 insert into [tblSach] values ('S0000002', N'Sách 2', 'NXB00002', '01/01/2016', 1, 2012, 52000, '')
@@ -440,6 +446,8 @@ CREATE TABLE [dbo].[tblTacGia](
 
 GO
 
+insert into [tblTacGia] values ('TG000', '')
+GO
 insert into [tblTacGia] values ('TG001', N'Phan Thanh Tùng')
 GO
 insert into [tblTacGia] values ('TG002', N'Nguyễn Thành Luân') 
@@ -716,6 +724,8 @@ CREATE TABLE [dbo].[tblTheLoai](
 
 GO
 
+insert into [tblTheLoai] values ('TL0', '')
+GO
 insert into [tblTheLoai] values ('TL1', 'A')
 GO
 insert into [tblTheLoai] values ('TL2', 'B')
@@ -774,15 +784,17 @@ CREATE TABLE [dbo].[tblTrangThai](
 
 GO
 
+insert into [tblTrangThai] values (0, '')
+GO
 insert into [tblTrangThai] values (1, N'Còn sách')
 GO
 insert into [tblTrangThai] values (2, N'Đã mượn')
 GO
 
-SELECT dg.[hotendocgia], dg.[ngaylapthe], ctpm.[masach] 
-FROM [tblDocGia] dg, [tblPhieuMuonSach] pms, [tblChiTietPhieuMuon] ctpm
-WHERE 
-pms.[madocgia] = dg.[madocgia]
-AND ctpm.[maphieumuonsach] = pms.[maphieumuonsach]
-AND dg.[madocgia] = 'DG000001'
-GROUP BY dg.[hotendocgia], dg.[ngaylapthe], ctpm.[masach] 
+SELECT s.tensach, pm.ngaymuon
+FROM tblPhieuMuonSach pm, tblSach s, tblChiTietPhieuMuon ct
+WHERE pm.maphieumuonsach = ct.maphieumuonsach 
+and ct.masach = s.masach 
+and s.matrangthai = 2
+and s.madocgiamuon = pm.madocgia
+and GETDATE() - pm.ngaymuon > 4

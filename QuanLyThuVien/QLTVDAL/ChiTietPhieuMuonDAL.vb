@@ -62,6 +62,41 @@ Public Class ChiTietPhieuMuonDAL
         Return New Result(True)
     End Function
 
+    Public Function selectALL(ByRef listctpm As List(Of ChiTietPhieuMuonDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT *"
+        query &= "FROM [tblChiTietPhieuMuon]"
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listctpm.Clear()
+                        While reader.Read()
+                            listctpm.Add(New ChiTietPhieuMuonDTO(reader("machitietphieumuon"), reader("maphieumuonsach"), reader("masach")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
     Public Function insert(ctpm As ChiTietPhieuMuonDTO) As Result
 
         Dim query As String = String.Empty
@@ -89,5 +124,173 @@ Public Class ChiTietPhieuMuonDAL
             End Using
         End Using
         Return New Result(True)
+    End Function
+
+    Public Function baocao1(month As String, year As String, ByRef listten As List(Of String), ByRef listsoluotmuon As List(Of Integer))
+
+        Dim query As String = String.Empty
+        query &= " SELECT [tentheloai], COUNT(machitietphieumuon) cnt"
+        query &= " FROM [tblTheLoai] tl, [tblChiTietPhieuMuon] ct, [tblPhieuMuonSach] pms, [tblTheLoaiSach] tls "
+        query &= " WHERE tl.[matheloai] = tls.[matheloai] "
+        query &= "      AND tls.[masach] = ct.[masach] "
+        query &= "      AND ct.[maphieumuonsach] = pms.[maphieumuonsach] "
+        query &= "      AND MONTH(pms.[ngaymuon]) = @month "
+        query &= "      AND YEAR(pms.[ngaymuon]) = @year "
+        query &= " GROUP BY [tentheloai]"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@month", month)
+                    .Parameters.AddWithValue("@year", year)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listten.Clear()
+                        listsoluotmuon.Clear()
+                        While reader.Read()
+                            listten.Add(reader("tentheloai"))
+                            listsoluotmuon.Add(reader("cnt"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+
+    End Function
+
+    Public Function baocao2(month As String, ByRef listten As List(Of String), ByRef listsoluotmuon As List(Of Integer))
+
+        Dim query As String = String.Empty
+        query &= " SELECT [tentheloai], COUNT(machitietphieumuon) cnt"
+        query &= " FROM [tblTheLoai] tl, [tblChiTietPhieuMuon] ct, [tblPhieuMuonSach] pms, [tblTheLoaiSach] tls "
+        query &= " WHERE tl.[matheloai] = tls.[matheloai] "
+        query &= "      AND tls.[masach] = ct.[masach] "
+        query &= "      AND ct.[maphieumuonsach] = pms.[maphieumuonsach] "
+        query &= "      AND MONTH(pms.[ngaymuon]) = @month "
+        query &= " GROUP BY [tentheloai]"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@month", month)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listten.Clear()
+                        listsoluotmuon.Clear()
+                        While reader.Read()
+                            listten.Add(reader("tentheloai"))
+                            listsoluotmuon.Add(reader("cnt"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+
+    End Function
+
+    Public Function baocao3(year As String, ByRef listten As List(Of String), ByRef listsoluotmuon As List(Of Integer))
+
+        Dim query As String = String.Empty
+        query &= " SELECT [tentheloai], COUNT(machitietphieumuon) cnt"
+        query &= " FROM [tblTheLoai] tl, [tblChiTietPhieuMuon] ct, [tblPhieuMuonSach] pms, [tblTheLoaiSach] tls "
+        query &= " WHERE tl.[matheloai] = tls.[matheloai] "
+        query &= "      AND tls.[masach] = ct.[masach] "
+        query &= "      AND ct.[maphieumuonsach] = pms.[maphieumuonsach] "
+        query &= "      AND YEAR(pms.[ngaymuon]) = @year "
+        query &= " GROUP BY [tentheloai]"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@year", year)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listten.Clear()
+                        listsoluotmuon.Clear()
+                        While reader.Read()
+                            listten.Add(reader("tentheloai"))
+                            listsoluotmuon.Add(reader("cnt"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+
+    End Function
+
+    Public Function baocao4(ByRef listten As List(Of String), ByRef listsoluotmuon As List(Of Integer))
+
+        Dim query As String = String.Empty
+        query &= " SELECT [tentheloai], COUNT(machitietphieumuon) cnt"
+        query &= " FROM [tblTheLoai] tl, [tblChiTietPhieuMuon] ct, [tblPhieuMuonSach] pms, [tblTheLoaiSach] tls "
+        query &= " WHERE tl.[matheloai] = tls.[matheloai] "
+        query &= "      AND tls.[masach] = ct.[masach] "
+        query &= "      AND ct.[maphieumuonsach] = pms.[maphieumuonsach] "
+        query &= " GROUP BY [tentheloai]"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listten.Clear()
+                        listsoluotmuon.Clear()
+                        While reader.Read()
+                            listten.Add(reader("tentheloai"))
+                            listsoluotmuon.Add(reader("cnt"))
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+
     End Function
 End Class

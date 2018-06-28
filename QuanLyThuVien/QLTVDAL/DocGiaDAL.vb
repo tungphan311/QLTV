@@ -66,8 +66,8 @@ Public Class DocGiaDAL
     Public Function insert(dg As DocGiaDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblDocGia] ([madocgia], [hotendocgia], [ngaysinh], [diachi], [email], [ngaylapthe], [maloaidocgia])"
-        query &= "VALUES (@madocgia,@hotendocgia,@ngaysinh,@diachi,@email,@ngaylapthe,@maloaidocgia)"
+        query &= "INSERT INTO [tblDocGia] ([madocgia], [hotendocgia], [ngaysinh], [diachi], [email], [ngaylapthe], [maloaidocgia]) "
+        query &= "VALUES (@madocgia, @hotendocgia,@ngaysinh, @diachi, @email, @ngaylapthe, @maloaidocgia)"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()

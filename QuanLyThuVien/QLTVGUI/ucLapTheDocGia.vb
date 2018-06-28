@@ -7,6 +7,9 @@ Public Class ucLapTheDocGia
     Private ldgBus As LoaiDocGiaBus
 
     Private Sub ucLapTheDocGia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dtpNgayLapThe.Value = Today
+        tbHoTen.Focus()
+
         dgBus = New DocGiaBus()
         Dim result As Result
         ldgBus = New LoaiDocGiaBus()
@@ -20,7 +23,7 @@ Public Class ucLapTheDocGia
             Return
         End If
 
-        listLoaiDG.RemoveAt(0)
+        ' truyen vao combobox loaidocgia
         cbLoaiDocGia.DataSource = New BindingSource(listLoaiDG, String.Empty)
         cbLoaiDocGia.DisplayMember = "tenloaidocgia"
         cbLoaiDocGia.ValueMember = "maloaidocgia"
@@ -34,7 +37,9 @@ Public Class ucLapTheDocGia
             Me.Dispose()
             Return
         End If
+
         lbMaDocGia.Text = nextMaDG
+
     End Sub
 
     Private Sub btnLuu_Click(sender As Object, e As EventArgs) Handles btnLuu.Click
@@ -124,7 +129,7 @@ Public Class ucLapTheDocGia
             tbHoTen.Focus()
 
         Else
-            MessageBox.Show("Thêm độc giả thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thêm độc giả thất bại! Kiểm tra kết nối đến cơ sở dữ liệu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
@@ -179,7 +184,7 @@ Public Class ucLapTheDocGia
         If (result.FlagResult = True) Then
             MessageBox.Show("Thêm độc giả thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            MessageBox.Show("Thêm độc giả thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thêm độc giả thất bại! Kiểm tra kết nối đến cơ sở dữ liệu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
 

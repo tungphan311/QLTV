@@ -55,6 +55,8 @@ Public Class ucTraCuuSach
     End Sub
 
     Private Sub btnTraCuu_Click(sender As Object, e As EventArgs) Handles btnTraCuu.Click
+        dgDanhSachSach.Rows.Clear()
+
         Dim ketqua As New List(Of String)
         Dim timkiem As New List(Of String)
 
@@ -122,6 +124,8 @@ Public Class ucTraCuuSach
             If ketqua.Count > 0 Then
                 showResult(ketqua)
             End If
+        Else
+            MessageBox.Show("Không tìm thấy kết quả nào thoả mãn!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
     End Sub
@@ -189,5 +193,18 @@ Public Class ucTraCuuSach
         Using b As SolidBrush = New SolidBrush(dgDanhSachSach.RowHeadersDefaultCellStyle.ForeColor)
             e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDanhSachSach.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 2)
         End Using
+    End Sub
+
+    Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click
+        Dim parent As ucTraCuuSach
+        parent = sender.Parent
+        Dim grandpar = New FlowLayoutPanel
+        grandpar = parent.Parent
+        grandpar.Controls.Clear()
+        Dim grgrpar = New frmHome
+        grgrpar = grandpar.Parent
+        grgrpar.btnLapTheDocGia.selected = False
+        Dim ucThuVien As New ucThuVien
+        grandpar.Controls.Add(ucThuVien)
     End Sub
 End Class

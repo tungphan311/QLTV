@@ -141,7 +141,7 @@ Partial Class ucLapTheDocGia
         Me.tbHoTen.LineIdleColor = System.Drawing.Color.Silver
         Me.tbHoTen.LineMouseHoverColor = System.Drawing.Color.Gray
         Me.tbHoTen.LineThickness = 2
-        Me.tbHoTen.Location = New System.Drawing.Point(245, 124)
+        Me.tbHoTen.Location = New System.Drawing.Point(245, 125)
         Me.tbHoTen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbHoTen.Name = "tbHoTen"
         Me.tbHoTen.Size = New System.Drawing.Size(331, 36)
@@ -153,11 +153,11 @@ Partial Class ucLapTheDocGia
         Me.lbMaDocGia.AutoSize = True
         Me.lbMaDocGia.BackColor = System.Drawing.Color.Gainsboro
         Me.lbMaDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lbMaDocGia.Font = New System.Drawing.Font("Segoe UI", 13.0!)
+        Me.lbMaDocGia.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbMaDocGia.ForeColor = System.Drawing.Color.Red
-        Me.lbMaDocGia.Location = New System.Drawing.Point(245, 87)
+        Me.lbMaDocGia.Location = New System.Drawing.Point(245, 91)
         Me.lbMaDocGia.Name = "lbMaDocGia"
-        Me.lbMaDocGia.Size = New System.Drawing.Size(94, 25)
+        Me.lbMaDocGia.Size = New System.Drawing.Size(82, 21)
         Me.lbMaDocGia.TabIndex = 3
         Me.lbMaDocGia.Text = "MaDocGia"
         '
@@ -283,12 +283,12 @@ Partial Class ucLapTheDocGia
         Me.dtpNgaySinh.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke
         Me.dtpNgaySinh.CalendarTitleBackColor = System.Drawing.SystemColors.Control
         Me.dtpNgaySinh.CalendarTrailingForeColor = System.Drawing.Color.Black
-        Me.dtpNgaySinh.CustomFormat = "ddddddddd, dd/MM/yyyy"
+        Me.dtpNgaySinh.CustomFormat = "dd/MM/yyyy"
         Me.dtpNgaySinh.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpNgaySinh.Location = New System.Drawing.Point(245, 172)
+        Me.dtpNgaySinh.Location = New System.Drawing.Point(245, 173)
         Me.dtpNgaySinh.Name = "dtpNgaySinh"
-        Me.dtpNgaySinh.Size = New System.Drawing.Size(221, 29)
+        Me.dtpNgaySinh.Size = New System.Drawing.Size(128, 29)
         Me.dtpNgaySinh.TabIndex = 2
         Me.dtpNgaySinh.Value = New Date(2000, 1, 1, 0, 0, 0, 0)
         '
@@ -306,7 +306,7 @@ Partial Class ucLapTheDocGia
         Me.tbDiaChi.LineIdleColor = System.Drawing.Color.Silver
         Me.tbDiaChi.LineMouseHoverColor = System.Drawing.Color.Gray
         Me.tbDiaChi.LineThickness = 2
-        Me.tbDiaChi.Location = New System.Drawing.Point(245, 212)
+        Me.tbDiaChi.Location = New System.Drawing.Point(245, 213)
         Me.tbDiaChi.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbDiaChi.Name = "tbDiaChi"
         Me.tbDiaChi.Size = New System.Drawing.Size(331, 36)
@@ -327,7 +327,7 @@ Partial Class ucLapTheDocGia
         Me.tbEmail.LineIdleColor = System.Drawing.Color.Silver
         Me.tbEmail.LineMouseHoverColor = System.Drawing.Color.Gray
         Me.tbEmail.LineThickness = 2
-        Me.tbEmail.Location = New System.Drawing.Point(245, 259)
+        Me.tbEmail.Location = New System.Drawing.Point(245, 257)
         Me.tbEmail.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbEmail.Name = "tbEmail"
         Me.tbEmail.Size = New System.Drawing.Size(331, 36)
@@ -342,11 +342,11 @@ Partial Class ucLapTheDocGia
         Me.dtpNgayLapThe.CustomFormat = "ddddddddd, dd/MM/yyyy"
         Me.dtpNgayLapThe.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.dtpNgayLapThe.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpNgayLapThe.Location = New System.Drawing.Point(245, 348)
+        Me.dtpNgayLapThe.Location = New System.Drawing.Point(245, 350)
         Me.dtpNgayLapThe.Name = "dtpNgayLapThe"
         Me.dtpNgayLapThe.Size = New System.Drawing.Size(221, 29)
         Me.dtpNgayLapThe.TabIndex = 6
-        Me.dtpNgayLapThe.Value = New Date(2018, 6, 25, 11, 17, 51, 0)
+        Me.dtpNgayLapThe.Value = New Date(2018, 6, 28, 0, 0, 0, 0)
         '
         'cbLoaiDocGia
         '
@@ -356,7 +356,7 @@ Partial Class ucLapTheDocGia
         Me.cbLoaiDocGia.FormattingEnabled = True
         Me.cbLoaiDocGia.Location = New System.Drawing.Point(245, 306)
         Me.cbLoaiDocGia.Name = "cbLoaiDocGia"
-        Me.cbLoaiDocGia.Size = New System.Drawing.Size(221, 29)
+        Me.cbLoaiDocGia.Size = New System.Drawing.Size(128, 29)
         Me.cbLoaiDocGia.TabIndex = 5
         '
         'GroupBox1

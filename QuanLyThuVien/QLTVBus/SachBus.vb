@@ -34,6 +34,14 @@ Public Class SachBUS
         Return True
     End Function
 
+    Public Function get_masach(ByRef nextMaSach As String) As Result
+        Return sDAL.get_masach(nextMaSach)
+    End Function
+
+    Public Function selectSachTre(thoigian As DateTime, quydinh As Integer, ByRef listten As List(Of String), ByRef listngaymuon As List(Of DateTime)) As Result
+        Return sDAL.selectSachTre(thoigian, quydinh, listten, listngaymuon)
+    End Function
+
     Public Function insert(sach As SachDTO) As Result
         Return sDAL.insert(sach)
     End Function

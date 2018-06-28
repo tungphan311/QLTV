@@ -4,13 +4,13 @@ Imports Utility
 
 Public Class ucThuVien
     Dim dgBus As DocGiaBus
-    Dim pmsBus As PhieuMuonSachBus
+    Dim ctpmBus As ChiTietPhieuMuonBus
     Dim sachBus As SachBUS
 
     Private Sub ucThuVien_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim result As Result
         dgBus = New DocGiaBus()
-        pmsBus = New PhieuMuonSachBus()
+        ctpmBus = New ChiTietPhieuMuonBus()
         sachBus = New SachBUS()
 
         ' Hien thi so dau sach
@@ -24,7 +24,7 @@ Public Class ucThuVien
             Return
         End If
 
-        lbSoDauSach.Text = listSach.Count.ToString()
+        lbSoDauSach.Text = (listSach.Count - 1).ToString()
 
         ' Hien thi so doc gia
         Dim listDocGia As List(Of DocGiaDTO)
@@ -37,12 +37,12 @@ Public Class ucThuVien
             Return
         End If
 
-        lbSoDocGia.Text = listDocGia.Count.ToString()
+        lbSoDocGia.Text = (listDocGia.Count - 1).ToString()
 
         ' Hien thi so luot muon
-        Dim listPhieuMuon As List(Of PhieuMuonSachDTO)
-        listPhieuMuon = New List(Of PhieuMuonSachDTO)
-        result = pmsBus.selectALL(listPhieuMuon)
+        Dim listctpm As List(Of ChiTietPhieuMuonDTO)
+        listctpm = New List(Of ChiTietPhieuMuonDTO)
+        result = ctpmBus.selectALL(listctpm)
 
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách phiếu mượn thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -50,6 +50,6 @@ Public Class ucThuVien
             Return
         End If
 
-        lbSoLuotMuon.Text = listPhieuMuon.Count.ToString()
+        lbSoLuotMuon.Text = listctpm.Count.ToString()
     End Sub
 End Class
