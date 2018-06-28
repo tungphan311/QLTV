@@ -71,6 +71,7 @@ Public Class ucChoMuonSach
                                  "Xin vui lòng trả sách trước khi mượn thêm sách mới!", "Error", MessageBoxButtons.OK)
                 tbMaSach.Enabled = False
                 btnThemMaSach.Enabled = False
+                btnXuatPhieuMuon.Enabled = False
             End If
         End If
 
