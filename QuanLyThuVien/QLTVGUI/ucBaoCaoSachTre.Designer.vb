@@ -65,13 +65,12 @@ Partial Class ucBaoCaoSachTre
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         Me.dgThongKe.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgThongKe.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgThongKe.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.dgThongKe.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgThongKe.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
@@ -81,7 +80,7 @@ Partial Class ucBaoCaoSachTre
         Me.dgThongKe.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TenSach, Me.NgayMuon, Me.SoNgayTraTre})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
@@ -98,7 +97,7 @@ Partial Class ucBaoCaoSachTre
         Me.dgThongKe.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
