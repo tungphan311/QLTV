@@ -16,6 +16,7 @@ Public Class ucTiepNhanSachMoi
 
     Private Sub ucTiepNhanSachMoi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tbTenSach.Focus()
+        dtpNgayNhap.Value = Today
 
         ' lay ma sach tu dong
         Dim nextMaSach = "0"
@@ -120,7 +121,7 @@ Public Class ucTiepNhanSachMoi
         sach.MaSach = lbMaSach.Text
         sach.TenSach = tbTenSach.Text
         sach.MaNhaXuatBan = cbNhaXuatBan.SelectedValue.ToString()
-        sach.NgayNhap = dtpNgayLapThe.Value
+        sach.NgayNhap = dtpNgayNhap.Value
         sach.TriGia = Convert.ToDecimal(tbTriGia.Text)
         sach.NamXuatBan = nudNamXuatBan.Value
         sach.MaDocGiaMuon = String.Empty
@@ -286,7 +287,7 @@ Mã tác giả: " + tacgiasach.MaTacGia, "Error", MessageBoxButtons.OK, MessageB
             cbNhaXuatBan.SelectedIndex = 0
             cbNhaXuatBan.Text = ""
             nudNamXuatBan.Value = Today.Year
-            dtpNgayLapThe.Value = Today
+            dtpNgayNhap.Value = Today
             tbTriGia.Text = "0"
             tbTenSach.Focus()
         End If
@@ -304,4 +305,6 @@ Mã tác giả: " + tacgiasach.MaTacGia, "Error", MessageBoxButtons.OK, MessageB
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
     End Sub
+
+
 End Class

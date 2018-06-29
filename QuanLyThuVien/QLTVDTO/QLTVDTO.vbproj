@@ -67,6 +67,7 @@
     <Compile Include="ChiTietPhieuTraDTO.vb" />
     <Compile Include="DocGiaDTO.vb" />
     <Compile Include="LoaiDocGiaDTO.vb" />
+    <Compile Include="LoaiTaiKhoanDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -88,6 +89,7 @@
     <Compile Include="SachDTO.vb" />
     <Compile Include="TacGiaDTO.vb" />
     <Compile Include="TacGiaSachDTO.vb" />
+    <Compile Include="TaiKhoanDTO.vb" />
     <Compile Include="ThamSoDTO.vb" />
     <Compile Include="TheLoaiDTO.vb" />
     <Compile Include="TheLoaiSachDTO.vb" />

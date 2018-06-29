@@ -59,7 +59,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>QLTVGUI.frmHome</StartupObject>
+    <StartupObject>QLTVGUI.splashScreen</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
@@ -70,6 +70,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -114,6 +115,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="splashScreen.Designer.vb">
+      <DependentUpon>splashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="splashScreen.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ucBaoCao.Designer.vb">
       <DependentUpon>ucBaoCao.vb</DependentUpon>
@@ -185,6 +192,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="splashScreen.resx">
+      <DependentUpon>splashScreen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucBaoCao.resx">
       <DependentUpon>ucBaoCao.vb</DependentUpon>
@@ -378,6 +388,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Combo_Chart1_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Course_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Course.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\files-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\36336054_798363663702632_2571347381962407936_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Male_User_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\36430347_798557037016628_946792645248679936_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\36430347_798557037016628_946792645248679936_n1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\36336054_798363663702632_2571347381962407936_n1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

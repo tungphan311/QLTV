@@ -26,8 +26,6 @@ Partial Class frmHome
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHome))
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.pnTaskBar = New System.Windows.Forms.Panel()
-        Me.ibtnMinimize = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.ibtnExit = New Bunifu.Framework.UI.BunifuImageButton()
         Me.fpnZone = New System.Windows.Forms.FlowLayoutPanel()
         Me.tbName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -40,11 +38,15 @@ Partial Class frmHome
         Me.btnThayDoiQuyDinh = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btnLapTheDocGia = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.pbMenu = New System.Windows.Forms.PictureBox()
+        Me.ibtnMinimize = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.ibtnExit = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.lbTrangThai = New System.Windows.Forms.Label()
+        Me.lbThayDoi = New System.Windows.Forms.Label()
         Me.pnTaskBar.SuspendLayout()
-        CType(Me.ibtnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ibtnExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ibtnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ibtnExit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuDragControl1
@@ -57,6 +59,8 @@ Partial Class frmHome
         'pnTaskBar
         '
         Me.pnTaskBar.BackColor = System.Drawing.Color.LightGray
+        Me.pnTaskBar.Controls.Add(Me.lbThayDoi)
+        Me.pnTaskBar.Controls.Add(Me.lbTrangThai)
         Me.pnTaskBar.Controls.Add(Me.ibtnMinimize)
         Me.pnTaskBar.Controls.Add(Me.ibtnExit)
         Me.pnTaskBar.Dock = System.Windows.Forms.DockStyle.Top
@@ -64,32 +68,6 @@ Partial Class frmHome
         Me.pnTaskBar.Name = "pnTaskBar"
         Me.pnTaskBar.Size = New System.Drawing.Size(984, 29)
         Me.pnTaskBar.TabIndex = 2
-        '
-        'ibtnMinimize
-        '
-        Me.ibtnMinimize.BackColor = System.Drawing.Color.Transparent
-        Me.ibtnMinimize.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Minimize_Window_64
-        Me.ibtnMinimize.ImageActive = Nothing
-        Me.ibtnMinimize.Location = New System.Drawing.Point(931, 2)
-        Me.ibtnMinimize.Name = "ibtnMinimize"
-        Me.ibtnMinimize.Size = New System.Drawing.Size(25, 25)
-        Me.ibtnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ibtnMinimize.TabIndex = 0
-        Me.ibtnMinimize.TabStop = False
-        Me.ibtnMinimize.Zoom = 25
-        '
-        'ibtnExit
-        '
-        Me.ibtnExit.BackColor = System.Drawing.Color.Transparent
-        Me.ibtnExit.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Close_Window_64
-        Me.ibtnExit.ImageActive = Nothing
-        Me.ibtnExit.Location = New System.Drawing.Point(956, 2)
-        Me.ibtnExit.Name = "ibtnExit"
-        Me.ibtnExit.Size = New System.Drawing.Size(25, 25)
-        Me.ibtnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ibtnExit.TabIndex = 0
-        Me.ibtnExit.TabStop = False
-        Me.ibtnExit.Zoom = 25
         '
         'fpnZone
         '
@@ -126,7 +104,7 @@ Partial Class frmHome
         'btnLogo
         '
         Me.btnLogo.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnLogo.Image = Global.QLTVGUI.My.Resources.Resources.Books_96px
+        Me.btnLogo.Image = Global.QLTVGUI.My.Resources.Resources._36336054_798363663702632_2571347381962407936_n1
         Me.btnLogo.ImageActive = Nothing
         Me.btnLogo.Location = New System.Drawing.Point(85, 35)
         Me.btnLogo.Name = "btnLogo"
@@ -144,7 +122,7 @@ Partial Class frmHome
         Me.btnLapBaoCao.BorderRadius = 7
         Me.btnLapBaoCao.ButtonText = "  Lập báo cáo"
         Me.btnLapBaoCao.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLapBaoCao.DisabledColor = System.Drawing.Color.Silver
+        Me.btnLapBaoCao.DisabledColor = System.Drawing.Color.LightSteelBlue
         Me.btnLapBaoCao.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLapBaoCao.ForeColor = System.Drawing.Color.White
         Me.btnLapBaoCao.Iconcolor = System.Drawing.Color.Transparent
@@ -180,7 +158,7 @@ Partial Class frmHome
         Me.btnNhanTraSach.BorderRadius = 7
         Me.btnNhanTraSach.ButtonText = "  Nhận trả sách"
         Me.btnNhanTraSach.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNhanTraSach.DisabledColor = System.Drawing.Color.Silver
+        Me.btnNhanTraSach.DisabledColor = System.Drawing.Color.LightSteelBlue
         Me.btnNhanTraSach.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNhanTraSach.ForeColor = System.Drawing.Color.White
         Me.btnNhanTraSach.Iconcolor = System.Drawing.Color.Transparent
@@ -216,7 +194,7 @@ Partial Class frmHome
         Me.btnChoMuonSach.BorderRadius = 7
         Me.btnChoMuonSach.ButtonText = "  Cho mượn sách"
         Me.btnChoMuonSach.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnChoMuonSach.DisabledColor = System.Drawing.Color.Silver
+        Me.btnChoMuonSach.DisabledColor = System.Drawing.Color.LightSteelBlue
         Me.btnChoMuonSach.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnChoMuonSach.ForeColor = System.Drawing.Color.White
         Me.btnChoMuonSach.Iconcolor = System.Drawing.Color.Transparent
@@ -252,7 +230,7 @@ Partial Class frmHome
         Me.btnTraCuuSach.BorderRadius = 7
         Me.btnTraCuuSach.ButtonText = "  Tra cứu sách "
         Me.btnTraCuuSach.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTraCuuSach.DisabledColor = System.Drawing.Color.Silver
+        Me.btnTraCuuSach.DisabledColor = System.Drawing.Color.LightSteelBlue
         Me.btnTraCuuSach.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTraCuuSach.ForeColor = System.Drawing.Color.White
         Me.btnTraCuuSach.Iconcolor = System.Drawing.Color.Transparent
@@ -288,7 +266,7 @@ Partial Class frmHome
         Me.btnTiepNhanSachMoi.BorderRadius = 7
         Me.btnTiepNhanSachMoi.ButtonText = "  Tiếp nhận sách mới"
         Me.btnTiepNhanSachMoi.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTiepNhanSachMoi.DisabledColor = System.Drawing.Color.Silver
+        Me.btnTiepNhanSachMoi.DisabledColor = System.Drawing.Color.LightSteelBlue
         Me.btnTiepNhanSachMoi.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTiepNhanSachMoi.ForeColor = System.Drawing.Color.White
         Me.btnTiepNhanSachMoi.Iconcolor = System.Drawing.Color.Transparent
@@ -324,7 +302,7 @@ Partial Class frmHome
         Me.btnThayDoiQuyDinh.BorderRadius = 7
         Me.btnThayDoiQuyDinh.ButtonText = "  Thay đổi quy định"
         Me.btnThayDoiQuyDinh.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnThayDoiQuyDinh.DisabledColor = System.Drawing.Color.Silver
+        Me.btnThayDoiQuyDinh.DisabledColor = System.Drawing.Color.LightSteelBlue
         Me.btnThayDoiQuyDinh.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnThayDoiQuyDinh.ForeColor = System.Drawing.Color.White
         Me.btnThayDoiQuyDinh.Iconcolor = System.Drawing.Color.Transparent
@@ -360,7 +338,7 @@ Partial Class frmHome
         Me.btnLapTheDocGia.BorderRadius = 7
         Me.btnLapTheDocGia.ButtonText = "  Lập thẻ độc giả"
         Me.btnLapTheDocGia.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLapTheDocGia.DisabledColor = System.Drawing.Color.Silver
+        Me.btnLapTheDocGia.DisabledColor = System.Drawing.Color.LightSteelBlue
         Me.btnLapTheDocGia.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLapTheDocGia.ForeColor = System.Drawing.Color.White
         Me.btnLapTheDocGia.Iconcolor = System.Drawing.Color.Transparent
@@ -401,6 +379,55 @@ Partial Class frmHome
         Me.pbMenu.TabIndex = 0
         Me.pbMenu.TabStop = False
         '
+        'ibtnMinimize
+        '
+        Me.ibtnMinimize.BackColor = System.Drawing.Color.Transparent
+        Me.ibtnMinimize.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Minimize_Window_64
+        Me.ibtnMinimize.ImageActive = Nothing
+        Me.ibtnMinimize.Location = New System.Drawing.Point(931, 2)
+        Me.ibtnMinimize.Name = "ibtnMinimize"
+        Me.ibtnMinimize.Size = New System.Drawing.Size(25, 25)
+        Me.ibtnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ibtnMinimize.TabIndex = 0
+        Me.ibtnMinimize.TabStop = False
+        Me.ibtnMinimize.Zoom = 25
+        '
+        'ibtnExit
+        '
+        Me.ibtnExit.BackColor = System.Drawing.Color.Transparent
+        Me.ibtnExit.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Close_Window_64
+        Me.ibtnExit.ImageActive = Nothing
+        Me.ibtnExit.Location = New System.Drawing.Point(956, 2)
+        Me.ibtnExit.Name = "ibtnExit"
+        Me.ibtnExit.Size = New System.Drawing.Size(25, 25)
+        Me.ibtnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ibtnExit.TabIndex = 0
+        Me.ibtnExit.TabStop = False
+        Me.ibtnExit.Zoom = 25
+        '
+        'lbTrangThai
+        '
+        Me.lbTrangThai.AutoSize = True
+        Me.lbTrangThai.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTrangThai.Location = New System.Drawing.Point(12, 6)
+        Me.lbTrangThai.Name = "lbTrangThai"
+        Me.lbTrangThai.Size = New System.Drawing.Size(76, 17)
+        Me.lbTrangThai.TabIndex = 1
+        Me.lbTrangThai.Text = "lbTrangThai"
+        Me.lbTrangThai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbThayDoi
+        '
+        Me.lbThayDoi.AutoSize = True
+        Me.lbThayDoi.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbThayDoi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lbThayDoi.Location = New System.Drawing.Point(248, 6)
+        Me.lbThayDoi.Name = "lbThayDoi"
+        Me.lbThayDoi.Size = New System.Drawing.Size(58, 17)
+        Me.lbThayDoi.TabIndex = 1
+        Me.lbThayDoi.Text = "Thay đổi"
+        Me.lbThayDoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'frmHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -426,10 +453,11 @@ Partial Class frmHome
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "QUẢN LÝ THƯ VIỆN"
         Me.pnTaskBar.ResumeLayout(False)
-        CType(Me.ibtnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ibtnExit, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnTaskBar.PerformLayout()
         CType(Me.btnLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ibtnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ibtnExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -451,4 +479,6 @@ Partial Class frmHome
     Friend WithEvents btnThayDoiQuyDinh As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLogo As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lbThayDoi As Label
+    Friend WithEvents lbTrangThai As Label
 End Class

@@ -10,7 +10,7 @@ Public Class frmHome
     Private Sub ibtnExit_Click(sender As Object, e As EventArgs) Handles ibtnExit.Click
         Dim result As Integer = MessageBox.Show("Bạn có muốn tắt ứng dụng quản lý thư viện?", "Thông báo", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
-            Me.Close()
+            Application.Exit()
         End If
     End Sub
 
@@ -64,5 +64,20 @@ Public Class frmHome
         fpnZone.Controls.Clear()
         Dim ucThuVien As New ucThuVien
         fpnZone.Controls.Add(ucThuVien)
+    End Sub
+
+    Private Sub lbThayDoi_MouseHover(sender As Object, e As EventArgs) Handles lbThayDoi.MouseHover
+        lbThayDoi.ForeColor = Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
+    End Sub
+
+    Private Sub lbThayDoi_MouseLeave(sender As Object, e As EventArgs) Handles lbThayDoi.MouseLeave
+        lbThayDoi.ForeColor = Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+    End Sub
+
+    Private Sub lbThayDoi_Click(sender As Object, e As EventArgs) Handles lbThayDoi.Click
+        Me.Hide()
+
+        Dim splash As New splashScreen
+        splash.Show()
     End Sub
 End Class
