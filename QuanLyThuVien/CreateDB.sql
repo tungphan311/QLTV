@@ -791,10 +791,63 @@ GO
 insert into [tblTrangThai] values (2, N'Đã mượn')
 GO
 
-SELECT s.tensach, pm.ngaymuon
-FROM tblPhieuMuonSach pm, tblSach s, tblChiTietPhieuMuon ct
-WHERE pm.maphieumuonsach = ct.maphieumuonsach 
-and ct.masach = s.masach 
-and s.matrangthai = 2
-and s.madocgiamuon = pm.madocgia
-and GETDATE() - pm.ngaymuon > 4
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tblTaiKhoan](
+	[mataikhoan] [nvarchar](8) NOT NULL,
+	[id] [nvarchar](50) NULL,
+	[password] [nvarchar](50) NULL,
+	[maloaitaikhoan] [int] NULL,
+ CONSTRAINT [PK_tblTaiKhoan] PRIMARY KEY CLUSTERED 
+(
+	[mataikhoan] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tblLoaiTaiKhoan](
+	[maloaitaikhoan] [int] NOT NULL,
+	[loaitaikhoan] [nvarchar](50) NULL,
+ CONSTRAINT [PK_tblLoaiTaiKhoan] PRIMARY KEY CLUSTERED 
+(
+	[maloaitaikhoan] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [tblTaiKhoan] ADD CONSTRAINT [FK_tblTaiKhoan_tblLoaiTaiKhoan] 
+FOREIGN KEY ([maloaitaikhoan]) REFERENCES [tblLoaiTaiKhoan]([maloaitaikhoan])
+GO
+
+--loai tai khoan
+insert into [tblLoaiTaiKhoan] values (1, 'ADMIN')
+GO
+insert into [tblLoaiTaiKhoan] values (2, 'EMPLOYEE')
+GO
+
+-- tai khoan
+insert into [tblTaiKhoan] values ('TK001', 'ADMIN', 'admin', 1)
+GO
+insert into [tblTaiKhoan] values ('TK002', 'EMP001', 'emp001', 2)
+GO
+insert into [tblTaiKhoan] values ('TK003', 'EMP002', 'emp002', 2)
+GO
+insert into [tblTaiKhoan] values ('TK004', 'EMP003', 'emp003', 2)
+GO
+insert into [tblTaiKhoan] values ('TK005', 'EMP004', 'emp004', 2)
+GO
+insert into [tblTaiKhoan] values ('TK006', 'EMP005', 'emp005', 2)
+GO
+
