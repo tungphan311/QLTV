@@ -25,7 +25,7 @@ Public Class ucNhanTraSach
         Dim listDG As New List(Of DocGiaDTO)
         result = dgBus.selectAll(listDG)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách độc giả không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách độc giả không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -34,14 +34,14 @@ Public Class ucNhanTraSach
         Dim nextMS = "0"
         result = ptsBus.build_maphieumuon(nextMS)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy tự động mã phiếu trả sách không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy tự động mã phiếu trả sách không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Dispose()
             Return
         End If
         lbMaPTS.Text = nextMS
 
-        dtpNgayTra.Value = DateTime.Now
+        lbNgayTra.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString()
         clearInfo()
     End Sub
 
@@ -50,7 +50,7 @@ Public Class ucNhanTraSach
 
         If (e.KeyCode = Keys.Enter) Then
             If (tbMaDocGia.Text.Length < 1) Then
-                MessageBox.Show("Vui lòng nhập vào mã thẻ độc giả!")
+                MessageBox.Show("Vui lòng nhập vào mã thẻ độc giả!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 tbMaDocGia.Focus()
                 Return
             End If
@@ -59,7 +59,7 @@ Public Class ucNhanTraSach
             getInfo(tbMaDocGia.Text, isTrue)
 
             If isTrue = False Then
-                MessageBox.Show("Độc giả không tồn tại. Xin vui lòng kiểm tra lại mã độc giả!")
+                MessageBox.Show("Độc giả không tồn tại. Xin vui lòng kiểm tra lại mã độc giả!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 tbMaDocGia.Focus()
                 clearInfo()
                 Return
@@ -108,7 +108,7 @@ Public Class ucNhanTraSach
 
         ' Truyen gia tri vao GUI
         If (tinhTrang(DateTime.Now, ngaylapthe) = False) Then
-            If MessageBox.Show("Thẻ độc giả của quý khác đã quá hạn, xin vui lòng lập thẻ độc giả mới!", "Error ", MessageBoxButtons.OK) = DialogResult.OK Then
+            If MessageBox.Show("Thẻ độc giả của quý khác đã quá hạn, xin vui lòng lập thẻ độc giả mới!", "Lỗi", MessageBoxButtons.OK) = DialogResult.OK Then
                 tbMaDocGia.Focus()
                 Return New Result(False)
             End If
@@ -127,7 +127,9 @@ Public Class ucNhanTraSach
             re = sachBus.findTenSachFromMaSach(listMaSach(i), sach)
             listSach.Add(sach)
             Dim str As String()
-            str = New String() {"", listMaSach(i), listTenSach(i), listNgayMuon(i), tinhTrangSach(listNgayMuon(i))}
+            Dim ngaymuon As String = String.Empty
+            ngaymuon = listNgayMuon(i).Day.ToString() + "/" + listNgayMuon(i).Month.ToString() + "/" + listNgayMuon(i).Year.ToString()
+            str = New String() {listMaSach(i), listTenSach(i), ngaymuon, tinhTrangSach(listNgayMuon(i))}
             dgDSSachMuon.Rows.Add(str)
         Next
 
@@ -137,6 +139,12 @@ Public Class ucNhanTraSach
 
         Return New Result(True)
     End Function
+
+    Private Sub dgDSTheLoai_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles dgDSSachMuon.RowPostPaint
+        Using b As SolidBrush = New SolidBrush(dgDSSachMuon.RowHeadersDefaultCellStyle.ForeColor)
+            e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDSSachMuon.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 2)
+        End Using
+    End Sub
 
     Private Function tinhTrang(now As DateTime, ngaylap As DateTime) As Boolean
         Dim res As New Result
@@ -195,22 +203,10 @@ Public Class ucNhanTraSach
         Return "Đang mượn"
     End Function
 
-    Private Sub dgDSSachMuon_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles dgDSSachMuon.RowPostPaint
-        Using b As SolidBrush = New SolidBrush(dgDSSachMuon.RowHeadersDefaultCellStyle.ForeColor)
-            e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDSSachMuon.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 2)
-        End Using
-    End Sub
-
-    Private Sub dgDanhSachSach_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles dgDanhSachSach.RowPostPaint
-        Using b As SolidBrush = New SolidBrush(dgDanhSachSach.RowHeadersDefaultCellStyle.ForeColor)
-            e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDanhSachSach.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 2)
-        End Using
-    End Sub
-
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
         Dim add As Boolean = isAdded(cbMaSach.SelectedValue.ToString())
         If add = False Then
-            MessageBox.Show("Quý khách không thể thêm lại sách này!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Quý khách không thể thêm lại sách này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             cbMaSach.Focus()
             Return
         End If
@@ -220,7 +216,7 @@ Public Class ucNhanTraSach
     Private Function isAdded(masach As String) As Boolean
 
         For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
-            If (dgDanhSachSach.Rows(i).Cells(1).Value = masach) Then
+            If (dgDanhSachSach.Rows(i).Cells(0).Value = masach) Then
                 Return False
             End If
         Next
@@ -242,18 +238,18 @@ Public Class ucNhanTraSach
 
         res = sachBus.findTenSachFromMaSach(maSach, sach)
         If (res.FlagResult = False) Then
-            MessageBox.Show("Nạp tên sách không thành công!")
+            MessageBox.Show("Nạp tên sách không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return New Result(False)
         End If
         tensach = sach.TenSach
         res1 = tlsbus.getTenTheLoai_ByMaSach(maSach, listTheloai)
         If res1.FlagResult = False Then
-            MessageBox.Show("Nạp danh sách thể loại không thành công!")
+            MessageBox.Show("Nạp danh sách thể loại không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return New Result(False)
         End If
         res2 = tgsbus.get_TenTacGia_ByMaSach(maSach, listTacGia)
         If res2.FlagResult = False Then
-            MessageBox.Show("Nạp danh sách tác giả không thành công!")
+            MessageBox.Show("Nạp danh sách tác giả không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return New Result(False)
         End If
 
@@ -273,17 +269,34 @@ Public Class ucNhanTraSach
                 tacgia = tacgia + ", "
             End If
         Next
-        dgDanhSachSach.Rows.Add("", maSach, tensach, theloai, tacgia)
+        dgDanhSachSach.Rows.Add(maSach, tensach, theloai, tacgia)
 
         Return New Result(True)
     End Function
 
     Private Sub btnLuuVaThoat_Click(sender As Object, e As EventArgs) Handles btnLuuVaThoat.Click
+        ' Xet dieu kien
+        If lbHoTen.Text = String.Empty Then
+            MessageBox.Show("Vui lòng nhập mã độc giả trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            tbMaDocGia.Focus()
+            Return
+            End
+        Else
+            If dgDanhSachSach.Rows.Count = 0 Then
+                MessageBox.Show("Vui lòng chọn sách muốn trả!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                cbMaSach.Focus()
+                Return
+            End If
+        End If
+
+        If (MessageBox.Show("Phiếu trả sách sẽ đóng lại, bạn chắc chắn muốn thực hiện thao tác không? Tiếp tục?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) = DialogResult.Cancel) Then
+            Return
+        End If
 
         '1. Mapping data from GUI contro + insert to database:
         ' Xoa madocgiamuon cho sach duoc tra
         For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
-            sachBus.traSachBangMaSach(dgDanhSachSach.Rows(i).Cells(1).Value)
+            sachBus.traSachBangMaSach(dgDanhSachSach.Rows(i).Cells(0).Value)
         Next
 
         Dim pts As New PhieuTraSachDTO
@@ -292,7 +305,7 @@ Public Class ucNhanTraSach
 
         ' Insert Phieu Tra Sach
         pts.MaDocGia = tbMaDocGia.Text
-        pts.NgayTra = dtpNgayTra.Value
+        pts.NgayTra = lbNgayTra.Text
         pts.MaPhieuTraSach = lbMaPTS.Text
         res = ptsBus.insert(pts)
 
@@ -305,15 +318,15 @@ Public Class ucNhanTraSach
             res1 = ctptBus.build_mactphieutra(nextMaCTPT)
             ctpt.MaChiTietPhieuTra = nextMaCTPT
             ctpt.MaPhieuTraSach = lbMaPTS.Text
-            ctpt.MaSach = dgDanhSachSach.Rows(i).Cells(1).Value
+            ctpt.MaSach = dgDanhSachSach.Rows(i).Cells(0).Value
             res2 = ctptBus.insert(ctpt)
         Next
 
         'Thong bao
         If res.FlagResult = True Then
-            MessageBox.Show("Thêm phiếu trả thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Thêm phiếu trả thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            MessageBox.Show("Thêm phiếu trả thất bại. Vui lòng kiểm tra kết nối cơ sở dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thêm phiếu trả thất bại. Vui lòng kiểm tra kết nối cơ sở dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Console.WriteLine(res.SystemMessage)
         End If
 
@@ -332,6 +345,62 @@ Public Class ucNhanTraSach
     End Sub
 
     Private Sub btnLuu_Click(sender As Object, e As EventArgs) Handles btnLuu.Click
+        ' Xet dieu kien
+        If lbHoTen.Text = String.Empty Then
+            MessageBox.Show("Vui lòng nhập mã độc giả trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            tbMaDocGia.Focus()
+            Return
+            End
+        Else
+            If dgDanhSachSach.Rows.Count = 0 Then
+                MessageBox.Show("Vui lòng chọn sách muốn trả!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                cbMaSach.Focus()
+                Return
+            End If
+        End If
+
+        If (MessageBox.Show("Phiếu trả sách sẽ đóng lại, bạn chắc chắn muốn thực hiện thao tác không? Tiếp tục?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.Cancel) Then
+            Return
+        End If
+
+        '1. Mapping data from GUI contro + insert to database:
+        ' Xoa madocgiamuon cho sach duoc tra
+        For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
+            sachBus.traSachBangMaSach(dgDanhSachSach.Rows(i).Cells(0).Value)
+        Next
+
+        Dim pts As New PhieuTraSachDTO
+        Dim ctpt As New ChiTietPhieuTraDTO()
+        Dim res As New Result
+
+        ' Insert Phieu Tra Sach
+        pts.MaDocGia = tbMaDocGia.Text
+        pts.NgayTra = DateTime.Now
+        pts.MaPhieuTraSach = lbMaPTS.Text
+        res = ptsBus.insert(pts)
+
+        ' Insert Chi tiet phieu tra
+        Dim nextMaCTPT = "0"
+        For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
+            Dim res1 As New Result
+            Dim res2 As New Result
+
+            res1 = ctptBus.build_mactphieutra(nextMaCTPT)
+            ctpt.MaChiTietPhieuTra = nextMaCTPT
+            ctpt.MaPhieuTraSach = lbMaPTS.Text
+            ctpt.MaSach = dgDanhSachSach.Rows(i).Cells(0).Value
+            res2 = ctptBus.insert(ctpt)
+        Next
+
+        'Thong bao
+        If res.FlagResult = True Then
+            MessageBox.Show("Thêm phiếu trả thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Thêm phiếu trả thất bại. Vui lòng kiểm tra kết nối cơ sở dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Console.WriteLine(res.SystemMessage)
+        End If
+
+        ' Xuat file pdf
         Try
             Dim path As String
             Dim myFont As String = "C:\Windows\Fonts\Calibri.ttf"
@@ -383,7 +452,7 @@ Public Class ucNhanTraSach
 
             ' ngay tra
             s = String.Empty
-            s = "Ngày trả: " + dtpNgayTra.Value.Day.ToString() + "/" + dtpNgayTra.Value.Month.ToString() + "/" + dtpNgayTra.Value.Year.ToString()
+            s = "Ngày trả: " + lbNgayTra.Text
             Dim ngaytra As New Paragraph(s, fntID)
             ngaytra.Alignment = Element.ALIGN_CENTER
             ngaytra.SpacingAfter = 20.0F
@@ -494,18 +563,62 @@ Public Class ucNhanTraSach
             ' close
             doc.Close()
 
-            MessageBox.Show("Xuất phiếu trả sách " + lbMaPTS.Text + " thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If (MessageBox.Show("Xuất phiếu trả sách " + lbMaPTS.Text + " thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)) = DialogResult.OK Then
+                ' Load lai form moi
+                Dim parent As ucNhanTraSach
+                parent = sender.Parent
+                Dim grandpar = New FlowLayoutPanel
+                grandpar = parent.Parent
+                grandpar.Controls.Clear()
+                Dim grgrpar = New frmHome
+                grgrpar = grandpar.Parent
+                grgrpar.btnLapTheDocGia.selected = False
+                Dim ucNhanTraSach As New ucNhanTraSach
+                grandpar.Controls.Add(ucNhanTraSach)
+            End If
             Return
         Catch ex As Exception
-            MessageBox.Show("Xuất phiếu trả sách " + lbMaPTS.Text + " thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Xuất phiếu trả sách " + lbMaPTS.Text + " thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+
+
     End Sub
 
     Private Sub cbMaSach_Click(sender As Object, e As EventArgs) Handles cbMaSach.Click
         If lbHoTen.Text = String.Empty Then
-            MessageBox.Show("Vui lòng nhập vào mã độc giả trước!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Vui lòng nhập vào mã độc giả trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tbMaDocGia.Focus()
             Return
         End If
+    End Sub
+
+    Private Sub dgDanhSachSach_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles dgDanhSachSach.RowPostPaint
+        Using b As SolidBrush = New SolidBrush(dgDanhSachSach.RowHeadersDefaultCellStyle.ForeColor)
+            e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDanhSachSach.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 2)
+        End Using
+    End Sub
+
+    Private Sub dgDanhSachSach_UserDeletingRow(sender As Object, e As DataGridViewRowCancelEventArgs) Handles dgDanhSachSach.UserDeletingRow
+        e.Cancel = MessageBox.Show("Bạn có chắc muốn xoá sách khỏi phiếu mượn? Tiếp tục?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) <> DialogResult.OK
+    End Sub
+
+    Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click
+        '1. Xac nhan
+        If (MessageBox.Show("Dữ liệu chưa được lưu sẽ bị mất. Tiếp tuc?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)) = DialogResult.Cancel Then
+            Return
+        End If
+
+        '2. clear fpZone + call back ucThuVien
+        Dim parent As ucNhanTraSach
+        parent = sender.Parent
+        Dim grandpar = New FlowLayoutPanel
+        grandpar = parent.Parent
+        grandpar.Controls.Clear()
+        Dim grgrpar = New frmHome
+        grgrpar = grandpar.Parent
+        grgrpar.btnLapTheDocGia.selected = False
+        Dim ucThuVien As New ucThuVien
+        grandpar.Controls.Add(ucThuVien)
     End Sub
 End Class
