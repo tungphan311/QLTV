@@ -12,12 +12,14 @@ Public Class ucNhanTraSach
     Dim ptsBus As PhieuTraSachBus
     Dim sachBus As SachBUS
     Dim ctptBus As ChiTietPhieuTraBus
+    Dim tsBus
 
     Private Sub ucNhanTraSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ptsBus = New PhieuTraSachBus()
         dgBus = New DocGiaBus()
         sachBus = New SachBUS()
         ctptBus = New ChiTietPhieuTraBus()
+        tsBus = New ThamSoBus()
 
         'Load info doc gia
         Dim listDG As New List(Of DocGiaDTO)
@@ -52,7 +54,6 @@ Public Class ucNhanTraSach
                 tbMaDocGia.Focus()
                 Return
             End If
-
             Dim isTrue As Boolean = True
             clearInfo()
             getInfo(tbMaDocGia.Text, isTrue)
@@ -60,6 +61,7 @@ Public Class ucNhanTraSach
             If isTrue = False Then
                 MessageBox.Show("Độc giả không tồn tại. Xin vui lòng kiểm tra lại mã độc giả!")
                 tbMaDocGia.Focus()
+                clearInfo()
                 Return
             End If
         End If
@@ -90,6 +92,11 @@ Public Class ucNhanTraSach
         Dim res As New Result
         res = dgBus.findWithMaDG(madocgia, tendocgia, ngaylapthe)
 
+        If tendocgia.Length < 1 Then
+            isTrue = False
+            Return New Result(False)
+        End If
+
         For i As Integer = 0 To listMaSach.Count - 1
             Dim res1 As New Result
             Dim tensach As String = String.Empty
@@ -100,15 +107,19 @@ Public Class ucNhanTraSach
         Next
 
         ' Truyen gia tri vao GUI
-        lbHoTen.Text = tendocgia
-        lbNgayLap.Text = ngaylapthe.Day.ToString() + "/ " + ngaylapthe.Month.ToString() + "/ " + ngaylapthe.Year.ToString()
+        If (tinhTrang(DateTime.Now, ngaylapthe) = False) Then
+            If MessageBox.Show("Thẻ độc giả của quý khác đã quá hạn, xin vui lòng lập thẻ độc giả mới!", "Error ", MessageBoxButtons.OK) = DialogResult.OK Then
+                tbMaDocGia.Focus()
+                Return New Result(False)
+            End If
+        End If
 
         If (tinhTrang(DateTime.Now, ngaylapthe) = True) Then
             lbTinhTrang.Text = "Thẻ khả dụng"
         End If
-        If (tinhTrang(DateTime.Now, ngaylapthe) = False) Then
-            lbTinhTrang.Text = "Thẻ hết hạn"
-        End If
+
+        lbHoTen.Text = tendocgia
+        lbNgayLap.Text = ngaylapthe.Day.ToString() + "/ " + ngaylapthe.Month.ToString() + "/ " + ngaylapthe.Year.ToString()
 
         For i As Integer = 0 To listMaSach.Count - 1
             Dim re As New Result
@@ -128,6 +139,10 @@ Public Class ucNhanTraSach
     End Function
 
     Private Function tinhTrang(now As DateTime, ngaylap As DateTime) As Boolean
+        Dim res As New Result
+        Dim hsd As Integer
+        res = tsBUS.getHanSuDung(hsd)
+
         If (now.Year < ngaylap.Year) Then
             Return False
         End If
@@ -135,11 +150,11 @@ Public Class ucNhanTraSach
         If (now.Year = ngaylap.Year) Then
             Dim time As Integer = now.Month - ngaylap.Month
 
-            If (time > 6) Then
+            If (time > hsd) Then
                 Return False
             End If
 
-            If (time = 6) Then
+            If (time = hsd) Then
                 If (now.Day <= ngaylap.Day) Then
                     Return True
                 End If
@@ -152,15 +167,14 @@ Public Class ucNhanTraSach
 
         If (now.Year > ngaylap.Year) Then
             Dim time As Integer = now.Month + 12 - ngaylap.Month
-            If (time > 6) Then
+            If (time > hsd) Then
                 Return False
             End If
 
-            If (time = 6) Then
+            If (time = hsd) Then
                 If (now.Day <= ngaylap.Day) Then
                     Return True
                 End If
-
                 Return False
             End If
 
@@ -171,8 +185,10 @@ Public Class ucNhanTraSach
     Private Function tinhTrangSach(ngaylap As DateTime) As String
         Dim day As TimeSpan = DateTime.Now - ngaylap
         Dim days As Integer = day.TotalDays
-
-        If (days > 4) Then
+        Dim songaymuontoida As Integer = Nothing
+        Dim res As New Result
+        res = tsBus.getSoNgayMuonToiDa(songaymuontoida)
+        If (days > songaymuontoida) Then
             Return "Quá hạn"
         End If
 
@@ -192,8 +208,25 @@ Public Class ucNhanTraSach
     End Sub
 
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
+        Dim add As Boolean = isAdded(cbMaSach.SelectedValue.ToString())
+        If add = False Then
+            MessageBox.Show("Quý khách không thể thêm lại sách này!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            cbMaSach.Focus()
+            Return
+        End If
         getDetail(cbMaSach.SelectedValue.ToString())
     End Sub
+
+    Private Function isAdded(masach As String) As Boolean
+
+        For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
+            If (dgDanhSachSach.Rows(i).Cells(1).Value = masach) Then
+                Return False
+            End If
+        Next
+
+        Return True
+    End Function
 
     Private Function getDetail(maSach As String) As Result
         Dim tensach As String = String.Empty
@@ -276,6 +309,14 @@ Public Class ucNhanTraSach
             res2 = ctptBus.insert(ctpt)
         Next
 
+        'Thong bao
+        If res.FlagResult = True Then
+            MessageBox.Show("Thêm phiếu trả thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Thêm phiếu trả thất bại. Vui lòng kiểm tra kết nối cơ sở dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Console.WriteLine(res.SystemMessage)
+        End If
+
         '2. clear fpZone + call back ucThuVien
         Dim parent As ucNhanTraSach
         parent = sender.Parent
@@ -287,6 +328,7 @@ Public Class ucNhanTraSach
         grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
+
     End Sub
 
     Private Sub btnLuu_Click(sender As Object, e As EventArgs) Handles btnLuu.Click
@@ -457,5 +499,13 @@ Public Class ucNhanTraSach
         Catch ex As Exception
             MessageBox.Show("Xuất phiếu trả sách " + lbMaPTS.Text + " thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub cbMaSach_Click(sender As Object, e As EventArgs) Handles cbMaSach.Click
+        If lbHoTen.Text = String.Empty Then
+            MessageBox.Show("Vui lòng nhập vào mã độc giả trước!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tbMaDocGia.Focus()
+            Return
+        End If
     End Sub
 End Class

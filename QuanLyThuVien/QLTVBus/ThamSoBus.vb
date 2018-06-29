@@ -26,4 +26,8 @@ Public Class ThamSoBus
     Public Function getSoSachMuonToiDa(ByRef sosach As Integer) As Result
         Return tsDAL.getSoSachMuonToiDa(sosach)
     End Function
+
+    Public Function getHanSuDung(ByRef hansudung As Integer) As Result
+        Return tsDAL.getHanSuDung(hansudung)
+    End Function
 End Class

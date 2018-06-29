@@ -150,4 +150,37 @@ Public Class ThamSoDAL
         End Using
         Return New Result(True)
     End Function
+
+    Public Function getHanSuDung(ByRef hansudung As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= " SELECT [hansudung]"
+        query &= " FROM [tblThamSo]"
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            hansudung = reader("hansudung")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    Return New Result(False)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+
+    End Function
 End Class

@@ -92,6 +92,7 @@ Public Class ucChoMuonSach
 
         If tendocgia.Length < 1 Then
             isTrue = False
+            Return New Result(False)
         End If
 
         For i As Integer = 0 To listMaSach.Count - 1
@@ -144,6 +145,10 @@ Public Class ucChoMuonSach
     End Sub
 
     Private Function tinhTrang(now As DateTime, ngaylap As DateTime) As Boolean
+        Dim res As New Result
+        Dim hsd As Integer
+        res = tsBUS.getHanSuDung(hsd)
+
         If (now.Year < ngaylap.Year) Then
             Return False
         End If
@@ -151,11 +156,11 @@ Public Class ucChoMuonSach
         If (now.Year = ngaylap.Year) Then
             Dim time As Integer = now.Month - ngaylap.Month
 
-            If (time > 6) Then
+            If (time > hsd) Then
                 Return False
             End If
 
-            If (time = 6) Then
+            If (time = hsd) Then
                 If (now.Day <= ngaylap.Day) Then
                     Return True
                 End If
@@ -168,15 +173,14 @@ Public Class ucChoMuonSach
 
         If (now.Year > ngaylap.Year) Then
             Dim time As Integer = now.Month + 12 - ngaylap.Month
-            If (time > 6) Then
+            If (time > hsd) Then
                 Return False
             End If
 
-            If (time = 6) Then
+            If (time = hsd) Then
                 If (now.Day <= ngaylap.Day) Then
                     Return True
                 End If
-
                 Return False
             End If
 
@@ -264,11 +268,17 @@ Public Class ucChoMuonSach
         Dim isTrue As Boolean = True
         Dim hopLe As Boolean = sachHopLe(tbMaSach.Text)
         If hopLe = False Then
-            MessageBox.Show("Quý khách không thể mượn sách này vì sách đã được mượn!")
+            MessageBox.Show("Quý khách không thể mượn sách này vì sách đã được mượn!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             tbMaSach.Focus()
             Return
         End If
 
+        Dim add As Boolean = isAdded(tbMaSach.Text)
+        If add = False Then
+            MessageBox.Show("Quý khác không thể thêm lại sách này!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            tbMaSach.Focus()
+            Return
+        End If
         getSachInfo(tbMaSach.Text, isTrue)
 
     End Sub
@@ -322,6 +332,14 @@ Public Class ucChoMuonSach
             Dim res1 As New Result
             res1 = sachBUS.updateMaDocGiaMuon(dgDanhSachSach.Rows(i).Cells(1).Value, tbMaDocGia.Text)
         Next
+
+        ' Thong bao
+        If result.FlagResult = True Then
+            MessageBox.Show("Thêm phiếu mượn thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Thêm phiếu mượn thất bại. Vui lòng kiểm tra kết nối cơ sở dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Console.WriteLine(result.SystemMessage)
+        End If
 
         '2. clear fpZone + call back ucThuVien
         Dim parent As ucChoMuonSach
@@ -524,8 +542,6 @@ Public Class ucChoMuonSach
             ''''
             doc.Add(pdftable2)
 
-
-
             ' close
             doc.Close()
 
@@ -551,6 +567,15 @@ Public Class ucChoMuonSach
         Return True
     End Function
 
+    Private Function isAdded(masach As String) As Boolean
+        For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
+            If dgDanhSachSach.Rows(i).Cells(1).Value = masach Then
+                Return False
+            End If
+        Next
+        Return True
+    End Function
+
     Private Sub tbMaSach_OnValueChanged(sender As Object, e As EventArgs) Handles tbMaSach.OnValueChanged
         If lbHoTen.Text.Length < 1 Then
             MessageBox.Show("Vui lòng nhập vào mã độc giả trước!")
@@ -566,6 +591,7 @@ Public Class ucChoMuonSach
                 Return False
             End If
         Next
+
         Return True
     End Function
 End Class
