@@ -16,12 +16,13 @@ Public Class ucTiepNhanSachMoi
 
     Private Sub ucTiepNhanSachMoi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tbTenSach.Focus()
+        dtpNgayNhap.Value = Today
 
         ' lay ma sach tu dong
         Dim nextMaSach = "0"
         result = sachbus.get_masach(nextMaSach)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy tự động mã số sách thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy tự động mã số sách thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Dispose()
             Return
@@ -32,7 +33,7 @@ Public Class ucTiepNhanSachMoi
 
         result = theloaibus.selectAll(listtheloai)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách thể loại thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách thể loại thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -47,7 +48,7 @@ Public Class ucTiepNhanSachMoi
 
         result = tacgiabus.selectAll(listtacgia)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách tác giả thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách tác giả thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -62,7 +63,7 @@ Public Class ucTiepNhanSachMoi
 
         result = nhaxbbus.selectAll(listnhaxb)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách nhà xuất bản thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách nhà xuất bản thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -120,7 +121,7 @@ Public Class ucTiepNhanSachMoi
         sach.MaSach = lbMaSach.Text
         sach.TenSach = tbTenSach.Text
         sach.MaNhaXuatBan = cbNhaXuatBan.SelectedValue.ToString()
-        sach.NgayNhap = dtpNgayLapThe.Value
+        sach.NgayNhap = dtpNgayNhap.Value
         sach.TriGia = Convert.ToDecimal(tbTriGia.Text)
         sach.NamXuatBan = nudNamXuatBan.Value
         sach.MaDocGiaMuon = String.Empty
@@ -153,7 +154,7 @@ Public Class ucTiepNhanSachMoi
         '' Them tblSach
         result = sachbus.insert(sach)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Thêm thông tin sách thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thêm thông tin sách thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return New Result(False)
         End If
@@ -217,7 +218,7 @@ Mã thể loại: " + theloaisach.MaTheLoai, "Error", MessageBoxButtons.OK, Mess
             If (result.FlagResult = False) Then
                 MessageBox.Show("Tạo mã cho chi tiết tác giả sách thất bại!
 Mã sách: " + tacgiasach.MaSach + "
-Mã tác giả: " + tacgiasach.MaTacGia, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+Mã tác giả: " + tacgiasach.MaTacGia, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 System.Console.WriteLine(result.SystemMessage)
                 Return New Result(False)
             End If
@@ -228,7 +229,7 @@ Mã tác giả: " + tacgiasach.MaTacGia, "Error", MessageBoxButtons.OK, MessageB
             If (result.FlagResult = False) Then
                 MessageBox.Show("Lưu thông tin cho chi tiết tác giả sách thất bại!
 Mã sách: " + tacgiasach.MaSach + "
-Mã tác giả: " + tacgiasach.MaTacGia, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+Mã tác giả: " + tacgiasach.MaTacGia, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 System.Console.WriteLine(result.SystemMessage)
                 Return New Result(False)
             End If
@@ -236,7 +237,7 @@ Mã tác giả: " + tacgiasach.MaTacGia, "Error", MessageBoxButtons.OK, MessageB
 
 
         ' Thanh cong
-        MessageBox.Show("Thêm sách thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Thêm sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Return New Result(True)
     End Function
@@ -256,6 +257,15 @@ Mã tác giả: " + tacgiasach.MaTacGia, "Error", MessageBoxButtons.OK, MessageB
             grgrpar.btnLapTheDocGia.selected = False
             Dim ucThuVien As New ucThuVien
             grandpar.Controls.Add(ucThuVien)
+
+
+            grgrpar.btnLapTheDocGia.selected = False
+            grgrpar.btnTiepNhanSachMoi.selected = False
+            grgrpar.btnTraCuuSach.selected = False
+            grgrpar.btnChoMuonSach.selected = False
+            grgrpar.btnNhanTraSach.selected = False
+            grgrpar.btnLapBaoCao.selected = False
+            grgrpar.btnThayDoiQuyDinh.selected = False
         End If
     End Sub
 
@@ -286,7 +296,7 @@ Mã tác giả: " + tacgiasach.MaTacGia, "Error", MessageBoxButtons.OK, MessageB
             cbNhaXuatBan.SelectedIndex = 0
             cbNhaXuatBan.Text = ""
             nudNamXuatBan.Value = Today.Year
-            dtpNgayLapThe.Value = Today
+            dtpNgayNhap.Value = Today
             tbTriGia.Text = "0"
             tbTenSach.Focus()
         End If
@@ -303,5 +313,15 @@ Mã tác giả: " + tacgiasach.MaTacGia, "Error", MessageBoxButtons.OK, MessageB
         grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
+
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
+
+
 End Class

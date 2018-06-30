@@ -88,6 +88,7 @@
     <Compile Include="SachBUS.vb" />
     <Compile Include="TacGiaBUS.vb" />
     <Compile Include="TacGiaSachBUS.vb" />
+    <Compile Include="TaiKhoanBus.vb" />
     <Compile Include="ThamSoBus.vb" />
     <Compile Include="TheLoaiBUS.vb" />
     <Compile Include="TheLoaiSachBUS.vb" />

@@ -58,7 +58,7 @@ Public Class ucChoMuonSach
             getInfo(tbMaDocGia.Text, isTrue)
 
             If isTrue = False Then
-                MessageBox.Show("Độc giả không tồn tại. Xin vui lòng kiểm tra lại mã độc giả!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Độc giả không tồn tại. Vui lòng kiểm tra lại mã độc giả!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 tbMaDocGia.Focus()
                 clearInfo()
                 Return
@@ -68,7 +68,7 @@ Public Class ucChoMuonSach
             isValid = theHopLe()
             If (isValid = False) Then
                 MessageBox.Show("Quý khách không thể mượn thêm sách vì có sách mượn quá hạn. " +
-                                 "Xin vui lòng trả sách trước khi mượn thêm sách mới!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                                 "Vui lòng trả sách trước khi mượn thêm sách mới!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 tbMaSach.Enabled = False
                 btnThemMaSach.Enabled = False
                 btnXuatPhieuMuon.Enabled = False
@@ -112,7 +112,7 @@ Public Class ucChoMuonSach
 
         ' Truyen gia tri vao GUI
         If (tinhTrang(DateTime.Now, ngaylapthe) = False) Then
-            If MessageBox.Show("Thẻ độc giả của quý khác đã quá hạn, xin vui lòng lập thẻ độc giả mới!", "Lỗi",
+            If MessageBox.Show("Thẻ độc giả của quý khách đã quá hạn, vui lòng lập thẻ độc giả mới!", "Lỗi",
                                MessageBoxButtons.OK, MessageBoxIcon.Error) = DialogResult.OK Then
                 tbMaDocGia.Focus()
                 Return New Result(False)
@@ -226,7 +226,7 @@ Public Class ucChoMuonSach
 
         If num = 0 Then
             isTrue = False
-            MessageBox.Show("Sách không tồn tại. Xin vui lòng nhập lại mã sách!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Sách không tồn tại. Xin vui lòng nhập lại mã sách!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             tbMaSach.Focus()
             Return New Result(False)
         Else
@@ -234,11 +234,11 @@ Public Class ucChoMuonSach
         End If
 
         If (result1.FlagResult = False) Then
-            MessageBox.Show("Nạp thông tin độc giả không thành công", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Nạp thông tin độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return New Result(False)
         End If
         If (result2.FlagResult = False) Then
-            MessageBox.Show("Nạp thông tin độc giả không thành công", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Nạp thông tin độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return New Result(False)
         End If
 
@@ -381,6 +381,13 @@ Public Class ucChoMuonSach
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
 
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
     Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click
@@ -399,6 +406,15 @@ Public Class ucChoMuonSach
         grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
+
+
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
     Private Sub btnXuatPhieuMuon_Click(sender As Object, e As EventArgs) Handles btnXuatPhieuMuon.Click
@@ -431,7 +447,7 @@ Public Class ucChoMuonSach
         End If
 
         ' Xac nhan
-        If (MessageBox.Show("Phiếu mượn sách sẽ đóng lại, bạn chắc chắn muốn thực hiện thao tác không? Tiếp tục?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.Cancel) Then
+        If (MessageBox.Show("Lưu và xuất phiếu mượn. Tiếp tục?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.Cancel) Then
             Return
         End If
 

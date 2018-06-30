@@ -19,7 +19,7 @@ Public Class ucThuVien
         result = sachBus.selectAll(listSach)
 
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách đầu sách thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách đầu sách thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -32,7 +32,7 @@ Public Class ucThuVien
         result = dgBus.selectAll(listDocGia)
 
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách độc giả thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách độc giả thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -45,7 +45,7 @@ Public Class ucThuVien
         result = ctpmBus.selectALL(listctpm)
 
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách phiếu mượn thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách phiếu mượn thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If

@@ -20,7 +20,7 @@ Public Class ucThayDoiQuyDinh
         ' lấy danh sách quy định
         result = tsBus.selectALL(thamso)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách quy định không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách quy định không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -28,7 +28,7 @@ Public Class ucThayDoiQuyDinh
         ' lấy danh sách thể loại
         result = tlBus.selectAll(dstheloai)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách thể loại không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách thể loại không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -78,7 +78,7 @@ Public Class ucThayDoiQuyDinh
         result = tsBus.update(thamso)
 
         If (result.FlagResult = False) Then
-            MessageBox.Show("Cập nhật quy định không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Cập nhật quy định không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
@@ -137,13 +137,13 @@ Cập nhật quy định thất bại!", "Error", MessageBoxButtons.OK, MessageB
                 result = tlBus.insert(New TheLoaiDTO(dgDSTheLoai.Item(0, i).Value, dgDSTheLoai.Item(1, i).Value))
                 If (result.FlagResult = False) Then
                     MessageBox.Show("Lỗi xảy ra khi thêm thể loại có mã " + dgDSTheLoai.Item(0, i).Value + ".
-Cập nhật quy định thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+Cập nhật quy định thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
             End If
         Next
 
-        MessageBox.Show("Cập nhật quy định thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Cập nhật quy định thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ' Gọi về ucThuVien
         Dim parent = New ucThayDoiQuyDinh
@@ -156,6 +156,14 @@ Cập nhật quy định thất bại!", "Error", MessageBoxButtons.OK, MessageB
         grgrpar.btnThayDoiQuyDinh.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
+
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
     Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click
@@ -170,6 +178,14 @@ Cập nhật quy định thất bại!", "Error", MessageBoxButtons.OK, MessageB
         grgrpar.btnThayDoiQuyDinh.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
+
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
     ' Hàm này dùng để điền số thứ tự tự động trong datagrid
@@ -194,9 +210,9 @@ Cập nhật quy định thất bại!", "Error", MessageBoxButtons.OK, MessageB
     ' Hàm này có chức năng thông báo nhắc nhở khi người dùng muốn xoá một hàng trong datagrid
     Private Sub dgDSTheLoai_UserDeletingRow(sender As Object, e As DataGridViewRowCancelEventArgs) Handles dgDSTheLoai.UserDeletingRow
         If dgDSTheLoai.Rows.Count = 2 Then
-            e.Cancel = MessageBox.Show("Danh sách thể loại không được trống!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = MessageBox.Show("Danh sách thể loại không được trống!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
-            e.Cancel = MessageBox.Show("Xoá thể loại gây ảnh hưởng tới các chi tiết thể loại sách có liên quan. Tiếp tục?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) <> DialogResult.OK
+            e.Cancel = MessageBox.Show("Xoá thể loại gây ảnh hưởng tới các chi tiết thể loại sách có liên quan. Tiếp tục?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) <> DialogResult.OK
         End If
     End Sub
 

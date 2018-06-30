@@ -33,7 +33,7 @@ Public Class ucBaoCaoSachMuon
         End If
 
         If result.FlagResult = False Then
-            MessageBox.Show("Lỗi truy xuất dữ liệu. Lập thống kê thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lỗi truy xuất dữ liệu. Lập thống kê thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             tbThang.Focus()
             Return
@@ -51,7 +51,7 @@ Public Class ucBaoCaoSachMuon
         If tbThang.Text.Length > 0 Then
             month = Convert.ToDecimal(tbThang.Text)
             If ((month < 1 Or month > 12)) Then
-                MessageBox.Show("Tháng không hợp lệ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tháng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return New Result(False)
             End If
         End If
@@ -59,7 +59,7 @@ Public Class ucBaoCaoSachMuon
         If tbNam.Text.Length > 0 Then
             year = Convert.ToDecimal(tbNam.Text)
             If ((year < 2000 Or year > 2099)) Then
-                MessageBox.Show("Năm không hợp lệ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Năm không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return New Result(False)
             End If
         End If
@@ -118,6 +118,14 @@ Public Class ucBaoCaoSachMuon
         grgrgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grgrpar.Controls.Add(ucThuVien)
+
+        grgrgrpar.btnLapTheDocGia.selected = False
+        grgrgrpar.btnTiepNhanSachMoi.selected = False
+        grgrgrpar.btnTraCuuSach.selected = False
+        grgrgrpar.btnChoMuonSach.selected = False
+        grgrgrpar.btnNhanTraSach.selected = False
+        grgrgrpar.btnLapBaoCao.selected = False
+        grgrgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
     Private Sub ucBaoCaoSachMuon_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -242,11 +250,11 @@ Public Class ucBaoCaoSachMuon
             ' close
             doc.Close()
 
-            MessageBox.Show("Xuất kết quả báo cáo thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Xuất kết quả báo cáo thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return
 
         Catch ex As Exception
-            MessageBox.Show("Xuất kết quả báo cáo thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Xuất kết quả báo cáo thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
     End Sub

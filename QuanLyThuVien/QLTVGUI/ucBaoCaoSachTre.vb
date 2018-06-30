@@ -19,7 +19,7 @@ Public Class ucBaoCaoSachTre
         result = tsBus.selectALL(thamso)
 
         If result.FlagResult = False Then
-            MessageBox.Show("Lỗi truy xuất dữ liệu. Lập thống kê thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lỗi truy xuất dữ liệu. Lập thống kê thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             dtpNgay.Focus()
             Return
@@ -30,14 +30,14 @@ Public Class ucBaoCaoSachTre
         thoigian = New DateTime(dtpNgay.Value.Year, dtpNgay.Value.Month, dtpNgay.Value.Day)
 
         If thoigian > Today Or thoigian.Year < 2000 Then
-            MessageBox.Show("Thời gian không hợp lệ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thời gian không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
         result = sachBus.selectSachTre(thoigian, thamso.ThoiGianMuonToiDa, listten, listngay)
 
         If result.FlagResult = False Then
-            MessageBox.Show("Lỗi truy xuất dữ liệu. Lập thống kê thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lỗi truy xuất dữ liệu. Lập thống kê thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             dtpNgay.Focus()
             Return
@@ -82,6 +82,14 @@ Public Class ucBaoCaoSachTre
         grgrgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grgrpar.Controls.Add(ucThuVien)
+
+        grgrgrpar.btnLapTheDocGia.selected = False
+        grgrgrpar.btnTiepNhanSachMoi.selected = False
+        grgrgrpar.btnTraCuuSach.selected = False
+        grgrgrpar.btnChoMuonSach.selected = False
+        grgrgrpar.btnNhanTraSach.selected = False
+        grgrgrpar.btnLapBaoCao.selected = False
+        grgrgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
     Private Sub ucBaoCaoSachTre_Load(sender As Object, e As EventArgs) Handles MyBase.Load
