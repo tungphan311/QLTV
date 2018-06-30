@@ -1,6 +1,7 @@
 ﻿Imports QLTVDTO
 Imports QLTVBus
 Imports Utility
+Imports System.Drawing
 
 Public Class ucTiepNhanSachMoi
     Private sachbus As New SachBUS()
@@ -15,6 +16,7 @@ Public Class ucTiepNhanSachMoi
     Private result As New Result()
 
     Private Sub ucTiepNhanSachMoi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.ForeColor = Color.FromArgb(89, 94, 241)
         tbTenSach.Focus()
         dtpNgayNhap.Value = Today
 

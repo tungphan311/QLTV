@@ -93,6 +93,7 @@ Public Class ucBaoCaoSachTre
     End Sub
 
     Private Sub ucBaoCaoSachTre_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.ForeColor = Color.FromArgb(89, 94, 241)
         dtpNgay.Value = Today
     End Sub
 

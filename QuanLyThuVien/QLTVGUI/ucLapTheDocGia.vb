@@ -1,12 +1,14 @@
 ﻿Imports QLTVDTO
 Imports QLTVBus
 Imports Utility
+Imports System.Drawing
 
 Public Class ucLapTheDocGia
     Private dgBus As DocGiaBus
     Private ldgBus As LoaiDocGiaBus
 
     Private Sub ucLapTheDocGia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.ForeColor = Color.FromArgb(89, 94, 241)
         dtpNgayLapThe.Value = Today
         tbHoTen.Focus()
 

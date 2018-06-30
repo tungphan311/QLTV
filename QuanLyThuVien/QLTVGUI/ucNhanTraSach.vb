@@ -14,12 +14,15 @@ Public Class ucNhanTraSach
     Dim ctptBus As ChiTietPhieuTraBus
     Dim tsBus
 
+    ' Form Load
     Private Sub ucNhanTraSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ptsBus = New PhieuTraSachBus()
         dgBus = New DocGiaBus()
         sachBus = New SachBUS()
         ctptBus = New ChiTietPhieuTraBus()
         tsBus = New ThamSoBus()
+
+        Label1.ForeColor = Color.FromArgb(89, 94, 241)
 
         'Load info doc gia
         Dim listDG As New List(Of DocGiaDTO)
@@ -47,6 +50,8 @@ Public Class ucNhanTraSach
 
     ' Lay ma doc gia khi nguoi dung nhan enter
     Private Sub tbMaDocGia_KeyDown(sender As Object, e As KeyEventArgs) Handles tbMaDocGia.KeyDown
+        tbMaDocGia.Font = New Drawing.Font("Segoe UI", 12, FontStyle.Italic)
+        tbMaDocGia.ForeColor = Color.Black
 
         If (e.KeyCode = Keys.Enter) Then
             If (tbMaDocGia.Text.Length < 1) Then
@@ -56,6 +61,8 @@ Public Class ucNhanTraSach
             End If
             Dim isTrue As Boolean = True
             clearInfo()
+            tbMaDocGia.Font = New Drawing.Font("Segoe UI", 12, FontStyle.Regular)
+            tbMaDocGia.ForeColor = Color.Gray
             getInfo(tbMaDocGia.Text, isTrue)
 
             If isTrue = False Then
@@ -67,6 +74,7 @@ Public Class ucNhanTraSach
         End If
     End Sub
 
+    ' Xoa cac gia tri duoc gan tren GUI
     Private Sub clearInfo()
         lbHoTen.Text = ""
         lbNgayLap.Text = ""
@@ -140,12 +148,14 @@ Public Class ucNhanTraSach
         Return New Result(True)
     End Function
 
+    ' Ham gan so tu dong cho datagrid
     Private Sub dgDSTheLoai_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles dgDSSachMuon.RowPostPaint
         Using b As SolidBrush = New SolidBrush(dgDSSachMuon.RowHeadersDefaultCellStyle.ForeColor)
             e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDSSachMuon.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 2)
         End Using
     End Sub
 
+    ' Kiem tra han su dung cua the 
     Private Function tinhTrang(now As DateTime, ngaylap As DateTime) As Boolean
         Dim res As New Result
         Dim hsd As Integer
@@ -190,6 +200,7 @@ Public Class ucNhanTraSach
         End If
     End Function
 
+    ' Kiem tra tinh trang sach
     Private Function tinhTrangSach(ngaylap As DateTime) As String
         Dim day As TimeSpan = DateTime.Now - ngaylap
         Dim days As Integer = day.TotalDays
@@ -203,6 +214,7 @@ Public Class ucNhanTraSach
         Return "Đang mượn"
     End Function
 
+    ' Them sach vao phieu tra
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
         Dim add As Boolean = isAdded(cbMaSach.SelectedValue.ToString())
         If add = False Then
@@ -213,6 +225,7 @@ Public Class ucNhanTraSach
         getDetail(cbMaSach.SelectedValue.ToString())
     End Sub
 
+    ' Kiem tra sach da duoc them vao phieu tra hay chua
     Private Function isAdded(masach As String) As Boolean
 
         For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
@@ -225,6 +238,7 @@ Public Class ucNhanTraSach
     End Function
 
     Private Function getDetail(maSach As String) As Result
+        'Truy van du lieu tu database
         Dim tensach As String = String.Empty
         Dim listTheloai As New List(Of String)
         Dim listTacGia As New List(Of String)
@@ -253,6 +267,7 @@ Public Class ucNhanTraSach
             Return New Result(False)
         End If
 
+        ' Gan du lieu cho GUI
         Dim theloai As String = String.Empty
         Dim tacgia As String = String.Empty
 
@@ -601,6 +616,7 @@ Public Class ucNhanTraSach
 
     End Sub
 
+    ' Ham kiem tra da nhap vao doc gia hay chua
     Private Sub cbMaSach_Click(sender As Object, e As EventArgs) Handles cbMaSach.Click
         If lbHoTen.Text = String.Empty Then
             MessageBox.Show("Vui lòng nhập vào mã độc giả trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -609,12 +625,14 @@ Public Class ucNhanTraSach
         End If
     End Sub
 
+    ' Ham gan so tu dong cho datagrid
     Private Sub dgDanhSachSach_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles dgDanhSachSach.RowPostPaint
         Using b As SolidBrush = New SolidBrush(dgDanhSachSach.RowHeadersDefaultCellStyle.ForeColor)
             e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDanhSachSach.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 2)
         End Using
     End Sub
 
+    ' Ham xac nhan xem nguoi dung muon xoa dong tren datagrid
     Private Sub dgDanhSachSach_UserDeletingRow(sender As Object, e As DataGridViewRowCancelEventArgs) Handles dgDanhSachSach.UserDeletingRow
         e.Cancel = MessageBox.Show("Bạn có chắc muốn xoá sách khỏi phiếu mượn? Tiếp tục?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) <> DialogResult.OK
     End Sub
@@ -646,7 +664,4 @@ Public Class ucNhanTraSach
         grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
-    Private Sub dgDSSachMuon_UserDeletingRow(sender As Object, e As DataGridViewRowCancelEventArgs) Handles dgDSSachMuon.UserDeletingRow
-        e.Cancel = MessageBox.Show("Bạn có chắc muốn xoá sách khỏi phiếu mượn? Tiếp tục?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) <> DialogResult.OK
-    End Sub
 End Class

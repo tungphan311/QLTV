@@ -129,6 +129,7 @@ Public Class ucBaoCaoSachMuon
     End Sub
 
     Private Sub ucBaoCaoSachMuon_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.ForeColor = Color.FromArgb(89, 94, 241)
         tbThang.Text = Today.Month.ToString()
         tbNam.Text = Today.Year.ToString()
     End Sub

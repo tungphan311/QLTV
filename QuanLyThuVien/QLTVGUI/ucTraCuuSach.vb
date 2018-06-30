@@ -19,6 +19,7 @@ Public Class ucTraCuuSach
     Dim result As New Result
 
     Private Sub ucTraCuuSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.ForeColor = Color.FromArgb(89, 94, 241)
         ' Lay danh sach the loai, tac gia, trang thai, nha xuat ban
         '' The loai
         result = tlbus.selectAll(dstheloai)

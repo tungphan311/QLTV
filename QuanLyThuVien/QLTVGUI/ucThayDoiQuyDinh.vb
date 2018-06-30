@@ -16,7 +16,7 @@ Public Class ucThayDoiQuyDinh
 
 
     Private Sub ucThayDoiQuyDinh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Label1.ForeColor = Color.FromArgb(89, 94, 241)
         ' lấy danh sách quy định
         result = tsBus.selectALL(thamso)
         If (result.FlagResult = False) Then

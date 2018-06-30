@@ -13,6 +13,7 @@ Public Class ucChoMuonSach
     Private sachBUS As SachBUS
     Private tsBUS As ThamSoBus
 
+    ' Form load
     Private Sub ucChoMuonSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgBus = New DocGiaBus()
         pmsBUS = New PhieuMuonSachBus()
@@ -20,6 +21,8 @@ Public Class ucChoMuonSach
         sachBUS = New SachBUS()
         tsBUS = New ThamSoBus()
         Dim result As Result
+
+        Label1.ForeColor = Color.FromArgb(89, 94, 241)
 
         'Load info doc gia
         Dim listDG = New List(Of DocGiaDTO)
@@ -43,11 +46,18 @@ Public Class ucChoMuonSach
 
         clearInfo()
         lbNgayMuon.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString()
+
+        Me.dgDSSachMuon.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
     End Sub
 
+    ' Xet su kien nhap phim
     Private Sub tbMaDocGia_KeyDown(sender As Object, e As KeyEventArgs) Handles tbMaDocGia.KeyDown
+        tbMaDocGia.Font = New Drawing.Font("Segoe UI", 12, FontStyle.Italic)
+        tbMaDocGia.ForeColor = Color.Black
 
+        ' Lay ma doc gia tu textbox
         If (e.KeyCode = Keys.Enter) Then
+            ' Textbox khong duoc bo trong
             If (tbMaDocGia.Text.Length < 1) Then
                 MessageBox.Show("Vui lòng nhập vào mã thẻ độc giả!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 tbMaDocGia.Focus()
@@ -55,8 +65,11 @@ Public Class ucChoMuonSach
             End If
             Dim isTrue As Boolean = True
             clearInfo()
+            tbMaDocGia.Font = New Drawing.Font("Segoe UI", 12, FontStyle.Regular)
+            tbMaDocGia.ForeColor = Color.Gray
             getInfo(tbMaDocGia.Text, isTrue)
 
+            ' Kiem tra ma doc gia nhap vao 
             If isTrue = False Then
                 MessageBox.Show("Độc giả không tồn tại. Vui lòng kiểm tra lại mã độc giả!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 tbMaDocGia.Focus()
@@ -64,6 +77,7 @@ Public Class ucChoMuonSach
                 Return
             End If
 
+            ' Kiem tra xem the co muon sach qua han hay khong
             Dim isValid As Boolean
             isValid = theHopLe()
             If (isValid = False) Then
@@ -77,12 +91,11 @@ Public Class ucChoMuonSach
                 btnThemMaSach.Enabled = True
                 btnXuatPhieuMuon.Enabled = True
             End If
-
-
         End If
 
     End Sub
 
+    ' Ham lay gia tri cho GUI
     Private Function getInfo(madocgia As String, ByRef isTrue As Boolean) As Result
         Dim tendocgia As String = String.Empty
         Dim ngaylapthe As New DateTime
@@ -133,15 +146,18 @@ Public Class ucChoMuonSach
             str = New String() {listMaSach(i), listTenSach(i), ngaymuon, tinhTrangSach(listNgayMuon(i))}
             dgDSSachMuon.Rows.Add(str)
         Next
+
         Return New Result(True)
     End Function
 
+    ' Ham danh so tu dong cho datagrid
     Private Sub dgDSSachMuon_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles dgDSSachMuon.RowPostPaint
         Using b As SolidBrush = New SolidBrush(dgDSSachMuon.RowHeadersDefaultCellStyle.ForeColor)
             e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDSSachMuon.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 2)
         End Using
     End Sub
 
+    ' Xoa cac gia tri duoc gan tren GUI
     Private Sub clearInfo()
         lbHoTen.Text = ""
         lbNgayLap.Text = ""
@@ -153,6 +169,7 @@ Public Class ucChoMuonSach
 
     End Sub
 
+    ' Kiem tra han su dung the
     Private Function tinhTrang(now As DateTime, ngaylap As DateTime) As Boolean
         Dim res As New Result
         Dim hsd As Integer
@@ -197,6 +214,7 @@ Public Class ucChoMuonSach
         End If
     End Function
 
+    ' Kiem tra tinh trang cua sach
     Private Function tinhTrangSach(ngaylap As DateTime) As String
         Dim day As TimeSpan = DateTime.Now - ngaylap
         Dim days As Integer = day.TotalDays
@@ -210,7 +228,9 @@ Public Class ucChoMuonSach
         Return "Đang mượn"
     End Function
 
+    ' Lay thong tin cua sach tu ma sach
     Public Function getSachInfo(ByRef maSach As String, ByRef isTrue As Boolean) As Result
+        ' Truy van du lieu tu databse
         Dim tenSach As String = String.Empty
         Dim listTG As New List(Of String)
         Dim listTL As New List(Of String)
@@ -242,6 +262,7 @@ Public Class ucChoMuonSach
             Return New Result(False)
         End If
 
+        ' Gan du lieu cho GUI
         Dim tacgia As String = String.Empty
         Dim theloai As String = String.Empty
 
@@ -266,6 +287,7 @@ Public Class ucChoMuonSach
         Return New Result(True)
     End Function
 
+    ' Ham gan so tu dong cho datagrid
     Private Sub dgDSTheLoai_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles dgDanhSachSach.RowPostPaint
         Using b As SolidBrush = New SolidBrush(dgDanhSachSach.RowHeadersDefaultCellStyle.ForeColor)
             e.Graphics.DrawString((e.RowIndex + 1).ToString(), dgDanhSachSach.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 2)
@@ -273,7 +295,7 @@ Public Class ucChoMuonSach
     End Sub
 
     Private Sub btnThemMaSach_Click(sender As Object, e As EventArgs) Handles btnThemMaSach.Click
-
+        ' Kiem tra tinh hop le
         If (tbMaSach.Text.Length < 1) Then
             MessageBox.Show("Vui lòng nhập vào mã sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
             tbMaSach.Focus()
@@ -295,6 +317,7 @@ Public Class ucChoMuonSach
             Return
         End If
 
+        ' Gan du lieu cho GUI
         Dim sosachmuontoida As Integer = Nothing
         Dim sum As Integer = dgDSSachMuon.Rows.Count + dgDanhSachSach.Rows.Count
         Dim re1 As New Result
@@ -396,6 +419,7 @@ Public Class ucChoMuonSach
             Return
         End If
 
+        ' Clear fpZone + call back ucThuVien
         Dim parent As ucChoMuonSach
         parent = sender.Parent
         Dim grandpar = New FlowLayoutPanel
@@ -406,7 +430,6 @@ Public Class ucChoMuonSach
         grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
-
 
         grgrpar.btnLapTheDocGia.selected = False
         grgrpar.btnTiepNhanSachMoi.selected = False
