@@ -31,9 +31,6 @@ Partial Class frmHome
         Me.ibtnMinimize = New Bunifu.Framework.UI.BunifuImageButton()
         Me.ibtnExit = New Bunifu.Framework.UI.BunifuImageButton()
         Me.fpnZone = New System.Windows.Forms.FlowLayoutPanel()
-        Me.tbName = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnLogo = New Bunifu.Framework.UI.BunifuImageButton()
         Me.btnLapBaoCao = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btnNhanTraSach = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btnChoMuonSach = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -42,11 +39,22 @@ Partial Class frmHome
         Me.btnThayDoiQuyDinh = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btnLapTheDocGia = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.pbMenu = New System.Windows.Forms.PictureBox()
+        Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.btnLogo = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.tbName = New System.Windows.Forms.Label()
+        Me.dot1 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.dot2 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.dot3 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.dot4 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.dot5 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.dot6 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.dot7 = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.pnTaskBar.SuspendLayout()
         CType(Me.ibtnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ibtnExit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BunifuGradientPanel1.SuspendLayout()
+        CType(Me.btnLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuDragControl1
@@ -127,41 +135,6 @@ Partial Class frmHome
         Me.fpnZone.Name = "fpnZone"
         Me.fpnZone.Size = New System.Drawing.Size(730, 530)
         Me.fpnZone.TabIndex = 1
-        '
-        'tbName
-        '
-        Me.tbName.AutoSize = True
-        Me.tbName.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.tbName.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.tbName.Location = New System.Drawing.Point(25, 111)
-        Me.tbName.Name = "tbName"
-        Me.tbName.Size = New System.Drawing.Size(199, 30)
-        Me.tbName.TabIndex = 4
-        Me.tbName.Text = "QUẢN LÝ THƯ VIỆN"
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(22, 137)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(203, 23)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "________________________________"
-        '
-        'btnLogo
-        '
-        Me.btnLogo.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnLogo.Image = Global.QLTVGUI.My.Resources.Resources._36336054_798363663702632_2571347381962407936_n1
-        Me.btnLogo.ImageActive = Nothing
-        Me.btnLogo.Location = New System.Drawing.Point(85, 35)
-        Me.btnLogo.Name = "btnLogo"
-        Me.btnLogo.Size = New System.Drawing.Size(71, 71)
-        Me.btnLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btnLogo.TabIndex = 6
-        Me.btnLogo.TabStop = False
-        Me.btnLogo.Zoom = 10
         '
         'btnLapBaoCao
         '
@@ -428,15 +401,159 @@ Partial Class frmHome
         Me.pbMenu.TabIndex = 0
         Me.pbMenu.TabStop = False
         '
+        'BunifuGradientPanel1
+        '
+        Me.BunifuGradientPanel1.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel1.BackgroundImage"), System.Drawing.Image)
+        Me.BunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuGradientPanel1.Controls.Add(Me.btnLogo)
+        Me.BunifuGradientPanel1.Controls.Add(Me.tbName)
+        Me.BunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Black
+        Me.BunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.Silver
+        Me.BunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White
+        Me.BunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White
+        Me.BunifuGradientPanel1.Location = New System.Drawing.Point(0, 29)
+        Me.BunifuGradientPanel1.Name = "BunifuGradientPanel1"
+        Me.BunifuGradientPanel1.Quality = 10
+        Me.BunifuGradientPanel1.Size = New System.Drawing.Size(245, 124)
+        Me.BunifuGradientPanel1.TabIndex = 11
+        '
+        'btnLogo
+        '
+        Me.btnLogo.BackColor = System.Drawing.Color.Transparent
+        Me.btnLogo.Image = Global.QLTVGUI.My.Resources.Resources._36336054_798363663702632_2571347381962407936_n1
+        Me.btnLogo.ImageActive = Nothing
+        Me.btnLogo.Location = New System.Drawing.Point(83, 9)
+        Me.btnLogo.Name = "btnLogo"
+        Me.btnLogo.Size = New System.Drawing.Size(71, 71)
+        Me.btnLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btnLogo.TabIndex = 11
+        Me.btnLogo.TabStop = False
+        Me.btnLogo.Zoom = 10
+        '
+        'tbName
+        '
+        Me.tbName.AutoSize = True
+        Me.tbName.BackColor = System.Drawing.Color.Transparent
+        Me.tbName.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.tbName.Location = New System.Drawing.Point(21, 85)
+        Me.tbName.Name = "tbName"
+        Me.tbName.Size = New System.Drawing.Size(202, 30)
+        Me.tbName.TabIndex = 10
+        Me.tbName.Text = "QUẢN LÝ THƯ VIỆN"
+        '
+        'dot1
+        '
+        Me.dot1.BackgroundImage = CType(resources.GetObject("dot1.BackgroundImage"), System.Drawing.Image)
+        Me.dot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.dot1.GradientBottomLeft = System.Drawing.Color.White
+        Me.dot1.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot1.GradientTopLeft = System.Drawing.Color.White
+        Me.dot1.GradientTopRight = System.Drawing.Color.Gray
+        Me.dot1.Location = New System.Drawing.Point(1, 172)
+        Me.dot1.Name = "dot1"
+        Me.dot1.Quality = 10
+        Me.dot1.Size = New System.Drawing.Size(5, 50)
+        Me.dot1.TabIndex = 12
+        '
+        'dot2
+        '
+        Me.dot2.BackgroundImage = CType(resources.GetObject("dot2.BackgroundImage"), System.Drawing.Image)
+        Me.dot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.dot2.GradientBottomLeft = System.Drawing.Color.White
+        Me.dot2.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot2.GradientTopLeft = System.Drawing.Color.White
+        Me.dot2.GradientTopRight = System.Drawing.Color.Gray
+        Me.dot2.Location = New System.Drawing.Point(1, 225)
+        Me.dot2.Name = "dot2"
+        Me.dot2.Quality = 10
+        Me.dot2.Size = New System.Drawing.Size(5, 50)
+        Me.dot2.TabIndex = 12
+        '
+        'dot3
+        '
+        Me.dot3.BackgroundImage = CType(resources.GetObject("dot3.BackgroundImage"), System.Drawing.Image)
+        Me.dot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.dot3.GradientBottomLeft = System.Drawing.Color.White
+        Me.dot3.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot3.GradientTopLeft = System.Drawing.Color.White
+        Me.dot3.GradientTopRight = System.Drawing.Color.Gray
+        Me.dot3.Location = New System.Drawing.Point(1, 278)
+        Me.dot3.Name = "dot3"
+        Me.dot3.Quality = 10
+        Me.dot3.Size = New System.Drawing.Size(5, 50)
+        Me.dot3.TabIndex = 12
+        '
+        'dot4
+        '
+        Me.dot4.BackgroundImage = CType(resources.GetObject("dot4.BackgroundImage"), System.Drawing.Image)
+        Me.dot4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.dot4.GradientBottomLeft = System.Drawing.Color.White
+        Me.dot4.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot4.GradientTopLeft = System.Drawing.Color.White
+        Me.dot4.GradientTopRight = System.Drawing.Color.Gray
+        Me.dot4.Location = New System.Drawing.Point(1, 331)
+        Me.dot4.Name = "dot4"
+        Me.dot4.Quality = 10
+        Me.dot4.Size = New System.Drawing.Size(5, 50)
+        Me.dot4.TabIndex = 12
+        '
+        'dot5
+        '
+        Me.dot5.BackgroundImage = CType(resources.GetObject("dot5.BackgroundImage"), System.Drawing.Image)
+        Me.dot5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.dot5.GradientBottomLeft = System.Drawing.Color.White
+        Me.dot5.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot5.GradientTopLeft = System.Drawing.Color.White
+        Me.dot5.GradientTopRight = System.Drawing.Color.Gray
+        Me.dot5.Location = New System.Drawing.Point(1, 384)
+        Me.dot5.Name = "dot5"
+        Me.dot5.Quality = 10
+        Me.dot5.Size = New System.Drawing.Size(5, 50)
+        Me.dot5.TabIndex = 12
+        '
+        'dot6
+        '
+        Me.dot6.BackgroundImage = CType(resources.GetObject("dot6.BackgroundImage"), System.Drawing.Image)
+        Me.dot6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.dot6.GradientBottomLeft = System.Drawing.Color.White
+        Me.dot6.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot6.GradientTopLeft = System.Drawing.Color.White
+        Me.dot6.GradientTopRight = System.Drawing.Color.Gray
+        Me.dot6.Location = New System.Drawing.Point(1, 437)
+        Me.dot6.Name = "dot6"
+        Me.dot6.Quality = 10
+        Me.dot6.Size = New System.Drawing.Size(5, 50)
+        Me.dot6.TabIndex = 12
+        '
+        'dot7
+        '
+        Me.dot7.BackgroundImage = CType(resources.GetObject("dot7.BackgroundImage"), System.Drawing.Image)
+        Me.dot7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.dot7.GradientBottomLeft = System.Drawing.Color.White
+        Me.dot7.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot7.GradientTopLeft = System.Drawing.Color.White
+        Me.dot7.GradientTopRight = System.Drawing.Color.Gray
+        Me.dot7.Location = New System.Drawing.Point(1, 490)
+        Me.dot7.Name = "dot7"
+        Me.dot7.Quality = 10
+        Me.dot7.Size = New System.Drawing.Size(5, 50)
+        Me.dot7.TabIndex = 12
+        '
         'frmHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(984, 561)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnLogo)
-        Me.Controls.Add(Me.tbName)
+        Me.Controls.Add(Me.dot7)
+        Me.Controls.Add(Me.dot6)
+        Me.Controls.Add(Me.dot5)
+        Me.Controls.Add(Me.dot4)
+        Me.Controls.Add(Me.dot3)
+        Me.Controls.Add(Me.dot2)
+        Me.Controls.Add(Me.dot1)
+        Me.Controls.Add(Me.BunifuGradientPanel1)
         Me.Controls.Add(Me.btnLapBaoCao)
         Me.Controls.Add(Me.btnNhanTraSach)
         Me.Controls.Add(Me.btnChoMuonSach)
@@ -456,10 +573,11 @@ Partial Class frmHome
         Me.pnTaskBar.PerformLayout()
         CType(Me.ibtnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ibtnExit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.BunifuGradientPanel1.ResumeLayout(False)
+        Me.BunifuGradientPanel1.PerformLayout()
+        CType(Me.btnLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -469,7 +587,6 @@ Partial Class frmHome
     Friend WithEvents pnTaskBar As System.Windows.Forms.Panel
     Friend WithEvents ibtnExit As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents ibtnMinimize As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents tbName As System.Windows.Forms.Label
     Friend WithEvents btnLapTheDocGia As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnTiepNhanSachMoi As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnTraCuuSach As Bunifu.Framework.UI.BunifuFlatButton
@@ -477,8 +594,16 @@ Partial Class frmHome
     Friend WithEvents btnNhanTraSach As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnLapBaoCao As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btnThayDoiQuyDinh As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents btnLogo As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lbThayDoi As Label
     Friend WithEvents lbTrangThai As Label
+    Friend WithEvents BunifuGradientPanel1 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents btnLogo As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents tbName As Label
+    Friend WithEvents dot1 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents dot2 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents dot3 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents dot4 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents dot5 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents dot6 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents dot7 As Bunifu.Framework.UI.BunifuGradientPanel
 End Class

@@ -1,6 +1,7 @@
 ﻿Imports QLTVDTO
 Imports QLTVBus
 Imports Utility
+Imports System.Diagnostics
 
 Public Class ucThuVien
     Dim dgBus As DocGiaBus
@@ -51,5 +52,9 @@ Public Class ucThuVien
         End If
 
         lbSoLuotMuon.Text = listctpm.Count.ToString()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Process.Start("https://github.com/tungphan311/QLTV")
     End Sub
 End Class

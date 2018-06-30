@@ -56,11 +56,17 @@ Public Class splashScreen
         Dim home As New frmHome
         home.Show()
         home.btnLapTheDocGia.Enabled = False
+        home.dot1.Visible = False
         home.btnTiepNhanSachMoi.Enabled = False
+        home.dot2.Visible = False
         home.btnChoMuonSach.Enabled = False
+        home.dot4.Visible = False
         home.btnNhanTraSach.Enabled = False
+        home.dot5.Visible = False
         home.btnLapBaoCao.Enabled = False
+        home.dot6.Visible = False
         home.btnThayDoiQuyDinh.Enabled = False
+        home.dot7.Visible = False
         datTenCheDo(home)
     End Sub
 
@@ -164,6 +170,7 @@ Public Class splashScreen
                 Dim home As New frmHome
                 home.Show()
                 home.btnThayDoiQuyDinh.Enabled = False
+                home.dot7.Visible = False
                 datTenCheDo(home)
             End If
         Else
