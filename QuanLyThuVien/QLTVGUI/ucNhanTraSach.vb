@@ -386,43 +386,6 @@ Public Class ucNhanTraSach
             Return
         End If
 
-        '1. Mapping data from GUI contro + insert to database:
-        ' Xoa madocgiamuon cho sach duoc tra
-        For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
-            sachBus.traSachBangMaSach(dgDanhSachSach.Rows(i).Cells(0).Value)
-        Next
-
-        Dim pts As New PhieuTraSachDTO
-        Dim ctpt As New ChiTietPhieuTraDTO()
-        Dim res As New Result
-
-        ' Insert Phieu Tra Sach
-        pts.MaDocGia = tbMaDocGia.Text
-        pts.NgayTra = DateTime.Now
-        pts.MaPhieuTraSach = lbMaPTS.Text
-        res = ptsBus.insert(pts)
-
-        ' Insert Chi tiet phieu tra
-        Dim nextMaCTPT = "0"
-        For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
-            Dim res1 As New Result
-            Dim res2 As New Result
-
-            res1 = ctptBus.build_mactphieutra(nextMaCTPT)
-            ctpt.MaChiTietPhieuTra = nextMaCTPT
-            ctpt.MaPhieuTraSach = lbMaPTS.Text
-            ctpt.MaSach = dgDanhSachSach.Rows(i).Cells(0).Value
-            res2 = ctptBus.insert(ctpt)
-        Next
-
-        'Thong bao
-        If res.FlagResult = True Then
-            MessageBox.Show("Thêm phiếu trả thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            MessageBox.Show("Thêm phiếu trả thất bại. Vui lòng kiểm tra kết nối cơ sở dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Console.WriteLine(res.SystemMessage)
-        End If
-
         ' Xuat file pdf
         Try
             Dim path As String
@@ -587,6 +550,43 @@ Public Class ucNhanTraSach
             doc.Close()
 
             If (MessageBox.Show("Xuất phiếu trả sách " + lbMaPTS.Text + " thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)) = DialogResult.OK Then
+                '1. Mapping data from GUI contro + insert to database:
+                ' Xoa madocgiamuon cho sach duoc tra
+                For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
+                    sachBus.traSachBangMaSach(dgDanhSachSach.Rows(i).Cells(0).Value)
+                Next
+
+                Dim pts As New PhieuTraSachDTO
+                Dim ctpt As New ChiTietPhieuTraDTO()
+                Dim res As New Result
+
+                ' Insert Phieu Tra Sach
+                pts.MaDocGia = tbMaDocGia.Text
+                pts.NgayTra = DateTime.Now
+                pts.MaPhieuTraSach = lbMaPTS.Text
+                res = ptsBus.insert(pts)
+
+                ' Insert Chi tiet phieu tra
+                Dim nextMaCTPT = "0"
+                For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
+                    Dim res1 As New Result
+                    Dim res2 As New Result
+
+                    res1 = ctptBus.build_mactphieutra(nextMaCTPT)
+                    ctpt.MaChiTietPhieuTra = nextMaCTPT
+                    ctpt.MaPhieuTraSach = lbMaPTS.Text
+                    ctpt.MaSach = dgDanhSachSach.Rows(i).Cells(0).Value
+                    res2 = ctptBus.insert(ctpt)
+                Next
+
+                'Thong bao
+                If res.FlagResult = True Then
+                    MessageBox.Show("Thêm phiếu trả thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Thêm phiếu trả thất bại. Vui lòng kiểm tra kết nối cơ sở dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Console.WriteLine(res.SystemMessage)
+                End If
+
                 ' Load lai form moi
                 Dim parent As ucNhanTraSach
                 parent = sender.Parent

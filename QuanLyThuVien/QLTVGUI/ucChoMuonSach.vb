@@ -474,37 +474,6 @@ Public Class ucChoMuonSach
             Return
         End If
 
-        'Lay ma so tu dong
-        Dim nextMaCTPM = "0"
-        Dim result As Result
-
-        '1. mapping data from gui + insert to db
-        pms.MaDocGia = tbMaDocGia.Text
-        pms.MaPhieuMuonSach = lbMaPMS.Text
-        pms.NgayMuon = DateTime.Now
-        result = pmsBUS.insert(pms)
-
-        For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
-            Dim res As New Result
-            Dim result1 As New Result
-            res = ctpmBUS.build_mactpm(nextMaCTPM)
-            ctpm.MaChiTietPhieuMuon = nextMaCTPM
-            ctpm.MaPhieuMuonSach = lbMaPMS.Text
-            ctpm.MaSach = dgDanhSachSach.Rows(i).Cells(0).Value
-            result1 = ctpmBUS.insert(ctpm)
-
-            Dim res1 As New Result
-            res1 = sachBUS.updateMaDocGiaMuon(dgDanhSachSach.Rows(i).Cells(0).Value, tbMaDocGia.Text)
-        Next
-
-        ' Thong bao
-        If result.FlagResult = True Then
-            MessageBox.Show("Thêm phiếu mượn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            MessageBox.Show("Thêm phiếu mượn thất bại. Vui lòng kiểm tra kết nối cơ sở dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Console.WriteLine(result.SystemMessage)
-        End If
-
         ' Tao file pdf
         Try
             Dim path As String
@@ -683,6 +652,37 @@ Public Class ucChoMuonSach
             doc.Close()
 
             If MessageBox.Show("Xuất phiếu mượn sách " + lbMaPMS.Text + " thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information) = DialogResult.OK Then
+                'Lay ma so tu dong
+                Dim nextMaCTPM = "0"
+                Dim result As Result
+
+                '1. mapping data from gui + insert to db
+                pms.MaDocGia = tbMaDocGia.Text
+                pms.MaPhieuMuonSach = lbMaPMS.Text
+                pms.NgayMuon = DateTime.Now
+                result = pmsBUS.insert(pms)
+
+                For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
+                    Dim res As New Result
+                    Dim result1 As New Result
+                    res = ctpmBUS.build_mactpm(nextMaCTPM)
+                    ctpm.MaChiTietPhieuMuon = nextMaCTPM
+                    ctpm.MaPhieuMuonSach = lbMaPMS.Text
+                    ctpm.MaSach = dgDanhSachSach.Rows(i).Cells(0).Value
+                    result1 = ctpmBUS.insert(ctpm)
+
+                    Dim res1 As New Result
+                    res1 = sachBUS.updateMaDocGiaMuon(dgDanhSachSach.Rows(i).Cells(0).Value, tbMaDocGia.Text)
+                Next
+
+                ' Thong bao
+                If result.FlagResult = True Then
+                    MessageBox.Show("Thêm phiếu mượn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Thêm phiếu mượn thất bại. Vui lòng kiểm tra kết nối cơ sở dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Console.WriteLine(result.SystemMessage)
+                End If
+
                 ' Form Reload
                 Dim parent As ucChoMuonSach
                 parent = sender.Parent
@@ -695,6 +695,7 @@ Public Class ucChoMuonSach
                 Dim ucChoMuonSach As New ucChoMuonSach
                 grandpar.Controls.Add(ucChoMuonSach)
             End If
+
             Return
         Catch ex As Exception
             MessageBox.Show("Xuất phiếu mượn sách " + lbMaPMS.Text + " thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
