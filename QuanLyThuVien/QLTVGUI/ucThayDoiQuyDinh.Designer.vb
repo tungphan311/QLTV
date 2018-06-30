@@ -208,7 +208,7 @@ Partial Class ucThayDoiQuyDinh
         Me.GroupBox2.ForeColor = System.Drawing.Color.Red
         Me.GroupBox2.Location = New System.Drawing.Point(103, 217)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(490, 249)
+        Me.GroupBox2.Size = New System.Drawing.Size(490, 235)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Quy định 2:"
@@ -231,15 +231,15 @@ Partial Class ucThayDoiQuyDinh
         Me.dgDSTheLoai.AllowUserToResizeColumns = False
         Me.dgDSTheLoai.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.dgDSTheLoai.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgDSTheLoai.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgDSTheLoai.BackgroundColor = System.Drawing.Color.Gainsboro
+        Me.dgDSTheLoai.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgDSTheLoai.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgDSTheLoai.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
@@ -264,12 +264,12 @@ Partial Class ucThayDoiQuyDinh
         Me.dgDSTheLoai.Name = "dgDSTheLoai"
         Me.dgDSTheLoai.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
         Me.dgDSTheLoai.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgDSTheLoai.Size = New System.Drawing.Size(407, 148)
+        Me.dgDSTheLoai.Size = New System.Drawing.Size(407, 126)
         Me.dgDSTheLoai.TabIndex = 75
         '
         'MaTheLoai
@@ -426,7 +426,7 @@ Partial Class ucThayDoiQuyDinh
         Me.btnThoat.IconVisible = True
         Me.btnThoat.IconZoom = 60.0R
         Me.btnThoat.IsTab = False
-        Me.btnThoat.Location = New System.Drawing.Point(451, 654)
+        Me.btnThoat.Location = New System.Drawing.Point(448, 619)
         Me.btnThoat.Name = "btnThoat"
         Me.btnThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnThoat.OnHovercolor = System.Drawing.Color.Gray
@@ -462,7 +462,7 @@ Partial Class ucThayDoiQuyDinh
         Me.btnLuuThayDoi.IconVisible = True
         Me.btnLuuThayDoi.IconZoom = 60.0R
         Me.btnLuuThayDoi.IsTab = False
-        Me.btnLuuThayDoi.Location = New System.Drawing.Point(109, 654)
+        Me.btnLuuThayDoi.Location = New System.Drawing.Point(106, 619)
         Me.btnLuuThayDoi.Name = "btnLuuThayDoi"
         Me.btnLuuThayDoi.Normalcolor = System.Drawing.Color.LightGray
         Me.btnLuuThayDoi.OnHovercolor = System.Drawing.Color.Gray
@@ -486,7 +486,7 @@ Partial Class ucThayDoiQuyDinh
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ucThayDoiQuyDinh"
-        Me.Size = New System.Drawing.Size(700, 715)
+        Me.Size = New System.Drawing.Size(700, 686)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.nudThoiHanThe, System.ComponentModel.ISupportInitialize).EndInit()

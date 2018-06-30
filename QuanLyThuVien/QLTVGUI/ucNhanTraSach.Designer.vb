@@ -22,10 +22,10 @@ Partial Class ucNhanTraSach
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -135,7 +135,7 @@ Partial Class ucNhanTraSach
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.GroupBox1.Location = New System.Drawing.Point(31, 147)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(640, 305)
+        Me.GroupBox1.Size = New System.Drawing.Size(640, 265)
         Me.GroupBox1.TabIndex = 80
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Thông tin độc giả"
@@ -230,21 +230,21 @@ Partial Class ucNhanTraSach
         Me.dgDSSachMuon.AllowUserToDeleteRows = False
         Me.dgDSSachMuon.AllowUserToResizeColumns = False
         Me.dgDSSachMuon.AllowUserToResizeRows = False
-        DataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle33.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.dgDSSachMuon.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.dgDSSachMuon.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgDSSachMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgDSSachMuon.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgDSSachMuon.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgDSSachMuon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle34.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle34.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        DataGridViewCellStyle34.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgDSSachMuon.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle34
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgDSSachMuon.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgDSSachMuon.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.ThoiGianMuon, Me.Column1})
         Me.dgDSSachMuon.DoubleBuffered = True
         Me.dgDSSachMuon.EnableHeadersVisualStyles = False
@@ -255,7 +255,7 @@ Partial Class ucNhanTraSach
         Me.dgDSSachMuon.Name = "dgDSSachMuon"
         Me.dgDSSachMuon.ReadOnly = True
         Me.dgDSSachMuon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgDSSachMuon.Size = New System.Drawing.Size(625, 200)
+        Me.dgDSSachMuon.Size = New System.Drawing.Size(626, 160)
         Me.dgDSSachMuon.TabIndex = 71
         '
         'GroupBox2
@@ -267,9 +267,9 @@ Partial Class ucNhanTraSach
         Me.GroupBox2.Controls.Add(Me.BunifuImageButton1)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.GroupBox2.Location = New System.Drawing.Point(31, 473)
+        Me.GroupBox2.Location = New System.Drawing.Point(31, 434)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(640, 305)
+        Me.GroupBox2.Size = New System.Drawing.Size(640, 265)
         Me.GroupBox2.TabIndex = 81
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Thông tin phiếu trả"
@@ -281,7 +281,7 @@ Partial Class ucNhanTraSach
         Me.lbMaPTS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbMaPTS.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lbMaPTS.ForeColor = System.Drawing.Color.Red
-        Me.lbMaPTS.Location = New System.Drawing.Point(513, 25)
+        Me.lbMaPTS.Location = New System.Drawing.Point(504, 25)
         Me.lbMaPTS.Name = "lbMaPTS"
         Me.lbMaPTS.Size = New System.Drawing.Size(77, 19)
         Me.lbMaPTS.TabIndex = 76
@@ -293,7 +293,7 @@ Partial Class ucNhanTraSach
         Me.label.BackColor = System.Drawing.Color.Transparent
         Me.label.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.label.ForeColor = System.Drawing.Color.Red
-        Me.label.Location = New System.Drawing.Point(416, 25)
+        Me.label.Location = New System.Drawing.Point(393, 25)
         Me.label.Name = "label"
         Me.label.Size = New System.Drawing.Size(91, 19)
         Me.label.TabIndex = 75
@@ -304,7 +304,7 @@ Partial Class ucNhanTraSach
         Me.cbMaSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbMaSach.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.cbMaSach.FormattingEnabled = True
-        Me.cbMaSach.Location = New System.Drawing.Point(179, 57)
+        Me.cbMaSach.Location = New System.Drawing.Point(201, 52)
         Me.cbMaSach.Name = "cbMaSach"
         Me.cbMaSach.Size = New System.Drawing.Size(210, 29)
         Me.cbMaSach.TabIndex = 2
@@ -315,20 +315,20 @@ Partial Class ucNhanTraSach
         Me.dgDanhSachSach.AllowUserToOrderColumns = True
         Me.dgDanhSachSach.AllowUserToResizeColumns = False
         Me.dgDanhSachSach.AllowUserToResizeRows = False
-        DataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgDanhSachSach.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle35
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgDanhSachSach.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgDanhSachSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgDanhSachSach.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgDanhSachSach.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgDanhSachSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle36.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle36.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        DataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgDanhSachSach.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle36
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgDanhSachSach.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgDanhSachSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgDanhSachSach.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MaSach, Me.TenSach, Me.TheLoai, Me.TacGia})
         Me.dgDanhSachSach.DoubleBuffered = True
@@ -336,11 +336,11 @@ Partial Class ucNhanTraSach
         Me.dgDanhSachSach.GridColor = System.Drawing.Color.Gray
         Me.dgDanhSachSach.HeaderBgColor = System.Drawing.Color.DarkGray
         Me.dgDanhSachSach.HeaderForeColor = System.Drawing.Color.Black
-        Me.dgDanhSachSach.Location = New System.Drawing.Point(6, 99)
+        Me.dgDanhSachSach.Location = New System.Drawing.Point(6, 95)
         Me.dgDanhSachSach.Name = "dgDanhSachSach"
         Me.dgDanhSachSach.ReadOnly = True
         Me.dgDanhSachSach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgDanhSachSach.Size = New System.Drawing.Size(625, 200)
+        Me.dgDanhSachSach.Size = New System.Drawing.Size(626, 160)
         Me.dgDanhSachSach.TabIndex = 3
         '
         'BunifuImageButton1
@@ -348,7 +348,7 @@ Partial Class ucNhanTraSach
         Me.BunifuImageButton1.BackColor = System.Drawing.Color.Transparent
         Me.BunifuImageButton1.Image = Global.QLTVGUI.My.Resources.Resources.minus_sign_inside_a_black_circle
         Me.BunifuImageButton1.ImageActive = Nothing
-        Me.BunifuImageButton1.Location = New System.Drawing.Point(395, 58)
+        Me.BunifuImageButton1.Location = New System.Drawing.Point(417, 55)
         Me.BunifuImageButton1.Name = "BunifuImageButton1"
         Me.BunifuImageButton1.Size = New System.Drawing.Size(25, 25)
         Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -360,11 +360,11 @@ Partial Class ucNhanTraSach
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(110, 64)
+        Me.Label2.Location = New System.Drawing.Point(123, 55)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 19)
+        Me.Label2.Size = New System.Drawing.Size(71, 21)
         Me.Label2.TabIndex = 30
         Me.Label2.Text = "Tên sách:"
         '
@@ -390,7 +390,7 @@ Partial Class ucNhanTraSach
         Me.btnLuuVaThoat.IconVisible = True
         Me.btnLuuVaThoat.IconZoom = 60.0R
         Me.btnLuuVaThoat.IsTab = False
-        Me.btnLuuVaThoat.Location = New System.Drawing.Point(298, 794)
+        Me.btnLuuVaThoat.Location = New System.Drawing.Point(296, 712)
         Me.btnLuuVaThoat.Name = "btnLuuVaThoat"
         Me.btnLuuVaThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnLuuVaThoat.OnHovercolor = System.Drawing.Color.Gray
@@ -425,7 +425,7 @@ Partial Class ucNhanTraSach
         Me.btnThoat.IconVisible = True
         Me.btnThoat.IconZoom = 60.0R
         Me.btnThoat.IsTab = False
-        Me.btnThoat.Location = New System.Drawing.Point(512, 794)
+        Me.btnThoat.Location = New System.Drawing.Point(512, 712)
         Me.btnThoat.Name = "btnThoat"
         Me.btnThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnThoat.OnHovercolor = System.Drawing.Color.Gray
@@ -460,7 +460,7 @@ Partial Class ucNhanTraSach
         Me.btnLuu.IconVisible = True
         Me.btnLuu.IconZoom = 60.0R
         Me.btnLuu.IsTab = False
-        Me.btnLuu.Location = New System.Drawing.Point(75, 794)
+        Me.btnLuu.Location = New System.Drawing.Point(75, 712)
         Me.btnLuu.Name = "btnLuu"
         Me.btnLuu.Normalcolor = System.Drawing.Color.LightGray
         Me.btnLuu.OnHovercolor = System.Drawing.Color.Gray
@@ -485,11 +485,11 @@ Partial Class ucNhanTraSach
         '
         'DataGridViewTextBoxColumn2
         '
-        Me.DataGridViewTextBoxColumn2.FillWeight = 68.438!
+        Me.DataGridViewTextBoxColumn2.FillWeight = 70.0!
         Me.DataGridViewTextBoxColumn2.HeaderText = "Mã Sách"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 95
+        Me.DataGridViewTextBoxColumn2.Width = 96
         '
         'DataGridViewTextBoxColumn3
         '
@@ -497,10 +497,11 @@ Partial Class ucNhanTraSach
         Me.DataGridViewTextBoxColumn3.HeaderText = "Tên Sách"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 205
+        Me.DataGridViewTextBoxColumn3.Width = 214
         '
         'ThoiGianMuon
         '
+        Me.ThoiGianMuon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.ThoiGianMuon.HeaderText = "Thời gian mượn"
         Me.ThoiGianMuon.Name = "ThoiGianMuon"
         Me.ThoiGianMuon.ReadOnly = True
@@ -508,6 +509,7 @@ Partial Class ucNhanTraSach
         '
         'Column1
         '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Column1.HeaderText = "Tình Trạng"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -519,7 +521,7 @@ Partial Class ucNhanTraSach
         Me.MaSach.HeaderText = "Mã Sách"
         Me.MaSach.Name = "MaSach"
         Me.MaSach.ReadOnly = True
-        Me.MaSach.Width = 95
+        Me.MaSach.Width = 96
         '
         'TenSach
         '
@@ -527,7 +529,7 @@ Partial Class ucNhanTraSach
         Me.TenSach.HeaderText = "Tên Sách"
         Me.TenSach.Name = "TenSach"
         Me.TenSach.ReadOnly = True
-        Me.TenSach.Width = 205
+        Me.TenSach.Width = 214
         '
         'TheLoai
         '
@@ -535,7 +537,7 @@ Partial Class ucNhanTraSach
         Me.TheLoai.HeaderText = "Thể Loại"
         Me.TheLoai.Name = "TheLoai"
         Me.TheLoai.ReadOnly = True
-        Me.TheLoai.Width = 75
+        Me.TheLoai.Width = 95
         '
         'TacGia
         '
@@ -543,7 +545,7 @@ Partial Class ucNhanTraSach
         Me.TacGia.HeaderText = "Tác Giả"
         Me.TacGia.Name = "TacGia"
         Me.TacGia.ReadOnly = True
-        Me.TacGia.Width = 200
+        Me.TacGia.Width = 180
         '
         'ucNhanTraSach
         '
@@ -560,7 +562,7 @@ Partial Class ucNhanTraSach
         Me.Controls.Add(Me.tbMaDocGia)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ucNhanTraSach"
-        Me.Size = New System.Drawing.Size(700, 855)
+        Me.Size = New System.Drawing.Size(700, 765)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgDSSachMuon, System.ComponentModel.ISupportInitialize).EndInit()

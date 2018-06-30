@@ -149,7 +149,7 @@ Public Class ucNhanTraSach
     Private Function tinhTrang(now As DateTime, ngaylap As DateTime) As Boolean
         Dim res As New Result
         Dim hsd As Integer
-        res = tsBUS.getHanSuDung(hsd)
+        res = tsBus.getHanSuDung(hsd)
 
         If (now.Year < ngaylap.Year) Then
             Return False
@@ -644,5 +644,9 @@ Public Class ucNhanTraSach
         grgrpar.btnNhanTraSach.selected = False
         grgrpar.btnLapBaoCao.selected = False
         grgrpar.btnThayDoiQuyDinh.selected = False
+    End Sub
+
+    Private Sub dgDSSachMuon_UserDeletingRow(sender As Object, e As DataGridViewRowCancelEventArgs) Handles dgDSSachMuon.UserDeletingRow
+        e.Cancel = MessageBox.Show("Bạn có chắc muốn xoá sách khỏi phiếu mượn? Tiếp tục?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) <> DialogResult.OK
     End Sub
 End Class

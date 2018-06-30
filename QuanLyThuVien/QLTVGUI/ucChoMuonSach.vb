@@ -723,4 +723,5 @@ Public Class ucChoMuonSach
     Private Sub dgDanhSachSach_UserDeletingRow(sender As Object, e As DataGridViewRowCancelEventArgs) Handles dgDanhSachSach.UserDeletingRow
         e.Cancel = MessageBox.Show("Bạn có chắc muốn xoá sách khỏi phiếu mượn? Tiếp tục?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) <> DialogResult.OK
     End Sub
+
 End Class
