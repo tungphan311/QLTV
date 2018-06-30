@@ -18,7 +18,7 @@ Public Class ucLapTheDocGia
         Dim listLoaiDG = New List(Of LoaiDocGiaDTO)
         result = ldgBus.selectAll(listLoaiDG)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách loại độc giả không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách loại độc giả không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -32,7 +32,7 @@ Public Class ucLapTheDocGia
         Dim nextMaDG = "0"
         result = dgBus.buildMaDocGia(nextMaDG)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy tự động mã số độc giả không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy tự động mã số độc giả không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Dispose()
             Return
@@ -90,7 +90,7 @@ Public Class ucLapTheDocGia
         Dim result As Result
         result = dgBus.insert(docgia)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm độc giả thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Thêm độc giả thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ' Tao form them doc gia moi
             dgBus = New DocGiaBus()
@@ -100,7 +100,7 @@ Public Class ucLapTheDocGia
             Dim listLoaiDG = New List(Of LoaiDocGiaDTO)
             result = ldgBus.selectAll(listLoaiDG)
             If (result.FlagResult = False) Then
-                MessageBox.Show("Lấy danh sách loại độc giả không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Lấy danh sách loại độc giả không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 System.Console.WriteLine(result.SystemMessage)
                 Me.Dispose()
                 Return
@@ -129,7 +129,7 @@ Public Class ucLapTheDocGia
             tbHoTen.Focus()
 
         Else
-            MessageBox.Show("Thêm độc giả thất bại! Kiểm tra kết nối đến cơ sở dữ liệu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thêm độc giả thất bại! Kiểm tra kết nối đến cơ sở dữ liệu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
@@ -182,9 +182,9 @@ Public Class ucLapTheDocGia
         Dim result As Result
         result = dgBus.insert(docgia)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm độc giả thành công!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Thêm độc giả thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            MessageBox.Show("Thêm độc giả thất bại! Kiểm tra kết nối đến cơ sở dữ liệu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thêm độc giả thất bại! Kiểm tra kết nối đến cơ sở dữ liệu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
 
@@ -199,6 +199,14 @@ Public Class ucLapTheDocGia
         grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
+
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
     Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click
@@ -212,6 +220,14 @@ Public Class ucLapTheDocGia
         grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
+
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
 End Class

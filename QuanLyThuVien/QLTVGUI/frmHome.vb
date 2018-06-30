@@ -64,6 +64,17 @@ Public Class frmHome
         fpnZone.Controls.Clear()
         Dim ucThuVien As New ucThuVien
         fpnZone.Controls.Add(ucThuVien)
+        UnSelectedAll()
+    End Sub
+
+    Private Sub UnSelectedAll()
+        btnLapTheDocGia.selected = False
+        btnTiepNhanSachMoi.selected = False
+        btnTraCuuSach.selected = False
+        btnChoMuonSach.selected = False
+        btnNhanTraSach.selected = False
+        btnLapBaoCao.selected = False
+        btnThayDoiQuyDinh.selected = False
     End Sub
 
     Private Sub lbThayDoi_MouseHover(sender As Object, e As EventArgs) Handles lbThayDoi.MouseHover

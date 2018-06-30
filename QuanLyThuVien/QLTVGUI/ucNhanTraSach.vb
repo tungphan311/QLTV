@@ -342,6 +342,14 @@ Public Class ucNhanTraSach
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
 
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
+
     End Sub
 
     Private Sub btnLuu_Click(sender As Object, e As EventArgs) Handles btnLuu.Click
@@ -575,6 +583,14 @@ Public Class ucNhanTraSach
                 grgrpar.btnLapTheDocGia.selected = False
                 Dim ucNhanTraSach As New ucNhanTraSach
                 grandpar.Controls.Add(ucNhanTraSach)
+
+                grgrpar.btnLapTheDocGia.selected = False
+                grgrpar.btnTiepNhanSachMoi.selected = False
+                grgrpar.btnTraCuuSach.selected = False
+                grgrpar.btnChoMuonSach.selected = False
+                grgrpar.btnNhanTraSach.selected = False
+                grgrpar.btnLapBaoCao.selected = False
+                grgrpar.btnThayDoiQuyDinh.selected = False
             End If
             Return
         Catch ex As Exception
@@ -620,5 +636,13 @@ Public Class ucNhanTraSach
         grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
+
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 End Class

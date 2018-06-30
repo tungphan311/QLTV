@@ -26,6 +26,7 @@ Public Class splashScreen
         btnOK.Visible = False
         lbTrangThaiMK.Text = ""
         lbTroVe.Visible = False
+        btnDangNhap.Focus()
 
         Timer1.Interval = 1
         Timer1.Start()
@@ -38,7 +39,6 @@ Public Class splashScreen
             Timer1.Stop()
 
             If checkConnection() = True Then
-                BunifuTransition1.Show(pnLogo, True)
                 pnDangNhap.Width = 307
                 pnLogo.Location = New Drawing.Point(155, 138)
                 lbStatus.Text = "Kết nối thành công!"
@@ -245,4 +245,18 @@ Public Class splashScreen
         End If
     End Sub
 
+    Private Sub tbMatKhau_MouseHover(sender As Object, e As EventArgs) Handles tbMatKhau.MouseHover
+        Dim ToolTip1 As ToolTip = New ToolTip()
+        ToolTip1.SetToolTip(Me.tbMatKhau, "Nhập mật khẩu")
+    End Sub
+
+    Private Sub tbMatKhauMoi_MouseHover(sender As Object, e As EventArgs) Handles tbMatKhauMoi.MouseHover
+        Dim ToolTip1 As ToolTip = New ToolTip()
+        ToolTip1.SetToolTip(Me.tbMatKhauMoi, "Nhập mật khẩu mới")
+    End Sub
+
+    Private Sub tbNhapLaiMatKhauMoi_MouseHover(sender As Object, e As EventArgs) Handles tbNhapLaiMatKhauMoi.MouseHover
+        Dim ToolTip1 As ToolTip = New ToolTip()
+        ToolTip1.SetToolTip(Me.tbNhapLaiMatKhauMoi, "Xác nhận mật khẩu mới")
+    End Sub
 End Class

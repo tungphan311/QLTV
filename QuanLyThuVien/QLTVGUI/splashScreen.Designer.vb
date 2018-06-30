@@ -23,12 +23,8 @@ Partial Class splashScreen
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(splashScreen))
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
-        Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.pnDangNhap = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -52,6 +48,9 @@ Partial Class splashScreen
         Me.lbName = New System.Windows.Forms.Label()
         Me.progressBar = New Bunifu.Framework.UI.BunifuProgressBar()
         Me.lbStatus = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.BunifuDragControl3 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.BunifuGradientPanel1.SuspendLayout()
         Me.pnDangNhap.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,40 +66,6 @@ Partial Class splashScreen
         Me.BunifuDragControl1.TargetControl = Me.BunifuGradientPanel1
         Me.BunifuDragControl1.Vertical = True
         '
-        'Timer1
-        '
-        Me.Timer1.Interval = 1
-        '
-        'BunifuDragControl2
-        '
-        Me.BunifuDragControl2.Fixed = True
-        Me.BunifuDragControl2.Horizontal = True
-        Me.BunifuDragControl2.TargetControl = Me.pnDangNhap
-        Me.BunifuDragControl2.Vertical = True
-        '
-        'BunifuTransition1
-        '
-        Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind
-        Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 0
-        Animation1.Padding = New System.Windows.Forms.Padding(0)
-        Animation1.RotateCoeff = 0!
-        Animation1.RotateLimit = 0!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 0!
-        Animation1.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
-        Me.BunifuTransition1.MaxAnimationTime = 3000
-        Me.BunifuTransition1.TimeStep = 1.0!
-        '
         'BunifuGradientPanel1
         '
         Me.BunifuGradientPanel1.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel1.BackgroundImage"), System.Drawing.Image)
@@ -109,7 +74,6 @@ Partial Class splashScreen
         Me.BunifuGradientPanel1.Controls.Add(Me.pnLogo)
         Me.BunifuGradientPanel1.Controls.Add(Me.progressBar)
         Me.BunifuGradientPanel1.Controls.Add(Me.lbStatus)
-        Me.BunifuTransition1.SetDecoration(Me.BunifuGradientPanel1, BunifuAnimatorNS.DecorationType.None)
         Me.BunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Black
         Me.BunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.Gray
@@ -126,7 +90,6 @@ Partial Class splashScreen
         Me.pnDangNhap.BackColor = System.Drawing.Color.Transparent
         Me.pnDangNhap.Controls.Add(Me.PictureBox1)
         Me.pnDangNhap.Controls.Add(Me.Panel3)
-        Me.BunifuTransition1.SetDecoration(Me.pnDangNhap, BunifuAnimatorNS.DecorationType.None)
         Me.pnDangNhap.Dock = System.Windows.Forms.DockStyle.Right
         Me.pnDangNhap.Location = New System.Drawing.Point(677, 0)
         Me.pnDangNhap.Name = "pnDangNhap"
@@ -135,7 +98,6 @@ Partial Class splashScreen
         '
         'PictureBox1
         '
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox1, BunifuAnimatorNS.DecorationType.None)
         Me.PictureBox1.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Male_User_64
         Me.PictureBox1.Location = New System.Drawing.Point(110, 43)
         Me.PictureBox1.Name = "PictureBox1"
@@ -161,7 +123,6 @@ Partial Class splashScreen
         Me.Panel3.Controls.Add(Me.tbMatKhau)
         Me.Panel3.Controls.Add(Me.tbMaDangNhap)
         Me.Panel3.Controls.Add(Me.Label1)
-        Me.BunifuTransition1.SetDecoration(Me.Panel3, BunifuAnimatorNS.DecorationType.None)
         Me.Panel3.Location = New System.Drawing.Point(17, 68)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(241, 424)
@@ -178,7 +139,6 @@ Partial Class splashScreen
         Me.btnDocGia.BackgroundImage = CType(resources.GetObject("btnDocGia.BackgroundImage"), System.Drawing.Image)
         Me.btnDocGia.ButtonText = "Đăng nhập với tư cách độc giả"
         Me.btnDocGia.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.btnDocGia, BunifuAnimatorNS.DecorationType.None)
         Me.btnDocGia.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDocGia.ForeColor = System.Drawing.Color.White
         Me.btnDocGia.IdleBorderThickness = 1
@@ -196,7 +156,6 @@ Partial Class splashScreen
         'lbDoiMatKhau
         '
         Me.lbDoiMatKhau.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.lbDoiMatKhau, BunifuAnimatorNS.DecorationType.None)
         Me.lbDoiMatKhau.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbDoiMatKhau.ForeColor = System.Drawing.Color.Black
         Me.lbDoiMatKhau.Location = New System.Drawing.Point(3, 399)
@@ -208,7 +167,6 @@ Partial Class splashScreen
         'lbTroVe
         '
         Me.lbTroVe.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.lbTroVe, BunifuAnimatorNS.DecorationType.None)
         Me.lbTroVe.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTroVe.ForeColor = System.Drawing.Color.Black
         Me.lbTroVe.Location = New System.Drawing.Point(4, 399)
@@ -220,7 +178,6 @@ Partial Class splashScreen
         'lbThoat
         '
         Me.lbThoat.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.lbThoat, BunifuAnimatorNS.DecorationType.None)
         Me.lbThoat.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbThoat.ForeColor = System.Drawing.Color.Black
         Me.lbThoat.Location = New System.Drawing.Point(187, 399)
@@ -240,7 +197,6 @@ Partial Class splashScreen
         Me.btnOK.BackgroundImage = CType(resources.GetObject("btnOK.BackgroundImage"), System.Drawing.Image)
         Me.btnOK.ButtonText = "OK"
         Me.btnOK.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.btnOK, BunifuAnimatorNS.DecorationType.None)
         Me.btnOK.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOK.ForeColor = System.Drawing.Color.White
         Me.btnOK.IdleBorderThickness = 1
@@ -266,7 +222,6 @@ Partial Class splashScreen
         Me.btnDangNhap.BackgroundImage = CType(resources.GetObject("btnDangNhap.BackgroundImage"), System.Drawing.Image)
         Me.btnDangNhap.ButtonText = "ĐĂNG NHẬP"
         Me.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.btnDangNhap, BunifuAnimatorNS.DecorationType.None)
         Me.btnDangNhap.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDangNhap.ForeColor = System.Drawing.Color.White
         Me.btnDangNhap.IdleBorderThickness = 1
@@ -284,7 +239,6 @@ Partial Class splashScreen
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(1, 142)
         Me.Label3.Name = "Label3"
@@ -294,7 +248,6 @@ Partial Class splashScreen
         '
         'lbTrangThaiMK
         '
-        Me.BunifuTransition1.SetDecoration(Me.lbTrangThaiMK, BunifuAnimatorNS.DecorationType.None)
         Me.lbTrangThaiMK.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTrangThaiMK.ForeColor = System.Drawing.Color.Red
         Me.lbTrangThaiMK.Location = New System.Drawing.Point(9, 274)
@@ -307,7 +260,6 @@ Partial Class splashScreen
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.Label2, BunifuAnimatorNS.DecorationType.None)
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(1, 70)
         Me.Label2.Name = "Label2"
@@ -318,7 +270,6 @@ Partial Class splashScreen
         'tbNhapLaiMatKhauMoi
         '
         Me.tbNhapLaiMatKhauMoi.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BunifuTransition1.SetDecoration(Me.tbNhapLaiMatKhauMoi, BunifuAnimatorNS.DecorationType.None)
         Me.tbNhapLaiMatKhauMoi.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbNhapLaiMatKhauMoi.Location = New System.Drawing.Point(5, 244)
         Me.tbNhapLaiMatKhauMoi.MaxLength = 8
@@ -331,7 +282,6 @@ Partial Class splashScreen
         'tbMatKhauMoi
         '
         Me.tbMatKhauMoi.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BunifuTransition1.SetDecoration(Me.tbMatKhauMoi, BunifuAnimatorNS.DecorationType.None)
         Me.tbMatKhauMoi.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbMatKhauMoi.Location = New System.Drawing.Point(5, 209)
         Me.tbMatKhauMoi.MaxLength = 8
@@ -344,7 +294,6 @@ Partial Class splashScreen
         'tbMatKhau
         '
         Me.tbMatKhau.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BunifuTransition1.SetDecoration(Me.tbMatKhau, BunifuAnimatorNS.DecorationType.None)
         Me.tbMatKhau.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbMatKhau.Location = New System.Drawing.Point(5, 174)
         Me.tbMatKhau.MaxLength = 8
@@ -357,7 +306,6 @@ Partial Class splashScreen
         'tbMaDangNhap
         '
         Me.tbMaDangNhap.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BunifuTransition1.SetDecoration(Me.tbMaDangNhap, BunifuAnimatorNS.DecorationType.None)
         Me.tbMaDangNhap.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbMaDangNhap.Location = New System.Drawing.Point(5, 102)
         Me.tbMaDangNhap.Name = "tbMaDangNhap"
@@ -368,7 +316,6 @@ Partial Class splashScreen
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.Label1, BunifuAnimatorNS.DecorationType.None)
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(51, 27)
@@ -382,7 +329,6 @@ Partial Class splashScreen
         Me.pnLogo.BackColor = System.Drawing.Color.Transparent
         Me.pnLogo.Controls.Add(Me.logo)
         Me.pnLogo.Controls.Add(Me.lbName)
-        Me.BunifuTransition1.SetDecoration(Me.pnLogo, BunifuAnimatorNS.DecorationType.None)
         Me.pnLogo.Location = New System.Drawing.Point(314, 138)
         Me.pnLogo.Name = "pnLogo"
         Me.pnLogo.Size = New System.Drawing.Size(357, 239)
@@ -391,7 +337,6 @@ Partial Class splashScreen
         'logo
         '
         Me.logo.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTransition1.SetDecoration(Me.logo, BunifuAnimatorNS.DecorationType.None)
         Me.logo.Image = Global.QLTVGUI.My.Resources.Resources._36430347_798557037016628_946792645248679936_n
         Me.logo.Location = New System.Drawing.Point(84, 16)
         Me.logo.Name = "logo"
@@ -404,7 +349,6 @@ Partial Class splashScreen
         '
         Me.lbName.AutoSize = True
         Me.lbName.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTransition1.SetDecoration(Me.lbName, BunifuAnimatorNS.DecorationType.None)
         Me.lbName.Font = New System.Drawing.Font("Segoe UI", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbName.ForeColor = System.Drawing.Color.White
         Me.lbName.Location = New System.Drawing.Point(-7, 169)
@@ -417,7 +361,6 @@ Partial Class splashScreen
         '
         Me.progressBar.BackColor = System.Drawing.Color.LightGray
         Me.progressBar.BorderRadius = 5
-        Me.BunifuTransition1.SetDecoration(Me.progressBar, BunifuAnimatorNS.DecorationType.None)
         Me.progressBar.Location = New System.Drawing.Point(307, 481)
         Me.progressBar.MaximumValue = 100
         Me.progressBar.Name = "progressBar"
@@ -429,7 +372,6 @@ Partial Class splashScreen
         'lbStatus
         '
         Me.lbStatus.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTransition1.SetDecoration(Me.lbStatus, BunifuAnimatorNS.DecorationType.None)
         Me.lbStatus.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbStatus.ForeColor = System.Drawing.Color.LightGray
         Me.lbStatus.Location = New System.Drawing.Point(368, 457)
@@ -439,6 +381,24 @@ Partial Class splashScreen
         Me.lbStatus.Text = "Kết nối đến cơ sở dữ liệu"
         Me.lbStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1
+        '
+        'BunifuDragControl2
+        '
+        Me.BunifuDragControl2.Fixed = True
+        Me.BunifuDragControl2.Horizontal = True
+        Me.BunifuDragControl2.TargetControl = Me.pnDangNhap
+        Me.BunifuDragControl2.Vertical = True
+        '
+        'BunifuDragControl3
+        '
+        Me.BunifuDragControl3.Fixed = True
+        Me.BunifuDragControl3.Horizontal = True
+        Me.BunifuDragControl3.TargetControl = Me.pnLogo
+        Me.BunifuDragControl3.Vertical = True
+        '
         'splashScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -447,8 +407,8 @@ Partial Class splashScreen
         Me.ClientSize = New System.Drawing.Size(984, 561)
         Me.ControlBox = False
         Me.Controls.Add(Me.BunifuGradientPanel1)
-        Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "splashScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "splashScreen"
@@ -482,7 +442,6 @@ Partial Class splashScreen
     Friend WithEvents lbThoat As Label
     Friend WithEvents btnDangNhap As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents BunifuDragControl2 As Bunifu.Framework.UI.BunifuDragControl
-    Friend WithEvents BunifuTransition1 As BunifuAnimatorNS.BunifuTransition
     Friend WithEvents lbDoiMatKhau As Label
     Friend WithEvents tbNhapLaiMatKhauMoi As TextBox
     Friend WithEvents tbMatKhauMoi As TextBox
@@ -490,4 +449,5 @@ Partial Class splashScreen
     Friend WithEvents lbTrangThaiMK As Label
     Friend WithEvents btnDocGia As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents lbTroVe As Label
+    Friend WithEvents BunifuDragControl3 As Bunifu.Framework.UI.BunifuDragControl
 End Class

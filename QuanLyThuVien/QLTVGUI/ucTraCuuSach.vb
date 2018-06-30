@@ -23,7 +23,7 @@ Public Class ucTraCuuSach
         '' The loai
         result = tlbus.selectAll(dstheloai)
         If result.FlagResult = False Then
-            MessageBox.Show("Lấy danh sách thể loại không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách thể loại không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -35,7 +35,7 @@ Public Class ucTraCuuSach
         '' Tac gia
         result = tgbus.selectAll(dstacgia)
         If result.FlagResult = False Then
-            MessageBox.Show("Lấy danh sách tác giả không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách tác giả không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -47,7 +47,7 @@ Public Class ucTraCuuSach
         '' Tinh trang
         result = ttbus.selectAll(dstrangthai)
         If result.FlagResult = False Then
-            MessageBox.Show("Lấy danh sách trạng thái không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách trạng thái không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -67,14 +67,14 @@ Public Class ucTraCuuSach
         ' lay tat ca cac ma sach
         result = sachbus.selectAll_MaSach("%", ketqua)
         If result.FlagResult = False Then
-            MessageBox.Show("Lấy danh sách sách không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách sách không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
         ' tim kiem theo ma sach
         If tbMaSach.Text.Length > 0 Then
             result = sachbus.selectAll_MaSach("%" + tbMaSach.Text + "%", timkiem)
             If result.FlagResult = False Then
-                MessageBox.Show("Tìm kiếm theo mã sách không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tìm kiếm theo mã sách không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 findCommon(ketqua, timkiem) ' giao 2 list
             End If
@@ -84,7 +84,7 @@ Public Class ucTraCuuSach
         If tbTenSach.Text.Length > 0 Then
             result = sachbus.selectAll_TenSach("%" + tbTenSach.Text + "%", timkiem)
             If result.FlagResult = False Then
-                MessageBox.Show("Tìm kiếm theo tên sách không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tìm kiếm theo tên sách không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 findCommon(ketqua, timkiem)
             End If
@@ -94,7 +94,7 @@ Public Class ucTraCuuSach
         If cbTheLoai.SelectedIndex > 0 Then
             result = tlsbus.selectALL_MaTheLoai("%" + cbTheLoai.SelectedValue.ToString() + "%", timkiem)
             If result.FlagResult = False Then
-                MessageBox.Show("Tìm kiếm theo thể loại không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tìm kiếm theo thể loại không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 findCommon(ketqua, timkiem)
             End If
@@ -104,7 +104,7 @@ Public Class ucTraCuuSach
         If cbTacGia.SelectedIndex > 0 Then
             result = tgsbus.selectALL_MaTacGia("%" + cbTacGia.SelectedValue.ToString() + "%", timkiem)
             If result.FlagResult = False Then
-                MessageBox.Show("Tìm kiếm theo tác giả không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tìm kiếm theo tác giả không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 findCommon(ketqua, timkiem)
             End If
@@ -114,7 +114,7 @@ Public Class ucTraCuuSach
         If cbTinhTrang.SelectedIndex > 0 Then
             result = sachbus.selectAll_TrangThai("%" + cbTinhTrang.SelectedValue.ToString() + "%", timkiem)
             If result.FlagResult = False Then
-                MessageBox.Show("Tìm kiếm theo trạng thái không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tìm kiếm theo trạng thái không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 findCommon(ketqua, timkiem)
             End If
@@ -128,7 +128,7 @@ Public Class ucTraCuuSach
                 showResult(ketqua)
             End If
         Else
-            MessageBox.Show("Không tìm thấy kết quả nào thoả mãn!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Không tìm thấy kết quả nào thoả mãn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
     End Sub
@@ -148,20 +148,20 @@ Public Class ucTraCuuSach
             Dim tensach = ""
             result = sachbus.get_TenSach_ByMaSach(masach, tensach)
             If result.FlagResult = False Then
-                MessageBox.Show("Tìm kiếm thông tin tên của mã sách " + masach + " không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tìm kiếm thông tin tên của mã sách " + masach + " không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
             Dim trangthai = ""
             result = sachbus.get_TrangThai_ByMaSach(masach, trangthai)
             If result.FlagResult = False Then
-                MessageBox.Show("Tìm kiếm thông tin trạng thái của mã sách " + masach + " không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tìm kiếm thông tin trạng thái của mã sách " + masach + " không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
             Dim listTheLoai As New List(Of String)
             Dim theloai = ""
             result = tlsbus.getTenTheLoai_ByMaSach(masach, listTheLoai)
             If result.FlagResult = False Then
-                MessageBox.Show("Tìm kiếm thông tin thể loại của mã sách " + masach + " không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tìm kiếm thông tin thể loại của mã sách " + masach + " không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 For j As Integer = 0 To listTheLoai.Count - 1
                     theloai = theloai + listTheLoai.ElementAt(j)
@@ -175,7 +175,7 @@ Public Class ucTraCuuSach
             Dim tacgia = ""
             result = tgsbus.get_TenTacGia_ByMaSach(masach, listTacGia)
             If result.FlagResult = False Then
-                MessageBox.Show("Tìm kiếm thông tin tác giả của mã sách " + masach + " không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Tìm kiếm thông tin tác giả của mã sách " + masach + " không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 For j As Integer = 0 To listTacGia.Count - 1
                     tacgia = tacgia + listTacGia.ElementAt(j)
@@ -209,6 +209,14 @@ Public Class ucTraCuuSach
         grgrpar.btnLapTheDocGia.selected = False
         Dim ucThuVien As New ucThuVien
         grandpar.Controls.Add(ucThuVien)
+
+        grgrpar.btnLapTheDocGia.selected = False
+        grgrpar.btnTiepNhanSachMoi.selected = False
+        grgrpar.btnTraCuuSach.selected = False
+        grgrpar.btnChoMuonSach.selected = False
+        grgrpar.btnNhanTraSach.selected = False
+        grgrpar.btnLapBaoCao.selected = False
+        grgrpar.btnThayDoiQuyDinh.selected = False
     End Sub
 
     Private Sub btnXuatKetQua_Click(sender As Object, e As EventArgs) Handles btnXuatKetQua.Click
@@ -346,7 +354,7 @@ Public Class ucTraCuuSach
 
             ''''
             ' rows on datagrid
-            For i As Integer = 0 To dgDanhSachSach.Rows.Count - 2
+            For i As Integer = 0 To dgDanhSachSach.Rows.Count - 1
                 For j As Integer = 0 To dgDanhSachSach.Columns.Count - 1
                     pdfcell = New PdfPCell(New Phrase(dgDanhSachSach(j, i).Value.ToString(), fntNormal))
                     pdftable.HorizontalAlignment = PdfPCell.ALIGN_LEFT
