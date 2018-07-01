@@ -1,9 +1,8 @@
-﻿<img src="https://imgur.com/bcHFVBJ">
+﻿<img src="https://i.imgur.com/bcHFVBJ.png">
 
 
 
-Đồ án môn học Nhập môn Công nghệ phần mềm,
-Trường Đại học Công nghệ thông tin - DHQG HCM.
+*Đồ án môn học Nhập môn Công nghệ phần mềm, Trường Đại học Công nghệ thông tin - DHQG HCM.*
 
 
 
@@ -29,9 +28,9 @@ Trường Đại học Công nghệ thông tin - DHQG HCM.
 
 # Screenshots
 
-<img src="https://imgur.com/oQzoH2h">
+<img src="https://i.imgur.com/oQzoH2h.png">
 
-<img src="https://imgur.com/Evoi0YK">
+<img src="https://i.imgur.com/Evoi0YK.png">
 
 
 
@@ -74,8 +73,8 @@ Phần mềm có thể được phát triển và mở rộng tính năng hướ
 
 
 
-### Nhóm sinh viên thực hiện:
+# Nhóm sinh viên thực hiện:
 
 - Nguyễn Thành Luân - MSSV 16520703
 
-- Phan Thanh Tùng - MSSV 16521399 
+- Phan Thanh Tùng   - MSSV 16521399 
