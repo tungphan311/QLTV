@@ -2,7 +2,7 @@
 
 
 
-*Đồ án môn học Nhập môn Công nghệ phần mềm, Trường Đại học Công nghệ thông tin - DHQG HCM.*
+<p align="center">*Đồ án môn học Nhập môn Công nghệ phần mềm, Trường Đại học Công nghệ thông tin - DHQG HCM.*</p>
 
 
 
@@ -37,8 +37,8 @@
 # Cài đặt
 
 - Build from source: [Github](https://github.com/tungphan311/QLTV.git) 
-- Trong 'QLTV\QuanLyThuVien\QLTVGUI\app.config' sửa giá trị 'Data Source' của 'ConnectionString' thành tên server local
-- Trong 'QLTV\QuanLyThuVien\CreateDB.cmd' sửa vùng bôi đen như dưới thành tên server local
+- Trong `QLTV\QuanLyThuVien\QLTVGUI\app.config` sửa giá trị `Data Source` của `ConnectionString` thành tên server local
+- Trong `QLTV\QuanLyThuVien\CreateDB.cmd` sửa vùng bôi đen như dưới thành tên server local 
 <p align="center"><img src="https://i.imgur.com/ocjkEoR.png"></p>
 
 - Chạy CreateDB.cmd
