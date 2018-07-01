@@ -36,17 +36,20 @@
 
 # Cài đặt
 
-- Chạy CreateDB.cmd để cài đặt cơ sở dữ liệu
+- Build from source: [Github](https://github.com/tungphan311/QLTV.git) 
+- Trong 'QLTV\QuanLyThuVien\QLTVGUI\app.config' sửa giá trị 'Data Source' của 'ConnectionString' thành tên server local
+- Trong 'QLTV\QuanLyThuVien\CreateDB.cmd' sửa vùng bôi đen như dưới thành tên server local
+<p align="center"><img src="https://i.imgur.com/ocjkEoR.png"></p>
 
-- Mở QuanLyThuVien.exe để sử dụng phần mềm
-
+- Chạy CreateDB.cmd
+- Tiến hành build và sử dụng chương trình
 
 
 # Yêu cầu hệ thống
 
 - .Net Framework 3.5
 
-- SQL Server
+- SQL Server 2008
 
 
 
