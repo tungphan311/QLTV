@@ -49,7 +49,7 @@ Partial Class ucLapTheDocGia
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(260, 11)
+        Me.Label1.Location = New System.Drawing.Point(264, 11)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(182, 30)
         Me.Label1.TabIndex = 0
@@ -195,7 +195,7 @@ Partial Class ucLapTheDocGia
         Me.btnLuuVaThoat.IconVisible = True
         Me.btnLuuVaThoat.IconZoom = 60.0R
         Me.btnLuuVaThoat.IsTab = False
-        Me.btnLuuVaThoat.Location = New System.Drawing.Point(281, 470)
+        Me.btnLuuVaThoat.Location = New System.Drawing.Point(285, 470)
         Me.btnLuuVaThoat.Name = "btnLuuVaThoat"
         Me.btnLuuVaThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnLuuVaThoat.OnHovercolor = System.Drawing.Color.Gray
@@ -230,7 +230,7 @@ Partial Class ucLapTheDocGia
         Me.btnThoat.IconVisible = True
         Me.btnThoat.IconZoom = 60.0R
         Me.btnThoat.IsTab = False
-        Me.btnThoat.Location = New System.Drawing.Point(492, 470)
+        Me.btnThoat.Location = New System.Drawing.Point(496, 470)
         Me.btnThoat.Name = "btnThoat"
         Me.btnThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnThoat.OnHovercolor = System.Drawing.Color.Gray
@@ -265,7 +265,7 @@ Partial Class ucLapTheDocGia
         Me.btnLuu.IconVisible = True
         Me.btnLuu.IconZoom = 60.0R
         Me.btnLuu.IsTab = False
-        Me.btnLuu.Location = New System.Drawing.Point(121, 470)
+        Me.btnLuu.Location = New System.Drawing.Point(125, 470)
         Me.btnLuu.Name = "btnLuu"
         Me.btnLuu.Normalcolor = System.Drawing.Color.LightGray
         Me.btnLuu.OnHovercolor = System.Drawing.Color.Gray
@@ -361,7 +361,7 @@ Partial Class ucLapTheDocGia
         '
         'GroupBox1
         '
-        Me.GroupBox1.Location = New System.Drawing.Point(78, 63)
+        Me.GroupBox1.Location = New System.Drawing.Point(83, 63)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(544, 340)
         Me.GroupBox1.TabIndex = 12
@@ -394,7 +394,7 @@ Partial Class ucLapTheDocGia
         Me.Controls.Add(Me.GroupBox1)
         Me.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.Name = "ucLapTheDocGia"
-        Me.Size = New System.Drawing.Size(700, 530)
+        Me.Size = New System.Drawing.Size(710, 530)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -45,7 +45,7 @@ Partial Class ucBaoCao
         Me.btnBaoCaoSachMuon.IdleFillColor = System.Drawing.Color.LightGray
         Me.btnBaoCaoSachMuon.IdleForecolor = System.Drawing.Color.Black
         Me.btnBaoCaoSachMuon.IdleLineColor = System.Drawing.Color.Silver
-        Me.btnBaoCaoSachMuon.Location = New System.Drawing.Point(135, 166)
+        Me.btnBaoCaoSachMuon.Location = New System.Drawing.Point(140, 166)
         Me.btnBaoCaoSachMuon.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBaoCaoSachMuon.Name = "btnBaoCaoSachMuon"
         Me.btnBaoCaoSachMuon.Size = New System.Drawing.Size(150, 150)
@@ -70,7 +70,7 @@ Partial Class ucBaoCao
         Me.btnBaoCaoSachTre.IdleFillColor = System.Drawing.Color.LightGray
         Me.btnBaoCaoSachTre.IdleForecolor = System.Drawing.Color.Black
         Me.btnBaoCaoSachTre.IdleLineColor = System.Drawing.Color.Silver
-        Me.btnBaoCaoSachTre.Location = New System.Drawing.Point(415, 166)
+        Me.btnBaoCaoSachTre.Location = New System.Drawing.Point(420, 166)
         Me.btnBaoCaoSachTre.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBaoCaoSachTre.Name = "btnBaoCaoSachTre"
         Me.btnBaoCaoSachTre.Size = New System.Drawing.Size(150, 150)
@@ -85,7 +85,7 @@ Partial Class ucBaoCao
         Me.Controls.Add(Me.btnBaoCaoSachTre)
         Me.Controls.Add(Me.btnBaoCaoSachMuon)
         Me.Name = "ucBaoCao"
-        Me.Size = New System.Drawing.Size(700, 530)
+        Me.Size = New System.Drawing.Size(710, 530)
         Me.ResumeLayout(False)
 
     End Sub

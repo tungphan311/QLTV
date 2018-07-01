@@ -82,7 +82,7 @@ Partial Class frmHome
         Me.lbThayDoi.AutoSize = True
         Me.lbThayDoi.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbThayDoi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.lbThayDoi.Location = New System.Drawing.Point(248, 6)
+        Me.lbThayDoi.Location = New System.Drawing.Point(192, 6)
         Me.lbThayDoi.Name = "lbThayDoi"
         Me.lbThayDoi.Size = New System.Drawing.Size(58, 17)
         Me.lbThayDoi.TabIndex = 1
@@ -131,9 +131,9 @@ Partial Class frmHome
         Me.fpnZone.AutoScroll = True
         Me.fpnZone.BackColor = System.Drawing.Color.WhiteSmoke
         Me.fpnZone.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.fpnZone.Location = New System.Drawing.Point(251, 29)
+        Me.fpnZone.Location = New System.Drawing.Point(249, 29)
         Me.fpnZone.Name = "fpnZone"
-        Me.fpnZone.Size = New System.Drawing.Size(730, 530)
+        Me.fpnZone.Size = New System.Drawing.Size(734, 530)
         Me.fpnZone.TabIndex = 1
         '
         'btnLapBaoCao
@@ -447,13 +447,13 @@ Partial Class frmHome
         Me.dot1.BackgroundImage = CType(resources.GetObject("dot1.BackgroundImage"), System.Drawing.Image)
         Me.dot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.dot1.GradientBottomLeft = System.Drawing.Color.White
-        Me.dot1.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot1.GradientBottomRight = System.Drawing.Color.White
         Me.dot1.GradientTopLeft = System.Drawing.Color.White
-        Me.dot1.GradientTopRight = System.Drawing.Color.Gray
-        Me.dot1.Location = New System.Drawing.Point(1, 172)
+        Me.dot1.GradientTopRight = System.Drawing.Color.Black
+        Me.dot1.Location = New System.Drawing.Point(1, 171)
         Me.dot1.Name = "dot1"
         Me.dot1.Quality = 10
-        Me.dot1.Size = New System.Drawing.Size(5, 50)
+        Me.dot1.Size = New System.Drawing.Size(5, 53)
         Me.dot1.TabIndex = 12
         '
         'dot2
@@ -461,13 +461,13 @@ Partial Class frmHome
         Me.dot2.BackgroundImage = CType(resources.GetObject("dot2.BackgroundImage"), System.Drawing.Image)
         Me.dot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.dot2.GradientBottomLeft = System.Drawing.Color.White
-        Me.dot2.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot2.GradientBottomRight = System.Drawing.Color.White
         Me.dot2.GradientTopLeft = System.Drawing.Color.White
-        Me.dot2.GradientTopRight = System.Drawing.Color.Gray
-        Me.dot2.Location = New System.Drawing.Point(1, 225)
+        Me.dot2.GradientTopRight = System.Drawing.Color.Black
+        Me.dot2.Location = New System.Drawing.Point(1, 223)
         Me.dot2.Name = "dot2"
         Me.dot2.Quality = 10
-        Me.dot2.Size = New System.Drawing.Size(5, 50)
+        Me.dot2.Size = New System.Drawing.Size(5, 53)
         Me.dot2.TabIndex = 12
         '
         'dot3
@@ -475,13 +475,13 @@ Partial Class frmHome
         Me.dot3.BackgroundImage = CType(resources.GetObject("dot3.BackgroundImage"), System.Drawing.Image)
         Me.dot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.dot3.GradientBottomLeft = System.Drawing.Color.White
-        Me.dot3.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot3.GradientBottomRight = System.Drawing.Color.White
         Me.dot3.GradientTopLeft = System.Drawing.Color.White
-        Me.dot3.GradientTopRight = System.Drawing.Color.Gray
-        Me.dot3.Location = New System.Drawing.Point(1, 278)
+        Me.dot3.GradientTopRight = System.Drawing.Color.Black
+        Me.dot3.Location = New System.Drawing.Point(1, 276)
         Me.dot3.Name = "dot3"
         Me.dot3.Quality = 10
-        Me.dot3.Size = New System.Drawing.Size(5, 50)
+        Me.dot3.Size = New System.Drawing.Size(5, 53)
         Me.dot3.TabIndex = 12
         '
         'dot4
@@ -489,13 +489,13 @@ Partial Class frmHome
         Me.dot4.BackgroundImage = CType(resources.GetObject("dot4.BackgroundImage"), System.Drawing.Image)
         Me.dot4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.dot4.GradientBottomLeft = System.Drawing.Color.White
-        Me.dot4.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot4.GradientBottomRight = System.Drawing.Color.White
         Me.dot4.GradientTopLeft = System.Drawing.Color.White
-        Me.dot4.GradientTopRight = System.Drawing.Color.Gray
-        Me.dot4.Location = New System.Drawing.Point(1, 331)
+        Me.dot4.GradientTopRight = System.Drawing.Color.Black
+        Me.dot4.Location = New System.Drawing.Point(1, 329)
         Me.dot4.Name = "dot4"
         Me.dot4.Quality = 10
-        Me.dot4.Size = New System.Drawing.Size(5, 50)
+        Me.dot4.Size = New System.Drawing.Size(5, 53)
         Me.dot4.TabIndex = 12
         '
         'dot5
@@ -503,13 +503,13 @@ Partial Class frmHome
         Me.dot5.BackgroundImage = CType(resources.GetObject("dot5.BackgroundImage"), System.Drawing.Image)
         Me.dot5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.dot5.GradientBottomLeft = System.Drawing.Color.White
-        Me.dot5.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot5.GradientBottomRight = System.Drawing.Color.White
         Me.dot5.GradientTopLeft = System.Drawing.Color.White
-        Me.dot5.GradientTopRight = System.Drawing.Color.Gray
-        Me.dot5.Location = New System.Drawing.Point(1, 384)
+        Me.dot5.GradientTopRight = System.Drawing.Color.Black
+        Me.dot5.Location = New System.Drawing.Point(1, 382)
         Me.dot5.Name = "dot5"
         Me.dot5.Quality = 10
-        Me.dot5.Size = New System.Drawing.Size(5, 50)
+        Me.dot5.Size = New System.Drawing.Size(5, 53)
         Me.dot5.TabIndex = 12
         '
         'dot6
@@ -517,13 +517,13 @@ Partial Class frmHome
         Me.dot6.BackgroundImage = CType(resources.GetObject("dot6.BackgroundImage"), System.Drawing.Image)
         Me.dot6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.dot6.GradientBottomLeft = System.Drawing.Color.White
-        Me.dot6.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot6.GradientBottomRight = System.Drawing.Color.White
         Me.dot6.GradientTopLeft = System.Drawing.Color.White
-        Me.dot6.GradientTopRight = System.Drawing.Color.Gray
-        Me.dot6.Location = New System.Drawing.Point(1, 437)
+        Me.dot6.GradientTopRight = System.Drawing.Color.Black
+        Me.dot6.Location = New System.Drawing.Point(1, 435)
         Me.dot6.Name = "dot6"
         Me.dot6.Quality = 10
-        Me.dot6.Size = New System.Drawing.Size(5, 50)
+        Me.dot6.Size = New System.Drawing.Size(5, 53)
         Me.dot6.TabIndex = 12
         '
         'dot7
@@ -531,13 +531,13 @@ Partial Class frmHome
         Me.dot7.BackgroundImage = CType(resources.GetObject("dot7.BackgroundImage"), System.Drawing.Image)
         Me.dot7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.dot7.GradientBottomLeft = System.Drawing.Color.White
-        Me.dot7.GradientBottomRight = System.Drawing.Color.Silver
+        Me.dot7.GradientBottomRight = System.Drawing.Color.White
         Me.dot7.GradientTopLeft = System.Drawing.Color.White
-        Me.dot7.GradientTopRight = System.Drawing.Color.Gray
-        Me.dot7.Location = New System.Drawing.Point(1, 490)
+        Me.dot7.GradientTopRight = System.Drawing.Color.Black
+        Me.dot7.Location = New System.Drawing.Point(1, 488)
         Me.dot7.Name = "dot7"
         Me.dot7.Quality = 10
-        Me.dot7.Size = New System.Drawing.Size(5, 50)
+        Me.dot7.Size = New System.Drawing.Size(5, 53)
         Me.dot7.TabIndex = 12
         '
         'frmHome

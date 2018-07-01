@@ -72,7 +72,7 @@ Partial Class ucThayDoiQuyDinh
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(244, 11)
+        Me.Label1.Location = New System.Drawing.Point(249, 11)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(213, 30)
         Me.Label1.TabIndex = 1
@@ -91,7 +91,7 @@ Partial Class ucThayDoiQuyDinh
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Red
-        Me.GroupBox1.Location = New System.Drawing.Point(103, 65)
+        Me.GroupBox1.Location = New System.Drawing.Point(110, 65)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(490, 123)
         Me.GroupBox1.TabIndex = 4
@@ -206,7 +206,7 @@ Partial Class ucThayDoiQuyDinh
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Red
-        Me.GroupBox2.Location = New System.Drawing.Point(103, 217)
+        Me.GroupBox2.Location = New System.Drawing.Point(110, 217)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(490, 235)
         Me.GroupBox2.TabIndex = 7
@@ -331,7 +331,7 @@ Partial Class ucThayDoiQuyDinh
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.Red
-        Me.GroupBox3.Location = New System.Drawing.Point(103, 495)
+        Me.GroupBox3.Location = New System.Drawing.Point(110, 495)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(490, 98)
         Me.GroupBox3.TabIndex = 9
@@ -426,7 +426,7 @@ Partial Class ucThayDoiQuyDinh
         Me.btnThoat.IconVisible = True
         Me.btnThoat.IconZoom = 60.0R
         Me.btnThoat.IsTab = False
-        Me.btnThoat.Location = New System.Drawing.Point(448, 619)
+        Me.btnThoat.Location = New System.Drawing.Point(456, 628)
         Me.btnThoat.Name = "btnThoat"
         Me.btnThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnThoat.OnHovercolor = System.Drawing.Color.Gray
@@ -462,7 +462,7 @@ Partial Class ucThayDoiQuyDinh
         Me.btnLuuThayDoi.IconVisible = True
         Me.btnLuuThayDoi.IconZoom = 60.0R
         Me.btnLuuThayDoi.IsTab = False
-        Me.btnLuuThayDoi.Location = New System.Drawing.Point(106, 619)
+        Me.btnLuuThayDoi.Location = New System.Drawing.Point(114, 628)
         Me.btnLuuThayDoi.Name = "btnLuuThayDoi"
         Me.btnLuuThayDoi.Normalcolor = System.Drawing.Color.LightGray
         Me.btnLuuThayDoi.OnHovercolor = System.Drawing.Color.Gray
@@ -486,7 +486,7 @@ Partial Class ucThayDoiQuyDinh
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ucThayDoiQuyDinh"
-        Me.Size = New System.Drawing.Size(700, 686)
+        Me.Size = New System.Drawing.Size(710, 686)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.nudThoiHanThe, System.ComponentModel.ISupportInitialize).EndInit()

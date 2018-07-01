@@ -26,7 +26,7 @@ Public Class splashScreen
         btnOK.Visible = False
         lbTrangThaiMK.Text = ""
         lbTroVe.Visible = False
-        btnDangNhap.Focus()
+        tbMaDangNhap.Focus()
 
         Timer1.Interval = 1
         Timer1.Start()
@@ -42,6 +42,8 @@ Public Class splashScreen
                 pnDangNhap.Width = 307
                 pnLogo.Location = New Drawing.Point(155, 138)
                 lbStatus.Text = "Kết nối thành công!"
+                Timer2.Interval = 1000
+                Timer2.Start()
                 progressBar.Visible = False
 
             Else
@@ -49,6 +51,10 @@ Public Class splashScreen
                 Close()
             End If
         End If
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        lbStatus.Visible = False
     End Sub
 
     Private Sub btnDocGia_Click(sender As Object, e As EventArgs) Handles btnDocGia.Click
@@ -266,4 +272,6 @@ Public Class splashScreen
         Dim ToolTip1 As ToolTip = New ToolTip()
         ToolTip1.SetToolTip(Me.tbNhapLaiMatKhauMoi, "Xác nhận mật khẩu mới")
     End Sub
+
+
 End Class

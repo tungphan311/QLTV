@@ -40,15 +40,15 @@ Partial Class ucTraCuuSach
         Me.cbTinhTrang = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgDanhSachSach = New Bunifu.Framework.UI.BunifuCustomDataGrid()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.btnThoat = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btnTraCuu = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btnXuatKetQua = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.MaSach = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TenSach = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TheLoai = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TacGia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TinhTrang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.btnThoat = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.btnTraCuu = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.btnXuatKetQua = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgDanhSachSach, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,7 +59,7 @@ Partial Class ucTraCuuSach
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(271, 11)
+        Me.Label1.Location = New System.Drawing.Point(276, 11)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(158, 30)
         Me.Label1.TabIndex = 26
@@ -206,7 +206,7 @@ Partial Class ucTraCuuSach
         Me.GroupBox1.Controls.Add(Me.cbTacGia)
         Me.GroupBox1.Controls.Add(Me.cbTinhTrang)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Location = New System.Drawing.Point(21, 44)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 44)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(659, 171)
         Me.GroupBox1.TabIndex = 69
@@ -251,7 +251,7 @@ Partial Class ucTraCuuSach
         Me.dgDanhSachSach.GridColor = System.Drawing.Color.Gray
         Me.dgDanhSachSach.HeaderBgColor = System.Drawing.Color.DarkGray
         Me.dgDanhSachSach.HeaderForeColor = System.Drawing.Color.Black
-        Me.dgDanhSachSach.Location = New System.Drawing.Point(21, 319)
+        Me.dgDanhSachSach.Location = New System.Drawing.Point(26, 319)
         Me.dgDanhSachSach.Name = "dgDanhSachSach"
         Me.dgDanhSachSach.ReadOnly = True
         Me.dgDanhSachSach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -271,123 +271,6 @@ Partial Class ucTraCuuSach
         Me.dgDanhSachSach.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgDanhSachSach.Size = New System.Drawing.Size(659, 241)
         Me.dgDanhSachSach.TabIndex = 70
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(25, 286)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(117, 21)
-        Me.Label11.TabIndex = 60
-        Me.Label11.Text = "Kết quả tra cứu:"
-        '
-        'btnThoat
-        '
-        Me.btnThoat.Activecolor = System.Drawing.Color.Silver
-        Me.btnThoat.BackColor = System.Drawing.Color.LightGray
-        Me.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnThoat.BorderRadius = 7
-        Me.btnThoat.ButtonText = "Thoát"
-        Me.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnThoat.DisabledColor = System.Drawing.Color.Silver
-        Me.btnThoat.ForeColor = System.Drawing.Color.Black
-        Me.btnThoat.Iconcolor = System.Drawing.Color.Transparent
-        Me.btnThoat.Iconimage = Global.QLTVGUI.My.Resources.Resources.icons8_Enter_64
-        Me.btnThoat.Iconimage_right = Nothing
-        Me.btnThoat.Iconimage_right_Selected = Nothing
-        Me.btnThoat.Iconimage_Selected = Nothing
-        Me.btnThoat.IconMarginLeft = 0
-        Me.btnThoat.IconMarginRight = 0
-        Me.btnThoat.IconRightVisible = True
-        Me.btnThoat.IconRightZoom = 0R
-        Me.btnThoat.IconVisible = True
-        Me.btnThoat.IconZoom = 60.0R
-        Me.btnThoat.IsTab = False
-        Me.btnThoat.Location = New System.Drawing.Point(453, 616)
-        Me.btnThoat.Name = "btnThoat"
-        Me.btnThoat.Normalcolor = System.Drawing.Color.LightGray
-        Me.btnThoat.OnHovercolor = System.Drawing.Color.Gray
-        Me.btnThoat.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btnThoat.selected = False
-        Me.btnThoat.Size = New System.Drawing.Size(140, 41)
-        Me.btnThoat.TabIndex = 28
-        Me.btnThoat.Text = "Thoát"
-        Me.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnThoat.Textcolor = System.Drawing.Color.Black
-        Me.btnThoat.TextFont = New System.Drawing.Font("Segoe UI", 12.0!)
-        '
-        'btnTraCuu
-        '
-        Me.btnTraCuu.Activecolor = System.Drawing.Color.Silver
-        Me.btnTraCuu.BackColor = System.Drawing.Color.LightGray
-        Me.btnTraCuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnTraCuu.BorderRadius = 7
-        Me.btnTraCuu.ButtonText = "Tra cứu"
-        Me.btnTraCuu.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTraCuu.DisabledColor = System.Drawing.Color.Silver
-        Me.btnTraCuu.ForeColor = System.Drawing.Color.Black
-        Me.btnTraCuu.Iconcolor = System.Drawing.Color.Transparent
-        Me.btnTraCuu.Iconimage = Global.QLTVGUI.My.Resources.Resources.icons8_Search1_64
-        Me.btnTraCuu.Iconimage_right = Nothing
-        Me.btnTraCuu.Iconimage_right_Selected = Nothing
-        Me.btnTraCuu.Iconimage_Selected = Nothing
-        Me.btnTraCuu.IconMarginLeft = 0
-        Me.btnTraCuu.IconMarginRight = 0
-        Me.btnTraCuu.IconRightVisible = True
-        Me.btnTraCuu.IconRightZoom = 0R
-        Me.btnTraCuu.IconVisible = True
-        Me.btnTraCuu.IconZoom = 60.0R
-        Me.btnTraCuu.IsTab = False
-        Me.btnTraCuu.Location = New System.Drawing.Point(292, 236)
-        Me.btnTraCuu.Name = "btnTraCuu"
-        Me.btnTraCuu.Normalcolor = System.Drawing.Color.LightGray
-        Me.btnTraCuu.OnHovercolor = System.Drawing.Color.Gray
-        Me.btnTraCuu.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btnTraCuu.selected = False
-        Me.btnTraCuu.Size = New System.Drawing.Size(116, 41)
-        Me.btnTraCuu.TabIndex = 29
-        Me.btnTraCuu.Text = "Tra cứu"
-        Me.btnTraCuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnTraCuu.Textcolor = System.Drawing.Color.Black
-        Me.btnTraCuu.TextFont = New System.Drawing.Font("Segoe UI", 12.0!)
-        '
-        'btnXuatKetQua
-        '
-        Me.btnXuatKetQua.Activecolor = System.Drawing.Color.Silver
-        Me.btnXuatKetQua.BackColor = System.Drawing.Color.LightGray
-        Me.btnXuatKetQua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnXuatKetQua.BorderRadius = 7
-        Me.btnXuatKetQua.ButtonText = "Xuất kết quả"
-        Me.btnXuatKetQua.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnXuatKetQua.DisabledColor = System.Drawing.Color.Silver
-        Me.btnXuatKetQua.ForeColor = System.Drawing.Color.Black
-        Me.btnXuatKetQua.Iconcolor = System.Drawing.Color.Transparent
-        Me.btnXuatKetQua.Iconimage = Global.QLTVGUI.My.Resources.Resources.icons8_Download_64
-        Me.btnXuatKetQua.Iconimage_right = Nothing
-        Me.btnXuatKetQua.Iconimage_right_Selected = Nothing
-        Me.btnXuatKetQua.Iconimage_Selected = Nothing
-        Me.btnXuatKetQua.IconMarginLeft = 0
-        Me.btnXuatKetQua.IconMarginRight = 0
-        Me.btnXuatKetQua.IconRightVisible = True
-        Me.btnXuatKetQua.IconRightZoom = 0R
-        Me.btnXuatKetQua.IconVisible = True
-        Me.btnXuatKetQua.IconZoom = 60.0R
-        Me.btnXuatKetQua.IsTab = False
-        Me.btnXuatKetQua.Location = New System.Drawing.Point(107, 616)
-        Me.btnXuatKetQua.Name = "btnXuatKetQua"
-        Me.btnXuatKetQua.Normalcolor = System.Drawing.Color.LightGray
-        Me.btnXuatKetQua.OnHovercolor = System.Drawing.Color.Gray
-        Me.btnXuatKetQua.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btnXuatKetQua.selected = False
-        Me.btnXuatKetQua.Size = New System.Drawing.Size(140, 41)
-        Me.btnXuatKetQua.TabIndex = 29
-        Me.btnXuatKetQua.Text = "Xuất kết quả"
-        Me.btnXuatKetQua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnXuatKetQua.Textcolor = System.Drawing.Color.Black
-        Me.btnXuatKetQua.TextFont = New System.Drawing.Font("Segoe UI", 12.0!)
         '
         'MaSach
         '
@@ -428,6 +311,123 @@ Partial Class ucTraCuuSach
         Me.TinhTrang.ReadOnly = True
         Me.TinhTrang.Width = 97
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(21, 286)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(117, 21)
+        Me.Label11.TabIndex = 60
+        Me.Label11.Text = "Kết quả tra cứu:"
+        '
+        'btnThoat
+        '
+        Me.btnThoat.Activecolor = System.Drawing.Color.Silver
+        Me.btnThoat.BackColor = System.Drawing.Color.LightGray
+        Me.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnThoat.BorderRadius = 7
+        Me.btnThoat.ButtonText = "Thoát"
+        Me.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnThoat.DisabledColor = System.Drawing.Color.Silver
+        Me.btnThoat.ForeColor = System.Drawing.Color.Black
+        Me.btnThoat.Iconcolor = System.Drawing.Color.Transparent
+        Me.btnThoat.Iconimage = Global.QLTVGUI.My.Resources.Resources.icons8_Enter_64
+        Me.btnThoat.Iconimage_right = Nothing
+        Me.btnThoat.Iconimage_right_Selected = Nothing
+        Me.btnThoat.Iconimage_Selected = Nothing
+        Me.btnThoat.IconMarginLeft = 0
+        Me.btnThoat.IconMarginRight = 0
+        Me.btnThoat.IconRightVisible = True
+        Me.btnThoat.IconRightZoom = 0R
+        Me.btnThoat.IconVisible = True
+        Me.btnThoat.IconZoom = 60.0R
+        Me.btnThoat.IsTab = False
+        Me.btnThoat.Location = New System.Drawing.Point(458, 616)
+        Me.btnThoat.Name = "btnThoat"
+        Me.btnThoat.Normalcolor = System.Drawing.Color.LightGray
+        Me.btnThoat.OnHovercolor = System.Drawing.Color.Gray
+        Me.btnThoat.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btnThoat.selected = False
+        Me.btnThoat.Size = New System.Drawing.Size(140, 41)
+        Me.btnThoat.TabIndex = 28
+        Me.btnThoat.Text = "Thoát"
+        Me.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnThoat.Textcolor = System.Drawing.Color.Black
+        Me.btnThoat.TextFont = New System.Drawing.Font("Segoe UI", 12.0!)
+        '
+        'btnTraCuu
+        '
+        Me.btnTraCuu.Activecolor = System.Drawing.Color.Silver
+        Me.btnTraCuu.BackColor = System.Drawing.Color.LightGray
+        Me.btnTraCuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnTraCuu.BorderRadius = 7
+        Me.btnTraCuu.ButtonText = "Tra cứu"
+        Me.btnTraCuu.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTraCuu.DisabledColor = System.Drawing.Color.Silver
+        Me.btnTraCuu.ForeColor = System.Drawing.Color.Black
+        Me.btnTraCuu.Iconcolor = System.Drawing.Color.Transparent
+        Me.btnTraCuu.Iconimage = Global.QLTVGUI.My.Resources.Resources.icons8_Search1_64
+        Me.btnTraCuu.Iconimage_right = Nothing
+        Me.btnTraCuu.Iconimage_right_Selected = Nothing
+        Me.btnTraCuu.Iconimage_Selected = Nothing
+        Me.btnTraCuu.IconMarginLeft = 0
+        Me.btnTraCuu.IconMarginRight = 0
+        Me.btnTraCuu.IconRightVisible = True
+        Me.btnTraCuu.IconRightZoom = 0R
+        Me.btnTraCuu.IconVisible = True
+        Me.btnTraCuu.IconZoom = 60.0R
+        Me.btnTraCuu.IsTab = False
+        Me.btnTraCuu.Location = New System.Drawing.Point(297, 236)
+        Me.btnTraCuu.Name = "btnTraCuu"
+        Me.btnTraCuu.Normalcolor = System.Drawing.Color.LightGray
+        Me.btnTraCuu.OnHovercolor = System.Drawing.Color.Gray
+        Me.btnTraCuu.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btnTraCuu.selected = False
+        Me.btnTraCuu.Size = New System.Drawing.Size(116, 41)
+        Me.btnTraCuu.TabIndex = 29
+        Me.btnTraCuu.Text = "Tra cứu"
+        Me.btnTraCuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnTraCuu.Textcolor = System.Drawing.Color.Black
+        Me.btnTraCuu.TextFont = New System.Drawing.Font("Segoe UI", 12.0!)
+        '
+        'btnXuatKetQua
+        '
+        Me.btnXuatKetQua.Activecolor = System.Drawing.Color.Silver
+        Me.btnXuatKetQua.BackColor = System.Drawing.Color.LightGray
+        Me.btnXuatKetQua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnXuatKetQua.BorderRadius = 7
+        Me.btnXuatKetQua.ButtonText = "Xuất kết quả"
+        Me.btnXuatKetQua.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnXuatKetQua.DisabledColor = System.Drawing.Color.Silver
+        Me.btnXuatKetQua.ForeColor = System.Drawing.Color.Black
+        Me.btnXuatKetQua.Iconcolor = System.Drawing.Color.Transparent
+        Me.btnXuatKetQua.Iconimage = Global.QLTVGUI.My.Resources.Resources.icons8_Download_64
+        Me.btnXuatKetQua.Iconimage_right = Nothing
+        Me.btnXuatKetQua.Iconimage_right_Selected = Nothing
+        Me.btnXuatKetQua.Iconimage_Selected = Nothing
+        Me.btnXuatKetQua.IconMarginLeft = 0
+        Me.btnXuatKetQua.IconMarginRight = 0
+        Me.btnXuatKetQua.IconRightVisible = True
+        Me.btnXuatKetQua.IconRightZoom = 0R
+        Me.btnXuatKetQua.IconVisible = True
+        Me.btnXuatKetQua.IconZoom = 60.0R
+        Me.btnXuatKetQua.IsTab = False
+        Me.btnXuatKetQua.Location = New System.Drawing.Point(112, 616)
+        Me.btnXuatKetQua.Name = "btnXuatKetQua"
+        Me.btnXuatKetQua.Normalcolor = System.Drawing.Color.LightGray
+        Me.btnXuatKetQua.OnHovercolor = System.Drawing.Color.Gray
+        Me.btnXuatKetQua.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btnXuatKetQua.selected = False
+        Me.btnXuatKetQua.Size = New System.Drawing.Size(140, 41)
+        Me.btnXuatKetQua.TabIndex = 29
+        Me.btnXuatKetQua.Text = "Xuất kết quả"
+        Me.btnXuatKetQua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnXuatKetQua.Textcolor = System.Drawing.Color.Black
+        Me.btnXuatKetQua.TextFont = New System.Drawing.Font("Segoe UI", 12.0!)
+        '
         'ucTraCuuSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -445,7 +445,7 @@ Partial Class ucTraCuuSach
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "ucTraCuuSach"
-        Me.Size = New System.Drawing.Size(700, 670)
+        Me.Size = New System.Drawing.Size(710, 670)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgDanhSachSach, System.ComponentModel.ISupportInitialize).EndInit()

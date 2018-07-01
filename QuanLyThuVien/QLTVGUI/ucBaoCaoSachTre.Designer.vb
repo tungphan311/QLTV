@@ -142,7 +142,7 @@ Partial Class ucBaoCaoSachTre
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(201, 81)
+        Me.Label11.Location = New System.Drawing.Point(206, 81)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(50, 21)
         Me.Label11.TabIndex = 40
@@ -154,7 +154,7 @@ Partial Class ucBaoCaoSachTre
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(173, 17)
+        Me.Label1.Location = New System.Drawing.Point(178, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(355, 30)
         Me.Label1.TabIndex = 36
@@ -182,13 +182,13 @@ Partial Class ucBaoCaoSachTre
         Me.btnThoat.IconVisible = True
         Me.btnThoat.IconZoom = 60.0R
         Me.btnThoat.IsTab = False
-        Me.btnThoat.Location = New System.Drawing.Point(451, 473)
+        Me.btnThoat.Location = New System.Drawing.Point(455, 473)
         Me.btnThoat.Name = "btnThoat"
         Me.btnThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnThoat.OnHovercolor = System.Drawing.Color.Gray
         Me.btnThoat.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnThoat.selected = False
-        Me.btnThoat.Size = New System.Drawing.Size(140, 41)
+        Me.btnThoat.Size = New System.Drawing.Size(142, 41)
         Me.btnThoat.TabIndex = 42
         Me.btnThoat.Text = "Thoát"
         Me.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -217,13 +217,13 @@ Partial Class ucBaoCaoSachTre
         Me.btnXuatBaoCao.IconVisible = True
         Me.btnXuatBaoCao.IconZoom = 60.0R
         Me.btnXuatBaoCao.IsTab = False
-        Me.btnXuatBaoCao.Location = New System.Drawing.Point(109, 473)
+        Me.btnXuatBaoCao.Location = New System.Drawing.Point(113, 473)
         Me.btnXuatBaoCao.Name = "btnXuatBaoCao"
         Me.btnXuatBaoCao.Normalcolor = System.Drawing.Color.LightGray
         Me.btnXuatBaoCao.OnHovercolor = System.Drawing.Color.Gray
         Me.btnXuatBaoCao.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnXuatBaoCao.selected = False
-        Me.btnXuatBaoCao.Size = New System.Drawing.Size(140, 41)
+        Me.btnXuatBaoCao.Size = New System.Drawing.Size(142, 41)
         Me.btnXuatBaoCao.TabIndex = 43
         Me.btnXuatBaoCao.Text = "Xuất báo cáo"
         Me.btnXuatBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -238,7 +238,7 @@ Partial Class ucBaoCaoSachTre
         Me.dtpNgay.CustomFormat = "ddddddddd, dd/MM/yyyy"
         Me.dtpNgay.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpNgay.Location = New System.Drawing.Point(257, 76)
+        Me.dtpNgay.Location = New System.Drawing.Point(262, 76)
         Me.dtpNgay.Name = "dtpNgay"
         Me.dtpNgay.Size = New System.Drawing.Size(242, 29)
         Me.dtpNgay.TabIndex = 76
@@ -266,7 +266,7 @@ Partial Class ucBaoCaoSachTre
         Me.btnThongKe.IconVisible = True
         Me.btnThongKe.IconZoom = 60.0R
         Me.btnThongKe.IsTab = False
-        Me.btnThongKe.Location = New System.Drawing.Point(285, 119)
+        Me.btnThongKe.Location = New System.Drawing.Point(290, 119)
         Me.btnThongKe.Name = "btnThongKe"
         Me.btnThongKe.Normalcolor = System.Drawing.Color.LightGray
         Me.btnThongKe.OnHovercolor = System.Drawing.Color.Gray
@@ -291,7 +291,7 @@ Partial Class ucBaoCaoSachTre
         Me.Controls.Add(Me.btnThoat)
         Me.Controls.Add(Me.btnXuatBaoCao)
         Me.Name = "ucBaoCaoSachTre"
-        Me.Size = New System.Drawing.Size(700, 530)
+        Me.Size = New System.Drawing.Size(710, 530)
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgThongKe, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

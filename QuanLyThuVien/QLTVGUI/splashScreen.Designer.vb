@@ -51,6 +51,7 @@ Partial Class splashScreen
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.BunifuDragControl3 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.BunifuGradientPanel1.SuspendLayout()
         Me.pnDangNhap.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -399,6 +400,10 @@ Partial Class splashScreen
         Me.BunifuDragControl3.TargetControl = Me.pnLogo
         Me.BunifuDragControl3.Vertical = True
         '
+        'Timer2
+        '
+        Me.Timer2.Interval = 500
+        '
         'splashScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -450,4 +455,5 @@ Partial Class splashScreen
     Friend WithEvents btnDocGia As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents lbTroVe As Label
     Friend WithEvents BunifuDragControl3 As Bunifu.Framework.UI.BunifuDragControl
+    Friend WithEvents Timer2 As Timer
 End Class

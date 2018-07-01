@@ -22,11 +22,11 @@ Partial Class ucBaoCaoSachMuon
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tbThang = New Bunifu.Framework.UI.BunifuMaterialTextbox()
@@ -52,7 +52,7 @@ Partial Class ucBaoCaoSachMuon
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(47, 11)
+        Me.Label1.Location = New System.Drawing.Point(52, 11)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(607, 30)
         Me.Label1.TabIndex = 8
@@ -64,7 +64,7 @@ Partial Class ucBaoCaoSachMuon
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(211, 69)
+        Me.Label11.Location = New System.Drawing.Point(216, 69)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(56, 21)
         Me.Label11.TabIndex = 32
@@ -84,7 +84,7 @@ Partial Class ucBaoCaoSachMuon
         Me.tbThang.LineIdleColor = System.Drawing.Color.Silver
         Me.tbThang.LineMouseHoverColor = System.Drawing.Color.Gray
         Me.tbThang.LineThickness = 2
-        Me.tbThang.Location = New System.Drawing.Point(274, 57)
+        Me.tbThang.Location = New System.Drawing.Point(279, 57)
         Me.tbThang.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbThang.Name = "tbThang"
         Me.tbThang.Size = New System.Drawing.Size(64, 36)
@@ -105,7 +105,7 @@ Partial Class ucBaoCaoSachMuon
         Me.tbNam.LineIdleColor = System.Drawing.Color.Silver
         Me.tbNam.LineMouseHoverColor = System.Drawing.Color.Gray
         Me.tbNam.LineThickness = 2
-        Me.tbNam.Location = New System.Drawing.Point(426, 57)
+        Me.tbNam.Location = New System.Drawing.Point(431, 57)
         Me.tbNam.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbNam.Name = "tbNam"
         Me.tbNam.Size = New System.Drawing.Size(64, 36)
@@ -118,7 +118,7 @@ Partial Class ucBaoCaoSachMuon
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(372, 69)
+        Me.Label2.Location = New System.Drawing.Point(377, 69)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(47, 21)
         Me.Label2.TabIndex = 32
@@ -130,9 +130,9 @@ Partial Class ucBaoCaoSachMuon
         Me.GroupBox1.Controls.Add(Me.labellb)
         Me.GroupBox1.Controls.Add(Me.lbTongLuotMuon)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.GroupBox1.Location = New System.Drawing.Point(49, 155)
+        Me.GroupBox1.Location = New System.Drawing.Point(54, 155)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(602, 288)
+        Me.GroupBox1.Size = New System.Drawing.Size(602, 282)
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Thống kê:"
@@ -143,34 +143,34 @@ Partial Class ucBaoCaoSachMuon
         Me.dgThongKe.AllowUserToDeleteRows = False
         Me.dgThongKe.AllowUserToResizeColumns = False
         Me.dgThongKe.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.dgThongKe.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgThongKe.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgThongKe.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgThongKe.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.dgThongKe.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgThongKe.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgThongKe.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgThongKe.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgThongKe.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TenTheLoai, Me.SoLuotMuon, Me.TiLe})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgThongKe.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgThongKe.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgThongKe.DoubleBuffered = True
         Me.dgThongKe.EnableHeadersVisualStyles = False
         Me.dgThongKe.GridColor = System.Drawing.Color.Gray
@@ -180,20 +180,20 @@ Partial Class ucBaoCaoSachMuon
         Me.dgThongKe.Name = "dgThongKe"
         Me.dgThongKe.ReadOnly = True
         Me.dgThongKe.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgThongKe.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
-        Me.dgThongKe.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgThongKe.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
+        Me.dgThongKe.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgThongKe.Size = New System.Drawing.Size(493, 192)
         Me.dgThongKe.TabIndex = 72
         '
@@ -236,9 +236,9 @@ Partial Class ucBaoCaoSachMuon
         'lbTongLuotMuon
         '
         Me.lbTongLuotMuon.BackColor = System.Drawing.Color.Transparent
-        Me.lbTongLuotMuon.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTongLuotMuon.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTongLuotMuon.ForeColor = System.Drawing.Color.MediumBlue
-        Me.lbTongLuotMuon.Location = New System.Drawing.Point(495, 252)
+        Me.lbTongLuotMuon.Location = New System.Drawing.Point(495, 251)
         Me.lbTongLuotMuon.Name = "lbTongLuotMuon"
         Me.lbTongLuotMuon.Size = New System.Drawing.Size(53, 21)
         Me.lbTongLuotMuon.TabIndex = 32
@@ -267,13 +267,13 @@ Partial Class ucBaoCaoSachMuon
         Me.btnThoat.IconVisible = True
         Me.btnThoat.IconZoom = 60.0R
         Me.btnThoat.IsTab = False
-        Me.btnThoat.Location = New System.Drawing.Point(451, 467)
+        Me.btnThoat.Location = New System.Drawing.Point(455, 472)
         Me.btnThoat.Name = "btnThoat"
         Me.btnThoat.Normalcolor = System.Drawing.Color.LightGray
         Me.btnThoat.OnHovercolor = System.Drawing.Color.Gray
         Me.btnThoat.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnThoat.selected = False
-        Me.btnThoat.Size = New System.Drawing.Size(140, 41)
+        Me.btnThoat.Size = New System.Drawing.Size(142, 41)
         Me.btnThoat.TabIndex = 34
         Me.btnThoat.Text = "Thoát"
         Me.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -302,7 +302,7 @@ Partial Class ucBaoCaoSachMuon
         Me.btnThongKe.IconVisible = True
         Me.btnThongKe.IconZoom = 60.0R
         Me.btnThongKe.IsTab = False
-        Me.btnThongKe.Location = New System.Drawing.Point(285, 112)
+        Me.btnThongKe.Location = New System.Drawing.Point(290, 112)
         Me.btnThongKe.Name = "btnThongKe"
         Me.btnThongKe.Normalcolor = System.Drawing.Color.LightGray
         Me.btnThongKe.OnHovercolor = System.Drawing.Color.Gray
@@ -337,13 +337,13 @@ Partial Class ucBaoCaoSachMuon
         Me.btnXuatBaoCao.IconVisible = True
         Me.btnXuatBaoCao.IconZoom = 60.0R
         Me.btnXuatBaoCao.IsTab = False
-        Me.btnXuatBaoCao.Location = New System.Drawing.Point(109, 467)
+        Me.btnXuatBaoCao.Location = New System.Drawing.Point(113, 472)
         Me.btnXuatBaoCao.Name = "btnXuatBaoCao"
         Me.btnXuatBaoCao.Normalcolor = System.Drawing.Color.LightGray
         Me.btnXuatBaoCao.OnHovercolor = System.Drawing.Color.Gray
         Me.btnXuatBaoCao.OnHoverTextColor = System.Drawing.Color.Black
         Me.btnXuatBaoCao.selected = False
-        Me.btnXuatBaoCao.Size = New System.Drawing.Size(140, 41)
+        Me.btnXuatBaoCao.Size = New System.Drawing.Size(142, 41)
         Me.btnXuatBaoCao.TabIndex = 35
         Me.btnXuatBaoCao.Text = "Xuất báo cáo"
         Me.btnXuatBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -364,7 +364,7 @@ Partial Class ucBaoCaoSachMuon
         Me.Controls.Add(Me.tbThang)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ucBaoCaoSachMuon"
-        Me.Size = New System.Drawing.Size(700, 530)
+        Me.Size = New System.Drawing.Size(710, 530)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgThongKe, System.ComponentModel.ISupportInitialize).EndInit()

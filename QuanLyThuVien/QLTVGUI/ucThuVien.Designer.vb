@@ -53,7 +53,7 @@ Partial Class ucThuVien
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = Global.QLTVGUI.My.Resources.Resources.icons8_Info_64
-        Me.PictureBox2.Location = New System.Drawing.Point(190, 300)
+        Me.PictureBox2.Location = New System.Drawing.Point(195, 300)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(25, 25)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -64,7 +64,7 @@ Partial Class ucThuVien
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.QLTVGUI.My.Resources.Resources.contact_divider
-        Me.PictureBox1.Location = New System.Drawing.Point(99, 223)
+        Me.PictureBox1.Location = New System.Drawing.Point(104, 223)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(503, 50)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -75,7 +75,7 @@ Partial Class ucThuVien
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(219, 304)
+        Me.Label1.Location = New System.Drawing.Point(224, 304)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(193, 21)
         Me.Label1.TabIndex = 3
@@ -91,7 +91,7 @@ Partial Class ucThuVien
         Me.BunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.BunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.BunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.BunifuGradientPanel1.Location = New System.Drawing.Point(65, 45)
+        Me.BunifuGradientPanel1.Location = New System.Drawing.Point(70, 45)
         Me.BunifuGradientPanel1.Name = "BunifuGradientPanel1"
         Me.BunifuGradientPanel1.Quality = 10
         Me.BunifuGradientPanel1.Size = New System.Drawing.Size(150, 150)
@@ -131,7 +131,7 @@ Partial Class ucThuVien
         Me.BunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.BunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(93, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BunifuGradientPanel2.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.BunifuGradientPanel2.Location = New System.Drawing.Point(275, 45)
+        Me.BunifuGradientPanel2.Location = New System.Drawing.Point(280, 45)
         Me.BunifuGradientPanel2.Name = "BunifuGradientPanel2"
         Me.BunifuGradientPanel2.Quality = 10
         Me.BunifuGradientPanel2.Size = New System.Drawing.Size(150, 150)
@@ -167,11 +167,11 @@ Partial Class ucThuVien
         Me.BunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BunifuGradientPanel3.Controls.Add(Me.Label5)
         Me.BunifuGradientPanel3.Controls.Add(Me.lbSoLuotMuon)
-        Me.BunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.BunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.BunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.BunifuGradientPanel3.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.BunifuGradientPanel3.Location = New System.Drawing.Point(485, 45)
+        Me.BunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.BunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(230, Byte), Integer))
+        Me.BunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.BunifuGradientPanel3.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(230, Byte), Integer))
+        Me.BunifuGradientPanel3.Location = New System.Drawing.Point(490, 45)
         Me.BunifuGradientPanel3.Name = "BunifuGradientPanel3"
         Me.BunifuGradientPanel3.Quality = 10
         Me.BunifuGradientPanel3.Size = New System.Drawing.Size(150, 150)
@@ -206,7 +206,7 @@ Partial Class ucThuVien
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(219, 360)
+        Me.Label6.Location = New System.Drawing.Point(224, 360)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(82, 15)
         Me.Label6.TabIndex = 3
@@ -217,7 +217,7 @@ Partial Class ucThuVien
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(219, 421)
+        Me.Label4.Location = New System.Drawing.Point(224, 421)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(91, 15)
         Me.Label4.TabIndex = 3
@@ -228,7 +228,7 @@ Partial Class ucThuVien
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(219, 380)
+        Me.Label8.Location = New System.Drawing.Point(224, 380)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(181, 30)
         Me.Label8.TabIndex = 3
@@ -239,7 +239,7 @@ Partial Class ucThuVien
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(219, 439)
+        Me.Label9.Location = New System.Drawing.Point(224, 439)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(276, 30)
         Me.Label9.TabIndex = 3
@@ -250,7 +250,7 @@ Partial Class ucThuVien
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(219, 332)
+        Me.Label7.Location = New System.Drawing.Point(224, 332)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(77, 15)
         Me.Label7.TabIndex = 3
@@ -261,7 +261,7 @@ Partial Class ucThuVien
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(227, 311)
+        Me.Label10.Location = New System.Drawing.Point(232, 311)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(0, 15)
         Me.Label10.TabIndex = 3
@@ -270,7 +270,7 @@ Partial Class ucThuVien
         '
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(294, 332)
+        Me.LinkLabel1.Location = New System.Drawing.Point(299, 332)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(217, 15)
         Me.LinkLabel1.TabIndex = 5
@@ -296,7 +296,7 @@ Partial Class ucThuVien
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "ucThuVien"
-        Me.Size = New System.Drawing.Size(700, 530)
+        Me.Size = New System.Drawing.Size(710, 530)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BunifuGradientPanel1.ResumeLayout(False)

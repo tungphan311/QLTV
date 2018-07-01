@@ -60,7 +60,7 @@ Public Class frmHome
         fpnZone.Controls.Add(ucThayDoiQuyDinh)
     End Sub
 
-    Private Sub btnLogo_Click(sender As Object, e As EventArgs)
+    Private Sub btnLogo_Click(sender As Object, e As EventArgs) Handles btnLogo.Click
         fpnZone.Controls.Clear()
         Dim ucThuVien As New ucThuVien
         fpnZone.Controls.Add(ucThuVien)
